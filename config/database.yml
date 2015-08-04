@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: postgres
+
+development:
+  <<: *default
+  database: order_manager_development
+
+test:
+  <<: *default
+  database: order_manager_test
+
+production:
+  <<: *default
+  database: order_manager_production
+  password: <%= ENV['ORDER_MANAGER_DATABASE_PASSWORD'] %>
