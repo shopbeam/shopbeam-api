@@ -4,8 +4,13 @@ module Checkout
 
     attr_reader :order
 
-    def initialize(order)
+    def self.call(*args)
+      new(*args).call
+    end
+
+    def initialize(order, listener)
       @order = order
+      subscribe(listener)
     end
 
     def call
