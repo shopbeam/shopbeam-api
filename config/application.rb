@@ -33,5 +33,8 @@ module OrderManager
     config.active_record.raise_in_transactional_callbacks = true
 
     config.autoload_paths << Rails.root.join('lib')
+
+    # Use the schema in SQL format because of database-dependent statements
+    config.active_record.schema_format = :sql
   end
 end
