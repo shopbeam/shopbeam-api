@@ -36,5 +36,8 @@ module OrderManager
 
     # Use the schema in SQL format because of database-dependent statements
     config.active_record.schema_format = :sql
+
+    # Use Sidekiq as an Active Job adapter
+    config.active_job.queue_adapter = :sidekiq
   end
 end
