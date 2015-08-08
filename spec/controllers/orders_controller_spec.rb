@@ -16,7 +16,7 @@ describe OrdersController do
       )
     end
 
-    it 'returns accepted status code' do
+    it 'responds with accepted status code' do
       expect(response).to have_http_status(202)
     end
   end

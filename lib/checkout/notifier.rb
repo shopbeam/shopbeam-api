@@ -1,7 +1,12 @@
 module Checkout
   class Notifier
-    def submit_checkout_successful(order)
-      # TODO: Notification logic goes here...
+    # TODO: Notification logic goes here...
+    def checkout_successful(order)
+
+    end
+
+    def checkout_failed(order)
+
     end
   end
 end

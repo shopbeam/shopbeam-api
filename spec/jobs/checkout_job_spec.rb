@@ -10,8 +10,8 @@ describe CheckoutJob do
     clear_performed_jobs
   end
 
-  it 'calls checkout submitter' do
-    expect(Checkout::Submitter)
+  it 'calls checkout shopper' do
+    expect(Checkout::Shopper)
       .to receive(:call).with(order, instance_of(Checkout::Notifier))
     perform_enqueued_jobs { job }
   end

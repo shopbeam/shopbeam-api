@@ -4,6 +4,6 @@ class CheckoutJob < ActiveJob::Base
   def perform(order_id)
     order = Order.find(order_id)
 
-    Checkout::Submitter.call(order, Checkout::Notifier.new)
+    Checkout::Shopper.call(order, Checkout::Notifier.new)
   end
 end
