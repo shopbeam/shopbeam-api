@@ -58,7 +58,7 @@ module Checkout
       end
 
       def empty_cart
-        if browser.element(id: 'header-shopping-cart-count').inner_html != '0'
+        if browser.element(id: 'header-shopping-cart-count').text != '0'
           browser.goto EMPTY_CART_URL
         end
       end
