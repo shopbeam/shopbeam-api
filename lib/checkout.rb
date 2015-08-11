@@ -1,7 +1,7 @@
 module Checkout
-  class ProviderNotSupported < StandardError
+  class PartnerNotSupported < StandardError
     def initialize(url)
-      super("Checkout provider not supported for '#{url}'")
+      super("Checkout partner not supported for '#{url}'")
     end
   end
 end

@@ -1,5 +1,5 @@
 module Checkout
-  module Providers
+  module Partners
     class Base
       def initialize(session)
         @session = session

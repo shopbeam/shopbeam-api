@@ -6,7 +6,7 @@ module Checkout
 
     def commit(item)
       @item = item
-      provider.purchase
+      partner.purchase
     end
 
     def new_user?
@@ -33,8 +33,8 @@ module Checkout
 
     attr_reader :user, :item
 
-    def provider
-      Providers.lookup(product_url).new(self)
+    def partner
+      Partners.lookup(product_url).new(self)
     end
   end
 end

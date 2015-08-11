@@ -1,5 +1,5 @@
 module Checkout
-  module Providers
+  module Partners
     class WellCa < Base
       BASE_URL                          = 'https://well.ca/index.php?main_page='.freeze
       LOGIN_URL                         = "#{BASE_URL}login".freeze

@@ -1,11 +1,11 @@
 module Checkout
-  module Providers
+  module Partners
     def self.lookup(url)
       case url
       when /https:\/\/well.ca/
         WellCa
       else
-        raise ProviderNotSupported.new(url)
+        raise PartnerNotSupported.new(url)
       end
     end
   end
