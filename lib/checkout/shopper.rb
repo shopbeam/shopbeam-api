@@ -8,12 +8,13 @@ module Checkout
 
     def initialize(order, listener)
       @order = order
-      @session = Session.new(order.user)
 
       subscribe(listener)
     end
 
     def call
+      session = Session.new(order.user)
+
       order.order_items.each do |item|
         session.commit(item)
       end
@@ -25,6 +26,6 @@ module Checkout
 
     private
 
-    attr_reader :order, :session
+    attr_reader :order
   end
 end

@@ -6,7 +6,27 @@ module Checkout
 
     def commit(item)
       @item = item
-      provider.shop(self)
+      provider.purchase
+    end
+
+    def new_user?
+      # TODO: implement proxy user here
+      false
+    end
+
+    def user_data
+      {
+        email: 'bryan@shopbeam.com',
+        password: 'badpassword'
+      }
+    end
+
+    def product_url
+      item.variant_source_url
+    end
+
+    def product_quantity
+      item.quantity
     end
 
     private
@@ -14,7 +34,7 @@ module Checkout
     attr_reader :user, :item
 
     def provider
-      Providers.lookup(item.variant_source_url).new
+      Providers.lookup(product_url).new(self)
     end
   end
 end
