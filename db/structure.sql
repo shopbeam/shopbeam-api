@@ -494,7 +494,8 @@ CREATE TABLE "Payment" (
     "createdAt" timestamp with time zone NOT NULL,
     "updatedAt" timestamp with time zone NOT NULL,
     "UserId" integer,
-    cvv character varying(255)
+    cvv character varying(255),
+    "numberSalt" character varying
 );
 
 
@@ -1732,4 +1733,8 @@ INSERT INTO schema_migrations (version) VALUES ('20150513084505');
 INSERT INTO schema_migrations (version) VALUES ('20150513084920');
 
 INSERT INTO schema_migrations (version) VALUES ('20150514043126');
+
+INSERT INTO schema_migrations (version) VALUES ('20150816132924');
+
+INSERT INTO schema_migrations (version) VALUES ('20150816133159');
 
