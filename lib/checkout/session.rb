@@ -1,24 +1,15 @@
 module Checkout
   class Session
-    def initialize(user)
-      @user = user
+    attr_reader :order, :user, :item
+
+    def initialize(order)
+      @order = order
+      @user = order.user
     end
 
     def commit(item)
       @item = item
       partner.purchase
-    end
-
-    def new_user?
-      # TODO: implement proxy user here
-      false
-    end
-
-    def user_data
-      {
-        email: 'bryan@shopbeam.com',
-        password: 'badpassword'
-      }
     end
 
     def product_url
@@ -30,8 +21,6 @@ module Checkout
     end
 
     private
-
-    attr_reader :user, :item
 
     def partner
       Partners.lookup(product_url).new(self)

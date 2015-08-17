@@ -3,6 +3,7 @@ module Checkout
     class WellCa < Base
       BASE_URL                          = 'https://well.ca/index.php?main_page='.freeze
       LOGIN_URL                         = "#{BASE_URL}login".freeze
+      REGISTRATION_URL                  = "#{BASE_URL}create_account".freeze
       EMPTY_CART_URL                    = "#{BASE_URL}shopping_cart&action=remove_all".freeze
       ADDRESS_BOOK_URL                  = "#{BASE_URL}address_book".freeze
       ALTERNATE_ADDRESS_URL_PATTERN     = 'action=primary&address=(\d+)'.freeze
@@ -17,17 +18,16 @@ module Checkout
         browser.open do
           browser.goto session.product_url
           close_subscription_popup
-          browser.goto LOGIN_URL
 
-          if session.new_user?
+          if new_user?
             sign_up
           else
             sign_in
+            empty_cart
+            browser.goto ADDRESS_BOOK_URL
+            delete_alternate_addresses
           end
 
-          empty_cart
-          browser.goto ADDRESS_BOOK_URL
-          delete_alternate_addresses
           browser.goto session.product_url
           add_to_cart
           browser.goto CHECKOUT_URL
@@ -48,13 +48,23 @@ module Checkout
       end
 
       def sign_up
-        # TODO: implement user registration here
+        browser.goto REGISTRATION_URL
+        browser.radio(name: 'gender', value: 'o').set
+        browser.text_field(name: 'firstname').set proxy_user.first_name
+        browser.text_field(name: 'lastname').set proxy_user.last_name
+        browser.select(name: 'dob_year').select(DateTime.now.year - 25).to_s
+        browser.text_field(name: 'email_address').set proxy_user.email
+        browser.text_field(name: 'password').set proxy_user.password
+        browser.text_field(name: 'confirmation').set proxy_user.password
+        browser.input(type: 'submit', value: /join/i).click
+        proxy_user.save!
       end
 
       def sign_in
-        browser.text_field(name: 'email_address').set session.user_data[:email]
-        browser.text_field(name: 'password').set session.user_data[:password]
-        browser.element(class: 'sign_in_button_right').click
+        browser.goto LOGIN_URL
+        browser.text_field(name: 'email_address').set proxy_user.email
+        browser.text_field(name: 'password').set proxy_user.password
+        browser.input(type: 'submit', value: /sign in/i).click
       end
 
       def empty_cart

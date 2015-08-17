@@ -13,7 +13,7 @@ module Checkout
     end
 
     def call
-      session = Session.new(order.user)
+      session = Session.new(order)
 
       order.order_items.each do |item|
         session.commit(item)

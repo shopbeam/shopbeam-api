@@ -946,6 +946,41 @@ CREATE TABLE partnerfilters (
 
 
 --
+-- Name: proxy_users; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE proxy_users (
+    id integer NOT NULL,
+    user_id integer NOT NULL,
+    provider_type character varying NOT NULL,
+    email character varying NOT NULL,
+    password character varying NOT NULL,
+    password_salt character varying NOT NULL,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: proxy_users_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE proxy_users_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: proxy_users_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE proxy_users_id_seq OWNED BY proxy_users.id;
+
+
+--
 -- Name: schema_migrations; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -1124,6 +1159,13 @@ ALTER TABLE ONLY admin_users ALTER COLUMN id SET DEFAULT nextval('admin_users_id
 --
 
 ALTER TABLE ONLY delayed_jobs ALTER COLUMN id SET DEFAULT nextval('delayed_jobs_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY proxy_users ALTER COLUMN id SET DEFAULT nextval('proxy_users_id_seq'::regclass);
 
 
 --
@@ -1331,6 +1373,14 @@ ALTER TABLE ONLY admin_users
 
 ALTER TABLE ONLY delayed_jobs
     ADD CONSTRAINT delayed_jobs_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: proxy_users_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY proxy_users
+    ADD CONSTRAINT proxy_users_pkey PRIMARY KEY (id);
 
 
 --
@@ -1622,6 +1672,27 @@ CREATE UNIQUE INDEX index_admin_users_on_reset_password_token ON admin_users USI
 
 
 --
+-- Name: index_proxy_users_on_email; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE UNIQUE INDEX index_proxy_users_on_email ON proxy_users USING btree (email);
+
+
+--
+-- Name: index_proxy_users_on_user_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_proxy_users_on_user_id ON proxy_users USING btree (user_id);
+
+
+--
+-- Name: index_proxy_users_on_user_id_and_provider_type; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE UNIQUE INDEX index_proxy_users_on_user_id_and_provider_type ON proxy_users USING btree (user_id, provider_type);
+
+
+--
 -- Name: index_sessions_on_session_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -1719,6 +1790,14 @@ ALTER TABLE ONLY "Variant"
 
 
 --
+-- Name: fk_rails_044c7032ae; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY proxy_users
+    ADD CONSTRAINT fk_rails_044c7032ae FOREIGN KEY (user_id) REFERENCES "User"(id);
+
+
+--
 -- PostgreSQL database dump complete
 --
 
@@ -1737,4 +1816,6 @@ INSERT INTO schema_migrations (version) VALUES ('20150514043126');
 INSERT INTO schema_migrations (version) VALUES ('20150816132924');
 
 INSERT INTO schema_migrations (version) VALUES ('20150816133159');
+
+INSERT INTO schema_migrations (version) VALUES ('20150816175045');
 
