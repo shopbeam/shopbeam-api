@@ -13,6 +13,9 @@ module Checkout
       CHECKOUT_RECOMMENDATIONS_SLUG     = 'checkout_recommended_products'.freeze
       CHECKOUT_SKIP_SAMPLES_URL         = "#{BASE_URL}checkout_shipping&samples=no_thanks".freeze
       CHECKOUT_SAMPLES_SLUG             = 'checkout_samples'.freeze
+      NEW_ADDRESS_SLUG                  = 'address_book_process'.freeze
+      EDIT_SHIPPING_ADDRESS_URL         = "#{BASE_URL}checkout_shipping_address".freeze
+      EDIT_BILLING_ADDRESS_URL          = "#{BASE_URL}checkout_payment_address".freeze
 
       def purchase
         browser.open do
@@ -32,6 +35,8 @@ module Checkout
           browser.goto CHECKOUT_URL
           skip_recommendations
           skip_samples
+          fill_shipping_info
+          fill_billing_info
         end
       end
 
@@ -43,7 +48,7 @@ module Checkout
             .tap(&:wait_until_present)
             .element(class: 'ui-dialog-titlebar-close')
             .click
-        rescue TimeoutError; end
+        rescue Watir::Wait::TimeoutError; end
       end
 
       def sign_up
@@ -56,6 +61,7 @@ module Checkout
         browser.text_field(name: 'password').set proxy_user.password
         browser.text_field(name: 'confirmation').set proxy_user.password
         browser.input(type: 'submit', value: /join/i).click
+
         proxy_user.save!
       end
 
@@ -98,6 +104,85 @@ module Checkout
       def skip_samples
         if browser.url.include? CHECKOUT_SAMPLES_SLUG
           browser.goto CHECKOUT_SKIP_SAMPLES_URL
+        end
+      end
+
+      def fill_shipping_info
+        unless browser.url.include? NEW_ADDRESS_SLUG
+          browser.goto EDIT_SHIPPING_ADDRESS_URL
+        end
+
+        fill_address_form shipping_address
+        browser.input(type: 'submit', value: /submit|update/i).click
+
+        unless_continue do
+          raise InvalidAddress.new(shipping_address.to_s, self.class)
+        end
+      end
+
+      def fill_billing_info
+        browser.goto EDIT_BILLING_ADDRESS_URL
+        fill_address_form billing_address
+
+        unless_continue do
+          raise InvalidAddress.new(billing_address.to_s, self.class)
+        end
+      end
+
+      def fill_address_form(data)
+        browser.radio(name: 'gender', value: data[:gender]).set
+        browser.text_field(name: 'firstname').set proxy_user.first_name
+        browser.text_field(name: 'lastname').set proxy_user.last_name
+        browser.text_field(name: 'street_address').set data[:address1]
+        browser.text_field(name: 'suburb').set data[:address2]
+        browser.text_field(name: 'city').set data[:city]
+        browser.select(name: 'state').select data[:state]
+        browser.text_field(name: 'postcode').set data[:zip]
+        browser.select(name: 'country').select data[:country]
+      end
+
+      def shipping_address
+        session.shipping_address.merge({
+          state: to_state(session.shipping_address[:state]),
+          country: 'Canada'
+        })
+      end
+
+      def billing_address
+        session.billing_address.merge({
+          state: to_state(session.billing_address[:state]),
+          country: 'Canada'
+        })
+      end
+
+      def to_state(code)
+        states = Hash[[
+          ['AB', 'Alberta'],
+          ['BC', 'British Columbia'],
+          ['MB', 'Manitoba'],
+          ['NB', 'New Brunswick'],
+          ['NL', 'Newfoundland'],
+          ['NT', 'Northwest Territories'],
+          ['NS', 'Nova Scotia'],
+          ['NU', 'Nunavut'],
+          ['ON', 'Ontario'],
+          ['PE', 'Prince Edward Island'],
+          ['QC', 'Quebec'],
+          ['SK', 'Saskatchewan'],
+          ['YT', 'Yukon Territory']
+        ]]
+
+        states.default = states.values.first
+        states[code]
+      end
+
+      def unless_continue
+        continue_btn = browser.input(value: /\Acontinue\z/i)
+
+        if continue_btn.exists?
+          continue_btn.click
+        else
+          yield
         end
       end
     end

@@ -14,29 +14,27 @@ module Checkout
 
     def shipping_address
       {
-        gender: 'm', # assume male gender
+        gender: 'm',
         first_name: user.first_name,
         last_name: user.last_name,
         address1: order.shipping_address1,
         address2: order.shipping_address2,
         city: order.shipping_city,
-        state: '!!!',
-        zip: order.shipping_zip,
-        country: '???'
+        state: order.shipping_state,
+        zip: order.shipping_zip
       }
     end
 
     def billing_address
       {
-        gender: 'm', # assume male gender
+        gender: 'm',
         first_name: user.first_name,
         last_name: user.last_name,
         address1: order.billing_address1,
         address2: order.billing_address2,
         city: order.billing_city,
-        state: '!!!',
-        zip: order.billing_zip,
-        country: '???'
+        state: order.billing_state,
+        zip: order.billing_zip
       }
     end
 
