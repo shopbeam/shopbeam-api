@@ -5,4 +5,7 @@ class Order < ActiveRecord::Base
   belongs_to :shipping_address, foreign_key: 'ShippingAddressId'
   belongs_to :billing_address, foreign_key: 'BillingAddressId'
   has_many :order_items, foreign_key: 'OrderId'
+
+  delegate :address1, :address2, :city, :zip, to: :shipping_address, prefix: :shipping
+  delegate :address1, :address2, :city, :zip, to: :billing_address, prefix: :billing
 end

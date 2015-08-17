@@ -24,7 +24,6 @@ module Checkout
           else
             sign_in
             empty_cart
-            browser.goto ADDRESS_BOOK_URL
             delete_alternate_addresses
           end
 
@@ -74,6 +73,7 @@ module Checkout
       end
 
       def delete_alternate_addresses
+        browser.goto ADDRESS_BOOK_URL
         browser.links(href: /#{ALTERNATE_ADDRESS_URL_PATTERN}/)
           .map { |link|
             address_id = link.href.match(/#{ALTERNATE_ADDRESS_URL_PATTERN}/)[1]

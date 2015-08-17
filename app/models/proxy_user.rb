@@ -7,6 +7,16 @@ class ProxyUser < ActiveRecord::Base
 
   after_initialize :set_defaults, if: :new_record?
 
+  def password
+    Encryptor.decrypt(read_attribute(:password), read_attribute(:password_salt))
+  end
+
+  def password=(value)
+    encrypted = Encryptor.encrypt(value)
+    write_attribute(:password, encrypted[:value])
+    write_attribute(:password_salt, encrypted[:salt])
+  end
+
   private
 
   def set_defaults
