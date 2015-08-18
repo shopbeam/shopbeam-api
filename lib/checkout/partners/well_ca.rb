@@ -35,8 +35,9 @@ module Checkout
           browser.goto CHECKOUT_URL
           skip_recommendations
           skip_samples
-          fill_shipping_info
+          fill_shipping_address
           fill_billing_info
+          confirm
         end
       end
 
@@ -44,7 +45,8 @@ module Checkout
 
       def close_subscription_popup
         begin
-          browser.element(css: "[aria-labelledby='ui-dialog-title-newsletter_subscribe_auto']")
+          browser
+            .element(css: "[aria-labelledby='ui-dialog-title-newsletter_subscribe_auto']")
             .tap(&:wait_until_present)
             .element(class: 'ui-dialog-titlebar-close')
             .click
@@ -56,7 +58,7 @@ module Checkout
         browser.radio(name: 'gender', value: 'o').set
         browser.text_field(name: 'firstname').set proxy_user.first_name
         browser.text_field(name: 'lastname').set proxy_user.last_name
-        browser.select(name: 'dob_year').select(DateTime.now.year - 25).to_s
+        browser.select(name: 'dob_year').select(DateTime.now.year - 25)
         browser.text_field(name: 'email_address').set proxy_user.email
         browser.text_field(name: 'password').set proxy_user.password
         browser.text_field(name: 'confirmation').set proxy_user.password
@@ -107,29 +109,67 @@ module Checkout
         end
       end
 
-      def fill_shipping_info
+      def fill_shipping_address
         unless browser.url.include? NEW_ADDRESS_SLUG
           browser.goto EDIT_SHIPPING_ADDRESS_URL
         end
 
-        fill_address_form shipping_address
+        fill_address shipping_address
         browser.input(type: 'submit', value: /submit|update/i).click
 
-        unless_continue do
+        continue_btn = browser.input(type: 'submit', value: /\Acontinue\z/i)
+
+        if continue_btn.exists?
+          continue_btn.click
+        else
           raise InvalidAddress.new(shipping_address.to_s, self.class)
         end
       end
 
       def fill_billing_info
-        browser.goto EDIT_BILLING_ADDRESS_URL
-        fill_address_form billing_address
+        fill_billing_address
+        fill_payment_info
 
-        unless_continue do
-          raise InvalidAddress.new(billing_address.to_s, self.class)
+        continue_btn = browser.buttons(value: /\Acontinue\z/i).last
+        continue_btn.click
+        continue_btn.wait_while_present
+        browser.body.wait_until_present
+
+        on_error do |message|
+          raise InvalidBillingInfo.new(message, self.class)
         end
       end
 
-      def fill_address_form(data)
+      def confirm
+        browser.input(type: 'submit', value: /confirm/i).click
+
+        on_error do |message|
+          raise UnknownError.new(message, self.class)
+        end
+      end
+
+      def fill_billing_address
+        browser.goto EDIT_BILLING_ADDRESS_URL
+        fill_address billing_address
+        browser.input(type: 'submit', value: /submit|update/i).click
+      end
+
+      def fill_payment_info
+        browser.radio(name: 'payment', value: 'eselect_api').set
+        browser.text_field(name: 'eselect_api_cc_owner').set session.cc[:name]
+        iframe = browser.iframe(id: 'eselect_api_cc_number')
+        iframe.text_field(id: 'monerisDataInput').set session.cc[:number]
+        iframe.text_field(id: 'monerisCVDInput').set session.cc[:cvv]
+        browser
+          .select(name: 'eselect_api_cc_expires_month')
+          .select_value session.cc[:expiration_month].to_s.rjust(2, '0')
+        browser
+          .select(name: 'eselect_api_cc_expires_year')
+          .select session.cc[:expiration_year]
+        browser.checkbox(name: 'eselect_api_vault_save_cc').clear
+      end
+
+      def fill_address(data)
         browser.radio(name: 'gender', value: data[:gender]).set
         browser.text_field(name: 'firstname').set proxy_user.first_name
         browser.text_field(name: 'lastname').set proxy_user.last_name
@@ -176,13 +216,11 @@ module Checkout
         states[code]
       end
 
-      def unless_continue
-        continue_btn = browser.input(value: /\Acontinue\z/i)
+      def on_error
+        error = browser.element(class: 'error')
 
-        if continue_btn.exists?
-          continue_btn.click
-        else
-          yield
+        if error.exists?
+          yield error.text
         end
       end
     end

@@ -1,6 +1,6 @@
 module Checkout
   class Session
-    attr_reader :order, :user, :item
+    attr_reader :user
 
     def initialize(order)
       @order = order
@@ -10,6 +10,14 @@ module Checkout
     def commit(item)
       @item = item
       partner.purchase
+    end
+
+    def product_url
+      item.variant_source_url
+    end
+
+    def product_quantity
+      item.quantity
     end
 
     def shipping_address
@@ -38,15 +46,19 @@ module Checkout
       }
     end
 
-    def product_url
-      item.variant_source_url
-    end
-
-    def product_quantity
-      item.quantity
+    def cc
+      {
+        name: order.cc_name,
+        number: order.cc_number,
+        cvv: order.cc_cvv,
+        expiration_month: order.cc_expiration_month,
+        expiration_year: order.cc_expiration_year
+      }
     end
 
     private
+
+    attr_reader :order, :item
 
     def partner
       Partners.lookup(product_url).new(self)
