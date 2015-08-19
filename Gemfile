@@ -5,6 +5,9 @@ gem 'rails', '4.2.3'
 # Use postgresql as the database for Active Record
 gem 'pg'
 
+# State machine
+gem 'aasm'
+
 # Active Job adapter
 gem 'sidekiq'
 

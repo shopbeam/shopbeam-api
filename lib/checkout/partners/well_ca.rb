@@ -171,6 +171,7 @@ module Checkout
 
       def fill_address(data)
         browser.radio(name: 'gender', value: data[:gender]).set
+        # TODO: retrieve first/last name from address's user
         browser.text_field(name: 'firstname').set proxy_user.first_name
         browser.text_field(name: 'lastname').set proxy_user.last_name
         browser.text_field(name: 'street_address').set data[:address1]
