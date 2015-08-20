@@ -5,7 +5,7 @@ module Checkout
       when /https:\/\/well.ca/
         WellCa
       else
-        raise PartnerNotSupported.new(url)
+        raise PartnerNotSupportedError, url
       end
     end
   end

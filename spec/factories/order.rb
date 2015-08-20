@@ -4,7 +4,7 @@ FactoryGirl.define do
     taxCents               123
     orderTotalCents        123
     appliedCommissionCents 123
-    status                 1
+    status                 9
     shareWithPublisher     true
     apiKey                 'a12b3-c45d6-e78f9'
     createdAt              Time.now

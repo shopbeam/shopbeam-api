@@ -64,6 +64,10 @@ module Checkout
         browser.text_field(name: 'confirmation').set proxy_user.password
         browser.input(type: 'submit', value: /join/i).click
 
+        on_error do |message|
+          raise InvalidAccountError, message
+        end
+
         proxy_user.save!
       end
 
@@ -72,6 +76,10 @@ module Checkout
         browser.text_field(name: 'email_address').set proxy_user.email
         browser.text_field(name: 'password').set proxy_user.password
         browser.input(type: 'submit', value: /sign in/i).click
+
+        on_error do |message|
+          raise InvalidAccountError, message
+        end
       end
 
       def empty_cart
@@ -96,17 +104,17 @@ module Checkout
         price = browser.element(class: 'product_text_price').text.gsub(/[$,]/, '').to_f * 100
 
         unless form.exists?
-          raise ProductOutOfStock
+          raise ItemOutOfStockError
         end
 
         form.text.match(/max.*(\d+)/i) do |match|
           if match[1].to_i < session.product_quantity
-            raise ProductOutOfStock
+            raise ItemOutOfStockError
           end
         end
 
         if price > session.product_price
-          raise ProductPriceMismatch
+          raise ItemPriceMismatchError
         end
 
         browser.text_field(id: 'cart_quantity').set session.product_quantity
@@ -134,12 +142,16 @@ module Checkout
         fill_address shipping_address
         browser.input(type: 'submit', value: /submit|update/i).click
 
+        on_error do |message|
+          raise InvalidShippingAddressError, message
+        end
+
         continue_btn = browser.input(type: 'submit', value: /\Acontinue\z/i)
 
         if continue_btn.exists?
           continue_btn.click
         else
-          raise InvalidAddress
+          raise InvalidShippingInfoError
         end
       end
 
@@ -153,7 +165,7 @@ module Checkout
         browser.body.wait_until_present
 
         on_error do |message|
-          raise InvalidBillingInfo, message
+          raise InvalidBillingInfoError, message
         end
       end
 
@@ -169,6 +181,10 @@ module Checkout
         browser.goto EDIT_BILLING_ADDRESS_URL
         fill_address billing_address
         browser.input(type: 'submit', value: /submit|update/i).click
+
+        on_error do |message|
+          raise InvalidBillingAddressError, message
+        end
       end
 
       def fill_payment_info
@@ -235,11 +251,11 @@ module Checkout
       end
 
       def on_error
+        alert = browser.alert
         error = browser.element(class: 'error')
 
-        if error.exists?
-          yield error.text
-        end
+        return yield alert.text if alert.exists?
+        return yield error.text if error.exists?
       end
     end
   end

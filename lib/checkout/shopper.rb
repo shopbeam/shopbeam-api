@@ -9,7 +9,7 @@ module Checkout
     def initialize(order, listener)
       @order = order
 
-      subscribe(listener)
+      subscribe listener
     end
 
     def call
@@ -20,10 +20,11 @@ module Checkout
       order.order_items.each do |item|
         session.commit(item)
       end
-    rescue StandardError => e
-      broadcast(:checkout_failed, order)
+    rescue StandardError => exception
+      broadcast :checkout_failed, order
+      raise
     else
-      broadcast(:checkout_successful, order)
+      broadcast :checkout_successful, order
     ensure
       order.finish!
     end

@@ -11,12 +11,15 @@ module Checkout
       @item = item
       @item.process!
       partner.purchase
-    rescue ProductOutOfStock
-      item.mark_as_out_of_stock! && raise
-    rescue ProductUnprocessed
-      item.mark_as_unprocessed! && raise
+    rescue ItemOutOfStockError
+      item.mark_as_out_of_stock!
+      raise
+    rescue ItemUnprocessedError
+      item.mark_as_unprocessed!
+      raise
     rescue StandardError
-      item.abort! && raise
+      item.abort!
+      raise
     else
       item.mark_as_processed!
     end
