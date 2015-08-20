@@ -39,8 +39,8 @@ module Checkout
     def shipping_address
       {
         gender: 'm',
-        first_name: user.first_name,
-        last_name: user.last_name,
+        first_name: order.shipping_first_name,
+        last_name: order.shipping_last_name,
         address1: order.shipping_address1,
         address2: order.shipping_address2,
         city: order.shipping_city,
@@ -52,8 +52,8 @@ module Checkout
     def billing_address
       {
         gender: 'm',
-        first_name: user.first_name,
-        last_name: user.last_name,
+        first_name: order.billing_first_name,
+        last_name: order.billing_last_name,
         address1: order.billing_address1,
         address2: order.billing_address2,
         city: order.billing_city,

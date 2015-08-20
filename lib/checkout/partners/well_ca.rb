@@ -204,9 +204,8 @@ module Checkout
 
       def fill_address(data)
         browser.radio(name: 'gender', value: data[:gender]).set
-        # TODO: retrieve first/last name from address's user
-        browser.text_field(name: 'firstname').set proxy_user.first_name
-        browser.text_field(name: 'lastname').set proxy_user.last_name
+        browser.text_field(name: 'firstname').set data[:first_name]
+        browser.text_field(name: 'lastname').set data[:last_name]
         browser.text_field(name: 'street_address').set data[:address1]
         browser.text_field(name: 'suburb').set data[:address2]
         browser.text_field(name: 'city').set data[:city]
@@ -223,6 +222,7 @@ module Checkout
       end
 
       def billing_address
+        # TODO: Canada is not only a country to bill, fill an actual address here
         session.billing_address.merge({
           state: to_state(session.billing_address[:state]),
           country: 'Canada'

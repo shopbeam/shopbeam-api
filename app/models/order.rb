@@ -9,9 +9,15 @@ class Order < ActiveRecord::Base
   belongs_to :payment, foreign_key: 'PaymentId'
   has_many :order_items, foreign_key: 'OrderId'
 
-  delegate :address1, :address2, :city, :state, :zip, to: :shipping_address, prefix: :shipping
-  delegate :address1, :address2, :city, :state, :zip, to: :billing_address, prefix: :billing
-  delegate :name, :number, :cvv, :expiration_month, :expiration_year, to: :payment, prefix: :cc
+  delegate :first_name, :last_name, :address1, :address2, :city, :state, :zip,
+           to: :shipping_address,
+           prefix: :shipping
+  delegate :first_name, :last_name, :address1, :address2, :city, :state, :zip,
+           to: :billing_address,
+           prefix: :billing
+  delegate :name, :number, :cvv, :expiration_month, :expiration_year,
+           to: :payment,
+           prefix: :cc
 
   enum status: {
     pending: 9,
