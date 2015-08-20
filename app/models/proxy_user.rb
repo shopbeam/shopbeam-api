@@ -5,6 +5,10 @@ class ProxyUser < ActiveRecord::Base
 
   delegate :first_name, :last_name, to: :user, allow_nil: true
 
+  validates :user, presence: true, uniqueness: { scope: :provider_type }
+  validates :provider_type, :password, :password_salt, presence: true
+  validates :email, presence: true, uniqueness: true
+
   after_initialize :set_defaults, if: :new_record?
 
   def password
