@@ -17,6 +17,9 @@ gem 'wisper', '2.0.0.rc1'
 # Browser API
 gem 'watir-webdriver'
 
+# Headless display
+gem 'headless'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
