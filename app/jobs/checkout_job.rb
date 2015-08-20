@@ -18,7 +18,7 @@ class CheckoutJob < ActiveJob::Base
   end
 
   def perform(order_id)
-    order = Order.find(order_id)
+    order = Order.uncompleted.find(order_id)
 
     Checkout::Shopper.call(order, Checkout::Notifier.new)
   end

@@ -26,6 +26,8 @@ class Order < ActiveRecord::Base
     aborted: 8
   }
 
+  scope :uncompleted, -> { where.not(status: statuses[:completed]) }
+
   aasm column: :status do
     state :pending, initial: true
     state :completed
