@@ -15,13 +15,17 @@ module Checkout
     def call
       session = Session.new(order)
 
+      order.process!
+
       order.order_items.each do |item|
         session.commit(item)
       end
-
-      broadcast(:checkout_successful, order)
-    rescue
+    rescue StandardError => e
       broadcast(:checkout_failed, order)
+    else
+      broadcast(:checkout_successful, order)
+    ensure
+      order.finish!
     end
 
     private

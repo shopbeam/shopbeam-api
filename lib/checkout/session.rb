@@ -9,7 +9,16 @@ module Checkout
 
     def commit(item)
       @item = item
+      @item.process!
       partner.purchase
+    rescue ProductOutOfStock
+      item.mark_as_out_of_stock! && raise
+    rescue ProductUnprocessed
+      item.mark_as_unprocessed! && raise
+    rescue StandardError
+      item.abort! && raise
+    else
+      item.mark_as_processed!
     end
 
     def product_url
@@ -18,6 +27,10 @@ module Checkout
 
     def product_quantity
       item.quantity
+    end
+
+    def product_price
+      item.sale_price_cents
     end
 
     def shipping_address

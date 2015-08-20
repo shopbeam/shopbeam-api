@@ -5,6 +5,7 @@ class OrderItem < ActiveRecord::Base
 
   belongs_to :variant, foreign_key: 'VariantId'
   delegate :source_url, to: :variant, prefix: true
+  alias_attribute :sale_price_cents, :salePriceCents
 
   enum status: {
     pending: 9,

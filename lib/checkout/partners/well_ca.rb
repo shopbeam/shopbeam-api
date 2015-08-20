@@ -92,6 +92,23 @@ module Checkout
       end
 
       def add_to_cart
+        form = browser.form(name: 'cart_quantity')
+        price = browser.element(class: 'product_text_price').text.gsub(/[$,]/, '').to_f * 100
+
+        unless form.exists?
+          raise ProductOutOfStock
+        end
+
+        form.text.match(/max.*(\d+)/i) do |match|
+          if match[1].to_i < session.product_quantity
+            raise ProductOutOfStock
+          end
+        end
+
+        if price > session.product_price
+          raise ProductPriceMismatch
+        end
+
         browser.text_field(id: 'cart_quantity').set session.product_quantity
         browser.element(id: 'add_to_cart_button').click
         browser.element(id: 'shopping-cart-dropdown').wait_until_present
@@ -122,7 +139,7 @@ module Checkout
         if continue_btn.exists?
           continue_btn.click
         else
-          raise InvalidAddress.new(shipping_address.to_s, self.class)
+          raise InvalidAddress
         end
       end
 
@@ -136,7 +153,7 @@ module Checkout
         browser.body.wait_until_present
 
         on_error do |message|
-          raise InvalidBillingInfo.new(message, self.class)
+          raise InvalidBillingInfo, message
         end
       end
 
@@ -144,7 +161,7 @@ module Checkout
         browser.input(type: 'submit', value: /confirm/i).click
 
         on_error do |message|
-          raise UnknownError.new(message, self.class)
+          raise UnknownError, message
         end
       end
 
