@@ -143,7 +143,7 @@ module Checkout
         browser.input(type: 'submit', value: /submit|update/i).click
 
         on_error do |message|
-          raise InvalidShippingAddressError, message
+          raise InvalidAddressError, message
         end
 
         continue_btn = browser.input(type: 'submit', value: /\Acontinue\z/i)
@@ -183,7 +183,7 @@ module Checkout
         browser.input(type: 'submit', value: /submit|update/i).click
 
         on_error do |message|
-          raise InvalidBillingAddressError, message
+          raise InvalidAddressError, message
         end
       end
 
@@ -246,8 +246,7 @@ module Checkout
           ['YT', 'Yukon Territory']
         ]]
 
-        states.default = states.values.first
-        states[code]
+        states[code] || (raise InvalidAddressError)
       end
 
       def on_error

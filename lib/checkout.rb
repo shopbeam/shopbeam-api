@@ -11,9 +11,8 @@ module Checkout
   class ItemOutOfStockError < CheckoutError; end
   class ItemPriceMismatchError < CheckoutError; end
   class ItemUnprocessedError < CheckoutError; end
-  class InvalidShippingAddressError < CheckoutError; end
+  class InvalidAddressError < CheckoutError; end
   class InvalidShippingInfoError < CheckoutError; end
-  class InvalidBillingAddressError < CheckoutError; end
   class InvalidBillingInfoError < CheckoutError; end
   class UnknownError < CheckoutError; end
 end
