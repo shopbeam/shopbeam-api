@@ -20,6 +20,8 @@ class CheckoutJob < ActiveJob::Base
   def perform(order_id)
     order = Order.uncompleted.find(order_id)
 
-    Checkout::Shopper.call(order, Checkout::Notifier.new)
+    Checkout::Shopper.new
+      .subscribe(Checkout::Notifier.new)
+      .call(order)
   end
 end

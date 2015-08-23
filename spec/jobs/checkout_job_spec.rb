@@ -10,9 +10,16 @@ describe CheckoutJob do
     clear_performed_jobs
   end
 
-  it 'calls checkout shopper' do
-    expect(Checkout::Shopper)
-      .to receive(:call).with(order, instance_of(Checkout::Notifier))
+  it 'subscribes checkout notifier as event listener' do
+    expect_any_instance_of(Checkout::Shopper)
+      .to receive(:subscribe).with(instance_of(Checkout::Notifier))
+      .and_return(double(call: true))
+    perform_enqueued_jobs { job }
+  end
+
+  it 'calls checkout shopper for the current order' do
+    expect_any_instance_of(Checkout::Shopper)
+      .to receive(:call).with(order)
     perform_enqueued_jobs { job }
   end
 end

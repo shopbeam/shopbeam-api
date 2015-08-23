@@ -2,17 +2,7 @@ module Checkout
   class Shopper
     include Wisper::Publisher
 
-    def self.call(*args)
-      new(*args).call
-    end
-
-    def initialize(order, listener)
-      @order = order
-
-      subscribe listener
-    end
-
-    def call
+    def call(order)
       session = Session.new(order)
 
       order.process!
@@ -32,9 +22,5 @@ module Checkout
       order.complete!
       broadcast :order_completed, order
     end
-
-    private
-
-    attr_reader :order
   end
 end
