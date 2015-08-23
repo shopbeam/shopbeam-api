@@ -17,9 +17,9 @@ module Checkout
       EDIT_SHIPPING_ADDRESS_URL         = "#{BASE_URL}checkout_shipping_address".freeze
       EDIT_BILLING_ADDRESS_URL          = "#{BASE_URL}checkout_payment_address".freeze
 
-      def purchase
+      def purchase(items)
         browser.open do
-          browser.goto session.product_url
+          browser.goto BASE_URL
           close_subscription_popup
 
           if new_user?
@@ -30,8 +30,10 @@ module Checkout
             delete_alternate_addresses
           end
 
-          browser.goto session.product_url
-          add_to_cart
+          items.each do |item|
+            add_to_cart(item)
+          end
+
           browser.goto CHECKOUT_URL
           skip_recommendations
           skip_samples
@@ -99,7 +101,9 @@ module Checkout
           }
       end
 
-      def add_to_cart
+      def add_to_cart(item)
+        browser.goto item.source_url
+
         form = browser.form(name: 'cart_quantity')
         price = browser.element(class: 'product_text_price').text.gsub(/[$,]/, '').to_f * 100
 
@@ -108,18 +112,21 @@ module Checkout
         end
 
         form.text.match(/max.*(\d+)/i) do |match|
-          if match[1].to_i < session.product_quantity
+          if match[1].to_i < item.quantity
             raise ItemOutOfStockError
           end
         end
 
-        if price > session.product_price
+        if price > item.sale_price_cents
           raise ItemPriceMismatchError
         end
 
-        browser.text_field(id: 'cart_quantity').set session.product_quantity
+        browser.text_field(id: 'cart_quantity').set item.quantity
         browser.element(id: 'add_to_cart_button').click
         browser.element(id: 'shopping-cart-dropdown').wait_until_present
+      rescue ItemOutOfStockError
+        item.mark_as_out_of_stock!
+        raise
       end
 
       def skip_recommendations
@@ -139,7 +146,7 @@ module Checkout
           browser.goto EDIT_SHIPPING_ADDRESS_URL
         end
 
-        fill_address shipping_address
+        fill_address(shipping_address)
         browser.input(type: 'submit', value: /submit|update/i).click
 
         on_error do |message|
@@ -161,6 +168,8 @@ module Checkout
 
         continue_btn = browser.buttons(value: /\Acontinue\z/i).last
         continue_btn.click
+
+        # Wait for page with 3rd party iframe to reload
         continue_btn.wait_while_present
         browser.body.wait_until_present
 
@@ -173,13 +182,13 @@ module Checkout
         browser.input(type: 'submit', value: /confirm/i).click
 
         on_error do |message|
-          raise UnknownError, message
+          raise ConfirmationError, message
         end
       end
 
       def fill_billing_address
         browser.goto EDIT_BILLING_ADDRESS_URL
-        fill_address billing_address
+        fill_address(billing_address)
         browser.input(type: 'submit', value: /submit|update/i).click
 
         on_error do |message|
@@ -222,7 +231,6 @@ module Checkout
       end
 
       def billing_address
-        # TODO: Canada is not only a country to bill, fill an actual address here
         session.billing_address.merge({
           state: to_state(session.billing_address[:state]),
           country: 'Canada'

@@ -4,7 +4,10 @@ class OrderItem < ActiveRecord::Base
   self.table_name = 'OrderItem'
 
   belongs_to :variant, foreign_key: 'VariantId'
-  delegate :source_url, to: :variant, prefix: true
+
+  delegate :source_url, to: :variant
+
+  alias_attribute :sale_price_cents, :salePriceCents
   alias_attribute :sale_price_cents, :salePriceCents
 
   enum status: {
@@ -15,7 +18,7 @@ class OrderItem < ActiveRecord::Base
     aborted: 14
   }
 
-  aasm column: :status do
+  aasm column: :status, whiny_transitions: false do
     state :pending, initial: true
     state :processed
     state :out_of_stock
@@ -23,10 +26,10 @@ class OrderItem < ActiveRecord::Base
     state :aborted
 
     event :process do
-      transitions to: :pending, unless: :processed?
+      transitions to: :pending
     end
 
-    event :mark_as_processed do
+    event :complete do
       transitions from: :pending, to: :processed
     end
 
@@ -34,12 +37,16 @@ class OrderItem < ActiveRecord::Base
       transitions from: :pending, to: :out_of_stock
     end
 
-    event :mark_as_unprocessed do
-      transitions from: :pending, to: :unprocessed
+    event :terminate do
+      transitions from: :pending, to: :unprocessed, unless: :out_of_stock?
     end
 
     event :abort do
       transitions from: :pending, to: :aborted
     end
+  end
+
+  def partner
+    Checkout::Partners.lookup(source_url)
   end
 end

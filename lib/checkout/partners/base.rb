@@ -5,8 +5,8 @@ module Checkout
         @session = session
       end
 
-      def purchase
-        raise NotImplementedError, 'Subclasses must implement a purchase method.'
+      def purchase(items)
+        raise NotImplementedError, 'Subclasses must implement a purchase(items) method.'
       end
 
       def new_user?

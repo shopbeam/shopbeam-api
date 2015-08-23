@@ -17,16 +17,20 @@ module Checkout
 
       order.process!
 
-      order.order_items.each do |item|
-        session.commit(item)
+      order.order_items.group_by(&:partner).each do |partner, items|
+        partner.new(session).purchase(items)
       end
-    rescue StandardError => exception
-      broadcast :checkout_failed, order
+    rescue OrderError
+      order.terminate!
+      broadcast :order_terminated, order
+      raise
+    rescue StandardError
+      order.abort!
+      broadcast :order_aborted, order
       raise
     else
-      broadcast :checkout_successful, order
-    ensure
-      order.finish!
+      order.complete!
+      broadcast :order_completed, order
     end
 
     private

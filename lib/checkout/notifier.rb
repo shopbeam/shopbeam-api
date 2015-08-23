@@ -1,11 +1,15 @@
 module Checkout
   class Notifier
     # TODO: Notification logic goes here...
-    def checkout_successful(order)
+    def order_completed(order)
 
     end
 
-    def checkout_failed(order)
+    def order_terminated(order)
+
+    end
+
+    def order_aborted(order)
 
     end
   end

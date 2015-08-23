@@ -1,39 +1,9 @@
 module Checkout
   class Session
-    attr_reader :user
+    delegate :user, to: :order
 
     def initialize(order)
       @order = order
-      @user = order.user
-    end
-
-    def commit(item)
-      @item = item
-      @item.process!
-      partner.purchase
-    rescue ItemOutOfStockError
-      item.mark_as_out_of_stock!
-      raise
-    rescue ItemUnprocessedError
-      item.mark_as_unprocessed!
-      raise
-    rescue StandardError
-      item.abort!
-      raise
-    else
-      item.mark_as_processed!
-    end
-
-    def product_url
-      item.variant_source_url
-    end
-
-    def product_quantity
-      item.quantity
-    end
-
-    def product_price
-      item.sale_price_cents
     end
 
     def shipping_address
@@ -74,10 +44,6 @@ module Checkout
 
     private
 
-    attr_reader :order, :item
-
-    def partner
-      Partners.lookup(product_url).new(self)
-    end
+    attr_reader :order
   end
 end
