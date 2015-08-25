@@ -8,4 +8,8 @@ class Payment < ActiveRecord::Base
   def number
     Encryptor.decrypt(read_attribute(:number), read_attribute(:numberSalt))
   end
+
+  private
+
+  attr_writer :number
 end

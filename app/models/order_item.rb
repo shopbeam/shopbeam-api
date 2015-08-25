@@ -8,7 +8,6 @@ class OrderItem < ActiveRecord::Base
   delegate :source_url, to: :variant
 
   alias_attribute :sale_price_cents, :salePriceCents
-  alias_attribute :sale_price_cents, :salePriceCents
 
   enum status: {
     pending: 9,
@@ -38,7 +37,7 @@ class OrderItem < ActiveRecord::Base
     end
 
     event :terminate do
-      transitions from: :pending, to: :unprocessed, unless: :out_of_stock?
+      transitions from: :pending, to: :unprocessed
     end
 
     event :abort do

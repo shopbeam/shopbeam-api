@@ -15,16 +15,15 @@ class ProxyUser < ActiveRecord::Base
     Encryptor.decrypt(read_attribute(:password), read_attribute(:password_salt))
   end
 
-  def password=(value)
-    encrypted = Encryptor.encrypt(value)
-    write_attribute(:password, encrypted[:value])
-    write_attribute(:password_salt, encrypted[:salt])
-  end
-
   private
 
+  attr_writer :email, :password
+
   def set_defaults
-    self.email = "#{first_name}.#{last_name}.#{SecureRandom.hex(2)}".parameterize << "@#{EMAIL_DOMAIN}"
-    self.password = SecureRandom.hex(6)
+    encrypted_password = Encryptor.encrypt(SecureRandom.hex(6))
+
+    write_attribute(:email, "#{first_name}.#{last_name}.#{SecureRandom.hex(2)}".parameterize << "@#{EMAIL_DOMAIN}")
+    write_attribute(:password, encrypted_password[:value])
+    write_attribute(:password_salt, encrypted_password[:salt])
   end
 end
