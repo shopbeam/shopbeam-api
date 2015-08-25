@@ -37,4 +37,8 @@ group :test do
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'shoulda-matchers'
+  gem 'cucumber'
+  gem 'cucumber-rails', :require => false
+  gem 'database_cleaner'
+  gem 'rspec-expectations'
 end
