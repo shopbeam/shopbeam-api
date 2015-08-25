@@ -31,5 +31,13 @@ module OrderManager
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    config.autoload_paths << Rails.root.join('lib')
+
+    # Use the schema in SQL format because of database-dependent statements
+    config.active_record.schema_format = :sql
+
+    # Use Sidekiq as an Active Job adapter
+    config.active_job.queue_adapter = :sidekiq
   end
 end
