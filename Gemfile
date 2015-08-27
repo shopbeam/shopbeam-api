@@ -20,6 +20,9 @@ gem 'watir-webdriver'
 # Headless display
 gem 'headless'
 
+# Postmark adapter for Action Mailer
+gem 'postmark-rails', '~> 0.10.0'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -31,6 +34,10 @@ group :development, :test do
   gem 'spring'
 
   gem 'rspec-rails', '~> 3.0'
+end
+
+group :development do
+  gem 'mailcatcher'
 end
 
 group :test do
