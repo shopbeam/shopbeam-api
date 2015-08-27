@@ -13,7 +13,7 @@ describe Checkout::Partners do
     context 'for unsupported url' do
       let(:url) { 'http://foo.com/' }
 
-      it { expect { subject }.to raise_error("Checkout partner not supported for 'http://foo.com/'") }
+      it { expect { subject }.to raise_error('PartnerNotSupportedError: The following error(s) occurred on http://foo.com/: Checkout partner not supported.') }
     end
   end
 end

@@ -67,7 +67,7 @@ module Checkout
         browser.input(type: 'submit', value: /join/i).click
 
         on_error do |message|
-          raise InvalidAccountError, message
+          raise InvalidAccountError.new(browser.url, message)
         end
 
         proxy_user.save!
@@ -80,7 +80,7 @@ module Checkout
         browser.input(type: 'submit', value: /sign in/i).click
 
         on_error do |message|
-          raise InvalidAccountError, message
+          raise InvalidAccountError.new(browser.url, message)
         end
       end
 
@@ -105,20 +105,32 @@ module Checkout
         browser.goto item.source_url
 
         form = browser.form(name: 'cart_quantity')
-        price = browser.element(class: 'product_text_price').text.gsub(/[$,]/, '').to_f * 100
+        price_cents = browser.element(class: 'product_text_price').text.gsub(/[$,]/, '').to_f * 100
 
         unless form.exists?
-          raise ItemOutOfStockError
+          raise ItemOutOfStockError.new(
+            url: item.source_url,
+            requested_qty: item.quantity,
+            actual_qty: 0
+          )
         end
 
-        form.text.match(/max.*(\d+)/i) do |match|
+        form.text.match(/(?=max|stock).*(\d+)/i) do |match|
           if match[1].to_i < item.quantity
-            raise ItemOutOfStockError
+            raise ItemOutOfStockError.new(
+              url: item.source_url,
+              requested_qty: item.quantity,
+              actual_qty: match[1]
+            )
           end
         end
 
-        if price > item.sale_price_cents
-          raise ItemPriceMismatchError
+        if price_cents > item.sale_price_cents
+          raise ItemPriceMismatchError.new(
+            url: item.source_url,
+            requested_price_cents: item.sale_price_cents,
+            actual_price_cents: price_cents
+          )
         end
 
         browser.text_field(id: 'cart_quantity').set item.quantity
@@ -150,7 +162,7 @@ module Checkout
         browser.input(type: 'submit', value: /submit|update/i).click
 
         on_error do |message|
-          raise InvalidAddressError, message
+          raise InvalidAddressError.new(browser.url, message)
         end
 
         continue_btn = browser.input(type: 'submit', value: /\Acontinue\z/i)
@@ -158,7 +170,7 @@ module Checkout
         if continue_btn.exists?
           continue_btn.click
         else
-          raise InvalidShippingInfoError
+          raise InvalidShippingInfoError.new(browser.url, 'Invalid shipping info.')
         end
       end
 
@@ -174,7 +186,7 @@ module Checkout
         browser.body.wait_until_present
 
         on_error do |message|
-          raise InvalidBillingInfoError, message
+          raise InvalidBillingInfoError.new(browser.url, message)
         end
       end
 
@@ -182,7 +194,7 @@ module Checkout
         browser.input(type: 'submit', value: /confirm/i).click
 
         on_error do |message|
-          raise ConfirmationError, message
+          raise ConfirmationError.new(browser.url, message)
         end
       end
 
@@ -192,7 +204,7 @@ module Checkout
         browser.input(type: 'submit', value: /submit|update/i).click
 
         on_error do |message|
-          raise InvalidAddressError, message
+          raise InvalidAddressError.new(browser.url, message)
         end
       end
 
@@ -254,14 +266,19 @@ module Checkout
           ['YT', 'Yukon Territory']
         ]]
 
-        states[code] || (raise InvalidAddressError)
+        states[code] || (raise InvalidStateError.new(browser.url, code))
       end
 
       def on_error
         alert = browser.alert
         error = browser.element(class: 'error')
 
-        return yield alert.text if alert.exists?
+        if alert.exists?
+          message = alert.text
+          alert.close
+          return yield message
+        end
+
         return yield error.text if error.exists?
       end
     end
