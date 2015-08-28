@@ -1,0 +1,7 @@
+Shopbeam order #<%= @order.id %> has been terminated at <%= Time.now %> due to the site failure:
+
+<%= @exception.message %>
+
+Backtrace:
+
+<%= @exception.backtrace.join("\n") %>
