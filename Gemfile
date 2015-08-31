@@ -5,11 +5,20 @@ gem 'rails', '4.2.3'
 # Use postgresql as the database for Active Record
 gem 'pg'
 
-# State machine
-gem 'aasm'
+# Use Puma as the app server
+gem 'puma'
+
+# Action Mailer adapter
+gem 'postmark-rails', '~> 0.10.0'
 
 # Active Job adapter
 gem 'sidekiq'
+
+# Sidekiq Web UI
+gem 'sinatra', require: nil
+
+# State machine
+gem 'aasm'
 
 # Publish-Subscribe capabilities
 gem 'wisper', '2.0.0.rc1'
@@ -20,8 +29,8 @@ gem 'watir-webdriver'
 # Headless display
 gem 'headless'
 
-# Postmark adapter for Action Mailer
-gem 'postmark-rails', '~> 0.10.0'
+# Load environment variables
+gem 'dotenv-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -38,6 +47,14 @@ end
 
 group :development do
   gem 'mailcatcher'
+
+  # Use Capistrano for deployment
+  gem 'capistrano',         require: false
+  gem 'capistrano-rbenv',   require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano3-puma',   require: false
+  gem 'capistrano-sidekiq', require: false
+  gem 'capistrano-rails',   require: false
 end
 
 group :test do
