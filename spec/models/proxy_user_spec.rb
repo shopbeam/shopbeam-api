@@ -1,7 +1,9 @@
 require 'rails_helper'
 
 describe ProxyUser do
-  it_behaves_like 'delegates methods to user', %i(first_name last_name)
+  it { is_expected.to delegate_method(:first_name).to(:user) }
+  it { is_expected.to delegate_method(:last_name).to(:user) }
+  it { is_expected.to delegate_method(:email).to(:user).with_prefix(true) }
 
   describe 'validations' do
     subject { create(:proxy_user) }

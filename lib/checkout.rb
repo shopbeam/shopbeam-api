@@ -10,6 +10,12 @@ module Checkout
     end
   end
 
+  class VariantNotAvailableError < OrderError
+    def initialize(url, item)
+      super url, "Requested variant (color: #{item.color}, size: #{item.size}) not available."
+    end
+  end
+
   class ItemOutOfStockError < OrderError
     def initialize(url:, requested_qty:, actual_qty:)
       super url, "#{requested_qty} requested but #{actual_qty} available."
@@ -21,12 +27,6 @@ module Checkout
 
     def initialize(url:, requested_price_cents:, actual_price_cents:)
       super url, "#{number_to_currency(requested_price_cents / 100.0)} expected but #{number_to_currency(actual_price_cents / 100.0)} got."
-    end
-  end
-
-  class InvalidStateError < OrderError
-    def initialize(url, code)
-      super url, "State with code '#{code}' not supported."
     end
   end
 

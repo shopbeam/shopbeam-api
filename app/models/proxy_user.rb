@@ -4,6 +4,7 @@ class ProxyUser < ActiveRecord::Base
   belongs_to :user
 
   delegate :first_name, :last_name, to: :user, allow_nil: true
+  delegate :email, to: :user, prefix: true
 
   validates :user, presence: true, uniqueness: { scope: :provider_type }
   validates :provider_type, :password, :password_salt, presence: true

@@ -21,7 +21,11 @@ Built on the following technology stack:
 
 ## Supported partners
 
-* [Well.ca](https://well.ca/) - Canada's online health, beauty, and skin care store
+* [Well.ca][1]
+* [Lacoste US][2]
+
+[1]: https://well.ca/
+[2]: https://www.lacoste.com/us/
 
 ## Installation
 
