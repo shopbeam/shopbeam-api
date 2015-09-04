@@ -1,5 +1,5 @@
 class CucumberMailer < ApplicationMailer
-  default to: 'bondar.oleksandr@gmail.com'
+  default to: 'tech@shopbeam.com'
 
   def completed(text, success)
     result = success ? 'success' : 'failed'
