@@ -282,6 +282,7 @@ DEPENDENCIES
   sidekiq
   sinatra
   spring
+  sqlite3
   watir-webdriver
   web-console (~> 2.0)
   whenever
