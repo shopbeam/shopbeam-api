@@ -1,7 +1,9 @@
 require 'rails_helper'
 
 describe OrderItem do
-  it { is_expected.to delegate_method(:source_url).to(:variant) }
+  %i(source_url color size).each do |method|
+    it { is_expected.to delegate_method(method).to(:variant) }
+  end
 
   describe '#sale_price_cents' do
     it 'is an alias of #salePriceCents' do

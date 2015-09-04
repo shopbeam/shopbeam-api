@@ -39,7 +39,7 @@ module Checkout
           skip_samples
           fill_shipping_address
           fill_billing_info
-          confirm
+          confirm_order
         end
       end
 
@@ -107,7 +107,7 @@ module Checkout
         form = browser.form(name: 'cart_quantity')
         price_cents = browser.element(class: 'product_text_price').text.gsub(/[$,]/, '').to_f * 100
 
-        unless form.exists?
+        unless form.present?
           raise ItemOutOfStockError.new(
             url: item.source_url,
             requested_qty: item.quantity,
@@ -167,7 +167,7 @@ module Checkout
 
         continue_btn = browser.input(type: 'submit', value: /\Acontinue\z/i)
 
-        if continue_btn.exists?
+        if continue_btn.present?
           continue_btn.click
         else
           raise InvalidShippingInfoError.new(browser.url, 'Invalid shipping info.')
@@ -190,7 +190,7 @@ module Checkout
         end
       end
 
-      def confirm
+      def confirm_order
         browser.input(type: 'submit', value: /confirm/i).click
 
         on_error do |message|
@@ -224,33 +224,41 @@ module Checkout
       end
 
       def fill_address(data)
-        browser.radio(name: 'gender', value: data[:gender]).set
-        browser.text_field(name: 'firstname').set data[:first_name]
-        browser.text_field(name: 'lastname').set data[:last_name]
-        browser.text_field(name: 'street_address').set data[:address1]
-        browser.text_field(name: 'suburb').set data[:address2]
-        browser.text_field(name: 'city').set data[:city]
-        browser.select(name: 'state').select data[:state]
-        browser.text_field(name: 'postcode').set data[:zip]
-        browser.select(name: 'country').select data[:country]
+        super() do
+          browser.radio(name: 'gender', value: data[:gender]).set
+          browser.text_field(name: 'firstname').set data[:first_name]
+          browser.text_field(name: 'lastname').set data[:last_name]
+          browser.text_field(name: 'street_address').set data[:address1]
+          browser.text_field(name: 'suburb').set data[:address2]
+          browser.text_field(name: 'city').set data[:city]
+          browser.select(name: 'state').select data[:state]
+          browser.text_field(name: 'postcode').set data[:zip]
+          browser.select(name: 'country').select data[:country]
+        end
       end
 
       def shipping_address
-        session.shipping_address.merge({
+        @shipping_address ||= session.shipping_address.merge({
+          gender: 'm',
           state: to_state(session.shipping_address[:state]),
           country: 'Canada'
         })
       end
 
       def billing_address
-        session.billing_address.merge({
+        @billing_address ||= session.billing_address.merge({
+          gender: 'm',
           state: to_state(session.billing_address[:state]),
           country: 'Canada'
         })
       end
 
       def to_state(code)
-        states = Hash[[
+        states[code] || (raise InvalidAddressError.new(browser.url, "State with code '#{code}' not supported."))
+      end
+
+      def states
+        @states ||= Hash[[
           ['AB', 'Alberta'],
           ['BC', 'British Columbia'],
           ['MB', 'Manitoba'],
@@ -265,21 +273,19 @@ module Checkout
           ['SK', 'Saskatchewan'],
           ['YT', 'Yukon Territory']
         ]]
-
-        states[code] || (raise InvalidStateError.new(browser.url, code))
       end
 
       def on_error
         alert = browser.alert
         error = browser.element(class: 'error')
 
-        if alert.exists?
+        if alert.present?
           message = alert.text
           alert.close
           return yield message
         end
 
-        return yield error.text if error.exists?
+        return yield error.text if error.present?
       end
     end
   end

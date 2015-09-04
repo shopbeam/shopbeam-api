@@ -4,9 +4,7 @@ class OrderItem < ActiveRecord::Base
   self.table_name = 'OrderItem'
 
   belongs_to :variant, foreign_key: 'VariantId'
-
-  delegate :source_url, to: :variant
-
+  delegate :source_url, :color, :size, to: :variant
   alias_attribute :sale_price_cents, :salePriceCents
 
   enum status: {

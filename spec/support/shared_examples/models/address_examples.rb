@@ -1,5 +1,7 @@
-shared_examples 'delegates methods to user' do |methods|
-  methods.each do |method|
-    it { is_expected.to delegate_method(method).to(:user) }
+shared_examples_for '#phone_number' do
+  it 'is an alias of #phoneNumber' do
+    payment = described_class.new(phoneNumber: '123-456-7890')
+
+    expect(payment.phone_number).to eq('123-456-7890')
   end
 end
