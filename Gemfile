@@ -32,6 +32,9 @@ gem 'headless'
 # Load environment variables
 gem 'dotenv-rails'
 
+#pretty cron tasks
+gem 'whenever'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -61,4 +64,8 @@ group :test do
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'shoulda-matchers'
+  gem 'cucumber'
+  gem 'cucumber-rails', :require => false
+  gem 'database_cleaner'
+  gem 'rspec-expectations'
 end
