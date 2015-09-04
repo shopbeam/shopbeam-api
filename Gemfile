@@ -61,6 +61,7 @@ group :development do
 end
 
 group :test do
+  gem 'sqlite3'
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'shoulda-matchers'
