@@ -3,6 +3,7 @@ Given(/^registered user$/) do
     state: 'AB',
     gender: 'm'}
   @partner = Checkout::Partners::WellCa.new(double(
+    id: 1,
     shipping_address: address,
     billing_address: address,
     cc: {
