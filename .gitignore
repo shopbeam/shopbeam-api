@@ -16,3 +16,8 @@
 /log/*
 !/log/.keep
 /tmp
+
+# Ignore CTags files
+.gemtags
+.tags
+.tags_sorted_by_file
