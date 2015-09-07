@@ -9,8 +9,8 @@ describe ProxyUser do
     subject { create(:proxy_user) }
 
     it { is_expected.to validate_presence_of(:user) }
-    it { is_expected.to validate_uniqueness_of(:user).scoped_to(:provider_type) }
-    it { is_expected.to validate_presence_of(:provider_type) }
+    it { is_expected.to validate_uniqueness_of(:user).scoped_to(:partner_type) }
+    it { is_expected.to validate_presence_of(:partner_type) }
   end
 
   describe 'default values' do
