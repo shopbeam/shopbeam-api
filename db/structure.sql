@@ -952,7 +952,7 @@ CREATE TABLE partnerfilters (
 CREATE TABLE proxy_users (
     id integer NOT NULL,
     user_id integer NOT NULL,
-    provider_type character varying NOT NULL,
+    partner_type character varying NOT NULL,
     email character varying NOT NULL,
     password character varying NOT NULL,
     password_salt character varying NOT NULL,
@@ -1686,10 +1686,10 @@ CREATE INDEX index_proxy_users_on_user_id ON proxy_users USING btree (user_id);
 
 
 --
--- Name: index_proxy_users_on_user_id_and_provider_type; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: index_proxy_users_on_user_id_and_partner_type; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
-CREATE UNIQUE INDEX index_proxy_users_on_user_id_and_provider_type ON proxy_users USING btree (user_id, provider_type);
+CREATE UNIQUE INDEX index_proxy_users_on_user_id_and_partner_type ON proxy_users USING btree (user_id, partner_type);
 
 
 --
@@ -1816,4 +1816,6 @@ INSERT INTO schema_migrations (version) VALUES ('20150514043126');
 INSERT INTO schema_migrations (version) VALUES ('20150816132924');
 
 INSERT INTO schema_migrations (version) VALUES ('20150816175045');
+
+INSERT INTO schema_migrations (version) VALUES ('20150907090911');
 

@@ -22,7 +22,7 @@ module Checkout
       end
 
       def proxy_user
-        @proxy_user ||= ProxyUser.find_or_initialize_by(user: session.user, provider_type: self.class)
+        @proxy_user ||= ProxyUser.find_or_initialize_by(user: session.user, partner_type: self.class)
       end
 
       def fill_address
