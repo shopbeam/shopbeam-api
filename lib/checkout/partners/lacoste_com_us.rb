@@ -74,7 +74,7 @@ module Checkout
         browser.text_field(name: 'lastname').set proxy_user.last_name
         browser.text_field(name: 'email2').set proxy_user.user_email
         browser.checkbox(name: 'receivenews').clear
-        browser.button(id: 'js-checkout-register-guest').click
+        browser.wait_for_ajax { browser.button(id: 'js-checkout-register-guest').click }
 
         on_error do |message|
           raise InvalidAccountError.new(browser.url, message)
