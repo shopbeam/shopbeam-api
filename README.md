@@ -75,3 +75,14 @@ Navigate to [http://localhost:3000/admin/monitor/](http://localhost:3000/admin/m
     $ mailcatcher
 
 and navigate to [http://localhost:1080/](http://localhost:1080/).
+
+## Partners integration tests
+located in "features" directory
+To run tests against specific partner:
+`rake cucumber:partners:lacoste`
+or
+`rake cucumber:partners:well_ca`
+Please use mentioned rake tasks instead of just `cucumber`, as rake task loads specific steps definitions.
+
+There is cronjob which runs all partners tests, by calling every 4 hours following task:
+`rake cucumber:partners`

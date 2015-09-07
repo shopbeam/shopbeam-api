@@ -13,7 +13,7 @@ Given(/^registered user$/) do
       expiration_month: '01',
       expiration_year: 2020}))
   @browser = @partner.send(:browser)
-  @user = double(email: "john-doe-dae5@checkout.shopbeam.com", password: "820af74d2d82")
+  @user = double(email: "john-doe-dae5@orders.shopbeam.com", password: "820af74d2d82")
   @partner.instance_variable_set(:@proxy_user, @user)
 end
 
