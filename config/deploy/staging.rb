@@ -3,10 +3,8 @@
 # Defines a single server with a list of roles and multiple properties.
 # You can define all roles on a single server, or split them:
 
-server '52.7.66.188', user: 'ubuntu', roles: %w(app db web), primary: true
-server '52.2.85.6', user: 'ubuntu', roles: %w(sidekiq)
-
-
+server '52.21.61.70', user: 'ubuntu', roles: %w(app db web), primary: true
+server '52.5.146.176', user: 'ubuntu', roles: %w(worker)
 
 # role-based syntax
 # ==================
@@ -32,6 +30,9 @@ server '52.2.85.6', user: 'ubuntu', roles: %w(sidekiq)
 
 set :rails_env, 'production'
 
+set :bundle_without, 'development'
+
+set :whenever_roles, %w(worker)
 # Custom SSH Options
 # ==================
 # You may pass any option but keep in mind that net/ssh understands a
