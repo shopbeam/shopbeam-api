@@ -7,7 +7,9 @@ Rails.application.routes.draw do
 
   mount Sidekiq::Web, at: '/admin/monitor'
 
-  resources :orders, only: :none do
-    post :fill, on: :member
-  end
+  # Spock route to place incoming orders
+  post '/orders/:id/fill', to: 'orders#fill'
+
+  # Mailgun route to handle incoming emails
+  post '/orders/mail', to: 'orders#mail'
 end

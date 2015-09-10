@@ -4,12 +4,16 @@ module Checkout
       OrderMailer.completed(order).deliver_now
     end
 
-    def order_terminated(order)
-      OrderMailer.terminated(order, $!).deliver_now
+    def order_not_found(order_id)
+      OrderMailer.not_found(order_id).deliver_now
     end
 
-    def order_aborted(order)
-      OrderMailer.aborted(order, $!).deliver_now
+    def order_terminated(order, exception)
+      OrderMailer.terminated(order, exception).deliver_now
+    end
+
+    def order_aborted(order, exception)
+      OrderMailer.aborted(order, exception).deliver_now
     end
   end
 end

@@ -43,7 +43,7 @@ class OrderItem < ActiveRecord::Base
     end
   end
 
-  def partner
-    Checkout::Partners.lookup(source_url)
+  def bot
+    Checkout::Bots.lookup(source_url)
   end
 end

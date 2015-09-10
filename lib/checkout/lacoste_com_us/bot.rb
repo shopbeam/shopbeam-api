@@ -1,6 +1,6 @@
 module Checkout
-  module Partners
-    class LacosteComUs < Base
+  module LacosteComUs
+    class Bot < BotBase
       BASE_URL     = 'https://www.lacoste.com/us/'.freeze
       CHECKOUT_URL = "#{BASE_URL}login-checkout".freeze
 

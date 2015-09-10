@@ -1,6 +1,6 @@
 module Checkout
-  module Partners
-    class WellCa < Base
+  module WellCa
+    class Bot < BotBase
       BASE_URL                          = 'https://well.ca/index.php?main_page='.freeze
       LOGIN_URL                         = "#{BASE_URL}login".freeze
       REGISTRATION_URL                  = "#{BASE_URL}create_account".freeze

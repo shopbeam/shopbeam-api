@@ -9,7 +9,7 @@ gem 'pg'
 gem 'puma'
 
 # Action Mailer adapter
-gem 'postmark-rails', '~> 0.10.0'
+gem 'mailgun_rails'
 
 # Active Job adapter
 gem 'sidekiq'
@@ -65,7 +65,7 @@ group :test do
   gem 'faker'
   gem 'shoulda-matchers'
   gem 'cucumber'
-  gem 'cucumber-rails', :require => false
+  gem 'cucumber-rails', require: false
   gem 'database_cleaner'
   gem 'rspec-expectations'
 end

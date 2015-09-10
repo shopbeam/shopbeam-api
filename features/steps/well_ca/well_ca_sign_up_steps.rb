@@ -1,10 +1,10 @@
 Before('@well_ca', '@sign_up') do
-  partner = Checkout::Partners::WellCa.new(double(id: 1))
+  partner = Checkout::WellCa::Bot.new(double(id: 1))
   @browser = partner.send(:browser)
 end
 
 When(/^I go to registration page$/) do
-  @browser.goto Checkout::Partners::WellCa::REGISTRATION_URL
+  @browser.goto Checkout::WellCa::Bot::REGISTRATION_URL
 end
 
 When(/^I set gender$/) do

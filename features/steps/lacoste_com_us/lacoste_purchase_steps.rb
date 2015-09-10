@@ -8,7 +8,7 @@ Before('@lacoste', '@purchase') do
     zip: 95014,
     city: 'Cupertino'
   }
-  @partner = Checkout::Partners::LacosteComUs.new(
+  @bot = Checkout::LacosteComUs::Bot.new(
     double(
       id: 1,
       shipping_address: address,
@@ -23,7 +23,7 @@ Before('@lacoste', '@purchase') do
       }
     )
   )
-  @browser = @partner.send(:browser)
+  @browser = @bot.send(:browser)
 end
 
 Given(/^the following products$/) do |table|
@@ -40,34 +40,34 @@ end
 
 When(/^I add products to cart$/) do
   @products.each do |product|
-    @partner.send(:add_to_cart, product)
+    @bot.send(:add_to_cart, product)
   end
 end
 
 When(/^I go to checkout page$/) do
-  @browser.goto Checkout::Partners::LacosteComUs::CHECKOUT_URL
+  @browser.goto Checkout::LacosteComUs::Bot::CHECKOUT_URL
 end
 
 When(/^I sign up as guest$/) do
-  user = double(user_email: 'john-doe-dae5@checkout.shopbeam.com', first_name: 'Alex', last_name: 'Bond')
-  @partner.instance_variable_set(:@proxy_user, user)
-  @partner.send(:sign_up_as_guest)
+  user = double(user_email: 'john-doe-dae5@orders.shopbeam.com', first_name: 'Alex', last_name: 'Bond')
+  @bot.instance_variable_set(:@proxy_user, user)
+  @bot.send(:sign_up_as_guest)
 end
 
 When(/^I fill shipping info$/) do
-  @partner.send(:fill_shipping_info)
+  @bot.send(:fill_shipping_info)
 end
 
 When(/^I fill billing address$/) do
-  @partner.send(:fill_billing_address)
+  @bot.send(:fill_billing_address)
 end
 
 When(/^I validate order$/) do
-  @partner.send(:validate_order)
+  @bot.send(:validate_order)
 end
 
 Then(/^I confirm order$/) do
   # Expect it to fail due to a test credit card number
   expected_error_text = 'ConfirmationError: The following error(s) occurred on https://www.lacoste.com/us/checkout-validate: Error occured during the validation of your payment. Please try again.'
-  expect { @partner.send(:confirm_order) }.to raise_error(Checkout::ConfirmationError, expected_error_text)
+  expect { @bot.send(:confirm_order) }.to raise_error(Checkout::ConfirmationError, expected_error_text)
 end
