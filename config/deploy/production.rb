@@ -3,8 +3,8 @@
 # Defines a single server with a list of roles and multiple properties.
 # You can define all roles on a single server, or split them:
 
-server '52.21.61.70', user: 'ubuntu', roles: %w(app db web), primary: true
-server '52.5.146.176', user: 'ubuntu', roles: %w(worker)
+server '52.7.63.247', user: 'ubuntu', roles: %w(app db web), primary: true
+server '52.20.76.22', user: 'ubuntu', roles: %w(worker)
 
 # role-based syntax
 # ==================
