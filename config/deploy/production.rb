@@ -3,8 +3,8 @@
 # Defines a single server with a list of roles and multiple properties.
 # You can define all roles on a single server, or split them:
 
-server '52.21.61.70', user: 'ubuntu', roles: %w(app db web), primary: true
-server '52.5.146.176', user: 'ubuntu', roles: %w(worker)
+server '52.7.63.247', user: 'ubuntu', roles: %w(app db web), primary: true
+server '52.20.76.22', user: 'ubuntu', roles: %w(worker)
 
 # role-based syntax
 # ==================
@@ -28,13 +28,12 @@ server '52.5.146.176', user: 'ubuntu', roles: %w(worker)
 # http://capistranorb.com/documentation/getting-started/configuration/
 # Feel free to add new variables to customise your setup.
 
+set :branch, 'production'
 set :rails_env, 'production'
+set :bundle_without, 'development test'
 
-# Keep test group to be able to run Cucumber features
-set :bundle_without, 'development'
-
-# Run Cucumber features on a schedule
-set :whenever_roles, %w(worker)
+# Do not run Cucumber features on a schedule
+set :whenever_roles, nil
 
 # Custom SSH Options
 # ==================
