@@ -67,12 +67,17 @@ module Checkout
       end
 
       def sign_up_as_guest
-        browser.text_field(id: 'js-login-checkout-email').set proxy_user.user_email
-        browser.wait_for_ajax { browser.button(id: 'js-validate-email').click }
+        sign_in(proxy_user.user_email)
+
+        if browser.element(id: 'js-login-already-exists').present?
+          proxy_user.save! if new_user?
+          sign_in(proxy_user.email)
+        end
+
         browser.radio(name: 'salutation', value: 'MR').set
         browser.text_field(name: 'firstname').set proxy_user.first_name
         browser.text_field(name: 'lastname').set proxy_user.last_name
-        browser.text_field(name: 'email2').set proxy_user.user_email
+        browser.text_field(name: 'email2').set browser.text_field(name: 'email1').value
         browser.checkbox(name: 'receivenews').clear
         browser.wait_for_ajax { browser.button(id: 'js-checkout-register-guest').click }
 
@@ -130,6 +135,11 @@ module Checkout
         on_error do |message|
           raise ConfirmationError.new(browser.url, message)
         end
+      end
+
+      def sign_in(email)
+        browser.text_field(name: 'email').set email
+        browser.wait_for_ajax { browser.button(id: 'js-validate-email').click }
       end
 
       def fill_shipping_address
