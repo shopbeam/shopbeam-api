@@ -143,6 +143,7 @@ GEM
       net-ssh (>= 2.6.5)
     net-ssh (2.9.2)
     netrc (0.10.3)
+    newrelic_rpm (3.13.0.299)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
     pg (0.18.2)
@@ -283,6 +284,7 @@ DEPENDENCIES
   headless
   mailcatcher
   mailgun_rails
+  newrelic_rpm
   pg
   puma
   rails (= 4.2.3)

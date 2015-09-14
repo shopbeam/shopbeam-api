@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     username == 'admin' && password == Rails.application.secrets.admin_monitor_password
   end if Rails.env.production?
 
-  mount Sidekiq::Web, at: '/admin/monitor'
+  mount Sidekiq::Web, at: '/admin/sidekiq'
 
   # Spock route to place incoming orders
   post '/orders/:id/fill', to: 'orders#fill'
