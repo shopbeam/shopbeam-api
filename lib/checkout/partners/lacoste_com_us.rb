@@ -188,7 +188,9 @@ module Checkout
         }
       end
 
-      def on_error
+      def on_error(url = nil)
+        return if url && !browser.on_page?(url)
+
         errors = browser.spans(class: 'error').select(&:visible?)
 
         if errors.any?

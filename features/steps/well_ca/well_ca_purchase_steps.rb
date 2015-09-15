@@ -15,6 +15,13 @@ Given(/^registered user$/) do
   @browser = @partner.send(:browser)
   @user = double(email: "john-doe-dae5@orders.shopbeam.com", password: "820af74d2d82")
   @partner.instance_variable_set(:@proxy_user, @user)
+  @items = [
+    double(
+      source_url: 'https://well.ca/products/skip-hop-zoo-packs-little-kid_89736.html',
+      quantity: 1,
+      sale_price_cents: 2499
+    )
+  ]
 end
 
 When(/^I go to landing page$/) do
@@ -37,12 +44,17 @@ Then(/^I remove alternate addresses$/) do
   @partner.send(:delete_alternate_addresses)
 end
 
-Then(/^I add item to cart$/) do
-  item = double(source_url: "https://well.ca/products/skip-hop-zoo-packs-little-kid_89736.html",
-                quantity: 1,
-                sale_price_cents: 2499)
+Then(/^I add items to cart$/) do
+  @items.each do |item|
+    @partner.send(:add_to_cart, item)
+  end
+end
 
-  @partner.send(:add_to_cart, item)
+Then(/^I remove samples$/) do
+  @partner.send(:remove_samples, @items)
+
+  items_in_cart = @browser.elements(class: 'shopping_cart_product_container')
+  expect(items_in_cart.count).to eq(@items.count)
 end
 
 Then(/^I go to checkout page$/) do

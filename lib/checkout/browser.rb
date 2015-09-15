@@ -21,6 +21,10 @@ module Checkout
       @headless.destroy if @headless
     end
 
+    def on_page?(page_url)
+      Regexp.new(Regexp.quote(page_url)) =~ url
+    end
+
     def wait_for_ajax
       yield if block_given?
       Watir::Wait.until { execute_script('return jQuery.active') == 0 }
