@@ -4,9 +4,11 @@ module Checkout
       BASE_URL                          = 'https://well.ca/index.php?main_page='.freeze
       LOGIN_URL                         = "#{BASE_URL}login".freeze
       REGISTRATION_URL                  = "#{BASE_URL}create_account".freeze
-      EMPTY_CART_URL                    = "#{BASE_URL}shopping_cart&action=remove_all".freeze
+      CART_URL                          = "#{BASE_URL}shopping_cart".freeze
+      EMPTY_CART_URL                    = "#{CART_URL}&action=remove_all".freeze
+      REMOVE_PRODUCT_URL_PATTERN        = /action=remove_product&product_id=(\d+)/.freeze
       ADDRESS_BOOK_URL                  = "#{BASE_URL}address_book".freeze
-      ALTERNATE_ADDRESS_URL_PATTERN     = 'action=primary&address=(\d+)'.freeze
+      ALTERNATE_ADDRESS_URL_PATTERN     = /action=primary&address=(\d+)/.freeze
       ADDRESS_DELETE_CONFIRM_URL_FORMAT = "#{ADDRESS_BOOK_URL}_process&delete=%d&action=deleteconfirm".freeze
       CHECKOUT_URL                      = "#{BASE_URL}checkout_shipping".freeze
       CHECKOUT_SKIP_RECOMMENDATIONS_URL = "#{BASE_URL}checkout_shipping&recommended=true".freeze
@@ -34,6 +36,7 @@ module Checkout
             add_to_cart(item)
           end
 
+          remove_samples(items)
           browser.goto CHECKOUT_URL
           skip_recommendations
           skip_samples
@@ -79,22 +82,20 @@ module Checkout
         browser.text_field(name: 'password').set proxy_user.password
         browser.input(type: 'submit', value: /sign in/i).click
 
-        on_error do |message|
+        on_error(LOGIN_URL) do |message|
           raise InvalidAccountError.new(browser.url, message)
         end
       end
 
       def empty_cart
-        if browser.element(id: 'header-shopping-cart-count').text != '0'
-          browser.goto EMPTY_CART_URL
-        end
+        browser.goto EMPTY_CART_URL if cart_count > 0
       end
 
       def delete_alternate_addresses
         browser.goto ADDRESS_BOOK_URL
-        browser.links(href: /#{ALTERNATE_ADDRESS_URL_PATTERN}/)
+        browser.links(href: ALTERNATE_ADDRESS_URL_PATTERN)
           .map { |link|
-            address_id = link.href.match(/#{ALTERNATE_ADDRESS_URL_PATTERN}/)[1]
+            address_id = link.href.match(ALTERNATE_ADDRESS_URL_PATTERN)[1]
             ADDRESS_DELETE_CONFIRM_URL_FORMAT % address_id
           }.each { |url|
             browser.goto url
@@ -139,6 +140,23 @@ module Checkout
       rescue ItemOutOfStockError
         item.mark_as_out_of_stock!
         raise
+      end
+
+      def remove_samples(items)
+        items_list = items.map(&:source_url)
+
+        browser.goto CART_URL
+
+        browser.elements(class: 'shopping_cart_product_container')
+          .each_with_object([]) { |container, links|
+            item_link = container.element(class: 'name').link.href
+
+            unless item_link.in?(items_list)
+              links << container.link(href: REMOVE_PRODUCT_URL_PATTERN).href
+            end
+          }.each { |url|
+            browser.goto url
+          }
       end
 
       def skip_recommendations
@@ -196,6 +214,10 @@ module Checkout
         on_error do |message|
           raise ConfirmationError.new(browser.url, message)
         end
+      end
+
+      def cart_count
+        browser.element(id: 'header-shopping-cart-count').text.to_i
       end
 
       def fill_billing_address
@@ -275,7 +297,9 @@ module Checkout
         ]]
       end
 
-      def on_error
+      def on_error(url = nil)
+        return if url && !browser.on_page?(url)
+
         alert = browser.alert
         error = browser.element(class: 'error')
 

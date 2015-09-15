@@ -2,8 +2,9 @@ class CucumberMailer < ApplicationMailer
   default to: 'tech@shopbeam.com'
 
   def completed(text, success)
-    result = success ? 'success' : 'failed'
+    status = success ? 'OK' : 'FAIL'
     @text = text
-    mail subject: "[partner-check](#{result})"
+
+    mail subject: "[order-manager:tests](#{status})"
   end
 end
