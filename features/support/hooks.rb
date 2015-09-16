@@ -1,3 +1,3 @@
-After do
+After('@partners') do
   @browser.close if @browser
 end

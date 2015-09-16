@@ -1,33 +1,37 @@
+Before('@well_ca', '@sign_up') do
+  partner = Checkout::Partners::WellCa.new(double(id: 1))
+  @browser = partner.send(:browser)
+end
+
 When(/^I go to registration page$/) do
-  @browser = Checkout::Browser.new
   @browser.goto Checkout::Partners::WellCa::REGISTRATION_URL
 end
 
-Then(/^I set gender$/) do
+When(/^I set gender$/) do
   @browser.radio(name: 'gender', value: 'o').set
 end
 
-Then(/^I fill firstname$/) do
+When(/^I fill firstname$/) do
   @browser.text_field(name: 'firstname').set "first name"
 end
 
-Then(/^I fill lastname$/) do
+When(/^I fill lastname$/) do
   @browser.text_field(name: 'lastname').set "last name"
 end
 
-Then(/^I set birthday$/) do
+When(/^I set birthday$/) do
   @browser.select(name: 'dob_year').select(DateTime.now.year - 25)
 end
 
-Then(/^I fill email_address$/) do
+When(/^I fill email_address$/) do
   @browser.text_field(name: 'email_address').set "some@example.com"
 end
 
-Then(/^I fill password$/) do
+When(/^I fill password$/) do
   @browser.text_field(name: 'password').set "some_password"
 end
 
-Then(/^I fill password_confirmation$/) do
+When(/^I fill password_confirmation$/) do
   @browser.text_field(name: 'confirmation').set "some_password"
 end
 

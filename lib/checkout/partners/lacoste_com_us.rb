@@ -25,13 +25,17 @@ module Checkout
         browser.goto item.source_url
 
         variations = browser.element(class: 'product-variations')
-        color = variations.element(class: 'color').link(title: /\A#{item.color}\z/i)
+        color = browser.element(id: 'selectedColor', text: /\A#{item.color}\z/i)
 
         unless color.present?
-          raise VariantNotAvailableError.new(browser.url, item)
-        end
+          color = variations.element(class: 'color').link(title: /\A#{item.color}\z/i)
 
-        browser.wait_for_ajax { color.click }
+          unless color.present?
+            raise VariantNotAvailableError.new(browser.url, item)
+          end
+
+          browser.wait_for_ajax { color.click }
+        end
 
         sizes = variations.select(class: 'product-sizes')
         size = sizes.element(xpath: "//option[@value='#{item.size}' and not(@disabled)]")
