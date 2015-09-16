@@ -5,6 +5,6 @@ class CucumberMailer < ApplicationMailer
     status = success ? 'OK' : 'FAIL'
     @text = text
 
-    mail subject: "[order-manager:tests](#{status})"
+    mail subject: "[order-manager:tests] #{status}"
   end
 end
