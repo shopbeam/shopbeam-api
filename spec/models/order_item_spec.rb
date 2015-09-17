@@ -47,12 +47,12 @@ describe OrderItem do
     end
   end
 
-  describe '#partner' do
-    it 'calls partners lookup with source url' do
+  describe '#bot' do
+    it 'calls bots lookup with source url' do
       order_item = described_class.new(variant: build(:variant, source_url: 'http://foo.com/'))
 
-      expect(Checkout::Partners).to receive(:lookup).with('http://foo.com/').and_return('FooPartner')
-      expect(order_item.partner).to eq('FooPartner')
+      expect(Checkout::Bots).to receive(:lookup).with('http://foo.com/').and_return('Foo::Bot')
+      expect(order_item.bot).to eq('Foo::Bot')
     end
   end
 

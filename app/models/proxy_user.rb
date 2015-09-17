@@ -1,5 +1,5 @@
 class ProxyUser < ActiveRecord::Base
-  EMAIL_DOMAIN = 'checkout.shopbeam.com'.freeze
+  EMAIL_DOMAIN = 'orders.shopbeam.com'.freeze
 
   belongs_to :user
 

@@ -3,18 +3,27 @@ class OrderMailer < ApplicationMailer
 
   def completed(order)
     @order = order
+
     mail subject: "[order-manager] Shopbeam order ##{@order.id} has been successfully processed"
+  end
+
+  def not_found(order_id)
+    @order_id = order_id
+
+    mail subject: "[order-manager] Shopbeam order ##{@order_id} not found"
   end
 
   def terminated(order, exception)
     @order = order
     @exception = exception
+
     mail subject: "[order-manager] Shopbeam order ##{@order.id} has been terminated"
   end
 
   def aborted(order, exception)
     @order = order
     @exception = exception
+
     mail subject: "[order-manager] Shopbeam order ##{@order.id} has been aborted"
   end
 end

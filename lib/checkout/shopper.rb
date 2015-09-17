@@ -2,21 +2,25 @@ module Checkout
   class Shopper
     include Wisper::Publisher
 
-    def call(order)
+    def call(order_id)
+      order = Order.uncompleted.find(order_id)
+
       session = Session.new(order)
 
       order.process!
 
-      order.order_items.group_by(&:partner).each do |partner, items|
-        partner.new(session).purchase(items)
+      order.order_items.group_by(&:bot).each do |bot, items|
+        bot.new(session).purchase(items)
       end
-    rescue OrderError
+    rescue ActiveRecord::RecordNotFound
+      broadcast :order_not_found, order_id
+    rescue OrderError => exception
       order.terminate!
-      broadcast :order_terminated, order
+      broadcast :order_terminated, order, exception
       raise
-    rescue StandardError
+    rescue StandardError => exception
       order.abort!
-      broadcast :order_aborted, order
+      broadcast :order_aborted, order, exception
       raise
     else
       order.complete!

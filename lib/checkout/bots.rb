@@ -1,11 +1,11 @@
 module Checkout
-  module Partners
+  module Bots
     def self.lookup(url)
       case url
       when %r(https?://well.ca)
-        WellCa
+        WellCa::Bot
       when %r(https?://www.lacoste.com/us)
-        LacosteComUs
+        LacosteComUs::Bot
       else
         raise PartnerNotSupportedError.new(url, 'Checkout partner not supported.')
       end

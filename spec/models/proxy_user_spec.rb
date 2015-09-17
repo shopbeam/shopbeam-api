@@ -16,7 +16,7 @@ describe ProxyUser do
   describe 'default values' do
     subject { described_class.new(user: build(:user, first_name: 'John', last_name: 'Smith')) }
 
-    it { expect(subject.email).to match(/\Ajohn-smith-\h{4}@checkout\.shopbeam\.com\z/) }
+    it { expect(subject.email).to match(/\Ajohn-smith-\h{4}@orders\.shopbeam\.com\z/) }
     it { expect(subject.password).to match(/\A\h{12}\z/) }
   end
 

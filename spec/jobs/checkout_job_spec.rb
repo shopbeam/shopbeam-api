@@ -1,9 +1,7 @@
 require 'rails_helper'
 
 describe CheckoutJob do
-  let(:order) { create(:order) }
-
-  subject(:job) { described_class.perform_later(order.id) }
+  subject(:job) { described_class.perform_later(1) }
 
   after do
     clear_enqueued_jobs
@@ -17,9 +15,9 @@ describe CheckoutJob do
     perform_enqueued_jobs { job }
   end
 
-  it 'calls checkout shopper for the current order' do
+  it 'calls checkout shopper with the target order ID' do
     expect_any_instance_of(Checkout::Shopper)
-      .to receive(:call).with(order)
+      .to receive(:call).with(1)
     perform_enqueued_jobs { job }
   end
 end

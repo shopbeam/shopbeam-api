@@ -3,7 +3,7 @@ Before('@well_ca', '@purchase') do
     state: 'AB',
     gender: 'm'
   }
-  @partner = Checkout::Partners::WellCa.new(
+  @bot = Checkout::WellCa::Bot.new(
     double(
       id: 1,
       shipping_address: address,
@@ -17,7 +17,7 @@ Before('@well_ca', '@purchase') do
       }
     )
   )
-  @browser = @partner.send(:browser)
+  @browser = @bot.send(:browser)
 end
 
 Given(/^the following products$/) do |table|
@@ -32,60 +32,60 @@ end
 
 Given(/^I am registered user$/) do
   user = double(email: 'john-doe-dae5@orders.shopbeam.com', password: '820af74d2d82')
-  @partner.instance_variable_set(:@proxy_user, user)
+  @bot.instance_variable_set(:@proxy_user, user)
 end
 
 When(/^I go to landing page$/) do
-  @browser.goto Checkout::Partners::WellCa::BASE_URL
+  @browser.goto Checkout::WellCa::Bot::BASE_URL
 end
 
 When(/^I close subscription popup$/) do
-  @partner.send(:close_subscription_popup)
+  @bot.send(:close_subscription_popup)
 end
 
 When(/^I sign in$/) do
-  @partner.send(:sign_in)
+  @bot.send(:sign_in)
 end
 
 When(/^I empty cart$/) do
-  @partner.send(:empty_cart)
+  @bot.send(:empty_cart)
 end
 
 When(/^I remove alternate addresses$/) do
-  @partner.send(:delete_alternate_addresses)
+  @bot.send(:delete_alternate_addresses)
 end
 
 When(/^I add products to cart$/) do
   @products.each do |product|
-    @partner.send(:add_to_cart, product)
+    @bot.send(:add_to_cart, product)
   end
 end
 
 When(/^I remove samples$/) do
-  @partner.send(:remove_samples, @products)
+  @bot.send(:remove_samples, @products)
 
   items_in_cart = @browser.elements(class: 'shopping_cart_product_container')
   expect(items_in_cart.count).to eq(@products.count)
 end
 
 When(/^I go to checkout page$/) do
-  @browser.goto Checkout::Partners::WellCa::CHECKOUT_URL
+  @browser.goto Checkout::WellCa::Bot::CHECKOUT_URL
 end
 
 When(/^I skip recomendations$/) do
-  @partner.send(:skip_recommendations)
+  @bot.send(:skip_recommendations)
 end
 
 When(/^I skip samples$/) do
-  @partner.send(:skip_samples)
+  @bot.send(:skip_samples)
 end
 
 When(/^I fill shipping address$/) do
-  @partner.send(:fill_shipping_address)
+  @bot.send(:fill_shipping_address)
 end
 
 When(/^I fill billing info$/) do
-  @partner.send(:fill_billing_info)
+  @bot.send(:fill_billing_info)
 end
 
 Then(/^I should see confirm button$/) do
