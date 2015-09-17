@@ -25,32 +25,9 @@ module Checkout
         browser.goto item.source_url
 
         variations = browser.element(class: 'product-variations')
-        color = browser.element(id: 'selectedColor', text: /\A#{item.color}\z/i)
 
-        unless color.present?
-          color = variations.element(class: 'color').link(title: /\A#{item.color}\z/i)
-
-          unless color.present?
-            raise VariantNotAvailableError.new(browser.url, item)
-          end
-
-          browser.wait_for_ajax { color.click }
-        end
-
-        sizes = variations.select(class: 'product-sizes')
-        size = sizes.element(xpath: "//option[@value='#{item.size}' and not(@disabled)]")
-
-        unless size.present?
-          raise VariantNotAvailableError.new(browser.url, item)
-        end
-
-        browser.wait_for_ajax { sizes.select_value(size.value) }
-
-        # Do check if the requested variant is still available
-        # (caused by buggy behavior of dependent selectors)
-        unless color.present? && size.present?
-          raise VariantNotAvailableError.new(browser.url, item)
-        end
+        select_color(item, variations) if item.color.present?
+        select_size(item, variations) if item.size.present?
 
         price_cents = browser.element(css: '[itemprop="price"]').attribute_value('textContent').to_f * 100
 
@@ -139,6 +116,31 @@ module Checkout
         on_error do |message|
           raise ConfirmationError.new(browser.url, message)
         end
+      end
+
+      def select_color(item, variations)
+        color = browser.element(id: 'selectedColor', text: /\A#{item.color}\z/i)
+
+        unless color.present?
+          color = variations.element(class: 'color').link(title: /\A#{item.color}\z/i)
+
+          unless color.present?
+            raise VariantNotAvailableError.new(browser.url, item)
+          end
+
+          browser.wait_for_ajax { color.click }
+        end
+      end
+
+      def select_size(item, variations)
+        sizes = variations.select(class: 'product-sizes')
+        size = sizes.element(xpath: "//option[@value='#{item.size}' and not(@disabled)]")
+
+        unless size.present?
+          raise VariantNotAvailableError.new(browser.url, item)
+        end
+
+        browser.wait_for_ajax { sizes.select_value(size.value) }
       end
 
       def sign_in(email)
