@@ -1,11 +1,13 @@
 class OrdersController < ApplicationController
+  skip_before_action :verify_request, only: :mail
+
   def fill
     CheckoutJob.perform_later(params[:id])
     head :accepted
   end
 
   def mail
-    return head :not_acceptable unless valid_signature?
+    return head :not_acceptable unless verify_mailgun_request
 
     Checkout::MailDispatchers
       .lookup(params[:sender]).new(params)
@@ -16,11 +18,12 @@ class OrdersController < ApplicationController
 
   private
 
-  def valid_signature?
-    digest = OpenSSL::Digest::SHA256.new
-    data = [params[:timestamp], params[:token]].join
-    signature = OpenSSL::HMAC.hexdigest(digest, Rails.application.secrets.mailgun_api_key, data)
-
-    params[:signature] == signature
+  def verify_mailgun_request
+    RequestVerifier.verify(
+      key: Rails.application.secrets.mailgun_api_key,
+      timestamp: params[:timestamp],
+      token: params[:token],
+      signature: params[:signature]
+    )
   end
 end
