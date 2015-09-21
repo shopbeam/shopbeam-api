@@ -1,0 +1,16 @@
+Order Number: <match>\w+</match>
+
+Hi <match>.+?</match>,
+
+Your order is now processing.
+Based on the items that you purchased, your order will be processed by Well.ca in one to three business days, unless otherwise noted on the product page.
+Once your order has been processed, you'll receive an additional email notification with the tracking information for the shipment of your parcel.
+<match>(?<scrub>.+)</match>
+
+What's next? We will send an update once your order has been shipped.
+
+Thank you,
+Well.ca Customer Service
+http://Well.ca
+
+<match>(?<scrub>.+)</match>

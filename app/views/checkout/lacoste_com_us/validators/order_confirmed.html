@@ -1,0 +1,288 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<style>
+body {
+width:100%!important;
+-webkit-text-size-adjust:100%;
+-ms-text-size-adjust:100%;
+margin:0;
+padding:0;
+}
+</style>
+</head>
+<body bgcolor="#e5e5e5" topmargin="0" leftmargin="0" marginheight="0" marginwidth="0" style="-webkit-font-smoothing:antialiased; width:100% !important;background-color:#e5e5e5;">
+<!--Content wrapper-->
+<table width="640" cellpadding="0" cellspacing="0" border="0" align="center" class="content_wrap" bgcolor="white" style="background-color: white;">
+<tr>
+<td width="100%" height="20" bgcolor="#e5e5e5"></td>
+</tr>
+<tr>
+<td width="100%">
+<table cellpadding="0" cellspacing="0" border="0" align="right" width="640" bgcolor="white" style="background-color: white;">
+<tr>
+<td colspan="3" id="replace" class="text-center">
+<!--image-->
+<img src="http://demandware.edgesuite.net/aaup_prd/on/demandware.static/Sites-FlagShip-Site/-/default/dw264661d0/img/lacoste-header-mail-confirmation-1.jpg" border="0" alt="Lacoste" width="640" height="205" align="center" />
+</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td width="50" style="width: 50px;">&nbsp;</td>
+<td style="font-family: Arial, sans-serif; font-size:10pt;color:black; width: 540px;">
+<table border="0" cellpadding="0" cellspacing="0"
+style="max-width: 640px;" bgcolor="white">
+<!-- header-->
+<!-- confirmation content-->
+<tr>
+<td>
+<table>
+<tr>
+<td>
+<p>
+<font face="Arial, sans-serif" size="2" style="color:black;font-size:10pt;">
+Hello <match>.+?</match>,
+</font>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<font face="Arial, sans-serif" size="2" style="color: black; font-size: 10pt;">
+<p>
+Thank you for your purchase!
+</p>
+</font>
+</td>
+</tr>
+<tr>
+<td>
+<font face="Arial, sans-serif" size="2" style="color: black; font-size: 10pt; font-weight: bold;">
+<p>
+Order Number : #<match>\d+</match>
+</p>
+</font>
+</td>
+</tr>
+<tr>
+<td><font face="Arial, sans-serif" size="2"
+style="color: black; font-size: 10pt;">
+<p>As soon as your order ships, you will receive a shipment confirmation email summarizing the tracking details.</p></font></td>
+</tr>
+<match>(?<scrub>.+)</match>
+</table>
+</td>
+</tr>
+<!-- confirmation content-->
+<tr>
+<td>&nbsp;</td>
+</tr>
+<!-- espace-->
+<!-- livraison content-->
+<tr>
+<td>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><font face="Arial, sans-serif" size="4"
+style="color: silver; font-size: 10pt;font-weight:bold;">YOUR ORDER SUMMARY
+</font></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+</tr>
+<!-- espace-->
+<tr>
+<td colspan="0"><font face="Arial, sans-serif" size="2"
+style="color: black; font-size: 10pt;">Your order number :</font></td>
+<td><font face="Arial, sans-serif" size="2"
+style="color: black; font-size: 10pt;"><match>\d+</match></font></td>
+</tr>
+<tr>
+<td colspan="0"><font face="Arial, sans-serif" size="2"
+style="color: black; font-size: 10pt;">Date :</font></td>
+<td><font face="Arial, sans-serif" size="2"
+style="color: black; font-size: 10pt;"><match>.+?</match></font></td>
+</tr>
+<match>(?<scrub>.+)</match>
+<tr>
+<td colspan="0"><font face="Arial, sans-serif" size="2"
+style="color: black; font-size: 10pt;">Delivery type :</font></td>
+<td><font face="Arial, sans-serif" size="2"
+style="color: black; font-size: 10pt;">
+Ground
+</font></td>
+</tr>
+</table>
+</td>
+</tr>
+<!-- livraison content-->
+<tr>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td ><font face="Arial, sans-serif" size="2" style="color:silver; font-size: 10pt;font-weight:bold;">DETAILS OF YOUR ORDER </font></td>
+</tr>
+<tr>
+<td>
+<!-- NEW CONTENT -->
+<table cellpadding="0" cellspacing="0">
+    <tr>
+      <td>
+        <table border="0" cellpadding="10" cellspacing="0"
+          style="width: 540px; border-bottom: solid 1px #cccccc;">
+          <tr>
+            <th width="80" colspan="1">&nbsp;</th>
+            <th width="224"><font face="Arial, sans-serif" size="2" style="color: silver; font-size: 10pt;">Products</font></th>
+            <th width="100"><font face="Arial, sans-serif" size="2" style="color: silver; font-size: 10pt;">QTY</font></th>
+            <th width="56"><font face="Arial, sans-serif" size="2" style="color: silver; font-size: 10pt;">Price</font></th>
+          </tr>
+           <!-- Product -->
+          <tr>
+            <td align="center" style="border-top: solid 1px #5C564E;">
+              <img src="<match>.+?</match>" width="100%" height="auto" alt="" />
+            </td>
+            <td
+              style="border-right: 1px solid #5C564E; padding-right: 10px; border-top: 1px solid #5C564E;"><font
+              face="Arial, sans-serif" size="2" style="color: black;font-size: 10pt;"><p style="text-align: center;"><match>.+?</match></p>
+              <p style="text-align: left;">
+                  <match>.+?</match>
+              </p>
+            </font></td>
+            <td align="center" height="0"
+              style="border-right: 1px solid #5C564E;  border-top: 1px solid #5C564E; padding-right: 10px;"><font
+              face="Arial, sans-serif" size="2" style="color: black; font-size: 10pt;">
+                  <match>\d+</match>
+            </font></td>
+            <td align="center" style="border-right: 1px solid #5C564E; padding-right: 10px;  border-top: 1px solid #5C564E;"><font
+              face="Arial, sans-serif" size="2" style="color: black; font-size: 10pt;">
+                  $<match>.+?</match>
+            </font></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+ <!-- END NEW CONTENT -->
+<tr>
+  <td>
+  <table>
+    <tbody>
+      <tr>
+        <td style="font-size:12px;font-family:arial;padding:20px 10px;vertical-align:top; padding:2px 0;">Subtotal</td>
+        <td style="font-size:12px;font-family:arial;padding:20px 10px;vertical-align:top; padding:2px 0;">$<match>.+?</match></td>
+      </tr>
+        <tr>
+          <td style="font-size:12px;font-family:arial;padding:20px 10px;vertical-align:top; padding:2px 0;">
+            Shipping
+            <!-- Display Shipping Method -->
+              Ground
+          </td>
+          <td style="font-size:12px;font-family:arial;padding:20px 10px;vertical-align:top; padding:2px 0;">
+              $<match>.+?</match>
+          </td>
+        </tr>
+      <tr>
+        <td style="font-size:12px;font-family:arial;padding:20px 10px;vertical-align:top; padding:2px 0;">Sales Tax</td>
+        <td style="font-size:12px;font-family:arial;padding:20px 10px;vertical-align:top; padding:2px 0;">
+            $<match>.+?</match>
+        </td>
+      </tr>
+<tr>
+  <td style="font-size:12px;font-family:arial;padding:20px 10px;vertical-align:top; padding:2px 0;"><b>Order Total:</b></td>
+  <td style="font-size:12px;font-family:arial;padding:20px 10px;vertical-align:top; padding:2px 0;"><b>$<match>.+?</match></b></td>
+</tr>
+    </tbody>
+  </table>
+    <br />
+  </td>
+</tr>
+<tr>
+  <td>&nbsp;</td>
+</tr>
+<tr>
+  <td>
+    <font face="Arial, sans-serif" size="2" style="color:silver; font-size: 10pt;font-weight:bold;">PAYMENT METHOD</font>
+  </td>
+</tr>
+<tr>
+  <td>
+      <font face="Arial, sans-serif" size="2"  style="color:black;font-size:10pt;">Credit Card</font>
+    </td>
+  <!-- END: payment-amount -->
+</tr>
+<tr>
+  <td>&nbsp;</td>
+</tr>
+</table></td>
+</tr>
+<!-- BOTTOM -->
+<tr>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+</tr>
+<!-- Footer -->
+<tr>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><font face="Arial, sans-serif" size="2" style="color:black;font-size:11pt;"><p><b>The Lacoste customer service team.</b></p></font></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><font face="Arial, sans-serif" size="2" style="color: black; font-size: 10pt;">Our customer service team is here to assist you Monday – Friday from 9 a.m. to midnight EST and Saturday – Sunday from 12 p.m. to 9 p.m. EST</font></td>
+</tr>
+<tr>
+<td><font face="Arial, sans-serif" size="2" style="color: black; font-size: 10pt;">By phone : 800-4LACOSTE (800-452-2678)</font></td>
+</tr>
+<tr>
+<td><font face="Arial, sans-serif" size="2" style="color: black; font-size: 10pt;">By e-mail : CustomerService-US@lacoste.com</font></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+</tr>
+</table>
+</td>
+<td width="50" style="width: 50px;">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="3">
+<img src="http://demandware.edgesuite.net/aaup_prd/on/demandware.static/Sites-FlagShip-Site/-/default/dw79e6c3d5/img/logo-lacoste-footer.png" />
+</td>
+</tr>
+<tr>
+<td width="50" style="width: 50px;">&nbsp;</td>
+<td>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td align="center" style="padding-right:10px; border-right:1px solid silver" ><a href="http://www.lacoste.com/us/homepage" style="color:silver;font-size:7.5pt;text-decoration:none;font-family:arial; display:inline-block;" >Lacoste</a></td>
+<td align="center" style="padding-right:10px;padding-left:10px; border-right:1px solid silver" ><a href="http://www.lacoste.com/on/demandware.store/Sites-FlagShip-Site/en_US/Page-Show?cid=LacostePrivacyPolicy" style="color:silver;font-size:7.5pt;text-decoration:none;font-family:arial;display:inline-block;" >Privacy</a></td>
+<td align="center" style="padding-right:10px;padding-left:10px;" ><a href="#" style="color:silver;font-size:7.5pt;text-decoration:none;font-family:arial;display:inline-block;" >©<match>\d{4}</match> Lacoste</a></td>
+</tr>
+<tr>
+<td colspan="3">
+<font face="Arial, sans-serif" size="2" style="color:silver;font-size:7.5pt;">This is an automated e-mail, please do not reply to it.</font>
+</td>
+</tr>
+</table>
+</td>
+<td width="50" style="width: 50px;">&nbsp;</td>
+</tr>
+</table>
+<!--Content 1-->
+<!--end Content 1-->
+</td>
+</tr>
+</table>
+</body>
+</html>

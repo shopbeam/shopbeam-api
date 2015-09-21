@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+  skip_before_action :verify_authenticity_token
   skip_before_action :verify_request, only: :mail
 
   def fill
@@ -9,9 +10,8 @@ class OrdersController < ApplicationController
   def mail
     return head :not_acceptable unless verify_mailgun_request
 
-    Checkout::MailDispatchers
-      .lookup(params[:sender]).new(params)
-      .call
+    dispatcher = Checkout::MailDispatchers.lookup(params[:from])
+    dispatcher.new(params).call if dispatcher
 
     head :ok
   end
@@ -19,7 +19,7 @@ class OrdersController < ApplicationController
   private
 
   def verify_mailgun_request
-    RequestVerifier.verify(
+    SignatureVerifier.verify(
       key: Rails.application.secrets.mailgun_api_key,
       timestamp: params[:timestamp],
       token: params[:token],

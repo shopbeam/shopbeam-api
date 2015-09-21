@@ -1,5 +1,7 @@
 <html>
   <body>
-    <%= yield %>
+    <%= content_for?(:content) ? yield(:content) : yield %>
+    <hr>
+    <p><i><%= Time.now.strftime('Sent: %a, %d %b %Y %T %z') %></i>
   </body>
 </html>

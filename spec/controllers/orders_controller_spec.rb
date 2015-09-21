@@ -23,14 +23,27 @@ describe OrdersController do
 
   describe 'POST mail' do
     context 'with valid signature' do
-      it 'responds with ok status code' do
-        dispatcher = double
-
+      before do
         expect(controller).to receive(:valid_signature?).and_return(true)
-        expect(Checkout::MailDispatchers).to receive(:lookup).with('sender@orders.shopbeam.com').and_return(dispatcher)
-        expect(dispatcher).to receive(:new).with(hash_including(foo: 'bar')).and_return(double(call: true))
-        post :mail, sender: 'sender@orders.shopbeam.com', foo: 'bar'
-        expect(response).to have_http_status(200)
+      end
+
+      context 'from known sender' do
+        it 'responds with ok status code' do
+          dispatcher = double
+
+          expect(Checkout::MailDispatchers).to receive(:lookup).with('info@well.ca').and_return(dispatcher)
+          expect(dispatcher).to receive(:new).with(hash_including(foo: 'bar')).and_return(double(call: true))
+          post :mail, from: 'info@well.ca', foo: 'bar'
+          expect(response).to have_http_status(200)
+        end
+      end
+
+      context 'from unknown sender' do
+        it 'responds with ok status code' do
+          expect(Checkout::MailDispatchers).to receive(:lookup).with('foo@bar.com')
+          post :mail, from: 'foo@bar.com'
+          expect(response).to have_http_status(200)
+        end
       end
     end
 

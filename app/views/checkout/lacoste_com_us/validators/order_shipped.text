@@ -1,0 +1,57 @@
+Shipment confirmation of your Lacoste order nº<match>\d+</match>
+
+
+
+
+
+
+ Hi <match>.+?</match>,
+
+Your order has shipped and your Lacoste merchandise is on its way! Please note that after the order ships, it cannot be changed.
+
+You can track the status of your order here: <match>.+?</match> (<match>.+?</match>)
+
+
+ THE FOLLOWING ITEMS HAVE BEEN SHIPPED
+
+
+  Product  Ordered quantity  Total TAX
+
+<match>.+?</match>  <match>\d+</match>  $<match>.+?</match>
+
+ THE SHIPMENT WAS SENT TO
+
+
+ <match>.+?</match>
+
+ ORDER SUMMARY
+
+
+ Order Placed:
+ Order #:  <match>\d+</match>
+ Shipping and Handling:  $<match>.+?</match>
+ Promotion Discount:  $<match>.+?</match>
+ Before Tax Total:  $<match>.+?</match> -                  -                 -
+ Estimated Tax:  $<match>.+?</match> -                  -                 -
+Appeasement: - $<match>.+?</match>
+Order Total:  $<match>.+?</match>
+
+ PAYMENT INFORMATION
+
+
+Payment Method:                                         CREDIT_CARD                     <match>.+?</match>
+
+Last Digits:                                          <match>\*+\d+</match>
+
+
+
+Thank you for shopping at Lacoste.
+
+
+
+If you have any questions or need assistance, please contact Customer Service at 1-800-4LACOSTE.
+
+
+
+ Lacoste (http://www.lacoste.com/us/homepage)  Privacy (/on/demandware.store/Sites-FlagShip-Site/en_US/Page-Show?cid=LacostePrivacyPolicy)  ©<match>\d{4}</match> Lacoste (#)
+ This is an automated e-mail, please do not reply to it.
