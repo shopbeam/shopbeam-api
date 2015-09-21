@@ -1,9 +1,17 @@
 class CucumberMailer < ApplicationMailer
   default to: 'tech@shopbeam.com'
 
-  def completed(text, success)
+  def partners_completed(text, success)
     @text = text
+    mail subject: "[order-manager:partners] #{status(success)}"
+  end
 
-    mail subject: "[order-manager:tests] #{success ? 'OK' : 'ACTION REQUIRED: FAILED'}"
+  def widgets_completed(text, success)
+    @text = text
+    mail subject: "[order-manager:widgets] #{status(success)}"
+  end
+
+  def status(success)
+    success ? 'OK' : 'ACTION REQUIRED: FAILED'
   end
 end

@@ -7,7 +7,7 @@ namespace :cucumber do
     end
     result = results.join("\n")
     success = !result.match(/Failing Scenarios:/)
-    CucumberMailer.completed(result, success).deliver_now
+    CucumberMailer.partners_completed(result, success).deliver_now
   end
 
   namespace :partners do
