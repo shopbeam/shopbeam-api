@@ -1,5 +1,5 @@
-module RequestVerifier
-  def self.verify(key: Rails.application.secrets.cipher_key, timestamp:, token:, signature:)
+module SignatureVerifier
+  def self.verify(key:, timestamp:, token:, signature:)
     digest = OpenSSL::Digest::SHA256.new
     data = [timestamp, token].join
 

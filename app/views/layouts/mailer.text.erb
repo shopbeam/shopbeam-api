@@ -1,1 +1,4 @@
-<%= yield %>
+<%= content_for?(:content) ? yield(:content) : yield %>
+-------------------------------------------------------------------------------
+
+<%= Time.now.strftime('Sent: %a, %d %b %Y %T %z') %>

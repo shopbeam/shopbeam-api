@@ -17,13 +17,13 @@ class OrderMailer < ApplicationMailer
     @order = order
     @exception = exception
 
-    mail subject: "[order-manager] Shopbeam order ##{@order.id} has been terminated"
+    mail subject: "[order-manager] ACTION REQUIRED: Shopbeam order ##{@order.id} has been terminated"
   end
 
   def aborted(order, exception)
     @order = order
     @exception = exception
 
-    mail subject: "[order-manager] Shopbeam order ##{@order.id} has been aborted"
+    mail subject: "[order-manager] ACTION REQUIRED: Shopbeam order ##{@order.id} has been aborted"
   end
 end

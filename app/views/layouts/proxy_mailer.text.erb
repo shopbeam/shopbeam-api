@@ -1,0 +1,18 @@
+<% content_for :content do %>
+<%= yield %>
+-------------------------------------------------------------------------------
+
+From: <%= @mail.from %>
+To: <%= @mail.recipient %>
+Subject: <%= @mail.subject %>
+
+HTML Body:
+
+<%= JSON.dump(@mail.body_html) %>
+
+Plain Body:
+
+<%= JSON.dump(@mail.body_plain) %>
+<% end %>
+
+<%= render template: 'layouts/mailer' %>

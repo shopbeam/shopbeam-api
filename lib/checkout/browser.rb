@@ -22,7 +22,7 @@ module Checkout
     end
 
     def on_page?(page_url)
-      Regexp.new(Regexp.quote(page_url)) =~ url
+      Regexp.new(Regexp.escape(page_url)) =~ url
     end
 
     def wait_for_ajax
