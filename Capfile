@@ -11,7 +11,6 @@ require 'capistrano/puma'
 require 'capistrano/puma/nginx'
 require 'capistrano/puma/monit'
 require 'capistrano/sidekiq'
-require 'capistrano/sidekiq/monit'
 require 'capistrano/rails/migrations'
 require 'whenever/capistrano'
 
