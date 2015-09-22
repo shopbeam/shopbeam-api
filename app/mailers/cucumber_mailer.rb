@@ -3,13 +3,21 @@ class CucumberMailer < ApplicationMailer
 
   def partners_completed(text, success)
     @text = text
-    mail subject: "[order-manager:partners] #{status(success)}"
+
+    mail subject: "[order-manager:partners] #{status(success)}" do |format|
+      format.text { render 'completed' }
+    end
   end
 
   def widgets_completed(text, success)
     @text = text
-    mail subject: "[order-manager:widgets] #{status(success)}"
+
+    mail subject: "[order-manager:widgets] #{status(success)}" do |format|
+      format.text { render 'completed' }
+    end
   end
+
+  private
 
   def status(success)
     success ? 'OK' : 'ACTION REQUIRED: FAILED'
