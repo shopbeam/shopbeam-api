@@ -14,12 +14,19 @@ module Checkout
         return ProxyMailer.unknown_mail(mail, self.class).deliver_now
       end
 
-      unless validator.validate_and_sanitize!(mail.body_html, :html) &&
-             validator.validate_and_sanitize!(mail.body_plain, :text)
+      html_options = validator.parse(mail.body_html, :html)
+      text_options = validator.parse(mail.body_plain, :text)
+
+      unless html_options && text_options
         return ProxyMailer.invalid_mail(mail, self.class, validator).deliver_now
       end
 
-      ProxyMailer.forward(proxy_user.user_email, mail).deliver_now
+      ProxyMailer.forward(
+        to: proxy_user.user_email,
+        proxy_mail: mail,
+        html: Checkout::ProxyMailTemplate.new(proxy_user, validator, html_options).html,
+        text: Checkout::ProxyMailTemplate.new(proxy_user, validator, text_options).text
+      ).deliver_now
     end
 
     protected

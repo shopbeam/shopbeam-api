@@ -1,6 +1,6 @@
-Order Number: <match>(?<order_id>\w+)</match>
+Order Number: <%= order_id %>
 
-Hi <match>(?<user_name>.+?)</match>,
+Hi <%= user_name %>,
 
 Your order has been picked, packed and shipped for delivery! It should arrive at your
 door shortly. Thank you again for ordering from us, it means the world to us. :)
@@ -17,7 +17,7 @@ your family and friends if you enjoyed your experience with Well.ca!
 <strong>Track your package </strong>
               using the
               following link:<br /><br />
-              <match>(?<tracking_link>.+?)</match>.<br /> <br />
+              <%= tracking_link %>.<br /> <br />
               Please note that postal tracking information may not be immediately available. Typically
               tracking information is updated and available after 7:30 p.m. EST on the ship date.
 
@@ -25,4 +25,4 @@ Thank you,
 Well.ca Customer Service
 http://Well.ca
 
-<match>(?<scrub>.+)</match>
+Unsubscribe (<%= unsubscribe_url(proxy_user.signature) %>)

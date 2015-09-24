@@ -1,15 +1,15 @@
-Shipment confirmation of your Lacoste order nº<match>\d+</match>
+Shipment confirmation of your Lacoste order nº<match>(?<order_id>\d+)</match>
 
 
 
 
 
 
- Hi <match>.+?</match>,
+ Hi <match>(?<user_name>.+?)</match>,
 
 Your order has shipped and your Lacoste merchandise is on its way! Please note that after the order ships, it cannot be changed.
 
-You can track the status of your order here: <match>.+?</match> (<match>.+?</match>)
+You can track the status of your order here: <match>(?<tracking_link>.+?)</match>
 
 
  THE FOLLOWING ITEMS HAVE BEEN SHIPPED
@@ -17,31 +17,31 @@ You can track the status of your order here: <match>.+?</match> (<match>.+?</mat
 
   Product  Ordered quantity  Total TAX
 
-<match>.+?</match>  <match>\d+</match>  $<match>.+?</match>
+<match>(?<product_name>.+?)</match> <match>(?<product_qty>\d+)</match>  $<match>(?<product_price>.+?)</match>
 
  THE SHIPMENT WAS SENT TO
 
 
- <match>.+?</match>
+ <match>(?<shipping_address>.+?)</match>
 
  ORDER SUMMARY
 
 
  Order Placed:
- Order #:  <match>\d+</match>
- Shipping and Handling:  $<match>.+?</match>
- Promotion Discount:  $<match>.+?</match>
- Before Tax Total:  $<match>.+?</match> -                  -                 -
- Estimated Tax:  $<match>.+?</match> -                  -                 -
-Appeasement: - $<match>.+?</match>
-Order Total:  $<match>.+?</match>
+ Order #:  <match>\k<order_id></match>
+ Shipping and Handling:  $<match>(?<shipping_cost>.+?)</match>
+ Promotion Discount:  $<match>(?<discount>.+?)</match>
+ Before Tax Total:  $<match>(?<subtotal>.+?)</match> -                  -                 -
+ Estimated Tax:  $<match>(?<tax>.+?)</match> -                  -                 -
+Appeasement: - $<match>(?<appeasement>.+?)</match>
+Order Total:  $<match>(?<total>.+?)</match>
 
  PAYMENT INFORMATION
 
 
-Payment Method:                                         CREDIT_CARD                     <match>.+?</match>
+Payment Method:                                         CREDIT_CARD                     <match>(?<cc_brand>.+?)</match>
 
-Last Digits:                                          <match>\*+\d+</match>
+Last Digits:                                          <match>(?<cc_digits>\*+\d+)</match>
 
 
 
@@ -53,5 +53,5 @@ If you have any questions or need assistance, please contact Customer Service at
 
 
 
- Lacoste (http://www.lacoste.com/us/homepage)  Privacy (/on/demandware.store/Sites-FlagShip-Site/en_US/Page-Show?cid=LacostePrivacyPolicy)  ©<match>\d{4}</match> Lacoste (#)
+ Lacoste (http://www.lacoste.com/us/homepage)  Privacy (/on/demandware.store/Sites-FlagShip-Site/en_US/Page-Show?cid=LacostePrivacyPolicy)  ©<match>(?<year>\d{4})</match> Lacoste (#)
  This is an automated e-mail, please do not reply to it.
