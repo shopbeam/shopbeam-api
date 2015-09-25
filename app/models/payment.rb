@@ -20,6 +20,17 @@ class Payment < ActiveRecord::Base
     end
   end
 
+  def flush!
+    update_columns(
+      number: '',
+      expirationMonth: 0,
+      expirationYear: 0,
+      name: '',
+      cvv: '',
+      numberSalt: ''
+    )
+  end
+
   private
 
   attr_writer :number

@@ -40,7 +40,10 @@ class Order < ActiveRecord::Base
     event :complete do
       transitions from: :pending,
                   to: :completed,
-                  after: -> { transit_order_items(:complete) }
+                  after: -> {
+                    transit_order_items(:complete)
+                    payment.flush!
+                  }
     end
 
     event :terminate do
