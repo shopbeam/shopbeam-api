@@ -12,13 +12,29 @@ class ProxyUser < ActiveRecord::Base
 
   after_initialize :set_defaults, if: :new_record?
 
+  def self.find_by_signature(signature)
+    find(verifier.verify(signature))
+  end
+
   def password
     Encryptor.decrypt(read_attribute(:password), read_attribute(:password_salt))
+  end
+
+  def signature
+    self.class.signature(self)
   end
 
   private
 
   attr_writer :email, :password
+
+  def self.signature(user)
+    verifier.generate(user.id)
+  end
+
+  def self.verifier
+    @verifier ||= ActiveSupport::MessageVerifier.new(Rails.application.secrets.secret_key_base)
+  end
 
   def set_defaults
     encrypted_password = Encryptor.encrypt(SecureRandom.hex(6))

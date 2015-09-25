@@ -43,7 +43,7 @@ style="max-width: 640px;" bgcolor="white">
 <td>
 <p>
 <font face="Arial, sans-serif" size="2" style="color:black;font-size:10pt;">
-Hello <match>(?<user_name>.+?)</match>,
+Hello <%= user_name %>,
 </font>
 </p>
 </td>
@@ -61,7 +61,7 @@ Thank you for your purchase!
 <td>
 <font face="Arial, sans-serif" size="2" style="color: black; font-size: 10pt; font-weight: bold;">
 <p>
-Order Number : #<match>(?<order_id>\d+)</match>
+Order Number : #<%= order_id %>
 </p>
 </font>
 </td>
@@ -71,7 +71,6 @@ Order Number : #<match>(?<order_id>\d+)</match>
 style="color: black; font-size: 10pt;">
 <p>As soon as your order ships, you will receive a shipment confirmation email summarizing the tracking details.</p></font></td>
 </tr>
-<match>(?<scrub>.+)</match>
 </table>
 </td>
 </tr>
@@ -97,15 +96,14 @@ style="color: silver; font-size: 10pt;font-weight:bold;">YOUR ORDER SUMMARY
 <td colspan="0"><font face="Arial, sans-serif" size="2"
 style="color: black; font-size: 10pt;">Your order number :</font></td>
 <td><font face="Arial, sans-serif" size="2"
-style="color: black; font-size: 10pt;"><match>\k<order_id></match></font></td>
+style="color: black; font-size: 10pt;"><%= order_id %></font></td>
 </tr>
 <tr>
 <td colspan="0"><font face="Arial, sans-serif" size="2"
 style="color: black; font-size: 10pt;">Date :</font></td>
 <td><font face="Arial, sans-serif" size="2"
-style="color: black; font-size: 10pt;"><match>(?<order_date>.+?)</match></font></td>
+style="color: black; font-size: 10pt;"><%= order_date %></font></td>
 </tr>
-<match>(?<scrub>.+)</match>
 <tr>
 <td colspan="0"><font face="Arial, sans-serif" size="2"
 style="color: black; font-size: 10pt;">Delivery type :</font></td>
@@ -141,23 +139,23 @@ Ground
            <!-- Product -->
           <tr>
             <td align="center" style="border-top: solid 1px #5C564E;">
-              <img src="<match>(?<product_image_url>.+?)</match>" width="100%" height="auto" alt="" />
+              <img src="<%= product_image_url %>" width="100%" height="auto" alt="" />
             </td>
             <td
               style="border-right: 1px solid #5C564E; padding-right: 10px; border-top: 1px solid #5C564E;"><font
-              face="Arial, sans-serif" size="2" style="color: black;font-size: 10pt;"><p style="text-align: center;"><match>(?<product_name>.+?)</match></p>
+              face="Arial, sans-serif" size="2" style="color: black;font-size: 10pt;"><p style="text-align: center;"><%= product_name %></p>
               <p style="text-align: left;">
-                  <match>(?<product_variant>.+?)</match>
+                  <%= product_variant %>
               </p>
             </font></td>
             <td align="center" height="0"
               style="border-right: 1px solid #5C564E;  border-top: 1px solid #5C564E; padding-right: 10px;"><font
               face="Arial, sans-serif" size="2" style="color: black; font-size: 10pt;">
-                  <match>(?<product_qty>\d+)</match>
+                  <%= product_qty %>
             </font></td>
             <td align="center" style="border-right: 1px solid #5C564E; padding-right: 10px;  border-top: 1px solid #5C564E;"><font
               face="Arial, sans-serif" size="2" style="color: black; font-size: 10pt;">
-                  $<match>(?<product_price>.+?)</match>
+                  $<%= product_price %>
             </font></td>
           </tr>
         </table>
@@ -170,7 +168,7 @@ Ground
     <tbody>
       <tr>
         <td style="font-size:12px;font-family:arial;padding:20px 10px;vertical-align:top; padding:2px 0;">Subtotal</td>
-        <td style="font-size:12px;font-family:arial;padding:20px 10px;vertical-align:top; padding:2px 0;">$<match>(?<subtotal>.+?)</match></td>
+        <td style="font-size:12px;font-family:arial;padding:20px 10px;vertical-align:top; padding:2px 0;">$<%= subtotal %></td>
       </tr>
         <tr>
           <td style="font-size:12px;font-family:arial;padding:20px 10px;vertical-align:top; padding:2px 0;">
@@ -179,18 +177,18 @@ Ground
               Ground
           </td>
           <td style="font-size:12px;font-family:arial;padding:20px 10px;vertical-align:top; padding:2px 0;">
-              $<match>(?<shipping_cost>.+?)</match>
+              $<%= shipping_cost %>
           </td>
         </tr>
       <tr>
         <td style="font-size:12px;font-family:arial;padding:20px 10px;vertical-align:top; padding:2px 0;">Sales Tax</td>
         <td style="font-size:12px;font-family:arial;padding:20px 10px;vertical-align:top; padding:2px 0;">
-            $<match>(?<tax>.+?)</match>
+            $<%= tax %>
         </td>
       </tr>
 <tr>
   <td style="font-size:12px;font-family:arial;padding:20px 10px;vertical-align:top; padding:2px 0;"><b>Order Total:</b></td>
-  <td style="font-size:12px;font-family:arial;padding:20px 10px;vertical-align:top; padding:2px 0;"><b>$<match>(?<total>.+?)</match></b></td>
+  <td style="font-size:12px;font-family:arial;padding:20px 10px;vertical-align:top; padding:2px 0;"><b>$<%= total %></b></td>
 </tr>
     </tbody>
   </table>
@@ -267,11 +265,14 @@ Ground
 <tr>
 <td align="center" style="padding-right:10px; border-right:1px solid silver" ><a href="http://www.lacoste.com/us/homepage" style="color:silver;font-size:7.5pt;text-decoration:none;font-family:arial; display:inline-block;" >Lacoste</a></td>
 <td align="center" style="padding-right:10px;padding-left:10px; border-right:1px solid silver" ><a href="http://www.lacoste.com/on/demandware.store/Sites-FlagShip-Site/en_US/Page-Show?cid=LacostePrivacyPolicy" style="color:silver;font-size:7.5pt;text-decoration:none;font-family:arial;display:inline-block;" >Privacy</a></td>
-<td align="center" style="padding-right:10px;padding-left:10px;" ><a href="#" style="color:silver;font-size:7.5pt;text-decoration:none;font-family:arial;display:inline-block;" >©<match>(?<year>\d{4})</match> Lacoste</a></td>
+<td align="center" style="padding-right:10px;padding-left:10px;" ><a href="#" style="color:silver;font-size:7.5pt;text-decoration:none;font-family:arial;display:inline-block;" >©<%= year %> Lacoste</a></td>
 </tr>
 <tr>
 <td colspan="3">
-<font face="Arial, sans-serif" size="2" style="color:silver;font-size:7.5pt;">This is an automated e-mail, please do not reply to it.</font>
+<font face="Arial, sans-serif" size="2" style="color:silver;font-size:7.5pt;">
+  This is an automated e-mail, please do not reply to it.
+  <%= link_to 'Unsubscribe', unsubscribe_url(proxy_user.signature), target: '_blank' %>
+</font>
 </td>
 </tr>
 </table>

@@ -65,6 +65,9 @@ Rails.application.configure do
     api_key: Rails.application.secrets.mailgun_api_key,
     domain: 'orders.shopbeam.com'
   }
+  config.action_mailer.default_url_options = {
+    host: 'https://orders.shopbeam.com'
+  }
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.

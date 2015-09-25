@@ -12,4 +12,6 @@ Rails.application.routes.draw do
 
   # Mailgun route to handle incoming emails
   post '/orders/mail', to: 'orders#mail'
+
+  get '/unsubscribe/:signature', to: 'proxy_users#unsubscribe', as: 'unsubscribe'
 end

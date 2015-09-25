@@ -2,12 +2,12 @@ class ProxyMailer < ApplicationMailer
   # only/except options do not work in ActionMailer properly, use method instead
   layout :proxy_mailer_layout
 
-  def forward(user_email, proxy_mail)
-    mail to: user_email,
+  def forward(to:, proxy_mail:, **body)
+    mail to: to,
          bcc: 'support@shopbeam.com',
          subject: proxy_mail.subject do |format|
-      format.html { render html: proxy_mail.body_html.html_safe }
-      format.text { render plain: proxy_mail.body_plain }
+      format.html { render html: body[:html].html_safe }
+      format.text { render plain: body[:text] }
     end
   end
 
