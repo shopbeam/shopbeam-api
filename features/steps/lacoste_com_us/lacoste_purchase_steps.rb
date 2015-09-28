@@ -1,12 +1,12 @@
 Before('@lacoste', '@purchase') do
   address = {
-    state: 'CA',
     first_name: 'John',
     last_name: 'Smith',
     address1: '1 Infinite Loop',
     address2: 'Cupertino, CA 95014',
-    zip: 95014,
-    city: 'Cupertino'
+    city: 'Cupertino',
+    state: 'CA',
+    zip: 95014
   }
   @bot = Checkout::LacosteComUs::Bot.new(
     double(
@@ -35,12 +35,6 @@ Given(/^the following products$/) do |table|
       color: hash[:color],
       size: hash[:size]
     )
-  end
-end
-
-When(/^I add products to cart$/) do
-  @products.each do |product|
-    @bot.send(:add_to_cart, product)
   end
 end
 
