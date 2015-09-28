@@ -1,5 +1,5 @@
 module Checkout
-  class ProxyMailTemplate < OpenStruct
+  class MailTemplate < OpenStruct
     include ActionView::Helpers
     include Rails.application.routes.url_helpers
 

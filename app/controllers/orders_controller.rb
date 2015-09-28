@@ -3,16 +3,14 @@ class OrdersController < ApplicationController
   skip_before_action :verify_request, only: :mail
 
   def fill
-    CheckoutJob.perform_later(params[:id])
+    CheckoutJob.perform_async(params[:id])
     head :accepted
   end
 
   def mail
     return head :not_acceptable unless verify_mailgun_request
 
-    dispatcher = Checkout::MailDispatchers.lookup(params[:from])
-    dispatcher.new(params).call if dispatcher
-
+    MailDispatcherJob.perform_async(params)
     head :ok
   end
 

@@ -36,4 +36,36 @@ module Checkout
   class InvalidShippingInfoError < OrderError; end
   class InvalidBillingInfoError < OrderError; end
   class ConfirmationError < OrderError; end
+
+  class UnknownMailError < StandardError; end
+
+  class InvalidMailError < StandardError
+    MATCHED_LINES = Regexp.new <<-MATCHED.squish!
+      <li class="del"><del>.*?match.*?match.*?</del></li>\\s*
+      (<li class="del"><del>.*?</del></li>\\s*)*
+      (<li class="ins"><ins>.*?</ins></li>\\s*)*
+      (<li class="unchanged">.*?</li>\\s*)*
+    MATCHED
+
+    UNCHANGED_LINES = Regexp.new <<-UNCHANGED.squish!
+      <li class="diff-block-info">.*?</li>\\s*
+      (<li class="unchanged">.*?</li>\\s*)*
+      (?=(<li class="diff-block-info">|</ul>))
+    UNCHANGED
+
+    attr_reader :diff
+
+    def initialize(template, content)
+      @diff = Diffy::Diff.new(template, content, context: 1, include_diff_info: true, ).to_s(:html)
+      strip_diff!
+    end
+
+    private
+
+    def strip_diff!
+      stripped_diff = diff.gsub(MATCHED_LINES, '').gsub(UNCHANGED_LINES, '')
+
+      diff.replace(stripped_diff) if stripped_diff =~ /<li class="diff-block-info">/
+    end
+  end
 end

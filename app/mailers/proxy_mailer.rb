@@ -1,4 +1,6 @@
 class ProxyMailer < ApplicationMailer
+  include Roadie::Rails::Mailer
+
   # only/except options do not work in ActionMailer properly, use method instead
   layout :proxy_mailer_layout
 
@@ -19,7 +21,7 @@ class ProxyMailer < ApplicationMailer
          subject: "[order-manager:proxy-mailer] Recipient not found"
   end
 
-  def unknown_mail(proxy_mail, dispatcher)
+  def unknown_mail(proxy_mail:, dispatcher:)
     @mail, @dispatcher = proxy_mail, dispatcher
 
     mail to: 'tech@shopbeam.com',
@@ -27,12 +29,12 @@ class ProxyMailer < ApplicationMailer
          subject: "[order-manager:proxy-mailer] ACTION REQUIRED: Unknown mail"
   end
 
-  def invalid_mail(proxy_mail, dispatcher, validator)
-    @mail, @dispatcher, @validator = proxy_mail, dispatcher, validator.to_s.demodulize.titleize
+  def invalid_mail(proxy_mail:, dispatcher:, validator:, diff:)
+    @mail, @dispatcher, @validator, @diff = proxy_mail, dispatcher, validator, diff
 
-    mail to: 'tech@shopbeam.com',
-         cc: 'support@shopbeam.com',
-         subject: "[order-manager:proxy-mailer] ACTION REQUIRED: Invalid mail"
+    roadie_mail to: 'tech@shopbeam.com',
+                cc: 'support@shopbeam.com',
+                subject: "Re: #{proxy_mail.subject}"
   end
 
   private

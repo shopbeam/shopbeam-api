@@ -1,6 +1,6 @@
 module Checkout
   module Bots
-    def self.lookup(url)
+    def self.lookup!(url)
       case url
       when %r(https?://well.ca)
         WellCa::Bot

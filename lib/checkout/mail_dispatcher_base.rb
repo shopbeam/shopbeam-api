@@ -6,27 +6,33 @@ module Checkout
     end
 
     def call
-      unless proxy_user
-        return ProxyMailer.recipient_not_found(mail.recipient).deliver_now
-      end
-
-      unless validator
-        return ProxyMailer.unknown_mail(mail, self.class).deliver_now
-      end
-
-      html_options = validator.parse(mail.body_html, :html)
-      text_options = validator.parse(mail.body_plain, :text)
-
-      unless html_options && text_options
-        return ProxyMailer.invalid_mail(mail, self.class, validator).deliver_now
-      end
+      proxy_user = ProxyUser.find_by!(email: mail.recipient)
+      html_options = validator.parse!(mail.body_html, :html)
+      text_options = validator.parse!(mail.body_plain, :text)
 
       ProxyMailer.forward(
         to: proxy_user.user_email,
         proxy_mail: mail,
-        html: Checkout::ProxyMailTemplate.new(proxy_user, validator, html_options).html,
-        text: Checkout::ProxyMailTemplate.new(proxy_user, validator, text_options).text
+        html: Checkout::MailTemplate.new(proxy_user, validator, html_options).html,
+        text: Checkout::MailTemplate.new(proxy_user, validator, text_options).text
       ).deliver_now
+    rescue ActiveRecord::RecordNotFound
+      ProxyMailer.recipient_not_found(mail.recipient).deliver_now
+      raise
+    rescue UnknownMailError
+      ProxyMailer.unknown_mail(
+        proxy_mail: mail,
+        dispatcher: self.class
+      ).deliver_now
+      raise
+    rescue InvalidMailError => exception
+      ProxyMailer.invalid_mail(
+        proxy_mail: mail,
+        dispatcher: self.class,
+        validator: validator.to_s.demodulize.titleize,
+        diff: exception.diff
+      ).deliver_now
+      raise
     end
 
     protected
@@ -43,12 +49,8 @@ module Checkout
       }
     end
 
-    def proxy_user
-      @proxy_user ||= ProxyUser.find_by_email(mail.recipient)
-    end
-
     def validator
-      raise NotImplementedError, 'Subclasses must implement a validator method.'
+      @validator ||= yield || (raise UnknownMailError)
     end
   end
 end

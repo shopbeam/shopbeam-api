@@ -2,7 +2,7 @@ module Checkout
   module WellCa
     module Validators
       module OrderReceived
-        extend ProxyMailValidator
+        extend MailValidator
 
         def self.===(mail)
           mail.from =~ %r(info@well.ca) &&

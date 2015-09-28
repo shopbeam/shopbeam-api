@@ -10,7 +10,7 @@ module Checkout
       order.process!
 
       order.order_items.group_by(&:bot).each do |bot, items|
-        bot.new(session).purchase(items)
+        bot.new(session).purchase!(items)
       end
     rescue ActiveRecord::RecordNotFound
       broadcast :order_not_found, order_id
