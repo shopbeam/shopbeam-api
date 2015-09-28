@@ -6,8 +6,9 @@ namespace :cucumber do
       `RAILS_ENV=test bundle exec rake cucumber:widgets:#{widget}`
     end
     result = results.join("\n")
-    success = !result.match(/Failing Scenarios:/)
-    CucumberMailer.widgets_completed(result, success).deliver_now
+    status_type = result.match(/failing scenarios/i) ? :failed : :ok
+
+    CucumberMailer.widgets_completed(result, status_type).deliver_now
   end
 
   namespace :widgets do

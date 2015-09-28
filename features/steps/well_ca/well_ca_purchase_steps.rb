@@ -1,7 +1,12 @@
 Before('@well_ca', '@purchase') do
   address = {
-    state: 'AB',
-    gender: 'm'
+    gender: 'm',
+    first_name: 'John',
+    last_name: 'Smith',
+    address1: '123 test st.',
+    city: 'Toronto',
+    state: 'ON',
+    zip: 'A1A 1A1'
   }
   @bot = Checkout::WellCa::Bot.new(
     double(
@@ -25,7 +30,8 @@ Given(/^the following products$/) do |table|
     double(
       source_url: hash[:source_url],
       quantity: hash[:quantity].to_i,
-      sale_price_cents: hash[:sale_price_cents].to_i
+      sale_price_cents: hash[:sale_price_cents].to_i,
+      mark_as_out_of_stock!: true
     )
   end
 end
@@ -55,12 +61,6 @@ When(/^I remove alternate addresses$/) do
   @bot.send(:delete_alternate_addresses)
 end
 
-When(/^I add products to cart$/) do
-  @products.each do |product|
-    @bot.send(:add_to_cart, product)
-  end
-end
-
 When(/^I remove samples$/) do
   @bot.send(:remove_samples, @products)
 
@@ -72,7 +72,7 @@ When(/^I go to checkout page$/) do
   @browser.goto Checkout::WellCa::Bot::CHECKOUT_URL
 end
 
-When(/^I skip recomendations$/) do
+When(/^I skip recommendations$/) do
   @bot.send(:skip_recommendations)
 end
 
