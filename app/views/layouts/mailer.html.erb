@@ -1,4 +1,7 @@
 <html>
+  <head>
+    <style><%= yield :stylesheets %></style>
+  </head>
   <body>
     <%= content_for?(:content) ? yield(:content) : yield %>
     <hr>

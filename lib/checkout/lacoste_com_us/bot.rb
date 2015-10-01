@@ -4,7 +4,7 @@ module Checkout
       BASE_URL     = 'https://www.lacoste.com/us/'.freeze
       CHECKOUT_URL = "#{BASE_URL}login-checkout".freeze
 
-      def purchase(items)
+      def purchase!(items)
         browser.open do
           items.each do |item|
             add_to_cart(item)

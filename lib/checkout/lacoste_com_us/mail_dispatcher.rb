@@ -4,7 +4,7 @@ module Checkout
       private
 
       def validator
-        @validator ||= begin
+        super do
           case mail
           when Validators::OrderConfirmed then Validators::OrderConfirmed
           when Validators::OrderShipped   then Validators::OrderShipped

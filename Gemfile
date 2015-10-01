@@ -11,7 +11,7 @@ gem 'puma'
 # Action Mailer adapter
 gem 'mailgun_rails'
 
-# Active Job adapter
+# Background processing
 gem 'sidekiq'
 
 # Sidekiq Web UI
@@ -32,11 +32,16 @@ gem 'headless'
 # Load environment variables
 gem 'dotenv-rails'
 
-#pretty cron tasks
+# Pretty cron tasks
 gem 'whenever'
 
-#NewRelic monitoring
+# NewRelic monitoring
 gem 'newrelic_rpm'
+
+gem 'diffy'
+
+# Inline CSS for HTML mails
+gem 'roadie-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

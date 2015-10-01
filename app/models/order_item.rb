@@ -44,6 +44,6 @@ class OrderItem < ActiveRecord::Base
   end
 
   def bot
-    Checkout::Bots.lookup(source_url)
+    Checkout::Bots.lookup!(source_url)
   end
 end

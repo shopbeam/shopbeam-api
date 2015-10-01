@@ -1,5 +1,6 @@
-class CheckoutJob < ActiveJob::Base
-  queue_as :default
+class CheckoutJob
+  include Sidekiq::Worker
+  sidekiq_options retry: 2, backtrace: 5
 
   def perform(order_id)
     Checkout::Shopper.new

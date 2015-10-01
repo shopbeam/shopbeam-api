@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 describe Checkout::Bots do
-  describe '.lookup' do
-    subject { described_class.lookup(url) }
+  describe '.lookup!' do
+    subject { described_class.lookup!(url) }
 
     context 'for well.ca' do
       let(:url) { 'https://well.ca/foo-bar.html' }

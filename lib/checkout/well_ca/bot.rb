@@ -19,7 +19,7 @@ module Checkout
       EDIT_SHIPPING_ADDRESS_URL         = "#{BASE_URL}checkout_shipping_address".freeze
       EDIT_BILLING_ADDRESS_URL          = "#{BASE_URL}checkout_payment_address".freeze
 
-      def purchase(items)
+      def purchase!(items)
         browser.open do
           browser.goto BASE_URL
           close_subscription_popup

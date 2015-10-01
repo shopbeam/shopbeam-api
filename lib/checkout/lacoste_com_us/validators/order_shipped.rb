@@ -2,7 +2,7 @@ module Checkout
   module LacosteComUs
     module Validators
       module OrderShipped
-        extend ProxyMailValidator
+        extend MailValidator
 
         def self.===(mail)
           mail.from =~ %r(no-reply@lacoste.us) &&

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe CheckoutJob do
-  subject(:job) { described_class.perform_later(1) }
+  subject(:job) { described_class.perform_async(1) }
 
   after do
     clear_enqueued_jobs
