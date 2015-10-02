@@ -2,54 +2,45 @@ require 'rails_helper'
 
 describe OrdersController do
   describe 'POST fill' do
-    let(:order) { build_stubbed(:order) }
+    it_behaves_like 'verifies authenticity signature for', :post, :fill, id: 1
 
-    before do
-      post :fill, id: order.id
-    end
+    context 'with valid signature' do
+      let(:order) { build_stubbed(:order) }
 
-    it 'enqueues checkout job' do
-      expect(enqueued_jobs).to include(
-        job: CheckoutJob,
-        args: ["#{order.id}"],
-        queue: 'default'
-      )
-    end
+      before do
+        verify_signature
+        post :fill, id: order.id
+      end
 
-    it 'responds with accepted status code' do
-      expect(response).to have_http_status(202)
+      it 'enqueues checkout job' do
+        expect(CheckoutJob).to have_enqueued_job("#{order.id}")
+      end
+
+      it 'responds with accepted status code' do
+        expect(response).to have_http_status(202)
+      end
     end
   end
 
   describe 'POST mail' do
     context 'with valid signature' do
       before do
-        expect(controller).to receive(:valid_signature?).and_return(true)
+        expect(controller).to receive(:verify_mailgun_signature).and_return(true)
+        post :mail, foo: 'bar'
       end
 
-      context 'from known sender' do
-        it 'responds with ok status code' do
-          dispatcher = double
-
-          expect(Checkout::MailDispatchers).to receive(:lookup).with('info@well.ca').and_return(dispatcher)
-          expect(dispatcher).to receive(:new).with(hash_including(foo: 'bar')).and_return(double(call: true))
-          post :mail, from: 'info@well.ca', foo: 'bar'
-          expect(response).to have_http_status(200)
-        end
+      it 'enqueues mail dispatcher job' do
+        expect(MailDispatcherJob).to have_enqueued_job(hash_including('foo' => 'bar'))
       end
 
-      context 'from unknown sender' do
-        it 'responds with ok status code' do
-          expect(Checkout::MailDispatchers).to receive(:lookup).with('foo@bar.com')
-          post :mail, from: 'foo@bar.com'
-          expect(response).to have_http_status(200)
-        end
+      it 'responds with ok status code' do
+        expect(response).to have_http_status(200)
       end
     end
 
     context 'with invalid signature' do
       it 'responds with not acceptable status code' do
-        expect(controller).to receive(:valid_signature?).and_return(false)
+        expect(controller).to receive(:verify_mailgun_signature).and_return(false)
         post :mail
         expect(response).to have_http_status(406)
       end

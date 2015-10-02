@@ -1,5 +1,6 @@
 FactoryGirl.define do
   factory :order do
+    payment
     shippingCents          100
     taxCents               100
     orderTotalCents        100

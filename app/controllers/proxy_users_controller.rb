@@ -1,5 +1,5 @@
 class ProxyUsersController < ApplicationController
-  skip_before_action :verify_request, only: :unsubscribe
+  skip_before_action :verify_authenticity_signature, only: :unsubscribe
 
   def unsubscribe
     proxy_user = ProxyUser.find_by_signature(params[:signature])

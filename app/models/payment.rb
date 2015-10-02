@@ -30,8 +30,4 @@ class Payment < ActiveRecord::Base
       numberSalt: ''
     )
   end
-
-  private
-
-  attr_writer :number
 end

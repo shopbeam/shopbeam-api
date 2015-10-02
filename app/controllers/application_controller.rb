@@ -1,11 +1,11 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  before_action :verify_request
+  before_action :verify_authenticity_signature
 
   protected
 
-  def verify_request
+  def verify_authenticity_signature
     head :unauthorized unless SignatureVerifier.verify(
       key: Rails.application.secrets.cipher_key,
       timestamp: request.headers['X-Timestamp'],
