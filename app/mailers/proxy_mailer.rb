@@ -26,7 +26,7 @@ class ProxyMailer < ApplicationMailer
 
     mail to: 'tech@shopbeam.com',
          cc: 'support@shopbeam.com',
-         subject: "[order-manager:proxy-mailer] ACTION REQUIRED: Unknown mail"
+         subject: "Re: #{proxy_mail.subject}"
   end
 
   def invalid_mail(proxy_mail:, dispatcher:, validator:, diff:)

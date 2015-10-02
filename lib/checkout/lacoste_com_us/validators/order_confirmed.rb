@@ -5,7 +5,7 @@ module Checkout
         extend MailValidator
 
         def self.===(mail)
-          mail.from =~ %r(noreply-staging@lacoste.com) &&
+          mail.from =~ %r(noreply(-staging)?@lacoste.com) &&
           mail.subject =~ /\AConfirmation of your Order \d+\z/
         end
       end

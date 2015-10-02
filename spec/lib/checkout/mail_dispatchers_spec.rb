@@ -2,24 +2,14 @@ require 'rails_helper'
 
 describe Checkout::MailDispatchers do
   describe '.lookup' do
-    subject { described_class.lookup(from) }
-
-    context 'for well.ca' do
-      let(:from) { 'info@well.ca' }
-
-      it { is_expected.to eq(Checkout::WellCa::MailDispatcher) }
+    context 'for WellCa' do
+      it { expect(described_class.lookup('info@well.ca')).to eq(Checkout::WellCa::MailDispatcher) }
     end
 
-    context 'for lacoste.com' do
-      let(:from) { 'noreply-staging@lacoste.com' }
-
-      it { is_expected.to eq(Checkout::LacosteComUs::MailDispatcher) }
-    end
-
-    context 'for lacoste.us' do
-      let(:from) { 'no-reply@lacoste.us' }
-
-      it { is_expected.to eq(Checkout::LacosteComUs::MailDispatcher) }
+    context 'for LacosteComUs' do
+      %w(no-reply@lacoste.us noreply@lacoste.com noreply-staging@lacoste.com).each do |from|
+        it { expect(described_class.lookup(from)).to eq(Checkout::LacosteComUs::MailDispatcher) }
+      end
     end
   end
 end
