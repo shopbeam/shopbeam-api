@@ -88,28 +88,7 @@
                     <th style="border-bottom: 1px solid black;" width="139" align="center"><font face="Arial, sans-serif" size="2"  style="color:silver;font-size:10pt;">Ordered quantity</font></th>
                     <th style="border-bottom: 1px solid black;"width="66" align="center"><font face="Arial, sans-serif" size="2"  style="color:silver;font-size:10pt;">Total TAX</font></th>
                   </tr>
-                  <tr>
-                      <td  width="80" height="85" align="center" style="vertical-align:center;">
-                        <img src="<match>(?<product_image_url>.+?)</match>" width="74" height="auto" alt="" />
-                      </td>
-                      <td width="224" style="border-right:1px solid #5C564E;">
-                        <font face="Arial, sans-serif" size="2"  style="color:#424242;">
-                        <p style="text-align: center;"><match>(?<product_name>.+?)</match></p>
-                        <p style="text-align: left;">
-                          <match>(?<product_variant>.+?)</match>
-                        </p>
-                      </td>
-                      <td align="center" width="100"  style="border-right:1px solid #5C564E;">
-                        <font face="Arial, sans-serif" size="2"  style="color:#424242;">
-                          <match>(?<product_qty>\d+)</match>
-                        </font>
-                      </td>
-                      <td align="center" width="56" style="border-right:1px solid #5C564E;">
-                        <font face="Arial, sans-serif" size="2"  style="color:#424242;">
-                            $<match>(?<product_price>.+?)</match>
-                        </font>
-                      </td>
-                    </tr>
+                  <match>(?<product_list>.+?)</match>
                 </table>
               </td>
             </tr>
