@@ -136,28 +136,7 @@ Ground
             <th width="100"><font face="Arial, sans-serif" size="2" style="color: silver; font-size: 10pt;">QTY</font></th>
             <th width="56"><font face="Arial, sans-serif" size="2" style="color: silver; font-size: 10pt;">Price</font></th>
           </tr>
-           <!-- Product -->
-          <tr>
-            <td align="center" style="border-top: solid 1px #5C564E;">
-              <img src="<%= product_image_url %>" width="100%" height="auto" alt="" />
-            </td>
-            <td
-              style="border-right: 1px solid #5C564E; padding-right: 10px; border-top: 1px solid #5C564E;"><font
-              face="Arial, sans-serif" size="2" style="color: black;font-size: 10pt;"><p style="text-align: center;"><%= product_name %></p>
-              <p style="text-align: left;">
-                  <%= product_variant %>
-              </p>
-            </font></td>
-            <td align="center" height="0"
-              style="border-right: 1px solid #5C564E;  border-top: 1px solid #5C564E; padding-right: 10px;"><font
-              face="Arial, sans-serif" size="2" style="color: black; font-size: 10pt;">
-                  <%= product_qty %>
-            </font></td>
-            <td align="center" style="border-right: 1px solid #5C564E; padding-right: 10px;  border-top: 1px solid #5C564E;"><font
-              face="Arial, sans-serif" size="2" style="color: black; font-size: 10pt;">
-                  $<%= product_price %>
-            </font></td>
-          </tr>
+          <%= product_list %>
         </table>
       </td>
     </tr>

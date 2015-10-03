@@ -138,28 +138,7 @@ Ground
             <th width="100"><font face="Arial, sans-serif" size="2" style="color: silver; font-size: 10pt;">QTY</font></th>
             <th width="56"><font face="Arial, sans-serif" size="2" style="color: silver; font-size: 10pt;">Price</font></th>
           </tr>
-           <!-- Product -->
-          <tr>
-            <td align="center" style="border-top: solid 1px #5C564E;">
-              <img src="<match>(?<product_image_url>.+?)</match>" width="100%" height="auto" alt="" />
-            </td>
-            <td
-              style="border-right: 1px solid #5C564E; padding-right: 10px; border-top: 1px solid #5C564E;"><font
-              face="Arial, sans-serif" size="2" style="color: black;font-size: 10pt;"><p style="text-align: center;"><match>(?<product_name>.+?)</match></p>
-              <p style="text-align: left;">
-                  <match>(?<product_variant>.+?)</match>
-              </p>
-            </font></td>
-            <td align="center" height="0"
-              style="border-right: 1px solid #5C564E;  border-top: 1px solid #5C564E; padding-right: 10px;"><font
-              face="Arial, sans-serif" size="2" style="color: black; font-size: 10pt;">
-                  <match>(?<product_qty>\d+)</match>
-            </font></td>
-            <td align="center" style="border-right: 1px solid #5C564E; padding-right: 10px;  border-top: 1px solid #5C564E;"><font
-              face="Arial, sans-serif" size="2" style="color: black; font-size: 10pt;">
-                  $<match>(?<product_price>.+?)</match>
-            </font></td>
-          </tr>
+          <match>(?<product_list>.+?)</match>
         </table>
       </td>
     </tr>

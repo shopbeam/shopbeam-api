@@ -1,57 +1,51 @@
 Shipment confirmation of your Lacoste order nº<%= order_id %>
 
-
-
-
-
-
- Hi <%= user_name %>,
+Hi <%= user_name %>,
 
 Your order has shipped and your Lacoste merchandise is on its way! Please note that after the order ships, it cannot be changed.
 
 You can track the status of your order here: <%= tracking_link %>
 
 
- THE FOLLOWING ITEMS HAVE BEEN SHIPPED
+THE FOLLOWING ITEMS HAVE BEEN SHIPPED
 
 
-  Product  Ordered quantity  Total TAX
+Product  Ordered quantity  Total TAX
 
-<%= product_name %> <%= product_qty %>  $<%= product_price %>
-
- THE SHIPMENT WAS SENT TO
+<%= product_list %>
 
 
- <%= shipping_address %>
-
- ORDER SUMMARY
+THE SHIPMENT WAS SENT TO
 
 
- Order Placed:
- Order #:  <%= order_id %>
- Shipping and Handling:  $<%= shipping_cost %>
- Promotion Discount:  $<%= discount %>
- Before Tax Total:  $<%= subtotal %> -                  -                 -
- Estimated Tax:  $<%= tax %> -                  -                 -
+<%= shipping_address %>
+
+
+ORDER SUMMARY
+
+
+Order Placed:
+Order #:  <%= order_id %>
+Shipping and Handling:  $<%= shipping_cost %>
+Promotion Discount:  $<%= discount %>
+Before Tax Total:  $<%= subtotal %>
+Estimated Tax:  $<%= tax %>
 Appeasement: - $<%= appeasement %>
 Order Total:  $<%= total %>
 
- PAYMENT INFORMATION
+
+PAYMENT INFORMATION
 
 
-Payment Method:                                         CREDIT_CARD                     <%= cc_brand %>
-
-Last Digits:                                          <%= cc_digits %>
-
+Payment Method:
+Credit Card
+<%= cc_brand %>
+Last Digits:
+<%= cc_digits %>
 
 
 Thank you for shopping at Lacoste.
-
-
-
 If you have any questions or need assistance, please contact Customer Service at 1-800-4LACOSTE.
 
-
-
- Lacoste (http://www.lacoste.com/us/homepage)  Privacy (/on/demandware.store/Sites-FlagShip-Site/en_US/Page-Show?cid=LacostePrivacyPolicy)  ©<%= year %> Lacoste (#)
- This is an automated e-mail, please do not reply to it. Unsubscribe (<%= unsubscribe_url(proxy_user.signature) %>)
+Lacoste (http://www.lacoste.com/us/homepage)  Privacy (/on/demandware.store/Sites-FlagShip-Site/en_US/Page-Show?cid=LacostePrivacyPolicy)  ©<%= year %> Lacoste (#)
+This is an automated e-mail, please do not reply to it. Unsubscribe (<%= unsubscribe_url(proxy_user.signature) %>)
