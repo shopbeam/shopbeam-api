@@ -24,6 +24,8 @@ module Checkout
       def add_to_cart(item)
         browser.goto item.source_url
 
+        close_monetize_popup
+
         variations = browser.element(class: 'product-variations')
 
         select_color(item, variations) if item.color.present?
@@ -115,6 +117,15 @@ module Checkout
 
         on_error do |message|
           raise ConfirmationError.new(browser.url, message)
+        end
+      end
+
+      def close_monetize_popup
+        popup = browser.element(id: 'monetate_lightbox')
+
+        if popup.present?
+          popup.click
+          popup.wait_while_present
         end
       end
 
