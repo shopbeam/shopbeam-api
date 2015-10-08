@@ -20,7 +20,7 @@ Feature: Purchase on well.ca
   Scenario: Purchase products
     Given the following products
       | quantity | sale_price_cents | source_url |
-      | 1        | 1518             | https://well.ca/products/tea-forte-kati-tea-brewing-cup_77798.html |
+      | 1        | 2999             | https://well.ca/products/luna-caramel-nut-brownie-bars_12539.html |
     And  I am registered user
     When I go to landing page
     And  I close subscription popup
