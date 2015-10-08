@@ -6,7 +6,8 @@ Before('@lacoste', '@purchase') do
     address2: 'Cupertino, CA 95014',
     city: 'Cupertino',
     state: 'CA',
-    zip: 95014
+    zip: 95014,
+    phone: '123.456.7890'
   }
   @bot = Checkout::LacosteComUs::Bot.new(
     double(

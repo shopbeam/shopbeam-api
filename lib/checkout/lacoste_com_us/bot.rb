@@ -161,7 +161,6 @@ module Checkout
 
       def fill_shipping_address
         fill_address(shipping_address, 'sa')
-        browser.text_field(name: 'sa-phone').set shipping_address[:phone]
       end
 
       def fill_address(data, prefix)
