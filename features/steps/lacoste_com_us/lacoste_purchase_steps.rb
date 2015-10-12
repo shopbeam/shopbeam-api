@@ -20,7 +20,7 @@ Before('@lacoste', '@purchase') do
         cvv: '000',
         brand: :visa,
         expiration_month: '1',
-        expiration_year: 2020
+        expiration_year: Time.now.year + 5
       }
     )
   )

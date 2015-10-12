@@ -23,7 +23,6 @@ Feature: Purchase on well.ca
       | 1        | 2999             | https://well.ca/products/luna-caramel-nut-brownie-bars_12539.html |
     And  I am registered user
     When I go to landing page
-    And  I close subscription popup
     And  I sign in
     And  I empty cart
     And  I remove alternate addresses

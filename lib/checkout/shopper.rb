@@ -4,7 +4,6 @@ module Checkout
 
     def call(order_id)
       order = Order.uncompleted.find(order_id)
-
       session = Session.new(order)
 
       order.process!
