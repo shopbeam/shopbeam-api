@@ -18,7 +18,7 @@ Before('@well_ca', '@purchase') do
         number: '4444333322221111',
         cvv: '000',
         expiration_month: '01',
-        expiration_year: 2020
+        expiration_year: Time.now.year + 5
       }
     )
   )
@@ -43,10 +43,6 @@ end
 
 When(/^I go to landing page$/) do
   @browser.goto Checkout::WellCa::Bot::BASE_URL
-end
-
-When(/^I close subscription popup$/) do
-  @bot.send(:close_subscription_popup)
 end
 
 When(/^I sign in$/) do

@@ -22,7 +22,6 @@ module Checkout
       def purchase!(items)
         browser.open do
           browser.goto BASE_URL
-          close_subscription_popup
 
           if new_user?
             sign_up
@@ -48,16 +47,6 @@ module Checkout
 
       private
 
-      def close_subscription_popup
-        begin
-          browser
-            .element(css: "[aria-labelledby='ui-dialog-title-newsletter_subscribe_auto']")
-            .tap(&:wait_until_present)
-            .element(class: 'ui-dialog-titlebar-close')
-            .click
-        rescue Watir::Wait::TimeoutError; end
-      end
-
       def sign_up
         browser.goto REGISTRATION_URL
         browser.radio(name: 'gender', value: 'o').set
@@ -67,7 +56,7 @@ module Checkout
         browser.text_field(name: 'email_address').set proxy_user.email
         browser.text_field(name: 'password').set proxy_user.password
         browser.text_field(name: 'confirmation').set proxy_user.password
-        browser.input(type: 'submit', value: /join/i).click
+        browser.click_on browser.input(type: 'submit', value: /join/i)
 
         on_error do |message|
           raise InvalidAccountError.new(browser.url, message)
@@ -80,7 +69,7 @@ module Checkout
         browser.goto LOGIN_URL
         browser.text_field(name: 'email_address').set proxy_user.email
         browser.text_field(name: 'password').set proxy_user.password
-        browser.input(type: 'submit', value: /sign in/i).click
+        browser.click_on browser.input(type: 'submit', value: /sign in/i)
 
         on_error(LOGIN_URL) do |message|
           raise InvalidAccountError.new(browser.url, message)
@@ -135,7 +124,7 @@ module Checkout
         end
 
         browser.text_field(id: 'cart_quantity').set item.quantity
-        browser.element(id: 'add_to_cart_button').click
+        browser.click_on browser.element(id: 'add_to_cart_button')
         browser.element(id: 'shopping-cart-dropdown').wait_until_present
       rescue ItemOutOfStockError
         item.mark_as_out_of_stock!
@@ -177,7 +166,7 @@ module Checkout
         end
 
         fill_address(shipping_address)
-        browser.input(type: 'submit', value: /submit|update/i).click
+        browser.click_on browser.input(type: 'submit', value: /submit|update/i)
 
         on_error do |message|
           raise InvalidAddressError.new(browser.url, message)
@@ -186,7 +175,7 @@ module Checkout
         continue_btn = browser.input(type: 'submit', value: /\Acontinue\z/i)
 
         if continue_btn.present?
-          continue_btn.click
+          browser.click_on continue_btn
         else
           raise InvalidShippingInfoError.new(browser.url, 'Invalid shipping info.')
         end
@@ -197,7 +186,7 @@ module Checkout
         fill_payment_info
 
         continue_btn = browser.buttons(value: /\Acontinue\z/i).last
-        continue_btn.click
+        browser.click_on continue_btn
 
         # Wait for page with 3rd party iframe to reload
         continue_btn.wait_while_present
@@ -209,7 +198,7 @@ module Checkout
       end
 
       def confirm_order
-        browser.input(type: 'submit', value: /confirm/i).click
+        browser.click_on browser.input(type: 'submit', value: /confirm/i)
 
         on_error do |message|
           raise ConfirmationError.new(browser.url, message)
@@ -223,7 +212,7 @@ module Checkout
       def fill_billing_address
         browser.goto EDIT_BILLING_ADDRESS_URL
         fill_address(billing_address)
-        browser.input(type: 'submit', value: /submit|update/i).click
+        browser.click_on browser.input(type: 'submit', value: /submit|update/i)
 
         on_error do |message|
           raise InvalidAddressError.new(browser.url, message)

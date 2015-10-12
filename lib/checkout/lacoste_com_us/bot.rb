@@ -24,7 +24,11 @@ module Checkout
       def add_to_cart(item)
         browser.goto item.source_url
 
-        close_monetize_popup
+        add_to_cart_btn = browser.element(id: 'add-to-cart')
+
+        unless add_to_cart_btn.present?
+          raise VariantNotAvailableError.new(browser.url, item)
+        end
 
         variations = browser.element(class: 'product-variations')
 
@@ -42,7 +46,7 @@ module Checkout
         end
 
         item.quantity.times do
-          browser.element(id: 'add-to-cart').click
+          browser.click_on browser.element(id: 'add-to-cart')
           browser.element(class: 'mini-cart')
             .tap(&:wait_until_present)
             .tap(&:wait_while_present)
@@ -62,7 +66,7 @@ module Checkout
         browser.text_field(name: 'lastname').set proxy_user.last_name
         browser.text_field(name: 'email2').set browser.text_field(name: 'email1').value
         browser.checkbox(name: 'receivenews').clear
-        browser.wait_for_ajax { browser.button(id: 'js-checkout-register-guest').click }
+        browser.click_on browser.button(id: 'js-checkout-register-guest')
 
         on_error do |message|
           raise InvalidAccountError.new(browser.url, message)
@@ -80,9 +84,7 @@ module Checkout
       end
 
       def validate_order
-        browser.wait_for_ajax do
-          browser.button(text: /\Avalidate and review my order\z/i).click
-        end
+        browser.click_on browser.button(text: /\Avalidate and review my order\z/i)
 
         on_error do |message|
           raise InvalidAddressError.new(browser.url, message)
@@ -90,7 +92,7 @@ module Checkout
 
         browser.element(css: '.dialog.active').when_present do |dialog|
           if dialog.radio(name: 'address', value: 'found').present?
-            browser.wait_for_ajax { browser.button(id: 'acceptDavCheck').click }
+            browser.click_on browser.button(id: 'acceptDavCheck')
           else
             raise InvalidAddressError.new(browser.url, dialog.ps.last.text)
           end
@@ -110,22 +112,10 @@ module Checkout
         browser.text_field(id: 'npm-card-number').set session.cc[:number]
         browser.text_field(id: 'npm-cryptogramme').set session.cc[:cvv]
         browser.checkbox(name: 'check-condition').set
-
-        browser.wait_for_ajax do
-          browser.button(text: /\Aconfirm my order\z/i).click
-        end
+        browser.click_on browser.button(text: /\Aconfirm my order\z/i)
 
         on_error do |message|
           raise ConfirmationError.new(browser.url, message)
-        end
-      end
-
-      def close_monetize_popup
-        popup = browser.element(id: 'monetate_lightbox')
-
-        if popup.present?
-          popup.click
-          popup.wait_while_present
         end
       end
 
@@ -139,7 +129,7 @@ module Checkout
             raise VariantNotAvailableError.new(browser.url, item)
           end
 
-          browser.wait_for_ajax { color.click }
+          browser.click_on color
         end
       end
 
@@ -156,7 +146,7 @@ module Checkout
 
       def sign_in(email)
         browser.text_field(name: 'email').set email
-        browser.wait_for_ajax { browser.button(id: 'js-validate-email').click }
+        browser.click_on browser.button(id: 'js-validate-email')
       end
 
       def fill_shipping_address
