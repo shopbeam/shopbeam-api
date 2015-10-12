@@ -24,7 +24,7 @@ module Checkout
       def add_to_cart(item)
         browser.goto item.source_url
 
-        add_to_cart_btn = browser.element(id: 'add-to-cart')
+        add_to_cart_btn = browser.button(id: 'add-to-cart')
 
         unless add_to_cart_btn.present?
           raise VariantNotAvailableError.new(browser.url, item)
@@ -43,6 +43,10 @@ module Checkout
             requested_price_cents: item.sale_price_cents,
             actual_price_cents: price_cents
           )
+        end
+
+        if add_to_cart_btn.disabled?
+          raise VariantNotAvailableError.new(browser.url, item)
         end
 
         item.quantity.times do
