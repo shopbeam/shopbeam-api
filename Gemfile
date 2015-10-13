@@ -43,6 +43,21 @@ gem 'diffy'
 # Inline CSS for HTML mails
 gem 'roadie-rails'
 
+#web parsing farmework for crawlers
+gem 'nokogiri'
+
+#stuff for working with prices
+gem 'money'
+gem 'monetize'
+
+#FTP
+gem 'net-sftp'
+
+gem 'heroku-api'
+
+# pretty output for printing ruby objects
+gem 'awesome_print'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -77,4 +92,5 @@ group :test do
   gem 'database_cleaner'
   gem 'rspec-expectations'
   gem 'rspec-sidekiq'
+  gem 'fakeredis', :require => 'fakeredis/rspec'
 end

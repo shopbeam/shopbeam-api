@@ -14,4 +14,7 @@ Rails.application.routes.draw do
   post '/orders/mail', to: 'orders#mail'
 
   get '/unsubscribe/:signature', to: 'proxy_users#unsubscribe', as: 'unsubscribe'
+
+  # Python crawlers upload results here
+  post '/crawlers/results', to: 'crawlers#results'
 end
