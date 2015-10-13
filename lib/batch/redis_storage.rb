@@ -1,7 +1,7 @@
 class Batch
   class RedisStorage
     EXPIRE_TIME = 86400 # 24 hours * 60 minutes * 60 seconds
-    
+
     def initialize(batch_id, job_id=nil)
       @batch_id = batch_id
       @job_id = job_id
@@ -28,6 +28,10 @@ class Batch
         :failed
       end
       set_status status
+    end
+
+    def failed?
+      job_status == :failed
     end
 
     def finished

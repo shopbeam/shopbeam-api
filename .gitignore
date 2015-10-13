@@ -19,7 +19,7 @@
 
 # Ignore CTags files
 .gemtags
-.tags
+.tags*
 .tags_sorted_by_file
 
 # Ignore Mac DS_Store files

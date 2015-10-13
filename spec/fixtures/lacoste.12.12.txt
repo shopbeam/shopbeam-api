@@ -1,0 +1,9260 @@
+HTTP/1.1 200 OK
+Server: Apache
+Content-Length: 167140
+Content-Type: text/html;charset=UTF-8
+Set-Cookie: dwac_dinx2iaaix3Edaaaegca7bfna7=qau1byui4dzNcgH4v_Ma_13FOqktZGSJI30%3D|dw-only|||USD|false|US%2FEastern|true; Path=/
+Set-Cookie: dwsid=hcKBFB50N-6wVfWFd5YJfnGsDtIYsrK7XlopE3Et9MKBcaE01WXM7XtYoOvXM1ZxU_lXHCf75aQzzhn6J7D_hA==; path=/; HttpOnly
+Set-Cookie: dwanonymous_422c2020658d3662655b13f64deaf2b9=bce6glwOFxSCxz6wjA0KxLaUsY; Version=1; Comment="Demandware anonymous cookie for site Sites-FlagShip-Site"; Max-Age=15552000; Expires=Sun, 10-Apr-2016 11:56:06 GMT; Path=/
+Set-Cookie: dwpersonalization_422c2020658d3662655b13f64deaf2b9=""; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/
+Set-Cookie: sid=qau1byui4dzNcgH4v_Ma_13FOqktZGSJI30; Path=/
+Pragma: no-cache
+Expires: Thu, 01 Dec 1994 16:00:00 GMT
+Date: Tue, 13 Oct 2015 11:56:07 GMT
+Connection: keep-alive
+
+<!DOCTYPE html>
+
+
+<html lang="en_US" prefix="og: http://ogp.me/ns#">
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js"><!--<![endif]-->
+	<head>
+	 	 
+		 
+	    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+
+	 
+
+<title>Lacoste.12.12 Watch | LACOSTE</title>
+
+
+
+    
+
+<!-- Begin Monetate ExpressTag Sync v8. Place at start of document head. DO NOT ALTER. -->
+<script type="text/javascript">
+var monetateT = new Date().getTime();
+(function() {
+    var p = document.location.protocol;
+    if (p == "http:" || p == "https:") {
+        var m = document.createElement("script"); m.type = "text/javascript"; m.src = (p == "https:" ? "https://s" : "http://") + "e.monetate.net/js/2/a-e5cb56da/p/us.lacoste.com/entry.js";
+        var e = document.createElement("div"); e.appendChild(m); document.write(e.innerHTML);
+    }
+})();
+</script>
+<!-- End Monetate tag. -->
+
+<script type="text/javascript">
+	/*
+	*	Global Monetate array for tracking
+	*/
+	window.monetateQ = window.monetateQ || [];
+	
+	/*
+	*	Temporary storage for data: cartrows, breadcrumbs, products on the plp/clp/search pages
+	*/
+	window.monetateData = window.monetateData || {};
+	window.monetateData.setPageType = "unknown";
+</script>
+
+
+<meta name="description" content="Lacoste.12.12 Watch | LACOSTE Discover in our new collection the trends inspired by sport, Watches at lacoste.com"/>
+<meta name="keywords" content="Lacoste.12.12 Watch"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, target-densityDpi=device-dpi">
+<meta name="msapplication-tap-highlight" content="no">
+
+
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="alternate" hreflang="de-AT" href="http://www.lacoste.com/at/885997177528.html" />
+
+
+
+
+
+
+
+
+
+
+
+<link rel="alternate" hreflang="de-DE" href="http://www.lacoste.com/de/885997177528.html" />
+
+
+
+
+
+
+
+
+
+
+
+<link rel="alternate" hreflang="fr-FR" href="http://www.lacoste.com/fr/885997177528.html" />
+
+
+
+
+
+
+
+
+
+
+
+<link rel="alternate" hreflang="en-GB" href="http://www.lacoste.com/gb/885997177528.html" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="alternate" hreflang="en-CA" href="http://www.lacoste.com/ca/en/885997177528.html" />
+
+
+
+
+<link rel="alternate" hreflang="fr-CA" href="http://www.lacoste.com/ca/fr/885997177528.html" />
+
+
+
+
+
+
+
+
+	
+
+	
+	<link rel="canonical" href="http://www.lacoste.com/us/lacoste/men/accessories/watches/lacoste.12.12-watch/2010823.html"/>
+
+
+
+	
+<meta content="http://www.lacoste.com/us/lacoste/men/accessories/watches/lacoste.12.12-watch/885997177528.html" property="og:url">
+<meta content="Lacoste.12.12 Watch" property="og:title">
+
+	
+	<meta content="An iconic watch family, the Lacoste.12.12 captures and transforms the essence of the polo shirt into a watch collection." property="og:description">
+ 
+
+	
+		
+	
+		
+			<meta content="http://imagena1.lacoste.com/sits_pod26/dw/image/v2/AAUP_PRD/on/demandware.static/-/Sites-master/default/dw6bd01afd/10_2010823_000_24.jpg?sw=656&amp;sh=656&amp;sm=fit" property="og:image">
+			
+		<meta name="twitter:image" content="http://imagena1.lacoste.com/sits_pod26/dw/image/v2/AAUP_PRD/on/demandware.static/-/Sites-master/default/dw6bd01afd/10_2010823_000_24.jpg?sw=656&amp;sh=656&amp;sm=fit">
+		
+	
+	    
+<meta name="twitter:card" 			content="summary">
+<meta name="twitter:title" 			content="Lacoste.12.12 Watch | LACOSTE" >
+<meta name="twitter:description" 	content="Lacoste.12.12 Watch | LACOSTE Discover in our new collection the trends inspired by sport, Watches at lacoste.com">
+<meta name="twitter:site" 			content="null">
+<meta name="twitter:creator" 		content="null">
+<meta name="twitter:url" 			content="www.lacoste.com/on/demandware.store/Sites-FlagShip-Site/en_US/Product-Show?pid=2010823&amp;dwvar_2010823_color=000">
+<meta name="google-site-verification" content="oUwmx7IBI9qWigf1YpTjy4-x-jH3D-zgc72eGpOt3Es" /> 
+
+<link rel="stylesheet" href="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/Sites-FlagShip-Site/-/en_US/v1444405540518/css/normalize.min.css">
+<link rel="stylesheet" href="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/Sites-FlagShip-Site/-/en_US/v1444405540518/css/colorbox.css" type="text/css" >  
+<link rel="stylesheet" href="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/Sites-FlagShip-Site/-/en_US/v1444405540518/css/idangerous.swiper.css">
+<link rel="stylesheet" href="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/Sites-FlagShip-Site/-/en_US/v1444405540518/css/jquery.selectBoxIt.css">
+<link rel="stylesheet" href="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/Sites-FlagShip-Site/-/en_US/v1444405540518/css/main.css">
+<link rel="stylesheet" href="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/Sites-FlagShip-Site/-/en_US/v1444405540518/css/page-login.css">
+<link rel="stylesheet" href="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/Sites-FlagShip-Site/-/en_US/v1444405540518/css/fonts-extended.css">
+<link rel="shortcut icon" href="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/Sites-FlagShip-Site/-/default/dwe8ddca0a/img/favicon.png">
+<link href="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/Sites-FlagShip-Site/-/default/dw33abe6be/img/lacoste-touch-icon-192x192.png" rel="apple-touch-icon" sizes="192x192" />
+<link href="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/Sites-FlagShip-Site/-/default/dw1037d202/img/lacoste-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" />
+<link href="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/Sites-FlagShip-Site/-/default/dw9a4e9639/img/lacoste-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" />
+<link href="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/Sites-FlagShip-Site/-/default/dwcf2478a6/img/lacoste-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" />
+<link href="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/Sites-FlagShip-Site/-/default/dw939008ca/img/lacoste-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" />
+<link href="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/Sites-FlagShip-Site/-/default/dwe66c9903/img/lacoste-touch-icon.png" rel="apple-touch-icon" />
+<script src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/Sites-FlagShip-Site/-/en_US/v1444405540518/js/vendor/jquery-1.10.1.min.js"></script>
+<script src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/Sites-FlagShip-Site/-/en_US/v1444405540518/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>  
+
+	
+<link rel="stylesheet" href="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/Sites-FlagShip-Site/-/en_US/v1444405540518/css/page-sku.css">
+<link rel="stylesheet" type="text/css" href="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/Sites-FlagShip-Site/-/en_US/v1444405540518/css/size-chart.css">
+
+
+
+
+    
+
+
+
+
+
+<!-- START IADVIZE CHAT -->
+<script type='text/javascript'>
+(function() {
+var idz = document.createElement('script'); idz.type = 'text/javascript'; idz.async = true;
+idz.src = document.location.protocol + '/' + '/' + 'halc.iadvize.com/iadvize.js?sid=null&lang=en_US';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(idz, s);
+})();
+var device = 'Desktop';
+     if (navigator.userAgent.match(/(android|iphone|ipad|blackberry|symbian|symbianos|symbos|netfront|model-orange|javaplatform|iemobile|windows phone|samsung|htc|opera mobile|opera mobi|opera mini|presto|huawei|blazer|bolt|doris|fennec|gobrowser|iris|maemo browser|mib|cldc|minimo|semc-browser|skyfire|teashark|teleca|uzard|uzardweb|meego|nokia|bb10|playbook)/gi)) {
+         if ( ((screen.width  >= 480) && (screen.height >= 800)) || ((screen.width  >= 800) && (screen.height >= 480)) || navigator.userAgent.match(/ipad/gi) ) {
+            device = 'Tablet';
+         } else {
+         device = 'Mobile';
+         }
+      } else {
+      device = 'Desktop';
+      }
+      var idzCustomData = {
+      "page_type": device
+      };
+</script>
+<!-- END IADVIZE CHAT -->
+
+	
+
+<script type="text/javascript" src="//display.ugc.bazaarvoice.com/static/lacoste-en_us/Main%20Site/en_US/bvapi.js"></script>
+
+<script type="text/javascript" language="javascript">
+	var configData = {};
+	
+    	configData.productId = "2010823";
+    	  configData.events = {
+          	    bvRender: function(data) {
+          	        if (!data.TotalReviewCount || data.TotalReviewCount === 0 || data.TotalReviewCount === 'undefined')      
+          	        {	        	
+    					$("#BVRRContainer").hide();
+	 	        	    $(".bv-stars-container").remove();
+	 	        	    $('.bazaarvoicetitle').hide();
+          	        }
+          	        else
+          	        {     
+          	        	if($('.hiddentitle').length == 0)
+          	        	{
+  	        	     		$('.bazaarvoicetitle').html($('.bazaarvoicetitle').html() + '<span class="hiddentitle">(' + data.TotalReviewCount + ')</span>');
+          	        	}
+          	       	}
+          	    }
+          	};
+    	
+    $BV.configure("global", configData);
+</script>
+
+
+
+<!-- START POPIN EVENTS -->
+
+	 
+
+	
+<!-- END POPIN EVENTS -->
+
+<script type="text/javascript" src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/Sites-FlagShip-Site/-/en_US/v1444405540518/internal/jscript/dwac-14.8.js"></script>
+
+
+	</head>
+	<body>
+		<div class="wrapper-all">
+			
+			
+			
+			
+			
+
+
+			<div class="wrapper-main">
+
+				
+ 
+
+<nav class="topbar">
+<a class="toggle-menu-mobile"></a> <a href="/us/homepage"
+class="logo-mobile-tablet no-desktop"> <!-- Lacoste -->  <span
+data-picture data-alt="Lacoste"> <span
+data-src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Sites-storefront-v5/default/dw014d9726/LacosteLogo.png"></span> <!--[if (lt IE 9) & (!IEMobile)]>
+<span data-src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Sites-storefront-v5/default/dw014d9726/LacosteLogo.png"></span>
+<![endif]-->
+</span> 
+</a>
+<div class="topbar-wrapper">
+<ul class="clearfix">
+<li class="main-menu tb-search"><a class="no-desktop"></a>
+<div class="sub-menu form">
+<p class="tit-search no-desktop">TYPE TO SEARCH</p>
+<form action="/us/search" method="get">
+<input itemprop="query-input" type="text" class="q" name="q"
+placeholder="Search "
+onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search '"
+autocomplete="off"> <input type="submit"
+value="Search ">
+</form>
+<div id="suggestions"></div>
+</div></li>
+<li class="find-store"><a class="no-submenu" target="_blank"
+href="http://stores.lacoste.com?lang=en">Find a boutique</a></li>
+<li class="main-menu"><a href="">Customer Service</a>
+<ul class="sub-menu">
+<li>
+<section class="form">
+<div class="form-item topbarcontact">
+<p class="title-15 no-margin">Customer Service</p>
+<span>Need assistance? Our customer service team is here to assist you Monday through Friday from 9am EST to 12am EST, and Saturday  and Sunday from 12pm EST to 9pm EST.</span>
+<div class="column-half">
+<a
+href="/us/FAQ.html"
+class="btn btn-secondary btn-full faqhelp">help</a>
+<a
+href="/us/contactus"
+class="btn btn-secondary btn-full faqmail">contact us</a>
+
+
+
+
+
+
+
+</div>
+</div>
+</section>
+</li>
+</ul></li>
+
+
+
+
+<li class="main-menu">
+<a href="https://www.lacoste.com/us/account" rel="nofollow">My account</a>
+<ul class="account sub-menu">
+
+	
+
+
+
+
+
+
+
+
+
+
+<div id="js-topmyaccount">
+	<li class="spacer-connect" id="notconnect">
+		<div class="row clearfix">
+			<div class="column-half">
+				<section class="form">
+					<p class="title-15">sign in</p>
+					
+					<form action="https://www.lacoste.com/on/demandware.store/Sites-FlagShip-Site/en_US/LoginV2-Authenticate?redirectpage=%2fon%2fdemandware%2estore%2fSites-FlagShip-Site%2fen_US%2fProduct-Show%3fpid%3d2010823%26dwvar_2010823_color%3d000"	method="POST" id="login-form">
+						<div class="form-item form-item-full">
+							<label>Email address:</label> <input
+								class="email" type="email" name="email"
+								value=""
+								data-error-required="Email is required"													
+				             	data-error-email="Invalid Email" />
+						</div>
+						<div class="form-item form-item-full">
+							<label>Password:</label>
+							<input type="password" name="password"
+								data-error-required="Password is required" />
+						</div>											
+						<div class="form-item form-item-full">
+							<span id="login-error" class="error"></span>
+							<button class="btn btn-secondary btn-full">
+								sign in</button>
+						</div>
+						<a href="https://www.lacoste.com/us/forgotpassword" class="forgot-pass-header" target="_parent">Forgot your password?</a>
+					</form>
+				</section>
+			</div>
+			<div class="column-half">
+				<section class="form form-new">
+					<h3 class="title-15">
+						I'm a new customer</h3>
+					<div class="form-item form-item-full">
+						Creating a Lacoste account is simple and easy. A Lacoste account will allow you to track the delivery of your purchases, manage your personal details, benefit from exclusive offers and more. Follow the next quick steps to set up your account today.</div>
+					<div class="form-item form-item-full">
+						<a href="https://www.lacoste.com/us/login-register"
+							class="btn-secondary btn-full create-account" target="_parent">
+							create my account </a>
+					</div>
+				</section>
+			</div>
+		</div>			
+	</li>
+</div>
+
+
+	
+
+
+
+
+
+	
+	<script type="text/javascript">
+		monetateData.setPageType = "login";
+
+		window.monetateQ.push(["setPageType", monetateData.setPageType]);
+
+		if(monetateData.addCartRows) window.monetateQ.push(["addCartRows", monetateData.addCartRows]);
+		if(monetateData.breadCrumbs) window.monetateQ.push(["addBreadcrumbs", monetateData.breadCrumbs]);
+
+		window.monetateQ.push(["trackData"]);
+	</script>
+
+	
+
+			
+
+</ul>
+</li>
+<li class="my-cart main-menu">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Report any requested source code -->
+
+
+<!-- Report the active source code -->
+
+
+
+
+	
+		<a href="https://www.lacoste.com/us/cart" rel="nofollow"><strong><span class="mycartmini">My shopping bag (0)</span></strong></a>	
+		<div class="sub-menu mini-cart">
+		     <div class="shipping-advice">
+	        	<span>Empty!</span>
+			</div>
+		</div>
+	
+
+</li>
+
+</ul>
+</div>
+</nav>
+				<div class="page-wrapper">
+					
+	            	<div class="main-container">
+	            		
+
+
+<aside class="main-sidebar">
+
+
+<div class="logo only-desktop">
+
+<a href="/us/lacoste/" class="link-logo only-desktop">
+<!-- Lacoste -->
+<span data-picture data-alt="Lacoste">
+
+<span data-src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/Sites-FlagShip-Site/-/default/dw06414f34/img/tag_lines/casual/lacoste-casual-tag-lines-en.png" data-media="(min-width: 1280px)"></span>
+<!--[if (lt IE 9) & (!IEMobile)]>
+<span data-src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/Sites-FlagShip-Site/-/default/dw06414f34/img/tag_lines/casual/lacoste-casual-tag-lines-en.png"></span>
+<![endif]-->
+</span>
+<span class="slogan">
+LIFE IS A BEAUTIFUL SPORT
+</span>
+</a>
+
+</div>
+
+<ul>
+<li class="not-accordion no-mobile">
+
+	 
+
+
+	
+
+
+
+
+
+<div class="content-asset"><!-- dwMarker="content" dwContentID="bdyIUiaaixy9kaaadnHRENKdbW" -->
+<ul class="always-expanded">
+<li data-level="1">
+
+<a class="not-a-link">What's New</a>
+
+<ul>
+<li data-level="-1"><a class="highlight btn-back only-mobile">BACK</a></li>
+<li><span class="title-submenu only-mobile">What's New</span></li>
+
+
+
+
+
+
+<li><a href="http://www.lacoste.com/us/fakeassetmif.html">Made In France Collection</a></li>
+
+
+
+
+
+
+
+<li><a href="http://www.lacoste.com/us/fakeassetfairplay.html">New For Fall: Men's Polos</a></li>
+
+
+
+
+
+
+
+<li><a href="http://www.lacoste.com/us/fashion-show-ss16.html">Fashion Show S/S 2016</a></li>
+
+
+
+
+
+
+
+<li><a href="http://www.lacoste.com/us/back-to-block-men.html">Back to Block Collection</a></li>
+
+
+<li><a class="highlight ico-find-store only-mobile">Find a boutique</a></li>
+<li><a class="highlight ico-my-lacoste only-mobile">My Account</a></li>
+<li><a class="highlight ico-home only-mobile">BACK TO HOME</a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+ 
+	
+</li>
+<li>
+<ul>
+
+
+
+<li data-level="1" data-accordion-menu-href="dialog-menu-Lacoste_Men" data-accordion-menu-group="menu-collapse">
+
+
+
+
+
+<a class="menu-acc"  >Men </a>
+
+
+<ul>
+
+
+
+<li data-level="2">
+
+
+
+
+<a class=" ">Clothing</a>
+<ul class="ulTablet  ">
+<li><a class="title-submenu only-mobile" href="/us/lacoste/men/clothing/">SEE ALL Clothing PRODUCTS</a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/men/clothing/polos/" >Polos</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/men/clothing/the-l.12.12-polo/" >The L.12.12 Polo</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/men/clothing/new-arrivals/" >New Arrivals</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/men/clothing/bestsellers/" >Bestsellers</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/men/clothing/t-shirts/" >T-Shirts</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/men/clothing/woven-shirts/" >Woven Shirts</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/men/clothing/sweaters/" >Sweaters</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/men/clothing/sweatshirts/" >Sweatshirts</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/men/clothing/pants-shorts/" >Pants &amp; Shorts</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/men/clothing/jackets-coats/" >Jackets &amp; Coats</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/men/clothing/underwear/" >Underwear</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/men/clothing/swimwear/" >Swimwear</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/men/clothing/big-tall/" >Big &amp; Tall</a></li>
+
+
+
+
+
+
+
+
+
+
+<li><a href="/us/lacoste/men/clothing/">SEE ALL Men Clothing</a></li>
+
+<li><a target="_blank" href="http://stores.lacoste.com?lang=en" class="highlight ico-find-store only-mobile">Find a boutique</a></li>
+
+ 
+ 	 <li><a data-dialog="dialog-menu-myaccount" href="https://www.lacoste.com/us/account" data-dialog-only-desktop data-dialog-toggle class="highlight ico-my-lacoste only-mobile" rel="nofollow">My Account</a></li>
+ 
+
+</ul>
+</li>
+
+
+
+
+<li data-level="2">
+
+
+
+
+<a class=" ">Shoes</a>
+<ul class="ulTablet  ">
+<li><a class="title-submenu only-mobile" href="/us/lacoste/men/shoes/">SEE ALL Shoes PRODUCTS</a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/men/shoes/new-arrivals/" >New Arrivals</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/men/shoes/sneakers/" >Sneakers</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/men/shoes/oxfords%2C-drivers-loafers/" >Oxfords, Drivers &amp; Loafers</a></li>
+
+
+
+
+<li><a href="/us/lacoste/men/shoes/">SEE ALL Men Shoes</a></li>
+
+<li><a target="_blank" href="http://stores.lacoste.com?lang=en" class="highlight ico-find-store only-mobile">Find a boutique</a></li>
+
+ 
+ 	 <li><a data-dialog="dialog-menu-myaccount" href="https://www.lacoste.com/us/account" data-dialog-only-desktop data-dialog-toggle class="highlight ico-my-lacoste only-mobile" rel="nofollow">My Account</a></li>
+ 
+
+</ul>
+</li>
+
+
+
+
+<li data-level="2">
+
+
+
+
+<a class=" ">Accessories</a>
+<ul class="ulTablet  ">
+<li><a class="title-submenu only-mobile" href="/us/lacoste/men/accessories/">SEE ALL Accessories PRODUCTS</a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/men/accessories/caps-hats/" >Caps &amp; Hats</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/men/accessories/watches/" >Watches</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/men/accessories/sunglasses/" >Sunglasses</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/men/accessories/fragrance/" >Fragrance</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/men/accessories/socks/" >Socks</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/men/accessories/scarves-gloves/" >Scarves &amp; Gloves</a></li>
+
+
+
+
+<li><a href="/us/lacoste/men/accessories/">SEE ALL Men Accessories</a></li>
+
+<li><a target="_blank" href="http://stores.lacoste.com?lang=en" class="highlight ico-find-store only-mobile">Find a boutique</a></li>
+
+ 
+ 	 <li><a data-dialog="dialog-menu-myaccount" href="https://www.lacoste.com/us/account" data-dialog-only-desktop data-dialog-toggle class="highlight ico-my-lacoste only-mobile" rel="nofollow">My Account</a></li>
+ 
+
+</ul>
+</li>
+
+
+
+
+<li data-level="2">
+
+
+
+
+<a class=" ">Leather goods</a>
+<ul class="ulTablet  ">
+<li><a class="title-submenu only-mobile" href="/us/lacoste/men/leather-goods/">SEE ALL Leather goods PRODUCTS</a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/men/leather-goods/bags/" >Bags</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/men/leather-goods/small-leather-goods/" >Small Leather Goods</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/men/leather-goods/belts/" >Belts</a></li>
+
+
+
+
+<li><a href="/us/lacoste/men/leather-goods/">SEE ALL Men Leather goods</a></li>
+
+<li><a target="_blank" href="http://stores.lacoste.com?lang=en" class="highlight ico-find-store only-mobile">Find a boutique</a></li>
+
+ 
+ 	 <li><a data-dialog="dialog-menu-myaccount" href="https://www.lacoste.com/us/account" data-dialog-only-desktop data-dialog-toggle class="highlight ico-my-lacoste only-mobile" rel="nofollow">My Account</a></li>
+ 
+
+</ul>
+</li>
+
+
+
+
+<li><a target="_blank" href="http://stores.lacoste.com?lang=en" class="highlight ico-find-store only-mobile">Find a boutique</a></li>
+
+ 
+ 	 <li><a data-dialog="dialog-menu-myaccount" href="https://www.lacoste.com/us/account" data-dialog-only-desktop data-dialog-toggle class="highlight ico-my-lacoste only-mobile" rel="nofollow">My Account</a></li>
+ 
+
+</ul>
+</li>
+
+
+
+
+<li data-level="1" data-accordion-menu-href="dialog-menu-Lacoste_Women" data-accordion-menu-group="menu-collapse">
+
+
+
+
+
+<a class="menu-acc"  >Women </a>
+
+
+<ul>
+
+
+
+<li data-level="2">
+
+
+
+
+<a class=" ">Clothing</a>
+<ul class="ulTablet  ">
+<li><a class="title-submenu only-mobile" href="/us/lacoste/women/clothing/">SEE ALL Clothing PRODUCTS</a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/women/clothing/polos/" >Polos</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/women/clothing/new-arrivals/" >New Arrivals</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/women/clothing/t-shirts/" >T-Shirts</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/women/clothing/shirts-tops/" >Shirts &amp; Tops</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/women/clothing/dresses-skirts/" >Dresses &amp; Skirts</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/women/clothing/sweaters-sweatshirts/" >Sweaters &amp; Sweatshirts</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/women/clothing/pants-shorts/" >Pants &amp; Shorts</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/women/clothing/jackets-coats/" >Jackets &amp; Coats</a></li>
+
+
+
+
+<li><a href="/us/lacoste/women/clothing/">SEE ALL Women Clothing</a></li>
+
+<li><a target="_blank" href="http://stores.lacoste.com?lang=en" class="highlight ico-find-store only-mobile">Find a boutique</a></li>
+
+ 
+ 	 <li><a data-dialog="dialog-menu-myaccount" href="https://www.lacoste.com/us/account" data-dialog-only-desktop data-dialog-toggle class="highlight ico-my-lacoste only-mobile" rel="nofollow">My Account</a></li>
+ 
+
+</ul>
+</li>
+
+
+
+
+<li data-level="2">
+
+
+
+
+<a class=" ">Shoes</a>
+<ul class="ulTablet  ">
+<li><a class="title-submenu only-mobile" href="/us/lacoste/women/shoes/">SEE ALL Shoes PRODUCTS</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/women/shoes/flats/" >Flats</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/women/shoes/sneakers/" >Sneakers</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/women/shoes/sandals/" >Sandals</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/women/shoes/boots-wedges/" >Boots &amp; Wedges</a></li>
+
+
+
+
+<li><a href="/us/lacoste/women/shoes/">SEE ALL Women Shoes</a></li>
+
+<li><a target="_blank" href="http://stores.lacoste.com?lang=en" class="highlight ico-find-store only-mobile">Find a boutique</a></li>
+
+ 
+ 	 <li><a data-dialog="dialog-menu-myaccount" href="https://www.lacoste.com/us/account" data-dialog-only-desktop data-dialog-toggle class="highlight ico-my-lacoste only-mobile" rel="nofollow">My Account</a></li>
+ 
+
+</ul>
+</li>
+
+
+
+
+<li data-level="2">
+
+
+
+
+<a class=" ">Accessories</a>
+<ul class="ulTablet  ">
+<li><a class="title-submenu only-mobile" href="/us/lacoste/women/accessories/">SEE ALL Accessories PRODUCTS</a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/women/accessories/watches/" >Watches</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/women/accessories/sunglasses/" >Sunglasses</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/women/accessories/fragrance/" >Fragrance</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/women/accessories/hats-headbands/" >Hats &amp; Headbands</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/women/accessories/scarves-gloves/" >Scarves &amp; Gloves</a></li>
+
+
+
+
+<li><a href="/us/lacoste/women/accessories/">SEE ALL Women Accessories</a></li>
+
+<li><a target="_blank" href="http://stores.lacoste.com?lang=en" class="highlight ico-find-store only-mobile">Find a boutique</a></li>
+
+ 
+ 	 <li><a data-dialog="dialog-menu-myaccount" href="https://www.lacoste.com/us/account" data-dialog-only-desktop data-dialog-toggle class="highlight ico-my-lacoste only-mobile" rel="nofollow">My Account</a></li>
+ 
+
+</ul>
+</li>
+
+
+
+
+<li data-level="2">
+
+
+
+
+<a class=" ">Leather goods</a>
+<ul class="ulTablet  ">
+<li><a class="title-submenu only-mobile" href="/us/lacoste/women/leather-goods/">SEE ALL Leather goods PRODUCTS</a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/women/leather-goods/bags/" >Bags</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/women/leather-goods/small-leather-goods/" >Small Leather Goods</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/women/leather-goods/belts/" >Belts</a></li>
+
+
+
+
+<li><a href="/us/lacoste/women/leather-goods/">SEE ALL Women Leather goods</a></li>
+
+<li><a target="_blank" href="http://stores.lacoste.com?lang=en" class="highlight ico-find-store only-mobile">Find a boutique</a></li>
+
+ 
+ 	 <li><a data-dialog="dialog-menu-myaccount" href="https://www.lacoste.com/us/account" data-dialog-only-desktop data-dialog-toggle class="highlight ico-my-lacoste only-mobile" rel="nofollow">My Account</a></li>
+ 
+
+</ul>
+</li>
+
+
+<li><a target="_blank" href="http://stores.lacoste.com?lang=en" class="highlight ico-find-store only-mobile">Find a boutique</a></li>
+
+ 
+ 	 <li><a data-dialog="dialog-menu-myaccount" href="https://www.lacoste.com/us/account" data-dialog-only-desktop data-dialog-toggle class="highlight ico-my-lacoste only-mobile" rel="nofollow">My Account</a></li>
+ 
+
+</ul>
+</li>
+
+
+
+
+<li data-level="1" data-accordion-menu-href="dialog-menu-Lacoste_Kids" data-accordion-menu-group="menu-collapse">
+
+
+
+
+
+<a class="menu-acc"  >Kids </a>
+
+
+<ul>
+
+
+
+<li data-level="2">
+
+
+
+
+<a class=" ">Boys</a>
+<ul class="ulTablet  ">
+<li><a class="title-submenu only-mobile" href="/us/lacoste/kids/boys/">SEE ALL Boys PRODUCTS</a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/kids/boys/new-arrivals/" >New Arrivals</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/kids/boys/polos/" >Polos</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/kids/boys/tops/" >Tops</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/kids/boys/bottoms/" >Bottoms</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/kids/boys/shoes/" >Shoes</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/kids/boys/accessories/" >Accessories</a></li>
+
+
+
+
+<li><a href="/us/lacoste/kids/boys/">SEE ALL Kids Boys</a></li>
+
+<li><a target="_blank" href="http://stores.lacoste.com?lang=en" class="highlight ico-find-store only-mobile">Find a boutique</a></li>
+
+ 
+ 	 <li><a data-dialog="dialog-menu-myaccount" href="https://www.lacoste.com/us/account" data-dialog-only-desktop data-dialog-toggle class="highlight ico-my-lacoste only-mobile" rel="nofollow">My Account</a></li>
+ 
+
+</ul>
+</li>
+
+
+
+
+<li data-level="2">
+
+
+
+
+<a class=" ">Girls</a>
+<ul class="ulTablet  ">
+<li><a class="title-submenu only-mobile" href="/us/lacoste/kids/girls/">SEE ALL Girls PRODUCTS</a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/kids/girls/new-arrivals/" >New Arrivals</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/kids/girls/polos/" >Polos</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/kids/girls/tops/" >Tops</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/kids/girls/dresses/" >Dresses</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/kids/girls/bottoms/" >Bottoms</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/kids/girls/shoes/" >Shoes</a></li>
+
+
+
+
+<li><a href="/us/lacoste/kids/girls/">SEE ALL Kids Girls</a></li>
+
+<li><a target="_blank" href="http://stores.lacoste.com?lang=en" class="highlight ico-find-store only-mobile">Find a boutique</a></li>
+
+ 
+ 	 <li><a data-dialog="dialog-menu-myaccount" href="https://www.lacoste.com/us/account" data-dialog-only-desktop data-dialog-toggle class="highlight ico-my-lacoste only-mobile" rel="nofollow">My Account</a></li>
+ 
+
+</ul>
+</li>
+
+
+
+
+<li data-level="2">
+
+
+
+
+<a class=" ">New Born</a>
+<ul class="ulTablet  ">
+<li><a class="title-submenu only-mobile" href="/us/lacoste/kids/new-born/">SEE ALL New Born PRODUCTS</a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/kids/new-born/baby-boy/" >Baby Boy</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/kids/new-born/baby-girl/" >Baby Girl</a></li>
+
+
+
+
+<li><a href="/us/lacoste/kids/new-born/">SEE ALL Kids New Born</a></li>
+
+<li><a target="_blank" href="http://stores.lacoste.com?lang=en" class="highlight ico-find-store only-mobile">Find a boutique</a></li>
+
+ 
+ 	 <li><a data-dialog="dialog-menu-myaccount" href="https://www.lacoste.com/us/account" data-dialog-only-desktop data-dialog-toggle class="highlight ico-my-lacoste only-mobile" rel="nofollow">My Account</a></li>
+ 
+
+</ul>
+</li>
+
+
+
+
+<li><a target="_blank" href="http://stores.lacoste.com?lang=en" class="highlight ico-find-store only-mobile">Find a boutique</a></li>
+
+ 
+ 	 <li><a data-dialog="dialog-menu-myaccount" href="https://www.lacoste.com/us/account" data-dialog-only-desktop data-dialog-toggle class="highlight ico-my-lacoste only-mobile" rel="nofollow">My Account</a></li>
+ 
+
+</ul>
+</li>
+
+
+
+
+<li data-level="1" data-accordion-menu-href="dialog-menu-Lacoste_Shoes" data-accordion-menu-group="menu-collapse">
+
+
+
+
+
+<a class="menu-acc"  >Shoes </a>
+
+
+<ul>
+
+
+
+<li data-level="2">
+
+
+
+
+<a class=" ">Men</a>
+<ul class="ulTablet  ">
+<li><a class="title-submenu only-mobile" href="/us/lacoste/shoes/men/">SEE ALL Men PRODUCTS</a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="http://www.lacoste.com/us/lacoste/men/shoes/new-arrivals/" >New Arrivals</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="http://www.lacoste.com/us/lacoste/men/shoes/sneakers/" >Sneakers</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="http://www.lacoste.com/us/lacoste/men/shoes/oxfords%2C-drivers-loafers/" >Oxfords, Drivers &amp; Loafers</a></li>
+
+
+
+
+<li><a href="/us/lacoste/shoes/men/">SEE ALL Shoes Men</a></li>
+
+<li><a target="_blank" href="http://stores.lacoste.com?lang=en" class="highlight ico-find-store only-mobile">Find a boutique</a></li>
+
+ 
+ 	 <li><a data-dialog="dialog-menu-myaccount" href="https://www.lacoste.com/us/account" data-dialog-only-desktop data-dialog-toggle class="highlight ico-my-lacoste only-mobile" rel="nofollow">My Account</a></li>
+ 
+
+</ul>
+</li>
+
+
+
+
+<li data-level="2">
+
+
+
+
+<a class=" ">Women</a>
+<ul class="ulTablet  ">
+<li><a class="title-submenu only-mobile" href="/us/lacoste/shoes/women/">SEE ALL Women PRODUCTS</a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="http://www.lacoste.com/us/lacoste/women/shoes/new-arrivals/" >New Arrivals</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="http://www.lacoste.com/us/lacoste/women/shoes/flats/" >Flats</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="http://www.lacoste.com/us/lacoste/women/shoes/sneakers/" >Sneakers</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="http://www.lacoste.com/us/lacoste/women/shoes/sandals/" >Sandals</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="http://www.lacoste.com/us/lacoste/women/shoes/boots-wedges/" >Boots &amp; Wedges</a></li>
+
+
+
+
+<li><a href="/us/lacoste/shoes/women/">SEE ALL Shoes Women</a></li>
+
+<li><a target="_blank" href="http://stores.lacoste.com?lang=en" class="highlight ico-find-store only-mobile">Find a boutique</a></li>
+
+ 
+ 	 <li><a data-dialog="dialog-menu-myaccount" href="https://www.lacoste.com/us/account" data-dialog-only-desktop data-dialog-toggle class="highlight ico-my-lacoste only-mobile" rel="nofollow">My Account</a></li>
+ 
+
+</ul>
+</li>
+
+
+
+
+<li data-level="2">
+
+
+
+
+<a class=" ">Kids</a>
+<ul class="ulTablet  ">
+<li><a class="title-submenu only-mobile" href="/us/lacoste/shoes/kids/">SEE ALL Kids PRODUCTS</a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="http://www.lacoste.com/us/lacoste/kids/girls/shoes/" >Girls Shoes</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="http://www.lacoste.com/us/lacoste/kids/boys/shoes/" >Boys Shoes</a></li>
+
+
+
+
+<li><a href="/us/lacoste/shoes/kids/">SEE ALL Shoes Kids</a></li>
+
+<li><a target="_blank" href="http://stores.lacoste.com?lang=en" class="highlight ico-find-store only-mobile">Find a boutique</a></li>
+
+ 
+ 	 <li><a data-dialog="dialog-menu-myaccount" href="https://www.lacoste.com/us/account" data-dialog-only-desktop data-dialog-toggle class="highlight ico-my-lacoste only-mobile" rel="nofollow">My Account</a></li>
+ 
+
+</ul>
+</li>
+
+
+<li><a target="_blank" href="http://stores.lacoste.com?lang=en" class="highlight ico-find-store only-mobile">Find a boutique</a></li>
+
+ 
+ 	 <li><a data-dialog="dialog-menu-myaccount" href="https://www.lacoste.com/us/account" data-dialog-only-desktop data-dialog-toggle class="highlight ico-my-lacoste only-mobile" rel="nofollow">My Account</a></li>
+ 
+
+</ul>
+</li>
+
+
+
+
+<li data-level="1" data-accordion-menu-href="dialog-menu-Lacoste_Accessories" data-accordion-menu-group="menu-collapse">
+
+
+
+
+
+<a class="menu-acc"  >Accessories </a>
+
+
+<ul>
+
+
+
+<li data-level="2">
+
+
+
+
+<a class=" ">Men</a>
+<ul class="ulTablet  ">
+<li><a class="title-submenu only-mobile" href="/us/lacoste/accessories/men/">SEE ALL Men PRODUCTS</a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="http://www.lacoste.com/us/lacoste/men/accessories/watches/" >Watches</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="http://www.lacoste.com/us/lacoste/men/accessories/sunglasses/" >Sunglasses</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="http://www.lacoste.com/us/lacoste/men/accessories/fragrance/" >Fragrance</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="http://www.lacoste.com/us/lacoste/men/leather-goods/bags/" >Bags</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="http://www.lacoste.com/us/lacoste/men/leather-goods/small-leather-goods/" >Small Leather Goods</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="http://www.lacoste.com/us/lacoste/men/leather-goods/belts/" >Belts</a></li>
+
+
+
+
+<li><a href="/us/lacoste/accessories/men/">SEE ALL Accessories Men</a></li>
+
+<li><a target="_blank" href="http://stores.lacoste.com?lang=en" class="highlight ico-find-store only-mobile">Find a boutique</a></li>
+
+ 
+ 	 <li><a data-dialog="dialog-menu-myaccount" href="https://www.lacoste.com/us/account" data-dialog-only-desktop data-dialog-toggle class="highlight ico-my-lacoste only-mobile" rel="nofollow">My Account</a></li>
+ 
+
+</ul>
+</li>
+
+
+
+
+<li data-level="2">
+
+
+
+
+<a class=" ">Women</a>
+<ul class="ulTablet  ">
+<li><a class="title-submenu only-mobile" href="/us/lacoste/accessories/women/">SEE ALL Women PRODUCTS</a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="http://www.lacoste.com/us/lacoste/women/accessories/watches/" >Watches</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="http://www.lacoste.com/us/lacoste/women/accessories/sunglasses/" >Sunglasses</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="http://www.lacoste.com/us/lacoste/women/accessories/fragrance/" >Fragrance</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="http://www.lacoste.com/us/lacoste/women/leather-goods/bags/" >Bags</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="http://www.lacoste.com/us/lacoste/women/leather-goods/small-leather-goods/" >Small Leather Goods</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="http://www.lacoste.com/us/lacoste/women/leather-goods/belts/" >Belts</a></li>
+
+
+
+
+<li><a href="/us/lacoste/accessories/women/">SEE ALL Accessories Women</a></li>
+
+<li><a target="_blank" href="http://stores.lacoste.com?lang=en" class="highlight ico-find-store only-mobile">Find a boutique</a></li>
+
+ 
+ 	 <li><a data-dialog="dialog-menu-myaccount" href="https://www.lacoste.com/us/account" data-dialog-only-desktop data-dialog-toggle class="highlight ico-my-lacoste only-mobile" rel="nofollow">My Account</a></li>
+ 
+
+</ul>
+</li>
+
+
+
+
+<li data-level="2">
+
+
+
+
+<a class=" ">Home</a>
+<ul class="ulTablet  ">
+<li><a class="title-submenu only-mobile" href="/us/lacoste/accessories/home/">SEE ALL Home PRODUCTS</a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/accessories/home/bedding/" >Bedding</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/accessories/home/bath/" >Bath</a></li>
+
+
+
+
+<li><a href="/us/lacoste/accessories/home/">SEE ALL Accessories Home</a></li>
+
+<li><a target="_blank" href="http://stores.lacoste.com?lang=en" class="highlight ico-find-store only-mobile">Find a boutique</a></li>
+
+ 
+ 	 <li><a data-dialog="dialog-menu-myaccount" href="https://www.lacoste.com/us/account" data-dialog-only-desktop data-dialog-toggle class="highlight ico-my-lacoste only-mobile" rel="nofollow">My Account</a></li>
+ 
+
+</ul>
+</li>
+
+
+<li><a target="_blank" href="http://stores.lacoste.com?lang=en" class="highlight ico-find-store only-mobile">Find a boutique</a></li>
+
+ 
+ 	 <li><a data-dialog="dialog-menu-myaccount" href="https://www.lacoste.com/us/account" data-dialog-only-desktop data-dialog-toggle class="highlight ico-my-lacoste only-mobile" rel="nofollow">My Account</a></li>
+ 
+
+</ul>
+</li>
+
+
+
+
+<li data-level="1" data-accordion-menu-href="dialog-menu-Lacoste_Sale" data-accordion-menu-group="menu-collapse">
+
+
+
+
+
+<a class="menu-acc"  >Sale </a>
+
+
+<ul>
+
+
+
+<li data-level="2">
+
+
+
+
+<a class=" ">Men's sale</a>
+<ul class="ulTablet  ">
+<li><a class="title-submenu only-mobile" href="/us/lacoste/sale/men-s-sale/">SEE ALL Men's sale PRODUCTS</a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/sale/men-s-sale/polos-1/" >Polos</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/sale/men-s-sale/tees-1/" >Tees</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/sale/men-s-sale/woven-shirts-1/" >Woven Shirts</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/sale/men-s-sale/jackets-coats-1/" >Jackets &amp; Coats</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/sale/men-s-sale/sweaters-sweatshirts-1/" >Sweaters &amp; Sweatshirts</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/sale/men-s-sale/trousers-shorts-1/" >Trousers &amp; Shorts</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/sale/men-s-sale/shoes-1/" >Shoes</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/sale/men-s-sale/accessories-1/" >Accessories</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/sale/men-s-sale/leather-goods-1/" >Leather Goods</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/sale/men-s-sale/swimwear-1/" >Swimwear</a></li>
+
+
+
+
+
+
+
+
+
+
+<li><a href="/us/lacoste/sale/men-s-sale/">SEE ALL Sale Men's sale</a></li>
+
+<li><a target="_blank" href="http://stores.lacoste.com?lang=en" class="highlight ico-find-store only-mobile">Find a boutique</a></li>
+
+ 
+ 	 <li><a data-dialog="dialog-menu-myaccount" href="https://www.lacoste.com/us/account" data-dialog-only-desktop data-dialog-toggle class="highlight ico-my-lacoste only-mobile" rel="nofollow">My Account</a></li>
+ 
+
+</ul>
+</li>
+
+
+
+
+<li data-level="2">
+
+
+
+
+<a class=" ">Women's Sale</a>
+<ul class="ulTablet  ">
+<li><a class="title-submenu only-mobile" href="/us/lacoste/sale/women-s-sale/">SEE ALL Women's Sale PRODUCTS</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/sale/women-s-sale/polos-1/" >Polos</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/sale/women-s-sale/tees-tops-1/" >Tees &amp; Tops</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/sale/women-s-sale/dresses-skirts-1/" >Dresses &amp; Skirts</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/sale/women-s-sale/sweaters-sweatshirts-1/" >Sweaters &amp; Sweatshirts</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/sale/women-s-sale/jackets-coats-1/" >Jackets &amp; Coats</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/sale/women-s-sale/trousers-shorts-1/" >Trousers &amp; Shorts</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/sale/women-s-sale/leather-goods-1/" >Leather Goods</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/sale/women-s-sale/shoes-1/" >Shoes</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/sale/women-s-sale/accessories-1/" >Accessories</a></li>
+
+
+
+
+
+
+
+
+
+
+<li><a href="/us/lacoste/sale/women-s-sale/">SEE ALL Sale Women's Sale</a></li>
+
+<li><a target="_blank" href="http://stores.lacoste.com?lang=en" class="highlight ico-find-store only-mobile">Find a boutique</a></li>
+
+ 
+ 	 <li><a data-dialog="dialog-menu-myaccount" href="https://www.lacoste.com/us/account" data-dialog-only-desktop data-dialog-toggle class="highlight ico-my-lacoste only-mobile" rel="nofollow">My Account</a></li>
+ 
+
+</ul>
+</li>
+
+
+
+
+<li data-level="2">
+
+
+
+
+<a class=" ">Kids' Sale</a>
+<ul class="ulTablet  ">
+<li><a class="title-submenu only-mobile" href="/us/lacoste/sale/kids--sale/">SEE ALL Kids' Sale PRODUCTS</a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/sale/kids--sale/polos-1/" >Polos</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/sale/kids--sale/tees-tops-1/" >Tees &amp; Tops</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/sale/kids--sale/shoes-accessories-1/" >Shoes &amp; Accessories</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/sale/kids--sale/swimwear-1/" >Swimwear</a></li>
+
+
+
+
+<li><a href="/us/lacoste/sale/kids--sale/">SEE ALL Sale Kids' Sale</a></li>
+
+<li><a target="_blank" href="http://stores.lacoste.com?lang=en" class="highlight ico-find-store only-mobile">Find a boutique</a></li>
+
+ 
+ 	 <li><a data-dialog="dialog-menu-myaccount" href="https://www.lacoste.com/us/account" data-dialog-only-desktop data-dialog-toggle class="highlight ico-my-lacoste only-mobile" rel="nofollow">My Account</a></li>
+ 
+
+</ul>
+</li>
+
+
+
+
+<li data-level="2">
+
+
+
+
+<a class=" ">Polos By Price</a>
+<ul class="ulTablet  ">
+<li><a class="title-submenu only-mobile" href="/us/lacoste/sale/polos-by-price/">SEE ALL Polos By Price PRODUCTS</a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/sale/polos-by-price/polos-under-%2450/" >Polos Under $50</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/sale/polos-by-price/polos-under-%2475/" >Polos Under $75</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/sale/polos-by-price/polos-under-%24100/" >Polos Under $100</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class=" "><a href="/us/lacoste/sale/polos-by-price/polos-under-%24150/" >Polos under $150</a></li>
+
+
+
+
+<li><a href="/us/lacoste/sale/polos-by-price/">SEE ALL Sale Polos By Price</a></li>
+
+<li><a target="_blank" href="http://stores.lacoste.com?lang=en" class="highlight ico-find-store only-mobile">Find a boutique</a></li>
+
+ 
+ 	 <li><a data-dialog="dialog-menu-myaccount" href="https://www.lacoste.com/us/account" data-dialog-only-desktop data-dialog-toggle class="highlight ico-my-lacoste only-mobile" rel="nofollow">My Account</a></li>
+ 
+
+</ul>
+</li>
+
+
+<li><a target="_blank" href="http://stores.lacoste.com?lang=en" class="highlight ico-find-store only-mobile">Find a boutique</a></li>
+
+ 
+ 	 <li><a data-dialog="dialog-menu-myaccount" href="https://www.lacoste.com/us/account" data-dialog-only-desktop data-dialog-toggle class="highlight ico-my-lacoste only-mobile" rel="nofollow">My Account</a></li>
+ 
+
+</ul>
+</li>
+
+
+</ul>
+</li>
+<li>
+<ul class="middle-menu">
+
+
+
+
+<li data-level="1" data-accordion-menu-href="dialog-menu-Polo" data-accordion-menu-group="menu-collapse">
+
+
+<a class="menu-acc" >Polos </a>
+
+<ul>
+<li><span class="title-submenu only-mobile">SEE ALL Polos</span></li>
+
+
+<li data-level="2">
+
+
+<a>Men </a>
+
+<ul>
+<li><span class="title-submenu only-mobile">SEE ALL Men PRODUCTS</span></li>
+
+
+
+<li><a href="/us/polos/men/the-l.12.12-polo/">The L.12.12 Polo</a></li>
+
+
+
+
+
+<li><a href="/us/polos/men/city-polos/">City Polos</a></li>
+
+
+
+
+
+
+
+<li><a href="http://www.lacoste.com/us/polo/polo-guide.html">Polo Guide Men</a></li>
+
+
+
+
+
+
+
+<li><a href="/us/polos/men/regular-fit/">Regular Fit</a></li>
+
+
+
+
+
+<li><a href="/us/polos/men/original-fit/">Original Fit</a></li>
+
+
+
+
+
+<li><a href="/us/polos/men/slim-fit/">Slim Fit</a></li>
+
+
+
+<li><a target="_blank" href="http://stores.lacoste.com?lang=en" class="highlight ico-find-store only-mobile">Find a boutique</a></li>
+
+ 
+ 	 <li><a data-dialog="dialog-menu-myaccount" href="https://www.lacoste.com/us/account" data-dialog-only-desktop data-dialog-toggle class="highlight ico-my-lacoste only-mobile" rel="nofollow">My Account</a></li>
+ 
+
+</ul>
+</li>
+
+
+
+<li data-level="2">
+
+
+<a>Women </a>
+
+<ul>
+<li><span class="title-submenu only-mobile">SEE ALL Women PRODUCTS</span></li>
+
+
+
+<li><a href="http://www.lacoste.com/us/lacoste/women/clothing/polos/">All polos</a></li>
+
+
+
+
+
+<li><a href="http://www.lacoste.com/us/polo/polo-guide.html">Polo Guide Women</a></li>
+
+
+
+
+
+<li><a href="/us/polos/women/slim-fit/">Slim Fit</a></li>
+
+
+
+
+
+<li><a href="/us/polos/women/classic-fit/">Classic Fit</a></li>
+
+
+
+<li><a target="_blank" href="http://stores.lacoste.com?lang=en" class="highlight ico-find-store only-mobile">Find a boutique</a></li>
+
+ 
+ 	 <li><a data-dialog="dialog-menu-myaccount" href="https://www.lacoste.com/us/account" data-dialog-only-desktop data-dialog-toggle class="highlight ico-my-lacoste only-mobile" rel="nofollow">My Account</a></li>
+ 
+
+</ul>
+</li>
+
+
+
+<li data-level="2">
+
+
+<a>Kids </a>
+
+<ul>
+<li><span class="title-submenu only-mobile">SEE ALL Kids PRODUCTS</span></li>
+
+
+
+<li><a href="http://www.lacoste.com/us/lacoste/kids/boys/polos/">All kids polos</a></li>
+
+
+
+<li><a target="_blank" href="http://stores.lacoste.com?lang=en" class="highlight ico-find-store only-mobile">Find a boutique</a></li>
+
+ 
+ 	 <li><a data-dialog="dialog-menu-myaccount" href="https://www.lacoste.com/us/account" data-dialog-only-desktop data-dialog-toggle class="highlight ico-my-lacoste only-mobile" rel="nofollow">My Account</a></li>
+ 
+
+</ul>
+</li>
+
+
+
+<li data-level="2">
+
+
+<a>We Are Polo </a>
+
+<ul>
+<li><span class="title-submenu only-mobile">SEE ALL We Are Polo PRODUCTS</span></li>
+
+
+
+<li><a href="http://www.lacoste.com/us/polo-shop.html">Polo Shop</a></li>
+
+
+
+
+
+<li><a href="http://www.lacoste.com/us/lemagazine_MyLacostePolo.html">#MYLACOSTEPOLO</a></li>
+
+
+
+
+
+<li><a href="http://www.lacoste.com/us/about/we-are-polo.html#heritage">Heritage</a></li>
+
+
+
+
+
+<li><a href="http://www.lacoste.com/us/about/we-are-polo.html#savoir-faire">Savoir-Faire</a></li>
+
+
+
+
+
+<li><a href="http://www.lacoste.com/us/about/we-are-polo.html#petit-pique">Petit piqu&eacute;</a></li>
+
+
+
+
+
+<li><a target="_blank" href="http://stores.lacoste.com?lang=en" class="highlight ico-find-store only-mobile">Find a boutique</a></li>
+
+ 
+ 	 <li><a data-dialog="dialog-menu-myaccount" href="https://www.lacoste.com/us/account" data-dialog-only-desktop data-dialog-toggle class="highlight ico-my-lacoste only-mobile" rel="nofollow">My Account</a></li>
+ 
+
+</ul>
+</li>
+
+
+
+
+</ul>
+</li>
+
+
+
+
+
+<li data-level="1" data-accordion-menu-href="dialog-menu-Live" data-accordion-menu-group="menu-collapse">
+
+
+<a class="menu-entry-live">Lacoste LIVE </a>
+
+<ul>
+<li><span class="title-submenu only-mobile">SEE ALL Lacoste LIVE</span></li>
+
+
+<li data-level="2">
+
+
+<a>Men </a>
+
+<ul>
+<li><span class="title-submenu only-mobile">SEE ALL Men PRODUCTS</span></li>
+
+
+
+<li><a href="/us/lacoste-live/men/polos/">Polos</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-live/men/t-shirts/">T-Shirts</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-live/men/woven-shirts/">Woven Shirts</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-live/men/sweaters-sweatshirts/">Sweaters &amp; Sweatshirts</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-live/men/jackets-coats/">Jackets &amp; Coats</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-live/men/pants-shorts/">Pants &amp; Shorts</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-live/men/swimwear/">Swimwear</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-live/men/shoes/">Shoes</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-live/men/accessories/">Accessories</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-live/men/socks/">Socks</a></li>
+
+
+
+
+
+<li><a target="_blank" href="http://stores.lacoste.com?lang=en" class="highlight ico-find-store only-mobile">Find a boutique</a></li>
+
+ 
+ 	 <li><a data-dialog="dialog-menu-myaccount" href="https://www.lacoste.com/us/account" data-dialog-only-desktop data-dialog-toggle class="highlight ico-my-lacoste only-mobile" rel="nofollow">My Account</a></li>
+ 
+
+</ul>
+</li>
+
+
+
+<li data-level="2">
+
+
+<a>Women </a>
+
+<ul>
+<li><span class="title-submenu only-mobile">SEE ALL Women PRODUCTS</span></li>
+
+
+
+<li><a href="/us/lacoste-live/women/polos/">Polos</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-live/women/t-shirts-tops/">T-Shirts &amp; Tops</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-live/women/dresses-skirts/">Dresses &amp; Skirts</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-live/women/sweaters-sweatshirts/">Sweaters &amp; Sweatshirts</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-live/women/pants-shorts/">Pants &amp; Shorts</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-live/women/jackets-coats/">Jackets &amp; Coats</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-live/women/leather-goods/">Leather Goods</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-live/women/all-women-live/">All Women Live</a></li>
+
+
+
+
+
+<li><a target="_blank" href="http://stores.lacoste.com?lang=en" class="highlight ico-find-store only-mobile">Find a boutique</a></li>
+
+ 
+ 	 <li><a data-dialog="dialog-menu-myaccount" href="https://www.lacoste.com/us/account" data-dialog-only-desktop data-dialog-toggle class="highlight ico-my-lacoste only-mobile" rel="nofollow">My Account</a></li>
+ 
+
+</ul>
+</li>
+
+
+
+<li data-level="2">
+
+
+<a>Accessories </a>
+
+<ul>
+<li><span class="title-submenu only-mobile">SEE ALL Accessories PRODUCTS</span></li>
+
+
+
+<li><a href="/us/lacoste-live/accessories/leather-goods/">Leather Goods</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-live/accessories/caps-hats/">Caps &amp; Hats</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-live/accessories/fragrance/">Fragrance</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-live/accessories/socks/">Socks</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-live/accessories/scarves-gloves/">Scarves &amp; Gloves</a></li>
+
+
+
+<li><a target="_blank" href="http://stores.lacoste.com?lang=en" class="highlight ico-find-store only-mobile">Find a boutique</a></li>
+
+ 
+ 	 <li><a data-dialog="dialog-menu-myaccount" href="https://www.lacoste.com/us/account" data-dialog-only-desktop data-dialog-toggle class="highlight ico-my-lacoste only-mobile" rel="nofollow">My Account</a></li>
+ 
+
+</ul>
+</li>
+
+
+
+<li data-level="2">
+
+
+<a>What's new </a>
+
+<ul>
+<li><span class="title-submenu only-mobile">SEE ALL What's new PRODUCTS</span></li>
+
+
+
+<li><a href="/us/lacoste-live/what-s-new/new-arrivals/">New Arrivals</a></li>
+
+
+
+
+
+<li><a href="http://www.lacoste.com/us/playground-magazine/editor-s-picks/pinstripes-on-the-court/">Pinstripes on the Court</a></li>
+
+
+
+<li><a target="_blank" href="http://stores.lacoste.com?lang=en" class="highlight ico-find-store only-mobile">Find a boutique</a></li>
+
+ 
+ 	 <li><a data-dialog="dialog-menu-myaccount" href="https://www.lacoste.com/us/account" data-dialog-only-desktop data-dialog-toggle class="highlight ico-my-lacoste only-mobile" rel="nofollow">My Account</a></li>
+ 
+
+</ul>
+</li>
+
+
+
+
+</ul>
+</li>
+
+
+
+<li data-level="1" data-accordion-menu-href="dialog-menu-Sport" data-accordion-menu-group="menu-collapse">
+
+
+<a class="menu-entry-sport">Lacoste SPORT </a>
+
+<ul>
+<li><span class="title-submenu only-mobile">SEE ALL Lacoste SPORT</span></li>
+
+
+<li data-level="2">
+
+
+<a>Men </a>
+
+<ul>
+<li><span class="title-submenu only-mobile">SEE ALL Men PRODUCTS</span></li>
+
+
+
+<li><a href="/us/lacoste-sport/men/golf/">Golf</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-sport/men/tennis/">Tennis</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-sport/men/polos/">Polos</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-sport/men/t-shirts/">T-Shirts</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-sport/men/sweaters-sweatshirts/">Sweaters &amp; Sweatshirts</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-sport/men/shorts-pants/">Shorts &amp; Pants</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-sport/men/jackets-coats/">Jackets &amp; Coats</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-sport/men/tracksuits/">Tracksuits</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-sport/men/shoes/">Shoes</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-sport/men/caps-hats/">Caps &amp; Hats</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-sport/men/socks/">Socks</a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="/us/lacoste-sport/men/equipment/">Equipment</a></li>
+
+
+
+<li><a target="_blank" href="http://stores.lacoste.com?lang=en" class="highlight ico-find-store only-mobile">Find a boutique</a></li>
+
+ 
+ 	 <li><a data-dialog="dialog-menu-myaccount" href="https://www.lacoste.com/us/account" data-dialog-only-desktop data-dialog-toggle class="highlight ico-my-lacoste only-mobile" rel="nofollow">My Account</a></li>
+ 
+
+</ul>
+</li>
+
+
+
+<li data-level="2">
+
+
+<a>Women </a>
+
+<ul>
+<li><span class="title-submenu only-mobile">SEE ALL Women PRODUCTS</span></li>
+
+
+
+<li><a href="/us/lacoste-sport/women/polos/">Polos</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-sport/women/t-shirts/">T-Shirts</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-sport/women/dresses-skirts/">Dresses &amp; Skirts</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-sport/women/sweaters-sweatshirts/">Sweaters &amp; Sweatshirts</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-sport/women/shorts-pants/">Shorts &amp; Pants</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-sport/women/jackets-coats/">Jackets &amp; Coats</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-sport/women/golf/">Golf</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-sport/women/tennis/">Tennis</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-sport/women/shoes/">Shoes</a></li>
+
+
+
+
+
+
+
+
+
+<li><a target="_blank" href="http://stores.lacoste.com?lang=en" class="highlight ico-find-store only-mobile">Find a boutique</a></li>
+
+ 
+ 	 <li><a data-dialog="dialog-menu-myaccount" href="https://www.lacoste.com/us/account" data-dialog-only-desktop data-dialog-toggle class="highlight ico-my-lacoste only-mobile" rel="nofollow">My Account</a></li>
+ 
+
+</ul>
+</li>
+
+
+
+<li data-level="2">
+
+
+<a>What's New </a>
+
+<ul>
+<li><span class="title-submenu only-mobile">SEE ALL What's New PRODUCTS</span></li>
+
+
+
+<li><a href="/us/lacoste-sport/what-s-new/new-arrivals/">New Arrivals</a></li>
+
+
+
+
+
+<li><a href="http://www.lacoste.com/us/roland-garros-ss15-mixte.html">Roland Garros</a></li>
+
+
+
+
+
+<li><a href="http://www.lacoste.com/us/miami-open/">Miami Open</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-sport/what-s-new/lifestyle-collection/">Lifestyle Collection</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-sport/what-s-new/john-isner-s-top-picks/">John Isner's Top Picks</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-sport/what-s-new/on-the-court/">On the Court</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-sport/what-s-new/on-the-green/">On the Green</a></li>
+
+
+
+<li><a target="_blank" href="http://stores.lacoste.com?lang=en" class="highlight ico-find-store only-mobile">Find a boutique</a></li>
+
+ 
+ 	 <li><a data-dialog="dialog-menu-myaccount" href="https://www.lacoste.com/us/account" data-dialog-only-desktop data-dialog-toggle class="highlight ico-my-lacoste only-mobile" rel="nofollow">My Account</a></li>
+ 
+
+</ul>
+</li>
+
+
+
+<li data-level="2">
+
+
+<a>Kids </a>
+
+<ul>
+<li><span class="title-submenu only-mobile">SEE ALL Kids PRODUCTS</span></li>
+
+
+
+<li><a href="/us/lacoste-sport/kids/polos/">Polos</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-sport/kids/t-shirts/">T-Shirts</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-sport/kids/bottoms/">Bottoms</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-sport/kids/shoes/">Shoes</a></li>
+
+
+
+
+
+<li><a target="_blank" href="http://stores.lacoste.com?lang=en" class="highlight ico-find-store only-mobile">Find a boutique</a></li>
+
+ 
+ 	 <li><a data-dialog="dialog-menu-myaccount" href="https://www.lacoste.com/us/account" data-dialog-only-desktop data-dialog-toggle class="highlight ico-my-lacoste only-mobile" rel="nofollow">My Account</a></li>
+ 
+
+</ul>
+</li>
+
+
+
+
+<li><a target="_blank" href="http://stores.lacoste.com?lang=en" class="highlight ico-find-store only-mobile">Find a boutique</a></li>
+
+ 
+ 	 <li><a data-dialog="dialog-menu-myaccount" href="https://www.lacoste.com/us/account" data-dialog-only-desktop data-dialog-toggle class="highlight ico-my-lacoste only-mobile" rel="nofollow">My Account</a></li>
+ 
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li>
+<ul>
+
+
+
+
+<li data-level="1" data-accordion-menu-href="dialog-menu-playground" data-accordion-menu-group="menu-collapse">
+
+
+<a class="redirectformobile menu-acc"  href="http://www.lacoste.com/us/LeMagazine.html">Playground magazine</a>
+
+</li>
+
+
+
+
+<li data-level="1" data-accordion-menu-href="dialog-menu-about" data-accordion-menu-group="menu-collapse">
+<a class="menu-acc" >About us</a>
+<ul>
+
+
+
+
+<li>
+<a href="http://www.lacoste.com/us/about/manifesto.html">Manifesto</a>
+</li>
+
+
+
+<li>
+<a href="http://www.lacoste.com/us/about/brandcodes.html">Brand Codes</a>
+</li>
+
+
+
+<li>
+<a href="http://www.lacoste.com/us/about/timeline.html">Timeline</a>
+</li>
+
+
+<li><a target="_blank" href="http://stores.lacoste.com?lang=en" class="highlight ico-find-store only-mobile">Find a boutique</a></li>
+
+ 
+ 	 <li><a data-dialog="dialog-menu-myaccount" href="https://www.lacoste.com/us/account" data-dialog-only-desktop data-dialog-toggle class="highlight ico-my-lacoste only-mobile" rel="nofollow">My Account</a></li>
+ 
+
+</li>
+</ul>
+</li>
+
+</ul>
+</li>
+<li>
+<ul>
+<li><a target="_blank" href="http://stores.lacoste.com?lang=en" class="highlight ico-find-store no-desktop">Find a boutique</a></li>
+
+ 
+ 	 <li><a data-dialog="dialog-menu-myaccount" href="https://www.lacoste.com/us/account" data-dialog-only-desktop data-dialog-toggle class="highlight ico-my-lacoste only-mobile" rel="nofollow">My Account</a></li>
+ 
+
+</ul>
+</li>
+</ul>
+</aside>
+
+
+
+<div class="dialog dialog-holder accordion-desktop-only data-dialog-drop-menu" data-accordion-menu-id="dialog-menu-Lacoste_Men" data-accordion-menu-group="menu-collapse">
+
+	 
+
+
+	
+
+
+
+
+<div class="dialog-banner-top content-asset"><!-- dwMarker="content" dwContentID="bdQzUiaaixhbIaaadnVRANKdbW" -->
+
+<div class="banner-description">
+
+<span class="title-40">Men's Collection</span>
+
+
+<p><a href="http://www.lacoste.com/us/lacoste/men/clothing/new-arrivals/">Shop Men's Fall/Winter 2015 New Arrivals</a></p>
+
+</div>
+<div class="banner-image">
+
+<span data-picture data-alt="Lacoste">
+
+<span data-src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dwa6c93264/rich-menu/FW15/menu-rich-men-banner.jpg" data-media="(min-width: 768px)"></span>
+
+<span data-src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dwa6c93264/rich-menu/FW15/menu-rich-men-banner.jpg" data-media="(min-width: 1280px)"></span>
+<!--[if (lt IE 9) & (!IEMobile)]>
+<span data-src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dwa6c93264/rich-menu/FW15/menu-rich-men-banner.jpg"></span>
+<![endif]-->
+</span>
+
+</div>
+
+</div>
+
+ 
+	
+<div class="menu-stories">
+<ul>
+
+
+<li>
+
+
+
+<a href="/us/lacoste/men/clothing/">
+
+	 
+
+	
+</a>
+<a href="/us/lacoste/men/clothing/" style="color:#454545;" class="title-15">
+Clothing
+</a>
+<ul>
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/men/clothing/polos/" >Polos</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/men/clothing/the-l.12.12-polo/" >The L.12.12 Polo</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/men/clothing/new-arrivals/" >New Arrivals</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/men/clothing/bestsellers/" >Bestsellers</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/men/clothing/t-shirts/" >T-Shirts</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/men/clothing/woven-shirts/" >Woven Shirts</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/men/clothing/sweaters/" >Sweaters</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/men/clothing/sweatshirts/" >Sweatshirts</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/men/clothing/pants-shorts/" >Pants &amp; Shorts</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/men/clothing/jackets-coats/" >Jackets &amp; Coats</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/men/clothing/underwear/" >Underwear</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/men/clothing/swimwear/" >Swimwear</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/men/clothing/big-tall/" >Big &amp; Tall</a>
+
+</li>
+
+
+
+
+
+</ul>
+
+<a class="block-link" href="/us/lacoste/men/clothing/">SEE ALL Men Clothing</a>
+
+</li>
+
+
+
+<li>
+
+
+
+<a href="/us/lacoste/men/shoes/">
+
+	 
+
+	
+</a>
+<a href="/us/lacoste/men/shoes/" style="color:#454545;" class="title-15">
+Shoes
+</a>
+<ul>
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/men/shoes/new-arrivals/" >New Arrivals</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/men/shoes/sneakers/" >Sneakers</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/men/shoes/oxfords%2C-drivers-loafers/" >Oxfords, Drivers &amp; Loafers</a>
+
+</li>
+
+
+
+</ul>
+
+<a class="block-link" href="/us/lacoste/men/shoes/">SEE ALL Men Shoes</a>
+
+</li>
+
+
+
+<li>
+
+
+
+<a href="/us/lacoste/men/accessories/">
+
+	 
+
+	
+</a>
+<a href="/us/lacoste/men/accessories/" style="color:#454545;" class="title-15">
+Accessories
+</a>
+<ul>
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/men/accessories/caps-hats/" >Caps &amp; Hats</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/men/accessories/watches/" >Watches</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/men/accessories/sunglasses/" >Sunglasses</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/men/accessories/fragrance/" >Fragrance</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/men/accessories/socks/" >Socks</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/men/accessories/scarves-gloves/" >Scarves &amp; Gloves</a>
+
+</li>
+
+
+
+</ul>
+
+<a class="block-link" href="/us/lacoste/men/accessories/">SEE ALL Men Accessories</a>
+
+</li>
+
+
+
+<li>
+
+
+
+<a href="/us/lacoste/men/leather-goods/">
+
+	 
+
+	
+</a>
+<a href="/us/lacoste/men/leather-goods/" style="color:#454545;" class="title-15">
+Leather goods
+</a>
+<ul>
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/men/leather-goods/bags/" >Bags</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/men/leather-goods/small-leather-goods/" >Small Leather Goods</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/men/leather-goods/belts/" >Belts</a>
+
+</li>
+
+
+
+</ul>
+
+<a class="block-link" href="/us/lacoste/men/leather-goods/">SEE ALL Men Leather goods</a>
+
+</li>
+
+
+
+
+</ul>
+</div>
+</div>
+
+
+
+
+
+<div class="dialog dialog-holder accordion-desktop-only data-dialog-drop-menu" data-accordion-menu-id="dialog-menu-Lacoste_Women" data-accordion-menu-group="menu-collapse">
+
+	 
+
+
+	
+
+
+
+
+<div class="dialog-banner-top content-asset"><!-- dwMarker="content" dwContentID="becBkiaaixLAQaaadn3BwNKdbW" -->
+
+<div class="banner-description">
+
+<span class="title-40">Women's Collection</span>
+
+
+<p><a href="http://www.lacoste.com/us/lacoste/women/clothing/new-arrivals/">Shop Women's Fall/Winter 2015 New Arrivals</a></p>
+
+</div>
+<div class="banner-image">
+
+<span data-picture data-alt="Lacoste">
+
+<span data-src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dw37f50bf3/rich-menu/FW15/menu-rich-women-banner.jpg" data-media="(min-width: 768px)"></span>
+
+<span data-src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dw37f50bf3/rich-menu/FW15/menu-rich-women-banner.jpg" data-media="(min-width: 1280px)"></span>
+<!--[if (lt IE 9) & (!IEMobile)]>
+<span data-src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dw37f50bf3/rich-menu/FW15/menu-rich-women-banner.jpg"></span>
+<![endif]-->
+</span>
+
+</div>
+
+</div>
+
+ 
+	
+<div class="menu-stories">
+<ul>
+
+
+<li>
+
+
+
+<a href="/us/lacoste/women/clothing/">
+
+	 
+
+	
+</a>
+<a href="/us/lacoste/women/clothing/" style="color:#454545;" class="title-15">
+Clothing
+</a>
+<ul>
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/women/clothing/polos/" >Polos</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/women/clothing/new-arrivals/" >New Arrivals</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/women/clothing/t-shirts/" >T-Shirts</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/women/clothing/shirts-tops/" >Shirts &amp; Tops</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/women/clothing/dresses-skirts/" >Dresses &amp; Skirts</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/women/clothing/sweaters-sweatshirts/" >Sweaters &amp; Sweatshirts</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/women/clothing/pants-shorts/" >Pants &amp; Shorts</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/women/clothing/jackets-coats/" >Jackets &amp; Coats</a>
+
+</li>
+
+
+
+</ul>
+
+<a class="block-link" href="/us/lacoste/women/clothing/">SEE ALL Women Clothing</a>
+
+</li>
+
+
+
+<li>
+
+
+
+<a href="/us/lacoste/women/shoes/">
+
+	 
+
+	
+</a>
+<a href="/us/lacoste/women/shoes/" style="color:#454545;" class="title-15">
+Shoes
+</a>
+<ul>
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/women/shoes/flats/" >Flats</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/women/shoes/sneakers/" >Sneakers</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/women/shoes/sandals/" >Sandals</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/women/shoes/boots-wedges/" >Boots &amp; Wedges</a>
+
+</li>
+
+
+
+</ul>
+
+<a class="block-link" href="/us/lacoste/women/shoes/">SEE ALL Women Shoes</a>
+
+</li>
+
+
+
+<li>
+
+
+
+<a href="/us/lacoste/women/accessories/">
+
+	 
+
+	
+</a>
+<a href="/us/lacoste/women/accessories/" style="color:#454545;" class="title-15">
+Accessories
+</a>
+<ul>
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/women/accessories/watches/" >Watches</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/women/accessories/sunglasses/" >Sunglasses</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/women/accessories/fragrance/" >Fragrance</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/women/accessories/hats-headbands/" >Hats &amp; Headbands</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/women/accessories/scarves-gloves/" >Scarves &amp; Gloves</a>
+
+</li>
+
+
+
+</ul>
+
+<a class="block-link" href="/us/lacoste/women/accessories/">SEE ALL Women Accessories</a>
+
+</li>
+
+
+
+<li>
+
+
+
+<a href="/us/lacoste/women/leather-goods/">
+
+	 
+
+	
+</a>
+<a href="/us/lacoste/women/leather-goods/" style="color:#454545;" class="title-15">
+Leather goods
+</a>
+<ul>
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/women/leather-goods/bags/" >Bags</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/women/leather-goods/small-leather-goods/" >Small Leather Goods</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/women/leather-goods/belts/" >Belts</a>
+
+</li>
+
+
+
+</ul>
+
+<a class="block-link" href="/us/lacoste/women/leather-goods/">SEE ALL Women Leather goods</a>
+
+</li>
+
+
+</ul>
+</div>
+</div>
+
+
+
+
+
+<div class="dialog dialog-holder accordion-desktop-only data-dialog-drop-menu" data-accordion-menu-id="dialog-menu-Lacoste_Kids" data-accordion-menu-group="menu-collapse">
+
+	 
+
+
+	
+
+
+
+
+<div class="dialog-banner-top content-asset"><!-- dwMarker="content" dwContentID="bdRRkiaaixaXIaaadnj7ANKdbW" -->
+
+<div class="banner-description">
+
+<span class="title-40">Kids' Collection</span>
+
+
+<p>FOR YOUR MINI-ME. OUR COLORFUL, <br/>YOUNG AND FUN COLLECTION JUST FOR KIDS.<br/>
+<a href="http://www.lacoste.com/us/lacoste/kids/boys/new-arrivals/">Shop F/W 2015 New Arrivals for Boys</a><br>
+<a href="http://www.lacoste.com/us/lacoste/kids/girls/new-arrivals/">Shop F/W 2015 New Arrivals  for Girls</a></p>
+
+</div>
+<div class="banner-image">
+
+<span data-picture data-alt="Lacoste">
+
+<span data-src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dw23674114/rich-menu/FW15/menu-rich-kids-banner.jpg" data-media="(min-width: 768px)"></span>
+
+<span data-src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dw23674114/rich-menu/FW15/menu-rich-kids-banner.jpg" data-media="(min-width: 1280px)"></span>
+<!--[if (lt IE 9) & (!IEMobile)]>
+<span data-src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dw23674114/rich-menu/FW15/menu-rich-kids-banner.jpg"></span>
+<![endif]-->
+</span>
+
+</div>
+
+</div>
+
+ 
+	
+<div class="menu-stories">
+<ul>
+
+
+<li>
+
+
+
+<a href="/us/lacoste/kids/boys/">
+
+	 
+
+	
+</a>
+<a href="/us/lacoste/kids/boys/" style="color:#454545;" class="title-15">
+Boys
+</a>
+<ul>
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/kids/boys/new-arrivals/" >New Arrivals</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/kids/boys/polos/" >Polos</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/kids/boys/tops/" >Tops</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/kids/boys/bottoms/" >Bottoms</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/kids/boys/shoes/" >Shoes</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/kids/boys/accessories/" >Accessories</a>
+
+</li>
+
+
+
+</ul>
+
+<a class="block-link" href="/us/lacoste/kids/boys/">SEE ALL Kids Boys</a>
+
+</li>
+
+
+
+<li>
+
+
+
+<a href="/us/lacoste/kids/girls/">
+
+	 
+
+	
+</a>
+<a href="/us/lacoste/kids/girls/" style="color:#454545;" class="title-15">
+Girls
+</a>
+<ul>
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/kids/girls/new-arrivals/" >New Arrivals</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/kids/girls/polos/" >Polos</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/kids/girls/tops/" >Tops</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/kids/girls/dresses/" >Dresses</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/kids/girls/bottoms/" >Bottoms</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/kids/girls/shoes/" >Shoes</a>
+
+</li>
+
+
+
+</ul>
+
+<a class="block-link" href="/us/lacoste/kids/girls/">SEE ALL Kids Girls</a>
+
+</li>
+
+
+
+<li>
+
+
+
+<a href="/us/lacoste/kids/new-born/">
+
+	 
+
+	
+</a>
+<a href="/us/lacoste/kids/new-born/" style="color:#454545;" class="title-15">
+New Born
+</a>
+<ul>
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/kids/new-born/baby-boy/" >Baby Boy</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/kids/new-born/baby-girl/" >Baby Girl</a>
+
+</li>
+
+
+
+</ul>
+
+<a class="block-link" href="/us/lacoste/kids/new-born/">SEE ALL Kids New Born</a>
+
+</li>
+
+
+
+
+</ul>
+</div>
+</div>
+
+
+
+
+
+<div class="dialog dialog-holder accordion-desktop-only data-dialog-drop-menu" data-accordion-menu-id="dialog-menu-Lacoste_Shoes" data-accordion-menu-group="menu-collapse">
+
+	 
+
+
+	
+
+
+
+
+<div class="dialog-banner-top content-asset"><!-- dwMarker="content" dwContentID="de5boiaaix9eQaaadnJEINKdcX" -->
+
+<div class="banner-description">
+
+<span class="title-40">The footwear collection</span>
+
+
+<p>This season put your best foot forward.<br>
+Lacoste classics are once again reinvented.<br>
+
+<a href="http://www.lacoste.com/us/lacoste/men/shoes/">Shop Men's Shoes</a><br>
+<a href="http://www.lacoste.com/us/lacoste/women/shoes/">Shop Women's Shoes</a></p>
+
+</div>
+<div class="banner-image">
+
+<span data-picture data-alt="Lacoste">
+
+<span data-src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dwcae7cde7/rich-menu/FW15/menu-rich-shoes-banner.jpg" data-media="(min-width: 768px)"></span>
+
+<span data-src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dwcae7cde7/rich-menu/FW15/menu-rich-shoes-banner.jpg" data-media="(min-width: 1280px)"></span>
+<!--[if (lt IE 9) & (!IEMobile)]>
+<span data-src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dwcae7cde7/rich-menu/FW15/menu-rich-shoes-banner.jpg"></span>
+<![endif]-->
+</span>
+
+</div>
+
+</div>
+
+ 
+	
+<div class="menu-stories">
+<ul>
+
+
+<li>
+
+
+
+<a href="http://www.lacoste.com/us/lacoste/men/shoes/">
+
+	 
+
+	
+</a>
+<a href="http://www.lacoste.com/us/lacoste/men/shoes/" style="color:#454545;" class="title-15">
+Men
+</a>
+<ul>
+
+
+
+
+
+
+<li>
+<a href="http://www.lacoste.com/us/lacoste/men/shoes/new-arrivals/" >New Arrivals</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="http://www.lacoste.com/us/lacoste/men/shoes/sneakers/" >Sneakers</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="http://www.lacoste.com/us/lacoste/men/shoes/oxfords%2C-drivers-loafers/" >Oxfords, Drivers &amp; Loafers</a>
+
+</li>
+
+
+
+</ul>
+
+<a class="block-link" href="http://www.lacoste.com/us/lacoste/men/shoes/">SEE ALL Shoes Men</a>
+
+</li>
+
+
+
+<li>
+
+
+
+<a href="http://www.lacoste.com/us/lacoste/women/shoes/">
+
+	 
+
+	
+</a>
+<a href="http://www.lacoste.com/us/lacoste/women/shoes/" style="color:#454545;" class="title-15">
+Women
+</a>
+<ul>
+
+
+
+
+
+
+<li>
+<a href="http://www.lacoste.com/us/lacoste/women/shoes/new-arrivals/" >New Arrivals</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="http://www.lacoste.com/us/lacoste/women/shoes/flats/" >Flats</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="http://www.lacoste.com/us/lacoste/women/shoes/sneakers/" >Sneakers</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="http://www.lacoste.com/us/lacoste/women/shoes/sandals/" >Sandals</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="http://www.lacoste.com/us/lacoste/women/shoes/boots-wedges/" >Boots &amp; Wedges</a>
+
+</li>
+
+
+
+</ul>
+
+<a class="block-link" href="http://www.lacoste.com/us/lacoste/women/shoes/">SEE ALL Shoes Women</a>
+
+</li>
+
+
+
+<li>
+
+
+
+<a href="/us/lacoste/shoes/kids/">
+
+	 
+
+	
+</a>
+<a href="/us/lacoste/shoes/kids/" style="color:#454545;" class="title-15">
+Kids
+</a>
+<ul>
+
+
+
+
+
+
+<li>
+<a href="http://www.lacoste.com/us/lacoste/kids/girls/shoes/" >Girls Shoes</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="http://www.lacoste.com/us/lacoste/kids/boys/shoes/" >Boys Shoes</a>
+
+</li>
+
+
+
+</ul>
+
+<a class="block-link" href="/us/lacoste/shoes/kids/">SEE ALL Shoes Kids</a>
+
+</li>
+
+
+</ul>
+</div>
+</div>
+
+
+
+
+
+<div class="dialog dialog-holder accordion-desktop-only data-dialog-drop-menu" data-accordion-menu-id="dialog-menu-Lacoste_Accessories" data-accordion-menu-group="menu-collapse">
+
+	 
+
+
+	
+
+
+
+
+<div class="dialog-banner-top content-asset"><!-- dwMarker="content" dwContentID="bdACwiaaixEmUaaadnbBANKdbW" -->
+
+<div class="banner-description">
+
+<span class="title-40">Accessories</span>
+
+
+</div>
+<div class="banner-image">
+
+<span data-picture data-alt="Lacoste">
+
+<span data-src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dw62aeb625/rich-menu/FW15/20150818-accessories-FLYAWAY.jpg" data-media="(min-width: 768px)"></span>
+
+<span data-src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dw62aeb625/rich-menu/FW15/20150818-accessories-FLYAWAY.jpg" data-media="(min-width: 1280px)"></span>
+<!--[if (lt IE 9) & (!IEMobile)]>
+<span data-src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dw62aeb625/rich-menu/FW15/20150818-accessories-FLYAWAY.jpg"></span>
+<![endif]-->
+</span>
+
+</div>
+
+</div>
+
+ 
+	
+<div class="menu-stories">
+<ul>
+
+
+<li>
+
+
+
+<a href="http://www.lacoste.com/us/lacoste/men/accessories/">
+
+	 
+
+	
+</a>
+<a href="http://www.lacoste.com/us/lacoste/men/accessories/" style="color:#454545;" class="title-15">
+Men
+</a>
+<ul>
+
+
+
+
+
+
+<li>
+<a href="http://www.lacoste.com/us/lacoste/men/accessories/watches/" >Watches</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="http://www.lacoste.com/us/lacoste/men/accessories/sunglasses/" >Sunglasses</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="http://www.lacoste.com/us/lacoste/men/accessories/fragrance/" >Fragrance</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="http://www.lacoste.com/us/lacoste/men/leather-goods/bags/" >Bags</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="http://www.lacoste.com/us/lacoste/men/leather-goods/small-leather-goods/" >Small Leather Goods</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="http://www.lacoste.com/us/lacoste/men/leather-goods/belts/" >Belts</a>
+
+</li>
+
+
+
+</ul>
+
+<a class="block-link" href="http://www.lacoste.com/us/lacoste/men/accessories/">SEE ALL Accessories Men</a>
+
+</li>
+
+
+
+<li>
+
+
+
+<a href="http://www.lacoste.com/us/lacoste/women/accessories/">
+
+	 
+
+	
+</a>
+<a href="http://www.lacoste.com/us/lacoste/women/accessories/" style="color:#454545;" class="title-15">
+Women
+</a>
+<ul>
+
+
+
+
+
+
+<li>
+<a href="http://www.lacoste.com/us/lacoste/women/accessories/watches/" >Watches</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="http://www.lacoste.com/us/lacoste/women/accessories/sunglasses/" >Sunglasses</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="http://www.lacoste.com/us/lacoste/women/accessories/fragrance/" >Fragrance</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="http://www.lacoste.com/us/lacoste/women/leather-goods/bags/" >Bags</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="http://www.lacoste.com/us/lacoste/women/leather-goods/small-leather-goods/" >Small Leather Goods</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="http://www.lacoste.com/us/lacoste/women/leather-goods/belts/" >Belts</a>
+
+</li>
+
+
+
+</ul>
+
+<a class="block-link" href="http://www.lacoste.com/us/lacoste/women/accessories/">SEE ALL Accessories Women</a>
+
+</li>
+
+
+
+<li>
+
+
+
+<a href="/us/lacoste/accessories/home/">
+
+	 
+
+	
+</a>
+<a href="/us/lacoste/accessories/home/" style="color:#454545;" class="title-15">
+Home
+</a>
+<ul>
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/accessories/home/bedding/" >Bedding</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/accessories/home/bath/" >Bath</a>
+
+</li>
+
+
+
+</ul>
+
+<a class="block-link" href="/us/lacoste/accessories/home/">SEE ALL Accessories Home</a>
+
+</li>
+
+
+</ul>
+</div>
+</div>
+
+
+
+
+
+<div class="dialog dialog-holder accordion-desktop-only data-dialog-drop-menu" data-accordion-menu-id="dialog-menu-Lacoste_Sale" data-accordion-menu-group="menu-collapse">
+
+	 
+
+
+	
+
+
+
+
+<div class="dialog-banner-top content-asset"><!-- dwMarker="content" dwContentID="bduQEiaaixMM6aaadnwBANKdbW" -->
+
+<div class="banner-description">
+
+
+</div>
+<div class="banner-image">
+
+<span data-picture data-alt="Lacoste">
+
+<span data-src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dw54c4e7ed/categories/lacoste/20150813-SALE-FLYAWAY.jpg" data-media="(min-width: 768px)"></span>
+
+<span data-src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dw54c4e7ed/categories/lacoste/20150813-SALE-FLYAWAY.jpg" data-media="(min-width: 1280px)"></span>
+<!--[if (lt IE 9) & (!IEMobile)]>
+<span data-src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dw54c4e7ed/categories/lacoste/20150813-SALE-FLYAWAY.jpg"></span>
+<![endif]-->
+</span>
+
+</div>
+
+</div>
+
+ 
+	
+<div class="menu-stories">
+<ul>
+
+
+<li>
+
+
+
+<a href="/us/lacoste/sale/men-s-sale/">
+
+	 
+
+	
+</a>
+<a href="/us/lacoste/sale/men-s-sale/" style="color:#454545;" class="title-15">
+Men's sale
+</a>
+<ul>
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/sale/men-s-sale/polos-1/" >Polos</a>
+
+</li>
+
+
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/sale/men-s-sale/tees-1/" >Tees</a>
+
+</li>
+
+
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/sale/men-s-sale/woven-shirts-1/" >Woven Shirts</a>
+
+</li>
+
+
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/sale/men-s-sale/jackets-coats-1/" >Jackets &amp; Coats</a>
+
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/sale/men-s-sale/sweaters-sweatshirts-1/" >Sweaters &amp; Sweatshirts</a>
+
+</li>
+
+
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/sale/men-s-sale/trousers-shorts-1/" >Trousers &amp; Shorts</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/sale/men-s-sale/shoes-1/" >Shoes</a>
+
+</li>
+
+
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/sale/men-s-sale/accessories-1/" >Accessories</a>
+
+</li>
+
+
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/sale/men-s-sale/leather-goods-1/" >Leather Goods</a>
+
+</li>
+
+
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/sale/men-s-sale/swimwear-1/" >Swimwear</a>
+
+</li>
+
+
+
+
+
+</ul>
+
+<a class="block-link" href="/us/lacoste/sale/men-s-sale/">SEE ALL Sale Men's sale</a>
+
+</li>
+
+
+
+<li>
+
+
+
+<a href="/us/lacoste/sale/women-s-sale/">
+
+	 
+
+	
+</a>
+<a href="/us/lacoste/sale/women-s-sale/" style="color:#454545;" class="title-15">
+Women's Sale
+</a>
+<ul>
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/sale/women-s-sale/polos-1/" >Polos</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/sale/women-s-sale/tees-tops-1/" >Tees &amp; Tops</a>
+
+</li>
+
+
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/sale/women-s-sale/dresses-skirts-1/" >Dresses &amp; Skirts</a>
+
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/sale/women-s-sale/sweaters-sweatshirts-1/" >Sweaters &amp; Sweatshirts</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/sale/women-s-sale/jackets-coats-1/" >Jackets &amp; Coats</a>
+
+</li>
+
+
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/sale/women-s-sale/trousers-shorts-1/" >Trousers &amp; Shorts</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/sale/women-s-sale/leather-goods-1/" >Leather Goods</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/sale/women-s-sale/shoes-1/" >Shoes</a>
+
+</li>
+
+
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/sale/women-s-sale/accessories-1/" >Accessories</a>
+
+</li>
+
+
+
+
+
+</ul>
+
+<a class="block-link" href="/us/lacoste/sale/women-s-sale/">SEE ALL Sale Women's Sale</a>
+
+</li>
+
+
+
+<li>
+
+
+
+<a href="/us/lacoste/sale/kids--sale/">
+
+	 
+
+	
+</a>
+<a href="/us/lacoste/sale/kids--sale/" style="color:#454545;" class="title-15">
+Kids' Sale
+</a>
+<ul>
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/sale/kids--sale/polos-1/" >Polos</a>
+
+</li>
+
+
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/sale/kids--sale/tees-tops-1/" >Tees &amp; Tops</a>
+
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/sale/kids--sale/shoes-accessories-1/" >Shoes &amp; Accessories</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/sale/kids--sale/swimwear-1/" >Swimwear</a>
+
+</li>
+
+
+
+</ul>
+
+<a class="block-link" href="/us/lacoste/sale/kids--sale/">SEE ALL Sale Kids' Sale</a>
+
+</li>
+
+
+
+<li>
+
+
+
+<a href="/us/lacoste/sale/polos-by-price/">
+
+	 
+
+	
+</a>
+<a href="/us/lacoste/sale/polos-by-price/" style="color:#454545;" class="title-15">
+Polos By Price
+</a>
+<ul>
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/sale/polos-by-price/polos-under-%2450/" >Polos Under $50</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/sale/polos-by-price/polos-under-%2475/" >Polos Under $75</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/sale/polos-by-price/polos-under-%24100/" >Polos Under $100</a>
+
+</li>
+
+
+
+
+
+
+
+
+<li>
+<a href="/us/lacoste/sale/polos-by-price/polos-under-%24150/" >Polos under $150</a>
+
+</li>
+
+
+
+</ul>
+
+<a class="block-link" href="/us/lacoste/sale/polos-by-price/">SEE ALL Sale Polos By Price</a>
+
+</li>
+
+
+</ul>
+</div>
+</div>
+
+
+
+
+<div class="dialog dialog-holder accordion-desktop-only data-dialog-drop-menu" data-accordion-menu-id="dialog-menu-Polo" data-accordion-menu-group="menu-collapse">
+
+	 
+
+
+	
+
+
+
+
+<div class="dialog-banner-top content-asset"><!-- dwMarker="content" dwContentID="bdV7EiaaixJlcaaadnd7ANKdbW" -->
+
+<div class="banner-description">
+
+<span class="title-40">the iconic polo</span>
+
+
+<p>ONE TIMELESS CLASSIC, COUNTLESS DIFFERENT EXPRESSIONS.<br />
+THE LACOSTE POLO, DESIGNED AND REINVENTED FOR THOSE WHO LIVE THEIR LIFE AS A BEAUTIFUL SPORT.<br />
+<a href="http://www.lacoste.com/us/lacoste/men/clothing/polos/">Shop All Men's Polos</a><br>
+
+<a href="http://www.lacoste.com/us/polo-shop.html">Enter the Polo Shop</a></p>
+
+</div>
+<div class="banner-image">
+
+<span data-picture data-alt="Lacoste">
+
+<span data-src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dw873b74de/rich-menu/FW15/menu-rich-polos-banner.jpg" data-media="(min-width: 768px)"></span>
+
+<span data-src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dw873b74de/rich-menu/FW15/menu-rich-polos-banner.jpg" data-media="(min-width: 1280px)"></span>
+<!--[if (lt IE 9) & (!IEMobile)]>
+<span data-src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dw873b74de/rich-menu/FW15/menu-rich-polos-banner.jpg"></span>
+<![endif]-->
+</span>
+
+</div>
+
+</div>
+
+ 
+	
+<div class="menu-stories">
+<ul>
+
+
+<li>
+
+
+
+<a href="http://www.lacoste.com/us/lacoste/men/clothing/polos/">
+
+	 
+
+	
+</a>
+<a href="http://www.lacoste.com/us/lacoste/men/clothing/polos/" style="color:#454545;" class="title-15">
+Men
+</a>
+<ul>
+
+
+
+<li><a href="/us/polos/men/the-l.12.12-polo/">The L.12.12 Polo</a></li>
+
+
+
+
+
+<li><a href="/us/polos/men/city-polos/">City Polos</a></li>
+
+
+
+
+
+
+
+<li><a href="http://www.lacoste.com/us/polo/polo-guide.html">Polo Guide Men</a></li>
+
+
+
+
+
+
+
+<li><a href="/us/polos/men/regular-fit/">Regular Fit</a></li>
+
+
+
+
+
+<li><a href="/us/polos/men/original-fit/">Original Fit</a></li>
+
+
+
+
+
+<li><a href="/us/polos/men/slim-fit/">Slim Fit</a></li>
+
+
+
+</ul>
+
+
+<a class="block-link" href="http://www.lacoste.com/us/lacoste/men/clothing/polos/">SEE ALL Polos Men</a>
+
+</li>
+
+
+
+<li>
+
+
+
+<a href="http://www.lacoste.com/us/lacoste/women/clothing/polos/">
+
+	 
+
+	
+</a>
+<a href="http://www.lacoste.com/us/lacoste/women/clothing/polos/" style="color:#454545;" class="title-15">
+Women
+</a>
+<ul>
+
+
+
+<li><a href="http://www.lacoste.com/us/lacoste/women/clothing/polos/">All polos</a></li>
+
+
+
+
+
+<li><a href="http://www.lacoste.com/us/polo/polo-guide.html">Polo Guide Women</a></li>
+
+
+
+
+
+<li><a href="/us/polos/women/slim-fit/">Slim Fit</a></li>
+
+
+
+
+
+<li><a href="/us/polos/women/classic-fit/">Classic Fit</a></li>
+
+
+
+</ul>
+
+
+<a class="block-link" href="http://www.lacoste.com/us/lacoste/women/clothing/polos/">SEE ALL Polos Women</a>
+
+</li>
+
+
+
+<li>
+
+
+
+<a href="http://www.lacoste.com/us/lacoste/kids/boys/polos/">
+
+	 
+
+	
+</a>
+<a href="http://www.lacoste.com/us/lacoste/kids/boys/polos/" style="color:#454545;" class="title-15">
+Kids
+</a>
+<ul>
+
+
+
+<li><a href="http://www.lacoste.com/us/lacoste/kids/boys/polos/">All kids polos</a></li>
+
+
+
+</ul>
+
+
+<a class="block-link" href="http://www.lacoste.com/us/lacoste/kids/boys/polos/">SEE ALL Polos Kids</a>
+
+</li>
+
+
+
+<li>
+
+
+
+<a href="http://www.lacoste.com/us/lacoste/men/clothing/polos/">
+
+	 
+
+	
+</a>
+<a href="http://www.lacoste.com/us/lacoste/men/clothing/polos/" style="color:#454545;" class="title-15">
+We Are Polo
+</a>
+<ul>
+
+
+
+<li><a href="http://www.lacoste.com/us/polo-shop.html">Polo Shop</a></li>
+
+
+
+
+
+<li><a href="http://www.lacoste.com/us/lemagazine_MyLacostePolo.html">#MYLACOSTEPOLO</a></li>
+
+
+
+
+
+<li><a href="http://www.lacoste.com/us/about/we-are-polo.html#heritage">Heritage</a></li>
+
+
+
+
+
+<li><a href="http://www.lacoste.com/us/about/we-are-polo.html#savoir-faire">Savoir-Faire</a></li>
+
+
+
+
+
+<li><a href="http://www.lacoste.com/us/about/we-are-polo.html#petit-pique">Petit piqu&eacute;</a></li>
+
+
+
+
+
+</ul>
+
+
+<a class="block-link" href="http://www.lacoste.com/us/lacoste/men/clothing/polos/">SEE ALL Polos We Are Polo</a>
+
+</li>
+
+
+
+
+</ul>
+</div>
+</div>
+
+
+<div class="dialog dialog-holder accordion-desktop-only data-dialog-drop-menu" data-accordion-menu-id="dialog-menu-Live" data-accordion-menu-group="menu-collapse">
+
+	 
+
+
+	
+
+
+
+
+<div class="dialog-banner-top content-asset"><!-- dwMarker="content" dwContentID="bdORAiaaixwloaaadnodsNKdbX" -->
+
+<div class="banner-description">
+
+
+</div>
+<div class="banner-image">
+
+<span data-picture data-alt="Lacoste">
+
+<span data-src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dw98ab6503/rich-menu/FW15/menu-rich-live-banner.jpg" data-media="(min-width: 768px)"></span>
+
+<span data-src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dw98ab6503/rich-menu/FW15/menu-rich-live-banner.jpg" data-media="(min-width: 1280px)"></span>
+<!--[if (lt IE 9) & (!IEMobile)]>
+<span data-src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dw98ab6503/rich-menu/FW15/menu-rich-live-banner.jpg"></span>
+<![endif]-->
+</span>
+
+</div>
+
+</div>
+
+ 
+	
+<div class="menu-stories">
+<ul>
+
+
+<li>
+
+
+
+<a href="/us/lacoste-live/men/">
+
+	 
+
+	
+</a>
+<a href="/us/lacoste-live/men/" style="color:#454545;" class="title-15">
+Men
+</a>
+<ul>
+
+
+
+<li><a href="/us/lacoste-live/men/polos/">Polos</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-live/men/t-shirts/">T-Shirts</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-live/men/woven-shirts/">Woven Shirts</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-live/men/sweaters-sweatshirts/">Sweaters &amp; Sweatshirts</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-live/men/jackets-coats/">Jackets &amp; Coats</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-live/men/pants-shorts/">Pants &amp; Shorts</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-live/men/swimwear/">Swimwear</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-live/men/shoes/">Shoes</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-live/men/accessories/">Accessories</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-live/men/socks/">Socks</a></li>
+
+
+
+
+
+</ul>
+
+
+<a class="block-link" href="/us/lacoste-live/men/">SEE ALL Lacoste LIVE Men</a>
+
+</li>
+
+
+
+<li>
+
+
+
+<a href="http://www.lacoste.com/us/lacoste-live/women/all-women-live/">
+
+	 
+
+	
+</a>
+<a href="http://www.lacoste.com/us/lacoste-live/women/all-women-live/" style="color:#454545;" class="title-15">
+Women
+</a>
+<ul>
+
+
+
+<li><a href="/us/lacoste-live/women/polos/">Polos</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-live/women/t-shirts-tops/">T-Shirts &amp; Tops</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-live/women/dresses-skirts/">Dresses &amp; Skirts</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-live/women/sweaters-sweatshirts/">Sweaters &amp; Sweatshirts</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-live/women/pants-shorts/">Pants &amp; Shorts</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-live/women/jackets-coats/">Jackets &amp; Coats</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-live/women/leather-goods/">Leather Goods</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-live/women/all-women-live/">All Women Live</a></li>
+
+
+
+
+
+</ul>
+
+
+<a class="block-link" href="http://www.lacoste.com/us/lacoste-live/women/all-women-live/">SEE ALL Lacoste LIVE Women</a>
+
+</li>
+
+
+
+<li>
+
+
+
+<a href="/us/lacoste-live/accessories/">
+
+	 
+
+	
+</a>
+<a href="/us/lacoste-live/accessories/" style="color:#454545;" class="title-15">
+Accessories
+</a>
+<ul>
+
+
+
+<li><a href="/us/lacoste-live/accessories/leather-goods/">Leather Goods</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-live/accessories/caps-hats/">Caps &amp; Hats</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-live/accessories/fragrance/">Fragrance</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-live/accessories/socks/">Socks</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-live/accessories/scarves-gloves/">Scarves &amp; Gloves</a></li>
+
+
+
+</ul>
+
+
+<a class="block-link" href="/us/lacoste-live/accessories/">SEE ALL Lacoste LIVE Accessories</a>
+
+</li>
+
+
+
+<li>
+
+
+
+<a href="http://www.lacoste.com/us/lacoste-live/what-s-new/new-arrivals/">
+
+	 
+
+	
+</a>
+<a href="http://www.lacoste.com/us/lacoste-live/what-s-new/new-arrivals/" style="color:#454545;" class="title-15">
+What's new
+</a>
+<ul>
+
+
+
+<li><a href="/us/lacoste-live/what-s-new/new-arrivals/">New Arrivals</a></li>
+
+
+
+
+
+<li><a href="http://www.lacoste.com/us/playground-magazine/editor-s-picks/pinstripes-on-the-court/">Pinstripes on the Court</a></li>
+
+
+
+</ul>
+
+
+<a class="block-link" href="http://www.lacoste.com/us/lacoste-live/what-s-new/new-arrivals/">SEE ALL Lacoste LIVE What's new</a>
+
+</li>
+
+
+
+
+</ul>
+</div>
+</div>
+
+
+<div class="dialog dialog-holder accordion-desktop-only data-dialog-drop-menu" data-accordion-menu-id="dialog-menu-Sport" data-accordion-menu-group="menu-collapse">
+
+	 
+
+
+	
+
+
+
+
+<div class="dialog-banner-top content-asset"><!-- dwMarker="content" dwContentID="egd32iaaix2Isaaaenb0ANKecX" -->
+
+<div class="banner-description">
+
+
+</div>
+<div class="banner-image">
+
+<span data-picture data-alt="Lacoste">
+
+<span data-src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dwd7debfb5/rich-menu/FW15/menu-rich-sport-banner.jpg" data-media="(min-width: 768px)"></span>
+
+<span data-src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dwd7debfb5/rich-menu/FW15/menu-rich-sport-banner.jpg" data-media="(min-width: 1280px)"></span>
+<!--[if (lt IE 9) & (!IEMobile)]>
+<span data-src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dwd7debfb5/rich-menu/FW15/menu-rich-sport-banner.jpg"></span>
+<![endif]-->
+</span>
+
+</div>
+
+</div>
+
+ 
+	
+<div class="menu-stories">
+<ul>
+
+
+<li>
+
+
+
+<a href="/us/lacoste-sport/men/">
+
+	 
+
+	
+</a>
+<a href="/us/lacoste-sport/men/" style="color:#454545;" class="title-15">
+Men
+</a>
+<ul>
+
+
+
+<li><a href="/us/lacoste-sport/men/golf/">Golf</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-sport/men/tennis/">Tennis</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-sport/men/polos/">Polos</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-sport/men/t-shirts/">T-Shirts</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-sport/men/sweaters-sweatshirts/">Sweaters &amp; Sweatshirts</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-sport/men/shorts-pants/">Shorts &amp; Pants</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-sport/men/jackets-coats/">Jackets &amp; Coats</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-sport/men/tracksuits/">Tracksuits</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-sport/men/shoes/">Shoes</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-sport/men/caps-hats/">Caps &amp; Hats</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-sport/men/socks/">Socks</a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="/us/lacoste-sport/men/equipment/">Equipment</a></li>
+
+
+
+</ul>
+
+
+<a class="block-link" href="/us/lacoste-sport/men/">SEE ALL Lacoste SPORT Men</a>
+
+</li>
+
+
+
+<li>
+
+
+
+<a href="/us/lacoste-sport/women/">
+
+	 
+
+	
+</a>
+<a href="/us/lacoste-sport/women/" style="color:#454545;" class="title-15">
+Women
+</a>
+<ul>
+
+
+
+<li><a href="/us/lacoste-sport/women/polos/">Polos</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-sport/women/t-shirts/">T-Shirts</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-sport/women/dresses-skirts/">Dresses &amp; Skirts</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-sport/women/sweaters-sweatshirts/">Sweaters &amp; Sweatshirts</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-sport/women/shorts-pants/">Shorts &amp; Pants</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-sport/women/jackets-coats/">Jackets &amp; Coats</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-sport/women/golf/">Golf</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-sport/women/tennis/">Tennis</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-sport/women/shoes/">Shoes</a></li>
+
+
+
+
+
+
+
+
+
+</ul>
+
+
+<a class="block-link" href="/us/lacoste-sport/women/">SEE ALL Lacoste SPORT Women</a>
+
+</li>
+
+
+
+<li>
+
+
+
+<a href="http://www.lacoste.com/us/sport-shop.html">
+
+	 
+
+	
+</a>
+<a href="http://www.lacoste.com/us/sport-shop.html" style="color:#454545;" class="title-15">
+What's New
+</a>
+<ul>
+
+
+
+<li><a href="/us/lacoste-sport/what-s-new/new-arrivals/">New Arrivals</a></li>
+
+
+
+
+
+<li><a href="http://www.lacoste.com/us/roland-garros-ss15-mixte.html">Roland Garros</a></li>
+
+
+
+
+
+<li><a href="http://www.lacoste.com/us/miami-open/">Miami Open</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-sport/what-s-new/lifestyle-collection/">Lifestyle Collection</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-sport/what-s-new/john-isner-s-top-picks/">John Isner's Top Picks</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-sport/what-s-new/on-the-court/">On the Court</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-sport/what-s-new/on-the-green/">On the Green</a></li>
+
+
+
+</ul>
+
+
+</li>
+
+
+
+<li>
+
+
+
+<a href="/us/lacoste-sport/kids/">
+
+	 
+
+	
+</a>
+<a href="/us/lacoste-sport/kids/" style="color:#454545;" class="title-15">
+Kids
+</a>
+<ul>
+
+
+
+<li><a href="/us/lacoste-sport/kids/polos/">Polos</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-sport/kids/t-shirts/">T-Shirts</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-sport/kids/bottoms/">Bottoms</a></li>
+
+
+
+
+
+<li><a href="/us/lacoste-sport/kids/shoes/">Shoes</a></li>
+
+
+
+
+
+</ul>
+
+
+<a class="block-link" href="/us/lacoste-sport/kids/">SEE ALL Lacoste SPORT Kids</a>
+
+</li>
+
+
+
+
+</ul>
+</div>
+</div>
+
+
+
+<div class="dialog dialog-holder accordion-desktop-only data-dialog-drop-menu" data-accordion-menu-id="dialog-menu-playground" data-accordion-menu-group="menu-collapse">
+
+
+	 
+
+
+	
+
+
+
+
+<div class="content-asset"><!-- dwMarker="content" dwContentID="deeVMiaaixbrUaaadnyRENKdcW" -->
+
+<script type="text/javascript">
+	var ___sb = $('aside.main-sidebar:eq(0)')[0];
+	var ___li = ($(___sb) .children('ul').children('li:eq(3)'))[0];
+	var ___elem = $(___li).children('ul').children('li:eq(0)')[0];
+	var ___url = "http://www.lacoste.com/us/LeMagazine.html";
+	$(___elem).removeAttr("data-accordion-menu-href").removeAttr("data-accordion-menu-group").addClass("not-accordion").html('<a href="'+___url+'">Le Magazine</a>');
+	$(___elem).click(function()
+	{
+		console.log("Click");
+		location.href = $(this).find('a').attr('href');
+	});
+
+	$(___elem).mouseover(function()
+	{
+		$('.dialog-menu-bg').trigger({ type:"mouseenter", pageX:"123", pageY:"123" });
+	});
+</script>
+
+<!--
+<div class="playground-mag">
+<img src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dw2788cf8c/img/playground-big.png" alt="playground magazine" style="margin: 0px auto;
+display: block;"/>
+
+<a href="http://www.lacoste.com/us/lacoste_playground_landing.html" class="view-all">all latest articles</a>
+<p class="sub-title-pl" style="width: 456px;margin: 20px auto;">Urban personalities, sport-inspired trends and timeless icons. Your seasonal guide on how to #livebeautifully</p>
+<div class="column-2-image-text mag-rich-menu">
+<div class="column-half white-bg">
+<a href="http://www.lacoste.com/us/fashionshowfw15.html">
+<img src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dw8bdef97a/ss15/casual/richs-menu/playground/playground-fashion-show-fw15.jpg" alt="From the runway, Fall/Winter 2014" />
+<span class="new-flag">New</span>
+<span class="title-with-bg">
+<span class="title">From the runway</span>
+<span class="subtitle">Fall/Winter 2015</span>
+</span>
+</a>
+</div>
+<div class="column-half">
+<span class="rectangle-horiz-middle"></span>
+<a href="http://www.lacoste.com/us/playground_urbanites_paddle.html">
+<img src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dwcfb5d370/rich-menu/playground/playground-the-urbanites.jpg" alt="the icons, lacoste blazer" />
+<span class="new-flag">New</span>
+<span class="title-with-bg" >
+<span class="title">the urbanites</span>
+<span class="subtitle">#UrbanPaddle</span>
+</span>
+</a>
+</div>
+</div>
+<div class="column-2-image-text mag-rich-menu">
+<div class="column-half white-bg">
+<a href="http://www.lacoste.com/us/playground-magazine/gift-ideas/">
+<img src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dw97a0e393/rich-menu/playground/playground-gifts.jpg" alt="lacoste gifts" />
+<span class="new-flag">New</span>
+
+<span class="title-with-bg" >
+<span class="title">Great Gift Ideas</span>
+<span class="subtitle">Find the perfect gift</span>
+</span>
+</a>
+</div>
+<div class="column-half  white-bg">
+<span class="rectangle-vert-bottom"></span>
+<a href="http://www.lacoste.com/us/mylacostepolo.html">					<img src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dw5851bcaa/rich-menu/playground/01.jpg" alt="MyLacostePolo" />
+<span class="new-flag">New</span>
+<span class="title-with-bg">  
+<span class="title">#MYLACOSTEPOLO</span>
+</span>
+</a>
+</div>
+</div>
+</div>
+
+-->
+
+</div>
+
+ 
+	
+
+</div>
+<div class="dialog dialog-holder accordion-desktop-only data-dialog-drop-menu" data-accordion-menu-id="dialog-menu-about" data-accordion-menu-group="menu-collapse">
+
+<div class="playground-mag menu-about">
+
+	 
+
+
+	
+
+
+
+
+<div class="content-asset"><!-- dwMarker="content" dwContentID="bdmyaiaaixl8AaaadnDRwNKdbW" -->
+
+<a href="http://www.lacoste.com/us/about/manifesto.html" class="dialog-banner-top dialog-banner-top-about">
+		    <div class="banner-description">
+		        <h3>About Us</h3>
+  				<p class="block-description">OVER 80 YEARS LIVING LIFE AS A BEAUTIFUL SPORT.
+LEARN MORE ABOUT THE LACOSTE STORY, STYLE & UNIQUE SAVOIR FAIRE.</p>
+		    </div>
+		    <div class="banner-image">
+		        <img src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dw3b23a83a/img/pic-about-banner.jpg" alt="about us" />
+		    </div>
+		    <span class="text-center">our manifesto</span>
+		</a>
+
+</div>
+
+ 
+	
+
+
+<div class="column-2-image-text mag-rich-menu">
+
+
+	 
+
+	
+
+
+
+
+	 
+
+	
+
+</div>
+
+
+
+<div class="column-2-image-text mag-rich-menu">
+
+
+	 
+
+
+	
+
+
+
+
+<div class="content-asset"><!-- dwMarker="content" dwContentID="bd3asiaaixxOYaaadnPBwNKdbW" -->
+
+<div class="column-half white-bg">
+				<a href="http://www.lacoste.com/us/about/timeline.html">
+					<img src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dw245f61e8/rich-menu/about/lacoste-about-manifesto.jpg" alt="" />
+					<span class="title-with-bg">  
+						<span class="title">Our Story</span>
+						<span class="subtitle">Read the story of Lacoste</span>
+					</span>
+				</a>
+			</div>
+
+</div>
+
+ 
+	
+
+
+
+
+	 
+
+
+	
+
+
+
+
+<div class="content-asset"><!-- dwMarker="content" dwContentID="bdRFAiaaixCB2aaadnJ7wNKdbW" -->
+
+<div class="column-half">
+				<a href="http://www.lacoste.com/us/about/brandcodes.html">
+					<img src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dw028af7fd/rich-menu/about/lacoste-about-brand-codes.jpg" alt="" />
+					<span class="new-flag">New</span>
+					<span class="title-with-bg">  
+						<span class="title">Our Style Codes</span>
+						<span class="subtitle">Discover the Lacoste style codes</span>
+					</span>
+				</a>
+			</div>
+
+</div>
+
+ 
+	
+
+</div>
+
+
+</div>
+
+</div>
+
+	            		
+	 
+
+	
+	            		
+	 
+
+
+	
+	
+		
+			
+				<div id="promotion-banner">
+					<p> 
+	<span>
+
+Free ground Shipping over $100!
+
+	</span>
+</p>
+				</div>
+			
+		
+	
+
+
+<script type="text/javascript">
+
+jQuery(document).ready(function(){
+	
+		var pWidth = jQuery('#promotion-banner p').width();
+		jQuery('#promotion-banner p').css({'width': pWidth, 'display':'block'});
+		jQuery('#promotion-banner').css('visibility','visible');
+		jQuery('.intro').css('margin-top','0');
+			
+});
+</script> 
+	
+
+						
+
+
+
+
+
+<div id="js-sku-product">
+	<script type="text/javascript">//<!--
+/* <![CDATA[ */
+if(dw&&dw.__ac){dw.__ac.pv({id:'885997177528'})};
+/* ]]> */
+// -->
+</script>
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<input type="hidden" id ="pid" name="pid" value="885997177528" />
+<input type="hidden" id ="pmid" name="pmid" value="2010823" />
+<input type="hidden" id ="colorid" name="colorid" value="000" />
+<input type="hidden" id="isajax" name="isajax" value="false"/>
+<input type="hidden" id="sourcecart" name="sourcecart" value="false"/>
+<input type="hidden" id="liuuid" name="liuuid" value="null"/>
+<input type="hidden" id="quantity" name="quantity" value="null"/>
+
+<input type="hidden" value="http://www.lacoste.com/us/lacoste/men/accessories/watches/lacoste.12.12-watch/885997177528.html" itemprop="url"/>
+
+	
+
+
+
+	<div class="row clearfix">
+
+
+<!-- dwMarker="product" dwContentID="bdjeQiaaixbHgaaadnsmp0Wap8" -->
+    <section class="sku clearfix">
+    	
+        	<div class="column-three-quarter">
+        
+            <div class="galeria-wrapper">
+       		    
+            	      
+
+	
+		
+	
+
+
+
+	
+	<div class="row clearfix productbreadcrumb">
+		<ol class="breadcrumb">	
+			
+				<li class="breadcrumb-first">
+					<a href="/us/lacoste/" title="LACOSTE" class="" >LACOSTE
+						
+							<span style="visibility:hidden; display:none" itemprop="brand">LACOSTE</span>
+						
+					</a>
+				</li>
+			
+				<li >
+					<a href="/us/lacoste/men/" title="Men" class="" >Men
+						
+					</a>
+				</li>
+			
+				<li >
+					<a href="/us/lacoste/men/accessories/" title="Accessories" class="" >Accessories
+						
+					</a>
+				</li>
+			
+				<li class="breadcrumb-last">
+					<a href="/us/lacoste/men/accessories/watches/" title="Watches" class="" >Watches
+						
+							<span style="visibility:hidden; display:none" itemprop="category">Watches</span>
+						
+					</a>
+				</li>
+			
+		</ol>
+	</div>
+
+                
+                
+
+    
+    
+   		
+		<div class="swiper-container slider-mobile-only" data-swiper-fade>
+	
+          <div class="galeria swiper-wrapper">
+			
+				
+					<div class="swiper-slide">
+									    
+                    <span data-picture itemprop="image" data-alt="Lacoste.12.12 Watch" data-position="0" data-query="pid=2010823&amp;dwvar_2010823_color=000">
+                        <span data-src="http://imagena1.lacoste.com/sits_pod26/dw/image/v2/AAUP_PRD/on/demandware.static/-/Sites-master/default/dw6bd01afd/10_2010823_000_24.jpg?sw=656&amp;sh=656&amp;sm=fit" itemprop="image"></span>
+                        <span data-src="http://imagena1.lacoste.com/sits_pod26/dw/image/v2/AAUP_PRD/on/demandware.static/-/Sites-master/default/dw6bd01afd/10_2010823_000_24.jpg?sw=656&amp;sh=656&amp;sm=fit" data-media="(min-width: 768px)"></span>
+                        <span data-src="http://imagena1.lacoste.com/sits_pod26/dw/image/v2/AAUP_PRD/on/demandware.static/-/Sites-master/default/dw6bd01afd/10_2010823_000_24.jpg?sw=656&amp;sh=656&amp;sm=fit" data-media="(min-width: 1280px)"></span>
+                        <span data-src="http://imagena1.lacoste.com/sits_pod26/dw/image/v2/AAUP_PRD/on/demandware.static/-/Sites-master/default/dw6bd01afd/10_2010823_000_24.jpg?sw=656&amp;sh=656&amp;sm=fit" data-media="(min-width: 1680px)"></span>
+                        <!--[if (lt IE 9) & (!IEMobile)]>
+                            <span data-src="http://imagena1.lacoste.com/sits_pod26/dw/image/v2/AAUP_PRD/on/demandware.static/-/Sites-master/default/dw6bd01afd/10_2010823_000_24.jpg?sw=656&amp;sh=656&amp;sm=fit"></span>
+                        <![endif]-->
+                    </span>
+                </div>								 								
+			   
+         </div>         
+    </div>
+    <div class="pager">
+        <div class="pager-inner">
+            <a class="swiper-arrow-left swiper-arrows" href="#"></a> 
+            <a class="swiper-arrow-right swiper-arrows" href="#"></a>
+            <div class="slider-status">
+                <span class="current-slide"></span>
+                <span class="total-slides"></span>
+            </div>
+        </div>
+    </div>				
+                
+            </div>
+        </div>
+        
+			<div class="column-quarter" data-fixed-position="fixed" data-fixed-limit=".sku">
+					
+            <div class="box-infos">
+              <span style="visibility:hidden; display:none" itemprop="seller">Lacoste</span>                
+		<h1 class="sku-product-name">
+                  <span itemprop="name">Lacoste.12.12 Watch</span>
+                </h1>                
+                		
+		<div class="row clearfix box-infos share-rate">
+			
+
+
+
+
+	<!-- Reviews Summary -->
+	<div id="BVRRSummaryContainer"></div>
+	
+	<script type="text/javascript" language="javascript">
+		var rrConfigData = {};
+		rrConfigData.productId = "2010823";
+		rrConfigData.doShowContent = function(json) {
+		    
+		};
+		
+		jQuery(document).ready(function(){
+			$BV.ui("rr", "show_reviews", rrConfigData);
+		});
+	</script>       
+	<!-- End Reviews Summary -->
+
+		</div>
+		
+                <div class="sku-product-price">
+                	
+                  		
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+		
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		
+			
+			
+		
+		
+		
+	
+			
+			
+			
+			
+			
+			<span class="price-sales ">$175.00</span>
+			
+				<span itemprop="price" style="visibility:hidden; display:none">175.00</span>		
+				<span itemprop="priceCurrency" style="visibility:hidden; display:none">USD</span>
+			
+		
+		 
+	
+	
+	
+
+                    
+                </div>
+               
+                
+                	
+ 
+	
+		<div class="product-description sku-info-gray lower">
+			<p class="sku-infos-title">Description</p>
+			<p>
+				An iconic watch family, the Lacoste.12.12 captures and transforms the essence of the polo shirt into a watch collection.
+			</p>
+			<a href="#longdescription" class="link-lower readmore">Read more</a>
+		</div>
+	 
+
+                
+		
+		<p class="product-reference sku-info-gray lower">
+			COLOR :&nbsp<span
+				id="selectedColor"></span>
+		</p>
+		
+
+
+
+
+
+
+
+<div class="product-variations">
+
+<ul style="padding: 0px;">
+
+
+
+
+
+<li class="attribute" >
+
+
+<div class="swatches color">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<input type="hidden" id="selectedColorCode" name="selectedColorCode" value="000">
+<input type="hidden" name="selectedColor" value="WHITE">
+<br />
+
+</div>
+
+</li>
+
+
+
+
+
+<li class="attribute" >
+
+
+<div class="swatches size">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+</li>
+
+</ul>
+</div>
+
+
+	</div>
+	           
+		<div class="box-infos"> 
+                    <div class="form-infos">
+                    	
+                       		
+
+
+
+
+
+
+		
+			
+			<div class="content-asset">
+				<!-- dwMarker="content" dwContentID="bdQREiaaixkkYaaadn6lQNKdbW" -->
+				<p class="sku-info-gray delivery-notice"><em>Free standard shipping on orders over $100 & Free returns</em> </p>
+			</div>
+				
+		
+
+
+                       	
+                   	<form>
+                        <div class="cart-save">
+                       		
+                       			
+                       			<input type="hidden" id="haveColorAvailable" value="true">
+                       			
+                           			<span id="add-to-cartspan"><button id="add-to-cart" class="btn btn-full" >Add to my shopping bag</button></span>
+                           		
+                           		<span id="notavailablespan" style="display : none"><button id="notavailable" class="btn btn-full" disabled="disabled">Product not available </button></span>
+                                                        
+                        </div>
+                        
+                        <span class="sku-info-gray lower">
+	               			
+	                    </span>
+		                
+	                   
+					   
+	                         
+                    </form>
+                </div>
+                 
+            </div>
+            
+            
+	            <div class="box-infos share-rate">
+		
+		
+		<ul class="sku-share">
+			<li class="share-facebook"><a target="_blank"
+				href="http://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.lacoste.com%2Fus%2Flacoste%2Fmen%2Faccessories%2Fwatches%2Flacoste.12.12-watch%2F885997177528.html">Facebook</a></li>
+			<li class="share-twitter"><a target="_blank"
+				href="https://twitter.com/share?url=http%3A%2F%2Fwww.lacoste.com%2Fus%2Flacoste%2Fmen%2Faccessories%2Fwatches%2Flacoste.12.12-watch%2F885997177528.html&text=Lacoste.12.12+Watch&related=LACOSTE&via=Lacoste">Twitter</a></li>
+			<li class="share-plusgoogle"><a target="_blank"
+				href="https://plus.google.com/share?url=http%3A%2F%2Fwww.lacoste.com%2Fus%2Flacoste%2Fmen%2Faccessories%2Fwatches%2Flacoste.12.12-watch%2F885997177528.html">Google+</a></li>
+			<li class="share-pinterest"><a target="_blank"
+				href="http://pinterest.com/pin/create/button/?url=http%3A%2F%2Fwww.lacoste.com%2Fus%2Flacoste%2Fmen%2Faccessories%2Fwatches%2Flacoste.12.12-watch%2F885997177528.html&media={media}&description=Lacoste.12.12+Watch">Pinterest</a></li>
+<li class="share-tumblr"><a target="_blank" href="http://www.tumblr.com/share/link?url=http%3A%2F%2Fwww.lacoste.com%2Fus%2Flacoste%2Fmen%2Faccessories%2Fwatches%2Flacoste.12.12-watch%2F885997177528.html&name=Lacoste.12.12+Watch">Tumblr</a></li>           
+	            </div>         
+            
+        </div>
+    </section>
+      
+</div>
+
+</section>
+
+<div class="dialog hidden" data-dialog-id="openDialogSendToFriend"></div>
+
+
+	
+
+
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		window.utag_data = {"page":{"pagename":"Lacoste_Men_Accessories_Watches","pagecategory":"product","subcategory":"product details","sitecountrycode":"US","sitecountryname":"United States","language":"en_US","visitdate":"13/10/2015 07:56:06","nbpagesviewed":1,"visitlength":"00:00:00"},"user":{"usercountrycode":"UA","usercountryname":"Ukraine","loggedin":false,"usertype":"guest"},"cart":{},"product":{"productid":"2010823","sku":"885997177528","productname":"Lacoste.12.12 Watch","manufacturer":"DEVANLAY","description":"An iconic watch family, the Lacoste.12.12 captures and transforms the essence of the polo shirt into a watch collection.","categoryid":"Lacoste_Men","categoryname":"Men","subcategory1":"Accessories","subcategory2":"Watches","currency":"USD","unitsaleprice":"175.00","unitprice":"175.00","color":"000","stockavailability":"100%","size":"ONE"},"recommandation":{"items":"temp"}};
+		window.utag_data.recommandation.items=$('.tealium_tag_certona').text().slice(0,-1);
+		
+		if(typeof window.utag_data.product.color == 'undefined')
+		{
+			window.utag_data.product.color = $('#selectedColorCode').val();
+		}
+			
+		if(typeof window.utag_data.product.stockavailability == 'undefined')
+		{
+			window.utag_data.product.stockavailability = $('#sizeavailability').val()+'%';
+		}
+			
+		window.utag_data.page.pageurl = window.location.toString();
+		if(condition="false")
+		{
+			if(window.utag && window.utag.view && typeof(window.utag.view) === 'function'){
+				window.utag.view(window.utag_data);
+			}
+		}		
+	});
+</script>
+
+
+
+	
+</div>
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+if(resx===undefined) {
+var resx = new Object();
+}
+
+resx.pageid="res15101304418034214721077";
+
+</script>
+
+<div class="row clearfix">
+<section class="similar-products the-essential">
+
+<h3 class="title-with-arrow"> You may also be interested in</h3>
+
+<div class="swiper-container slider-mobile-only certona">
+<div class="products swiper-wrapper clearfix">
+
+
+
+
+
+
+
+
+
+
+
+<div class="analytics capture-product-id" style="display:none;">2010819</div>
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+	
+	
+		
+	
+	
+		
+		
+		
+			
+		
+		
+		
+	
+
+
+
+
+
+
+
+
+
+
+	
+		
+	
+	
+		
+		
+
+<div class="product swiper-slide">	
+	<div class="product-images no-color">					
+		
+				
+		
+		<div class="before">
+			<a href="http://www.lacoste.com/us/lacoste/men/accessories/watches/lacoste.12.12-watch/2010819.html?dwvar_2010819_color=000">
+				<span class="product-primary-image">
+					<img src="http://imagena1.lacoste.com/sits_pod26/dw/image/v2/AAUP_PRD/on/demandware.static/-/Sites-master/default/dwf29b92bc/10_2010819_000_24.jpg?sw=340&amp;sh=329" width="340" height="329" alt="Lacoste.12.12 Watch"/>
+				</span>
+			</a>
+		</div>	
+		<div class="after noHovering">
+				
+		<a href="http://www.lacoste.com/us/lacoste/men/accessories/watches/lacoste.12.12-watch/2010819.html?dwvar_2010819_color=000">
+			<span  class="product-secondary-image">
+				<img src="http://imagena1.lacoste.com/sits_pod26/dw/image/v2/AAUP_PRD/on/demandware.static/-/Sites-master/default/dwf29b92bc/10_2010819_000_24.jpg?sw=358&amp;sh=495" width="358" height="495" alt="Lacoste.12.12 Watch"/>
+			</span>
+			
+			
+				<div class="btn-quick-shop">					
+					<a class="openDialogQuickView" data-popin-name="Lacoste.12.12 Watch" data-dialog="dialog-quick-view qv2010819" data-dialog-href="http://www.lacoste.com/us/lacoste/men/accessories/watches/lacoste.12.12-watch/2010819.html?dwvar_2010819_color=000&amp;format=ajax">
+						<span>Quick shop</span>
+					</a>
+					
+					
+					
+				</div>
+			
+			
+			
+			<div class="product-description intern">
+				<p class="underline-product">
+					<span class="product-name">
+						
+							<a href="http://www.lacoste.com/us/lacoste/men/accessories/watches/lacoste.12.12-watch/2010819.html?dwvar_2010819_color=000">
+								Lacoste.12.12 Watch
+							</a>
+						
+					</span>
+					<span class="product-price">
+						
+								
+						
+	
+	
+		
+		
+		
+	
+	
+	
+		
+	
+
+	
+	
+
+
+		
+
+
+	
+	
+
+	
+		<span class="product-sales-price" title="Sale Price">$135.00</span>
+	
+	
+	
+		
+		
+		
+	
+
+						
+					</span>
+				</p>
+				
+			</div>
+			</a>
+		</div>
+	</div>
+	<div class="product-description extern">
+		<p class="underline-product">
+			<span class="product-name">
+				
+					<a href="http://www.lacoste.com/us/lacoste/men/accessories/watches/lacoste.12.12-watch/2010819.html?dwvar_2010819_color=000">
+						Lacoste.12.12 Watch
+					</a> 
+				
+			</span>
+			<span class="product-price">
+				
+						
+						
+	
+	
+		
+		
+		
+	
+	
+	
+		
+	
+
+	
+	
+
+
+		
+
+
+	
+	
+
+	
+		<span class="product-sales-price" title="Sale Price">$135.00</span>
+	
+	
+	
+		
+		
+		
+	
+
+				
+			</span>
+		</p>
+		
+	</div>
+	<div class="dialog hidden" data-dialog-id="dialog-quick-view qv2010819"></div>  
+</div>
+
+
+
+
+
+
+
+
+<div class="analytics capture-product-id" style="display:none;">2010824</div>
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+	
+	
+		
+	
+	
+		
+		
+		
+			
+		
+		
+		
+	
+
+
+
+
+
+
+
+
+
+
+	
+		
+	
+	
+		
+		
+
+<div class="product swiper-slide">	
+	<div class="product-images no-color">					
+		
+				
+		
+		<div class="before">
+			<a href="http://www.lacoste.com/us/lacoste/men/accessories/watches/lacoste.12.12-watch/2010824.html?dwvar_2010824_color=000">
+				<span class="product-primary-image">
+					<img src="http://imagena1.lacoste.com/sits_pod26/dw/image/v2/AAUP_PRD/on/demandware.static/-/Sites-master/default/dw74323afe/10_2010824_000_24.jpg?sw=340&amp;sh=329" width="340" height="329" alt="Lacoste.12.12 Watch"/>
+				</span>
+			</a>
+		</div>	
+		<div class="after noHovering">
+				
+		<a href="http://www.lacoste.com/us/lacoste/men/accessories/watches/lacoste.12.12-watch/2010824.html?dwvar_2010824_color=000">
+			<span  class="product-secondary-image">
+				<img src="http://imagena1.lacoste.com/sits_pod26/dw/image/v2/AAUP_PRD/on/demandware.static/-/Sites-master/default/dw74323afe/10_2010824_000_24.jpg?sw=358&amp;sh=495" width="358" height="495" alt="Lacoste.12.12 Watch"/>
+			</span>
+			
+			
+				<div class="btn-quick-shop">					
+					<a class="openDialogQuickView" data-popin-name="Lacoste.12.12 Watch" data-dialog="dialog-quick-view qv2010824" data-dialog-href="http://www.lacoste.com/us/lacoste/men/accessories/watches/lacoste.12.12-watch/2010824.html?dwvar_2010824_color=000&amp;format=ajax">
+						<span>Quick shop</span>
+					</a>
+					
+					
+					
+				</div>
+			
+			
+			
+			<div class="product-description intern">
+				<p class="underline-product">
+					<span class="product-name">
+						
+							<a href="http://www.lacoste.com/us/lacoste/men/accessories/watches/lacoste.12.12-watch/2010824.html?dwvar_2010824_color=000">
+								Lacoste.12.12 Watch
+							</a>
+						
+					</span>
+					<span class="product-price">
+						
+								
+						
+	
+	
+		
+		
+		
+	
+	
+	
+		
+	
+
+	
+	
+
+
+		
+
+
+	
+	
+
+	
+		<span class="product-sales-price" title="Sale Price">$175.00</span>
+	
+	
+	
+		
+		
+		
+	
+
+						
+					</span>
+				</p>
+				
+			</div>
+			</a>
+		</div>
+	</div>
+	<div class="product-description extern">
+		<p class="underline-product">
+			<span class="product-name">
+				
+					<a href="http://www.lacoste.com/us/lacoste/men/accessories/watches/lacoste.12.12-watch/2010824.html?dwvar_2010824_color=000">
+						Lacoste.12.12 Watch
+					</a> 
+				
+			</span>
+			<span class="product-price">
+				
+						
+						
+	
+	
+		
+		
+		
+	
+	
+	
+		
+	
+
+	
+	
+
+
+		
+
+
+	
+	
+
+	
+		<span class="product-sales-price" title="Sale Price">$175.00</span>
+	
+	
+	
+		
+		
+		
+	
+
+				
+			</span>
+		</p>
+		
+	</div>
+	<div class="dialog hidden" data-dialog-id="dialog-quick-view qv2010824"></div>  
+</div>
+
+
+
+
+
+
+
+
+<div class="analytics capture-product-id" style="display:none;">2010821</div>
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+	
+	
+		
+	
+	
+		
+		
+		
+			
+		
+		
+		
+	
+
+
+
+
+
+
+
+
+
+
+	
+		
+	
+	
+		
+		
+
+<div class="product swiper-slide">	
+	<div class="product-images no-color">					
+		
+				
+		
+		<div class="before">
+			<a href="http://www.lacoste.com/us/lacoste/men/accessories/watches/lacoste.12.12-watch/2010821.html?dwvar_2010821_color=000">
+				<span class="product-primary-image">
+					<img src="http://imagena1.lacoste.com/sits_pod26/dw/image/v2/AAUP_PRD/on/demandware.static/-/Sites-master/default/dw4be2ef3c/10_2010821_000_24.jpg?sw=340&amp;sh=329" width="340" height="329" alt="Lacoste.12.12 Watch"/>
+				</span>
+			</a>
+		</div>	
+		<div class="after noHovering">
+				
+		<a href="http://www.lacoste.com/us/lacoste/men/accessories/watches/lacoste.12.12-watch/2010821.html?dwvar_2010821_color=000">
+			<span  class="product-secondary-image">
+				<img src="http://imagena1.lacoste.com/sits_pod26/dw/image/v2/AAUP_PRD/on/demandware.static/-/Sites-master/default/dw4be2ef3c/10_2010821_000_24.jpg?sw=358&amp;sh=495" width="358" height="495" alt="Lacoste.12.12 Watch"/>
+			</span>
+			
+			
+				<div class="btn-quick-shop">					
+					<a class="openDialogQuickView" data-popin-name="Lacoste.12.12 Watch" data-dialog="dialog-quick-view qv2010821" data-dialog-href="http://www.lacoste.com/us/lacoste/men/accessories/watches/lacoste.12.12-watch/2010821.html?dwvar_2010821_color=000&amp;format=ajax">
+						<span>Quick shop</span>
+					</a>
+					
+					
+					
+				</div>
+			
+			
+			
+			<div class="product-description intern">
+				<p class="underline-product">
+					<span class="product-name">
+						
+							<a href="http://www.lacoste.com/us/lacoste/men/accessories/watches/lacoste.12.12-watch/2010821.html?dwvar_2010821_color=000">
+								Lacoste.12.12 Watch
+							</a>
+						
+					</span>
+					<span class="product-price">
+						
+								
+						
+	
+	
+		
+		
+		
+	
+	
+	
+		
+	
+
+	
+	
+
+
+		
+
+
+	
+	
+
+	
+		<span class="product-sales-price" title="Sale Price">$175.00</span>
+	
+	
+	
+		
+		
+		
+	
+
+						
+					</span>
+				</p>
+				
+			</div>
+			</a>
+		</div>
+	</div>
+	<div class="product-description extern">
+		<p class="underline-product">
+			<span class="product-name">
+				
+					<a href="http://www.lacoste.com/us/lacoste/men/accessories/watches/lacoste.12.12-watch/2010821.html?dwvar_2010821_color=000">
+						Lacoste.12.12 Watch
+					</a> 
+				
+			</span>
+			<span class="product-price">
+				
+						
+						
+	
+	
+		
+		
+		
+	
+	
+	
+		
+	
+
+	
+	
+
+
+		
+
+
+	
+	
+
+	
+		<span class="product-sales-price" title="Sale Price">$175.00</span>
+	
+	
+	
+		
+		
+		
+	
+
+				
+			</span>
+		</p>
+		
+	</div>
+	<div class="dialog hidden" data-dialog-id="dialog-quick-view qv2010821"></div>  
+</div>
+
+
+
+
+
+
+
+
+<div class="analytics capture-product-id" style="display:none;">2010822</div>
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+	
+	
+		
+	
+	
+		
+		
+		
+			
+		
+		
+		
+	
+
+
+
+
+
+
+
+
+
+
+	
+		
+	
+	
+		
+		
+
+<div class="product swiper-slide">	
+	<div class="product-images no-color">					
+		
+				
+		
+		<div class="before">
+			<a href="http://www.lacoste.com/us/lacoste/men/accessories/watches/lacoste.12.12-watch/2010822.html?dwvar_2010822_color=000">
+				<span class="product-primary-image">
+					<img src="http://imagena1.lacoste.com/sits_pod26/dw/image/v2/AAUP_PRD/on/demandware.static/-/Sites-master/default/dw1db152a1/10_2010822_000_24.jpg?sw=340&amp;sh=329" width="340" height="329" alt="Lacoste.12.12 Watch"/>
+				</span>
+			</a>
+		</div>	
+		<div class="after noHovering">
+				
+		<a href="http://www.lacoste.com/us/lacoste/men/accessories/watches/lacoste.12.12-watch/2010822.html?dwvar_2010822_color=000">
+			<span  class="product-secondary-image">
+				<img src="http://imagena1.lacoste.com/sits_pod26/dw/image/v2/AAUP_PRD/on/demandware.static/-/Sites-master/default/dw1db152a1/10_2010822_000_24.jpg?sw=358&amp;sh=495" width="358" height="495" alt="Lacoste.12.12 Watch"/>
+			</span>
+			
+			
+				<div class="btn-quick-shop">					
+					<a class="openDialogQuickView" data-popin-name="Lacoste.12.12 Watch" data-dialog="dialog-quick-view qv2010822" data-dialog-href="http://www.lacoste.com/us/lacoste/men/accessories/watches/lacoste.12.12-watch/2010822.html?dwvar_2010822_color=000&amp;format=ajax">
+						<span>Quick shop</span>
+					</a>
+					
+					
+					
+				</div>
+			
+			
+			
+			<div class="product-description intern">
+				<p class="underline-product">
+					<span class="product-name">
+						
+							<a href="http://www.lacoste.com/us/lacoste/men/accessories/watches/lacoste.12.12-watch/2010822.html?dwvar_2010822_color=000">
+								Lacoste.12.12 Watch
+							</a>
+						
+					</span>
+					<span class="product-price">
+						
+								
+						
+	
+	
+		
+		
+		
+	
+	
+	
+		
+	
+
+	
+	
+
+
+		
+
+
+	
+	
+
+	
+		<span class="product-sales-price" title="Sale Price">$175.00</span>
+	
+	
+	
+		
+		
+		
+	
+
+						
+					</span>
+				</p>
+				
+			</div>
+			</a>
+		</div>
+	</div>
+	<div class="product-description extern">
+		<p class="underline-product">
+			<span class="product-name">
+				
+					<a href="http://www.lacoste.com/us/lacoste/men/accessories/watches/lacoste.12.12-watch/2010822.html?dwvar_2010822_color=000">
+						Lacoste.12.12 Watch
+					</a> 
+				
+			</span>
+			<span class="product-price">
+				
+						
+						
+	
+	
+		
+		
+		
+	
+	
+	
+		
+	
+
+	
+	
+
+
+		
+
+
+	
+	
+
+	
+		<span class="product-sales-price" title="Sale Price">$175.00</span>
+	
+	
+	
+		
+		
+		
+	
+
+				
+			</span>
+		</p>
+		
+	</div>
+	<div class="dialog hidden" data-dialog-id="dialog-quick-view qv2010822"></div>  
+</div>
+
+
+<div class="certona_product_ids" style="display:none">;2010819|product2_rr;2010824|product2_rr;2010821|product2_rr;2010822|product2_rr</div>
+
+
+</div>
+</div>
+<div class="pager">
+<div class="pager-inner">
+<a class="swiper-arrow-left swiper-arrows" href="#"></a>
+<a class="swiper-arrow-right swiper-arrows" href="#"></a>
+<div class="slider-status">
+<span class="current-slide"></span>
+<span class="total-slides"></span>
+</div>
+</div>
+</div>
+</section>
+</div>
+
+<span class="tealium_tag_certona" style="display:none">2010819,2010824,2010821,2010822,</span>
+
+
+	
+<div id="longdescription" class="row clearfix">
+			<h3 class="title-with-arrow"> Description</h3>
+				<div class="product-infos-content-more form" itemprop="description">		
+				<h3>Lacoste.12.12 Watch</h3>
+				 <span itemprop="productID">
+				
+					2010823
+				
+				</span>
+				
+					<p>
+						An iconic watch family, the Lacoste.12.12 captures and transforms the essence of the polo shirt into a watch collection.
+					</p>			
+				
+				
+				<ul>
+					
+						<li>White Silicone Strap With White Dial</li>
+					
+											
+						<li>Buckle Closure</li>
+					
+					
+						<li>Tr90 Composite Material Case</li>
+					
+					
+						<li>Quartz Chronograph Movement</li>
+								
+					
+						<li>2 Year Limited Warranty & 24-36 Months Approximate Battery Life</li>
+								
+								
+				</ul>
+			</div>
+			<ul class="careInstructions">
+				
+			</ul>
+	</div>
+
+
+
+	<div class="row clearfix">
+		<section class="similar-products the-essential">
+			<a name="bazaarvoicecomments"></a><h3 class="title-with-arrow bazaarvoicetitle">Read reviews</h3>
+			<div id="bazaar"></div>
+			
+
+
+
+	<!-- Reviews -->
+	<div id="BVRRContainer">
+		
+	    	
+<!--BVSEO|dp: Main Site-en_US|sdk: v1.0-p|msg: Bot not detected, Javascript only.-->
+	    
+	</div>
+	<!-- End Reviews -->
+
+	   </section>
+	</div>
+
+
+
+
+
+
+	
+
+ 
+
+
+
+<!-- Start: certona/product_include -->
+<!-- Copyright 2013 Certona Corporation www.certona.com. All rights reserved. -->
+
+
+
+<!-- Start: certona/resonance_include -->
+<!-- Copyright 2013 Certona Corporation www.certona.com. All rights reserved. -->
+
+<script type="text/javascript">
+if(resx===undefined) {
+var resx = new Object();
+}
+resx.appid = 'Lacoste06';
+resx.top1 = 100000;
+resx.top2 = 100000;
+
+
+</script>
+<!-- Resonance -->
+
+<!-- End: certona/resonance_include -->
+
+<script type="text/javascript">
+if(resx===undefined) {
+var resx = new Object();
+}
+resx.links = jQuery('.certona_product_ids').text().substring(1);
+resx.event="product";
+resx.itemid = "885997177528";
+</script>
+
+
+
+
+
+  <script src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/Sites-FlagShip-Site/-/en_US/v1444405540518/certona/js/resxclsa.js" type="text/javascript"></script>
+
+
+
+<!-- End: certona/product_include -->
+
+
+
+	
+
+
+
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+						
+	            	</div>
+	        	</div>
+	        </div>
+	        
+<script src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/Sites-FlagShip-Site/-/en_US/v1444405540518/js/picturefill.js" type="text/javascript"></script>
+<script src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/Sites-FlagShip-Site/-/en_US/v1444405540518/js/idangerous.swiper.js" type="text/javascript"></script>
+<script src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/Sites-FlagShip-Site/-/en_US/v1444405540518/js/idangerous.swiper.progress.min.js" type="text/javascript"></script>
+<script src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/Sites-FlagShip-Site/-/en_US/v1444405540518/js/jquery-ui.min.js" type="text/javascript"></script>
+<script src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/Sites-FlagShip-Site/-/en_US/v1444405540518/js/jquery.ns.js" type="text/javascript"></script>
+<script src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/Sites-FlagShip-Site/-/en_US/v1444405540518/js/jquery.validate.min.js" type="text/javascript"></script>
+<script src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/Sites-FlagShip-Site/-/en_US/v1444405540518/js/loadScript.js" type="text/javascript"></script>
+<script src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/Sites-FlagShip-Site/-/en_US/v1444405540518/js/ios-orientationchange-fix.js" type="text/javascript"></script>
+<script src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/Sites-FlagShip-Site/-/en_US/v1444405540518/js/jquery.selectBoxIt.min.js" type="text/javascript"></script> 
+<script src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/Sites-FlagShip-Site/-/en_US/v1444405540518/js/jquery.colorbox-min.js" type="text/javascript"></script>
+<script src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/Sites-FlagShip-Site/-/en_US/v1444405540518/js/jquery.hoverIntent.min.js" type="text/javascript"></script>
+<script src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/Sites-FlagShip-Site/-/en_US/v1444405540518/js/main.js" type="text/javascript"></script>
+<script src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/Sites-FlagShip-Site/-/en_US/v1444405540518/js/swiper.js" type="text/javascript"></script>
+<script src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/Sites-FlagShip-Site/-/en_US/v1444405540518/js/sticky-footer.js" type="text/javascript"></script>    
+<script src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/Sites-FlagShip-Site/-/en_US/v1444405540518/js/login.js" type="text/javascript"></script>
+<script src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/Sites-FlagShip-Site/-/en_US/v1444405540518/js/geopopin.js" type="text/javascript"></script>
+<script src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/Sites-FlagShip-Site/-/en_US/v1444405540518/js/sidebar.js" type="text/javascript"></script>
+<script src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/Sites-FlagShip-Site/-/en_US/v1444405540518/js/storeorder.js" type="text/javascript"></script>
+<script src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/Sites-FlagShip-Site/-/en_US/v1444405540518/js/jquery.history.min.js" type="text/javascript"></script>
+<script src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/Sites-FlagShip-Site/-/en_US/v1444405540518/js/footer.js" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+	
+
+(function(app){
+Lacoste.urls = {"CARTREMOVELINEITEM":"/on/demandware.store/Sites-FlagShip-Site/en_US/CartV2-RemoveLineItemMaster","CARTCHANGEQUANTITYLINEITEM":"/on/demandware.store/Sites-FlagShip-Site/en_US/CartV2-ChangeQuantityLineItemMaster","CHANGESHIPPINGMETHOD":"/on/demandware.store/Sites-FlagShip-Site/en_US/COShipping-SelectShippingMethod","MINICART":"/on/demandware.store/Sites-FlagShip-Site/en_US/CartV2-Mini","CART":"https://www.lacoste.com/us/cart","ADDCOUPON":"/on/demandware.store/Sites-FlagShip-Site/en_US/Cart-AddCoupon","ADDPRODUCT":"/on/demandware.store/Sites-FlagShip-Site/en_US/Cart-AddProduct","CHECKOUTCHANGESHIPPING":"/on/demandware.store/Sites-FlagShip-Site/en_US/CheckoutV2-ValidateShippingStep?isajax=true","CHECKOUTSTOCKPRERESERVATION":"/on/demandware.store/Sites-FlagShip-Site/en_US/ATP-PerformATPRequest","GETDEFAULTVARIANT":"/on/demandware.store/Sites-FlagShip-Site/en_US/ProductV2-GetDefaultVariant","ADDGIFTPRODUCT":"/on/demandware.store/Sites-FlagShip-Site/en_US/CartV2-AddGiftProduct","REMOVEGIFTPRODUCT":"/on/demandware.store/Sites-FlagShip-Site/en_US/CartV2-RemoveGiftProduct","SAVECUSTOMMESSAGE":"/on/demandware.store/Sites-FlagShip-Site/en_US/CartV2-SaveCustomMessage","LOGINCHECKOUTEMAIL":"/on/demandware.store/Sites-FlagShip-Site/en_US/LoginV2-LoginCheckoutValidateEmail","REGISTERCHECKOUT":"/on/demandware.store/Sites-FlagShip-Site/en_US/LoginV2-RegisterCheckout","LOGINCUSTOMERCHECKOUT":"/on/demandware.store/Sites-FlagShip-Site/en_US/LoginV2-LoginCheckoutCustomer","REGISTERCUSTOMERCHECKOUT":"/on/demandware.store/Sites-FlagShip-Site/en_US/LoginV2-RegisterCustomerCheckout","REGISTERGUESTCHECKOUT":"/on/demandware.store/Sites-FlagShip-Site/en_US/LoginV2-RegisterGuestCheckout","WIRECARDINITSTORAGE":"/on/demandware.store/Sites-FlagShip-Site/en_US/COWirecard-InitWirecardStorageAjax","CYBERSOURCEINITCHECKOUT":"/us/checkout-validate","SIDEBAR":"/on/demandware.store/Sites-FlagShip-Site/en_US/Navigation-Sidebar","CATEGORY":"/us/search","POLOCUSTOMSHOWWITHPRODUCT":"/on/demandware.store/Sites-FlagShip-Site/en_US/PoloConfigurator-ShowWithProduct","POLOCUSTOMGETVARIANT":"/on/demandware.store/Sites-FlagShip-Site/en_US/PoloConfigurator-GetVariant","POLOCUSTOMGETVARIANTID":"/on/demandware.store/Sites-FlagShip-Site/en_US/PoloConfigurator-GetVariantId","POLOCUSTOMGETPRODUCTIMAGEURL":"/on/demandware.store/Sites-FlagShip-Site/en_US/PoloConfigurator-GetImageUrl","POLOGUIDESIZETABAJAX":"/on/demandware.store/Sites-FlagShip-Site/en_US/PoloGuide-AjaxPoloSize","CHECKOUTGETSHIPPING":"/on/demandware.store/Sites-FlagShip-Site/en_US/CheckoutV2-GetAvailableShippingMethod","CHECKOUTQASVALIDATING":"/on/demandware.store/Sites-FlagShip-Site/en_US/CheckoutV2-CheckAddressQAS","CHECKOUTQASSAVE":"/on/demandware.store/Sites-FlagShip-Site/en_US/CheckoutV2-SaveAddressChoiceQAS","CHECKOUTQASEDIT":"/on/demandware.store/Sites-FlagShip-Site/en_US/CheckoutV2-EditAddressChoiceQAS","GETORDERDETAIL":"/on/demandware.store/Sites-FlagShip-Site/en_US/Order-Track","MONDIALRELAY":"/on/demandware.store/Sites-FlagShip-Site/en_US/MondialRelayShipping-Show","ADDMONDIALRELAYADDRESS":"https://www.lacoste.com/on/demandware.store/Sites-FlagShip-Site/en_US/CartV2-AddMondialRelayAddress","SEARCHSUGGEST":"/on/demandware.store/Sites-FlagShip-Site/en_US/Search-GetSuggestions","CHANGEBENEFIT":"/on/demandware.store/Sites-FlagShip-Site/en_US/CartV2-ChangeBenefit","DELETECOUPON":"/on/demandware.store/Sites-FlagShip-Site/en_US/CartV2-RemoveCouponLineItem","SKUPRODUCT":"/on/demandware.store/Sites-FlagShip-Site/en_US/ProductV2-SkuProduct","ACCEPTANCECHECK":"/on/demandware.store/Sites-FlagShip-Site/en_US/COWireCardAcceptanceCheck-Show","LOGIN":"/on/demandware.store/Sites-FlagShip-Site/en_US/LoginV2-Login","AUTHENTICATE":"/on/demandware.store/Sites-FlagShip-Site/en_US/LoginV2-Authenticate","SEARCH":"/on/demandware.store/Sites-FlagShip-Site/en_US/SearchV2-Show","CLASSICALSEARCH":"/us/search","UPDATEORDERDETAILS":"/on/demandware.store/Sites-FlagShip-Site/en_US/CheckoutV2-UpdateOrderDetails","UPSTRACKINGAJAX":"/on/demandware.store/Sites-FlagShip-Site/en_US/UPS-UPSPopinAjax","CANADAPOSTTRACKINGAJAX":"/on/demandware.store/Sites-FlagShip-Site/en_US/CanadaPost-PopinAjax","LOSTPASSWORD":"/us/forgotpassword","ACCOUNTSHOW":"/us/account","OLDACCOUNTMESSAGE":"/on/demandware.store/Sites-FlagShip-Site/en_US/LoginUS-ShowMessage","INCLUDEGIFTCERTFORM":"/on/demandware.store/Sites-FlagShip-Site/en_US/GiftCertV2-IncludeFormGiftCert","ADDPROXIMISADDRESS":"/on/demandware.store/Sites-FlagShip-Site/en_US/CartV2-AddProximisAddress","GETGEOPOPIN":"/on/demandware.store/Sites-FlagShip-Site/en_US/Geolocation-GetSiteIPInfo","SHOWREMOVEPRODUCT":"/on/demandware.store/Sites-FlagShip-Site/en_US/CartV2-ShowRemoveProduct","REMOVEGIFTCERTFORM":"/on/demandware.store/Sites-FlagShip-Site/en_US/GiftCertV2-ExcludeGiftCertificate","SAVESTOREID":"/on/demandware.store/Sites-FlagShip-Site/en_US/CartV2-SaveStoreId","GETBIRTHDAYPOPIN":"/on/demandware.store/Sites-FlagShip-Site/en_US/CheckoutV2-ShowBirthdayPopin","SAVEBIRTHDAYPOPIN":"/on/demandware.store/Sites-FlagShip-Site/en_US/CheckoutV2-SaveBirthdayDateBillPay","CHECKPROXIMISMONDIALREAYADDRESS":"/on/demandware.store/Sites-FlagShip-Site/en_US/COShippingV2-CheckMondialRelayProximisAddress"};
+Lacoste.statics = {"BTN_CLOSE":"http://staticna1.lacoste.com/aaup_prd/on/demandware.static/Sites-FlagShip-Site/-/default/dw4c0b507e/img/ico/close.png","BTN_PREVIOUS":"http://staticna1.lacoste.com/aaup_prd/on/demandware.static/Sites-FlagShip-Site/-/default/dw6eb6473a/img/previous.png","BTN_NEXT":"http://staticna1.lacoste.com/aaup_prd/on/demandware.static/Sites-FlagShip-Site/-/default/dwd9a879ee/img/next.png"};
+Lacoste.siteprefs = {"GIFTPRODUCTNO":"3608076181264","ISO_COUNTRY_CODE":"US","BRAND_MONDIAL_RELAY":"FRLCOSTE","ACTIVE_GEO_POPIN":true,"DISABLED_CC_CHECKSUM":null};
+Lacoste.resources = {"EVENTREGISTERERROR":"*Please fill in all fields"};
+}(window.app = window.app || {}));
+
+</script>
+
+	
+<script src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/Sites-FlagShip-Site/-/en_US/v1444405540518/js/jquery.zoom.js"></script>
+
+
+
+<script src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/Sites-FlagShip-Site/-/en_US/v1444405540518/js/product.js" type="text/javascript"></script>
+<script src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/Sites-FlagShip-Site/-/en_US/v1444405540518/js/size-chart.js" type="text/javascript"></script>
+<script src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/Sites-FlagShip-Site/-/en_US/v1444405540518/js/allsizeguides.js" type="text/javascript"></script>
+<script src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/Sites-FlagShip-Site/-/en_US/v1444405540518/js/fixed-sidebar.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$('body').imagesLoaded(function() {
+		Lacoste.product.bindProductPage();
+	});
+	Lacoste.product.toggleTile();
+	Lacoste.product.bindTile();
+});
+
+</script>
+
+<script type="text/javascript">
+	Lacoste.login.bindEvents();
+	Lacoste.geopopin.bindEvents();
+	Lacoste.storeorder.bindEvents();
+	Lacoste.footer.bindEvents();
+</script>
+  
+        </div>
+        
+<div id="rich-footer-wrapper">
+<div class="reinsurance-footer">
+
+	 
+
+
+	
+
+
+
+
+
+<div class="content-asset">
+<!-- dwMarker="content" dwContentID="bd6j2iaaix26IaaadnQDYNKdbW" -->
+
+
+<div class="dialog" data-dialog-id="dialog-customer-service">
+	<img src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dw9eb10955/img/pic-customer.jpg" alt=""/>
+	<div class="content content-gray arrow-top padding">
+		<h2 class="block-title">NEED ASSISTANCE ?</h2>
+		<div class="block-description-black">
+			<p>OUR CUSTOMER SERVICE IS HERE TO ASSIST YOU MONDAY THROUGH FRIDAY FROM 9AM TO 12AM, AND SATURDAY AND SUNDAY FROM 12PM TO 9PM</p>
+			<p>BY PHONE: 800-4LACOSTE (800-452-2678)</p>
+			<p>BY E-MAIL : CUSTOMERSERVICE-US@LACOSTE.COM</p>
+  		</div>
+  	</div>
+</div>
+<div class="dialog" data-dialog-id="dialog-free-returns">
+  <img src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dw38928569/img/pic-returns.jpg" alt=""/>
+  <div class="content content-gray arrow-top padding">
+    <h2 class="block-title">FREE AND EASY RETURNS</h2>
+    <div class="block-description-black">
+		<p>FREE RETURNS: A FREE RETURNS COUPON IS PROVIDED WITH YOUR PARCEL AND CAN BE USED IF YOU WANT TO RETURN A PRODUCT.</p>
+        <p>EASY RETURNS: TO RETURN A PRODUCT, PLEASE COMPLETE THE RETURNS FORM SPECIFYING THE REASONS FOR THE RETURN AND USING THE RETURN LABEL SUPPLIED.</p>
+        <p>YOU HAVE 30 DAYS FROM RECEIPT OF YOUR ORDER TO RETURN A PRODUCT PURCHASED FROM THE LACOSTE ONLINE SHOP.</p>
+      </div>
+    </div>
+</div>
+
+<div class="dialog" data-dialog-id="dialog-secure-payment">
+  <img src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dw79478167/img/pic-security.jpg" alt=""/>
+  <div class="content content-gray arrow-top padding">
+    <h2 class="block-title">SECURED PAYMENT</h2>
+    <div class="block-description-black">
+		<p>ALL PAYMENT INFORMATION WILL BE SSL CODED FOR TRANSMISSION TO PROTECT YOUR CARD DATA AND TO ENSURE THAT IT CANNOT BE USED BY ANYONE ELSE.</p>
+		<p>THE FOLLOWING PAYMENT METHODS ARE AVAILABLE AT THE LACOSTE ONLINE SHOP: VISA, MASTERCARD, AMERICAN EXPRESS AND PAYPAL.</p>
+    </div>
+  </div>
+</div>
+
+<div class="dialog" data-dialog-id="dialog-delivery">
+  <img src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dw601c9292/img/pic-delivery-48.jpg" alt=""/>
+  <div class="content content-gray arrow-top padding">
+		<h2 class="block-title">STANDARD DELIVERY</h2>
+    <div class="block-description-black">
+			<p>FREE GROUND SHIPPING ON ALL ORDERS OVER $100</p>
+			<p>THIS USUALLY TAKES 5 -7 WORKING DAYS FROM ORDER CONFIRMATION</p>
+		<h2 class="block-title">EXPRESS DELIVERY</h2>
+			<p>THIS TAKES 2 BUSINESS DAYS FROM WHEN THE ORDER IS SHIPPED</p>
+			<p>DELIVERY IS BY UPS</p>
+               <h2 class="block-title">EXPEDITED DELIVERY</h2>
+			<p>THIS TAKES 1 BUSINESS DAY FROM WHEN THE ORDER IS SHIPPED</p>
+      </div>
+    </div>
+</div>
+<div class="reinsurance-footer-bar">
+    <ul>
+        <li class="ft-customer-service" data-dialog="dialog-customer-service">
+        <div class="customerservice"></div>
+           <p>Customer service</p>
+        </li>
+        <li class="ft-free-returns" data-dialog="dialog-free-returns">
+        <div class="freereturns"></div>
+           <p>Free returns</p>
+        </li>
+        <li class="ft-secure-payment" data-dialog="dialog-secure-payment">
+        <div class="securepayment"></div>
+           <p>safe & secure payment</p>
+        </li>
+        <li class="ft-delivery-48" data-dialog="dialog-delivery">
+        <div class="freedelivery footer"></div>
+           <p>free standard delivery</p>
+        </li>
+    </ul>
+</div>
+<style>
+    .customerservice{
+      display: block;
+      width: 30px;
+      height: 30px;
+      margin: auto;
+    }
+      .customerservice{
+        background: url('http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dwb56c1a8d/reinsurance/customerservice.png') no-repeat;
+      } 
+    @media only screen and (-webkit-max-device-pixel-ratio: 1.5),
+       only screen and (-o-max-device-pixel-ratio: 3/2),
+       only screen and (max--moz-device-pixel-ratio: 1.5),
+       only screen and (max-device-pixel-ratio: 1.5) {
+    .customerservice{
+          background: url('http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dwb56c1a8d/reinsurance/customerservice.png') no-repeat;
+        }
+      }
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+       only screen and (-o-min-device-pixel-ratio: 3/2),
+       only screen and (min--moz-device-pixel-ratio: 1.5),
+       only screen and (min-device-pixel-ratio: 1.5) {
+        .customerservice{
+          background: url('http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dw331677d6/reinsurance/customerservice@2x.png');
+          /* nouvelle image de 60px par 60px */
+          background-size: 30px 30px;
+      }
+    }
+    .freereturns{
+      display: block;
+      width: 30px;
+      height: 30px;
+      margin: auto;
+    }
+    .freereturns{
+      background: url('http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dwb320bf14/reinsurance/freereturn.png') no-repeat;
+    }
+    @media only screen and (-webkit-max-device-pixel-ratio: 1.5),
+       only screen and (-o-max-device-pixel-ratio: 3/2),
+       only screen and (max--moz-device-pixel-ratio: 1.5),
+       only screen and (max-device-pixel-ratio: 1.5) {
+        .freereturns{
+          background: url('http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dwb320bf14/reinsurance/freereturn.png') no-repeat;
+        }
+      }
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+       only screen and (-o-min-device-pixel-ratio: 3/2),
+       only screen and (min--moz-device-pixel-ratio: 1.5),
+       only screen and (min-device-pixel-ratio: 1.5) {
+        .freereturns{
+          background: url('http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dwf83790a5/reinsurance//freereturn@2x.png');
+          /* nouvelle image de 60px par 60px */
+          background-size: 30px 30px;
+      }
+    }
+    .securepayment{
+      display: block;
+      width: 30px;
+      height: 30px;
+      margin: auto;
+    }
+    .securepayment{
+      background: url('http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dwcdaaf1ee/reinsurance//secure-payment.png') no-repeat;
+    }    
+    @media only screen and (-webkit-max-device-pixel-ratio: 1.5),
+       only screen and (-o-max-device-pixel-ratio: 3/2),
+       only screen and (max--moz-device-pixel-ratio: 1.5),
+       only screen and (max-device-pixel-ratio: 1.5) {
+        .securepayment{
+          background: url('http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dwcdaaf1ee/reinsurance//secure-payment.png') no-repeat;
+        }
+      }
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+       only screen and (-o-min-device-pixel-ratio: 3/2),
+       only screen and (min--moz-device-pixel-ratio: 1.5),
+       only screen and (min-device-pixel-ratio: 1.5) {
+        .securepayment{
+          background: url('http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dwfaeada15/reinsurance//secure-payment@2x.png');
+          /* nouvelle image de 60px par 60px */
+          background-size: 30px 30px;
+      }
+    }
+    .freedelivery{
+      display: block;
+      width: 30px;
+      height: 30px;
+      margin: auto;
+    }
+
+    .freedelivery.footer{
+      background: url('http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dw54fa3cd9/reinsurance/freedelivery.png') no-repeat;
+      display: block !important;
+      padding:0; 
+    }    
+    @media only screen and (-webkit-max-device-pixel-ratio: 1.5),
+       only screen and (-o-max-device-pixel-ratio: 3/2),
+       only screen and (max--moz-device-pixel-ratio: 1.5),
+       only screen and (max-device-pixel-ratio: 1.5) {
+        .freedelivery{
+          background: url('http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dw54fa3cd9/reinsurance//freedelivery.png') no-repeat;
+        }
+      }
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+       only screen and (-o-min-device-pixel-ratio: 3/2),
+       only screen and (min--moz-device-pixel-ratio: 1.5),
+       only screen and (min-device-pixel-ratio: 1.5) {
+        .freedelivery{
+          background: url('http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dw2a3d7ad1/reinsurance//freedelivery@2x.png');
+          /* nouvelle image de 60px par 60px */
+          background-size: 30px 30px;
+      }
+    }
+</style>
+
+
+</div>
+
+
+ 
+	
+</div>
+
+
+
+
+<footer class="clearfix footercontent">
+	
+	<div class="content-asset"><!-- dwMarker="content" dwContentID="bd7Ckiaaix4PIaaadnCn2NKdbW" -->
+		
+			<div class="footer-wrapper">
+    <div class="footer-wrapper-inner">	
+        <div class="findlocation">
+            <span  class="big">Store locator</span>      
+            <a href="http://stores.lacoste.com?lang=en" target="_blank" for="footer-zip-code">Find my current location</a> 
+        </div>  
+        <div class="newssubscribe">
+            <span class="big">NEWSLETTER</span>
+            <p>Sign up to receive our exclusive offers.</p>
+            <div class="form">
+                <form action="http://www.lacoste.com/on/demandware.store/Sites-FlagShip-Site/en_US/Newsletter-Start" id="footer-newsletter" method="post">                         
+                    <input type="email" name="email">
+                    <input type="submit" value="OK">              
+                </form>
+            </div>
+        </div>
+    </div>                    
+</div>
+		
+		
+			<div class="footer-wrapper">
+	<div class="footer-wrapper-inner">
+		<ul class="footer-customer-service">
+		<span  class="big">customer service</span>
+			
+<li><a href="http://www.lacoste.com/us/FAQ.html">FREQUENTLY ASKED QUESTIONS</a></li>
+<li><a href="http://www.lacoste.com/us/SizeGuide.html">SIZE GUIDE</a></li>
+<li><a href="http://www.lacoste.com/us/sitemap/SiteMap.html">SITE MAP</a></li>
+	    </ul>
+
+<ul class="footer-customer-service">
+<span  class="big">Shipping & Returns</span>
+<li><a href="http://www.lacoste.com/us/ShippingInformation.html">SHIPPING INFORMATION</a></li>
+<!--<li><a href="http://www.lacoste.com/us/account">TRACK YOUR ORDER</a></li>-->
+<li><a href="http://www.lacoste.com/us/ReturnsPolicy.html">RETURNS</a></li>
+</ul>
+
+
+	</div>                    
+</div>
+		
+		
+			<div class="footer-wrapper footer-no-mobile">
+    <div class=" footer-wrapper-inner">
+        <ul class="footer-e-shop">
+			<span  class="big">SHOP LACOSTE</span>
+           
+<li><a href="http://www.lacoste.com/us/GiftServices.html">GIFT SERVICES</a></li>
+<li><a href="http://www.lacoste.com/us/TermsandConditionExcl.html">PROMOTIONAL PRODUCTS EXCLUSION</a></li>
+<!--<li><a href="http://www.lacoste.com/us/CreateMangeAccount.html">CREATE AND MANAGE ACCOUNT</a></li>-->
+<li><a href="http://www.lacoste.com/us/OurGuarantee.html">OUR GUARANTEE</a></li>    
+</ul>
+<ul class="footer-e-shop">
+<span  class="big">Company information</span>
+<li><a href="http://www.lacoste.com/us/PrivacySecurity.html">PRIVACY AND SECURITY</a></li>    
+<li><a href="http://www.lacoste.com/us/CGV.html">TERMS & CONDITIONS</a></li>
+<li><a href="http://f.club.lacoste.com/ats/show.aspx?cr=100102&fm=1060" target="_blank">JOIN CLUB LACOSTE</a></li>
+<!--<li><a href="http://www.lacoste.com/us/SocialResponsibility.html">SOCIAL RESPONSABILITY</a></li>    -->
+</ul>
+
+    </div>                    
+</div>
+		
+		 
+			<div class="footer-wrapper">
+    <div class="footer-wrapper-inner">
+        <div class="socialmedia">
+            <span  class="big">follow us on:</span>
+            <ul class="footer-follow-us clearfix">
+                <a href="http://instagram.com/lacoste" target="_blank" "rel=nofollow"><span class="instagram-ico"></span></a>
+                <a href="https://www.facebook.com/Lacoste" target="_blank" "rel=nofollow"><span class="facebook-ico"></span></a>
+                <a href="https://twitter.com/LACOSTE" target="_blank" "rel=nofollow"><span class="twitter-ico"></span></a>
+                <a href="http://www.pinterest.com/lacoste/" target="_blank" "rel=nofollow"><span class="pinterest-ico"></span></a>
+                <a href="http://lacoste.tumblr.com/" target="_blank" "rel=nofollow"><span class="tumblr-ico"></span></a>
+                <a href="http://www.youtube.com/user/lacosteofficial" target="_blank" "rel=nofollow"><span class="youtube-ico"></span></a>
+                <a href="https://plus.google.com/+Lacoste/" target="_blank" "rel=nofollow"><span class="google-ico"></span></a>
+            </ul>
+        </div>
+        <div class="changelocale">         
+            <span  class="big">Change country :</span>
+            <select name="languages" onChange="window.location = this.options[this.selectedIndex].value" class="custom-select">
+                 <option>-</option>
+                 <option value="http://www.lacoste.com/de/">Deutschland</option>
+                 <option value="http://www.lacoste.com/at/">Österreich</option>
+                 <option value="http://shop.lacoste.com.au">Australia</option>
+                 <option value="http://shop.lacoste.ca">Canada</option>
+                 <option value="http://shop.lacoste.com.cn">中华人民共和国</option>
+                 <option value="http://shop.lacoste.jp">日本国</option>
+                 <option value="http://shop.lacoste.co.kr">한국</option>
+                 <option value="http://www.lacoste.com/fr/">France</option>
+                 <option value="http://shop.lacoste.ru">Россия</option>
+                 <option value="http://shop.lacoste.com.tr">Türkiye</option>
+                 <option value="http://www.lacoste.com/gb/">UK</option>
+                 <option value="http://www.lacoste.com/dk/">Denmark</option>
+                 <option value="http://www.lacoste.com/pt/">Portugal</option>
+                 <option value="http://www.lacoste.com/">Other countries</option>
+            </select>
+        </div>
+    </div>
+</div>
+<style>
+    .footer-wrapper-inner ul.footer-follow-us a {
+        display: inline-block !important;
+        margin-right: 0;
+        opacity: 0.5;
+        margin: 0 0.5%;
+    }
+    .footer-wrapper-inner ul.footer-follow-us a:hover {
+        opacity: 1;
+    }
+    .instagram-ico{
+        display: block;
+        height: 25px;
+        width: 25px;
+        background: url('http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dwafb0d7f3/fw15/ico/instagram-ico.png') no-repeat;
+    }
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+        only screen and (-o-min-device-pixel-ratio: 3/2),
+        only screen and (min--moz-device-pixel-ratio: 1.5),
+        only screen and (min-device-pixel-ratio: 1.5) {
+        .instagram-ico{
+            background: url('http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dwafb0d7f3/fw15/ico/instagram-ico.png') no-repeat;
+        }          
+    }
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+        only screen and (-o-min-device-pixel-ratio: 3/2),
+        only screen and (min--moz-device-pixel-ratio: 1.5),
+        only screen and (min-device-pixel-ratio: 1.5) {
+        .instagram-ico{
+            background: url('http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dwb430b962/fw15/ico/instagram-ico@2x.png') no-repeat;
+            background-size: 25px 25px;
+        }    
+    }
+    .facebook-ico{
+        display: block;
+        height: 25px;
+        width: 25px;
+        background: url('http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dw64d08902/fw15/ico/facebook.png') no-repeat;
+    }
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+        only screen and (-o-min-device-pixel-ratio: 3/2),
+        only screen and (min--moz-device-pixel-ratio: 1.5),
+        only screen and (min-device-pixel-ratio: 1.5) {
+        .facebook-ico{
+            background: url('http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dw64d08902/fw15/ico/facebook.png') no-repeat;
+        }          
+    }
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+        only screen and (-o-min-device-pixel-ratio: 3/2),
+        only screen and (min--moz-device-pixel-ratio: 1.5),
+        only screen and (min-device-pixel-ratio: 1.5) {
+        .facebook-ico{
+            background: url('http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dw3639af19/fw15/ico/facebook@2x.png') no-repeat;
+            background-size: 25px 25px;
+        }    
+    }       
+    .twitter-ico{
+        display: block;
+        height: 25px;
+        width: 25px;
+        background: url('http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dw68b6b6c6/fw15/ico/twitter.png') no-repeat;
+    }
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+        only screen and (-o-min-device-pixel-ratio: 3/2),
+        only screen and (min--moz-device-pixel-ratio: 1.5),
+        only screen and (min-device-pixel-ratio: 1.5) {
+        .twitter-ico{
+            background: url('http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dw68b6b6c6/fw15/ico/twitter.png') no-repeat;
+        }          
+    }
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+        only screen and (-o-min-device-pixel-ratio: 3/2),
+        only screen and (min--moz-device-pixel-ratio: 1.5),
+        only screen and (min-device-pixel-ratio: 1.5) {
+        .twitter-ico{
+            background: url('http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dwf862eaa6/fw15/ico/twitter@2x.png') no-repeat;
+            background-size: 25px 25px;
+        }           
+    }
+    .pinterest-ico{
+        display: block;
+        height: 25px;
+        width: 25px;
+        background: url('http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dw698c92ac/fw15/ico/pinterest.png') no-repeat;
+    }
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+        only screen and (-o-min-device-pixel-ratio: 3/2),
+        only screen and (min--moz-device-pixel-ratio: 1.5),
+        only screen and (min-device-pixel-ratio: 1.5) {
+        .pinterest-ico{
+            background: url('http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dw698c92ac/fw15/ico/pinterest.png') no-repeat;
+        }          
+    }
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+        only screen and (-o-min-device-pixel-ratio: 3/2),
+        only screen and (min--moz-device-pixel-ratio: 1.5),
+        only screen and (min-device-pixel-ratio: 1.5) {
+        .pinterest-ico{
+            background: url('http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dwe23c8aea/fw15/ico/pinterest@2x.png') no-repeat;
+            background-size: 25px 25px;
+        }         
+    }
+    .tumblr-ico{
+        display: block;
+        height: 25px;
+        width: 25px;
+        background: url('http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dw530877b9/fw15/ico/tumblr.png') no-repeat;
+    }
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+        only screen and (-o-min-device-pixel-ratio: 3/2),
+        only screen and (min--moz-device-pixel-ratio: 1.5),
+        only screen and (min-device-pixel-ratio: 1.5) {
+        .tumblr-ico{
+            background: url('http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dw530877b9/fw15/ico/tumblr.png') no-repeat;
+        }          
+    }
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+        only screen and (-o-min-device-pixel-ratio: 3/2),
+        only screen and (min--moz-device-pixel-ratio: 1.5),
+        only screen and (min-device-pixel-ratio: 1.5) {
+        .tumblr-ico{
+            background: url('http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dw1fe4bf57/fw15/ico/tumblr@2x.png') no-repeat;
+            background-size: 25px 25px;
+        }         
+    }
+    .youtube-ico{
+        display: block;
+        height: 25px;
+        width: 25px;
+        background: url('http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dwa160055b/fw15/ico/youtube.png') no-repeat;
+    }
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+        only screen and (-o-min-device-pixel-ratio: 3/2),
+        only screen and (min--moz-device-pixel-ratio: 1.5),
+        only screen and (min-device-pixel-ratio: 1.5) {
+        .youtube-ico{
+            background: url('http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dwa160055b/fw15/ico/youtube.png') no-repeat;
+        }          
+    }
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+        only screen and (-o-min-device-pixel-ratio: 3/2),
+        only screen and (min--moz-device-pixel-ratio: 1.5),
+        only screen and (min-device-pixel-ratio: 1.5) {
+        .youtube-ico{
+            background: url('http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dw87b8c515/fw15/ico/youtube@2x.png') no-repeat;
+            background-size: 25px 25px;
+        }         
+    }
+    .google-ico{
+         display: block;
+        height: 25px;
+        width: 25px;
+        background: url('http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dw0e693409/fw15/ico/google.png') no-repeat;
+    }
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+        only screen and (-o-min-device-pixel-ratio: 3/2),
+        only screen and (min--moz-device-pixel-ratio: 1.5),
+        only screen and (min-device-pixel-ratio: 1.5) {
+        .google-ico{
+            background: url('http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dw0e693409/fw15/ico/google.png') no-repeat;
+        }          
+    }
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+        only screen and (-o-min-device-pixel-ratio: 3/2),
+        only screen and (min--moz-device-pixel-ratio: 1.5),
+        only screen and (min-device-pixel-ratio: 1.5) {
+        .google-ico{
+            background: url('http://staticna1.lacoste.com/aaup_prd/on/demandware.static/-/Library-Sites-LacosteNAContent/default/dw231a1306/fw15/ico/google@2x.png') no-repeat;
+            background-size: 25px 25px;
+        }        
+    }
+</style>
+		      
+	</div>
+	
+	<div class="content-asset"><!-- dwMarker="content" dwContentID="bd7Ckiaaix4PIaaadnCn2NKdbW" -->
+	    
+		<div class="footer-wrapper">
+	        <div class="footer-wrapper-inner">
+				
+				
+	    	</div>                    
+	    </div>  
+		
+	</div>
+</footer> 
+
+	
+<script type="text/javascript">
+	if(monetateData.setPageType == "unknown") {
+		monetateData.trackUnknownPage = function() {
+			window.monetateQ.push(["setPageType", monetateData.setPageType]);
+			
+			if(monetateData.addCartRows) window.monetateQ.push(["addCartRows", monetateData.addCartRows]);
+			if(monetateData.breadCrumbs) window.monetateQ.push(["addBreadcrumbs", monetateData.breadCrumbs]);
+	
+			window.monetateQ.push(["trackData"]);
+		};
+		monetateData.trackUnknownPage();
+	}
+</script>
+	
+
+
+
+
+             
+
+
+
+<script type="text/javascript">
+	if(monetateData.setPageType == "unknown") {
+		monetateData.trackUnknownPage = function() {
+			window.monetateQ.push(["setPageType", monetateData.setPageType]);
+			
+			if(monetateData.addCartRows) window.monetateQ.push(["addCartRows", monetateData.addCartRows]);
+			if(monetateData.breadCrumbs) window.monetateQ.push(["addBreadcrumbs", monetateData.breadCrumbs]);
+	
+			window.monetateQ.push(["trackData"]);
+		};
+		monetateData.trackUnknownPage();
+	}
+</script>
+
+
+
+
+
+
+
+<div class="footer-logo">
+<div class="img-footer-logo"></div>
+</div>
+</div>
+
+        <a href=" https://plus.google.com/+Lacoste” rel="publisher"></a> 
+        
+
+
+
+
+<script type="text/javascript">
+	function setCookie(sName, sValue, sDays) {
+        var today = new Date(), expires = new Date();
+        expires.setTime(today.getTime() + (sDays*24*60*60*1000));
+        document.cookie = sName + "=" + encodeURIComponent(sValue) + ";expires=" + expires.toGMTString()+";path=/";
+	}
+	
+	function getCookie(sName) {
+        var cookContent = document.cookie, cookEnd, i, j;
+        var sName = sName + "=";
+ 
+        for (i=0, c=cookContent.length; i<c; i++) {
+                j = i + sName.length;
+                if (cookContent.substring(i, j) == sName) {
+                        cookEnd = cookContent.indexOf(";", j);
+                        if (cookEnd == -1) {
+                                cookEnd = cookContent.length;
+                        }
+                        return decodeURIComponent(cookContent.substring(j, cookEnd));
+                }
+        }       
+        return null;
+	}
+	
+	jQuery(document).ready(function(){
+		if(getCookie("cookieconsent") == null) {	
+			jQuery('#cookie-policy button').bind('click', function(){
+				setCookie("cookieconsent", "OK", 365);
+				jQuery('#cookie-policy, .cookiepolicy-clear').hide();
+			});
+		}
+	});
+	
+</script>
+       	
+
+
+
+	<script type="text/javascript">var utag_data = window.utag_data || {}</script>
+
+	<!-- Loading script asynchronously -->
+	<script type="text/javascript">
+	$(document).ready(function() {
+	    (function(a,b,c,d){
+	    a='//tags.tiqcdn.com/utag/lacoste/usa/prod/utag.js';
+	    b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/java'+c;d.async=true;
+	    a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
+	    })();
+	});
+	</script>	
+
+       	
+	<!-- Demandware Analytics code 1.0 -->
+<script type="text/javascript" src="http://staticna1.lacoste.com/aaup_prd/on/demandware.static/Sites-FlagShip-Site/-/en_US/v1444405540518/internal/jscript/dwanalytics.js"></script>
+<script type="text/javascript">//<!--
+/* <![CDATA[ */
+try{
+  var trackingUrl = "http://www.lacoste.com/on/demandware.store/Sites-FlagShip-Site/en_US/__Analytics-Tracking";
+  var dwAnalytics = dw.__dwAnalytics.getTracker(trackingUrl);
+  if (typeof dw.ac == "undefined") { 
+     dwAnalytics.trackPageView();
+  } else {        
+     dw.ac.setDWAnalytics(dwAnalytics);
+  } 
+}catch(err) {};
+/* ]]> */
+// -->
+</script>
+</body>
+</html>	
