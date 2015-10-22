@@ -19,7 +19,7 @@ module Crawler
       def product_list
         rows = CSV.read(Rails.root.join('lib', 'assets', 'crawler_realtime.csv'))
         rows.shift #skip header
-        rows.map do |parent_sku, provider, url|
+        rows.map do |provider, url|
           url
         end
       end
