@@ -6,22 +6,17 @@ module Crawler
       def scrape
         result = []
         variations do |color, images, prices, size|
-          formatted_name = format_name(name, brand, color)
-          color_family, formatted_color = ColorMap.format(color)
-          params = {  name: formatted_name,
+          params = {  name: name,
                       brand: brand,
                       'original-brand': brand.upcase,
                       partner: brand.capitalize,
                       description: description,
                       'original-category': original_category,
                       category: '',
-                      color: formatted_color,
-                      'color-family': color_family,
+                      color: color,
                       size: size,
-                      'list-price': prices[:list].try(:to_f),
-                      'sale-price': prices[:sale].try(:to_f),
-                      sku: uid(formatted_name, brand, formatted_color, size, 'child'),
-                      'parent-sku': uid(formatted_name, brand),
+                      'list-price': prices[:list],
+                      'sale-price': prices[:sale],
                       'source-url': @url}
           images.each_with_index do |img, index|
             params[:"image-url#{index+1}"] = img
@@ -50,9 +45,9 @@ module Crawler
           result = if breadcrumbs
             breadcrumbs.map do |breadcrumb|
               strip_tabs breadcrumb.child.text
-            end.join(": ")
+            end
           else
-            "New"
+            ["New"]
           end
         end
       end
@@ -85,7 +80,7 @@ module Crawler
           color[:sizes].each do |size|
             yield format_color(color[:color]),
                   format_images(color[:images]),
-                  format_prices(color[:prices]),
+                  color[:prices],
                   size
           end
         end
@@ -131,7 +126,7 @@ module Crawler
       end
 
       def format_size(size)
-        capitalize size.text.strip.downcase
+        size.text.strip.downcase
       end
 
       def format_color(color)

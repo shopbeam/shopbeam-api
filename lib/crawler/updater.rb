@@ -1,5 +1,7 @@
 module Crawler
   class Updater
+    EXTERNAL_RESULTS_FILES = ['well_ca']
+
     def initialize(batch_id)
       @batch_id = batch_id
     end
@@ -28,10 +30,22 @@ module Crawler
         end
         storage.all.each do |job_id, results|
           results.each do |r|
-            csv << Crawler::SMF.new(r.symbolize_keys).to_a
+            csv << Crawler::SMF.new(r.symbolize_keys).format.to_a
           end
         end
+        external_results.each do |result|
+          csv << Crawler::SMF.new(result.symbolize_keys).format.to_a
+        end
       end
+    end
+
+    def external_results
+      s3 = Aws::S3::Client.new
+      results = []
+      EXTERNAL_RESULTS_FILES.each do |file|
+        results += JSON.parse(s3.get_object(bucket: 'sb-scrapinghub-results', key: "#{file}.json").body.read)
+      end
+      results
     end
   end
 end

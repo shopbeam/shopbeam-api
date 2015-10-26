@@ -34,7 +34,7 @@ module Crawler
       end
 
       def get(url)
-        Nokogiri::HTML(open(url))
+        Nokogiri::HTML(URI.parse(url).open)
       end
     end
 
@@ -74,6 +74,10 @@ module Crawler
     def capitalize(text)
       return unless text
       text.split(" ").map(&:capitalize).join(" ")
+    end
+
+    def get(url)
+      Nokogiri::HTML(open(url))
     end
   end
 end
