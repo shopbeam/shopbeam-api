@@ -40,7 +40,7 @@ describe Crawler::Providers::WellCa do
         stub_request(:get, @url).to_return(body: File.new('spec/fixtures/rogaine_for_women.html'))
         @smf = described_class.new(@url).scrape.first.format
       end
-
+      
       attributes_to_test = Crawler::SMF_FIELDS.reject { |f| f == :description }
       attributes_to_test.each do |attr|
         it "should parse #{attr}" do
