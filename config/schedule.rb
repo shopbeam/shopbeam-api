@@ -19,6 +19,6 @@
 
 # Learn more: http://github.com/javan/whenever
 every 4.hours do
-  rake 'cucumber:partners'
-  rake 'cucumber:widgets'
+  rake 'cucumber:partners', environment: 'test'
+  rake 'cucumber:widgets', environment: 'test'
 end
