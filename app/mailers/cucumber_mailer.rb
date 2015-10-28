@@ -1,20 +1,10 @@
 class CucumberMailer < ApplicationMailer
   default to: 'tech@shopbeam.com'
 
-  def partners_completed(text, status_type)
-    @text = text
+  def completed(task:, results:, retries:, status_type:)
+    @results = results
 
-    mail subject: "[order-manager:partners] #{to_status(status_type)}" do |format|
-      format.text { render 'completed' }
-    end
-  end
-
-  def widgets_completed(text, status_type)
-    @text = text
-
-    mail subject: "[order-manager:widgets] #{to_status(status_type)}" do |format|
-      format.text { render 'completed' }
-    end
+    mail subject: "[order-manager:#{task}] #{to_status(status_type)}#{' [retried]' unless retries.zero?}"
   end
 
   private
