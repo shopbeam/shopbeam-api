@@ -20,7 +20,7 @@ Feature: Purchase on well.ca
   Scenario: Purchase products
     Given the following products
       | quantity | sale_price_cents | source_url |
-      | 10       | 296              | https://well.ca/products/manitoba-harvest-hemp-heart-bar_109716.html |
+      | 10       | 349              | https://well.ca/products/manitoba-harvest-hemp-heart-bar_109716.html |
     And  I am registered user
     When I go to landing page
     And  I sign in
