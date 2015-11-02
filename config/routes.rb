@@ -1,6 +1,8 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+  mount API::Root, at: '/'
+
   Sidekiq::Web.use Rack::Auth::Basic do |username, password|
     username == 'admin' && password == Rails.application.secrets.admin_monitor_password
   end if Rails.env.production?

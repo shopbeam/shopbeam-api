@@ -62,8 +62,8 @@ UPDATE "Product" SET
 	"maxPriceCents" = (SELECT MAX(coalesce(nullif(v."salePriceCents", 0), v."listPriceCents"))
 				       FROM "Variant" v
 				       WHERE v."status" = 1 AND v."ProductId" = NEW."ProductId")
-WHERE "id" = NEW."ProductId";
-RETURN NEW;
+WHERE "id" = NEW."ProductId"; 
+RETURN NEW; 
 END $$;
 
 
@@ -73,9 +73,9 @@ END $$;
 
 CREATE FUNCTION setfulltextsearchweights_trigger() RETURNS trigger
     LANGUAGE plpgsql
-    AS $$ BEGIN
-NEW."tsv" := setweight(to_tsvector('pg_catalog.english', coalesce(unaccent(NEW."searchText"),'')), 'A');
-RETURN NEW;
+    AS $$ BEGIN 
+NEW."tsv" := setweight(to_tsvector('pg_catalog.english', coalesce(unaccent(NEW."searchText"),'')), 'A'); 
+RETURN NEW; 
 END $$;
 
 
@@ -95,8 +95,8 @@ SET "salePercent" =
      AND vs."listPriceCents" > vs."salePriceCents"
      AND vs."ProductId" = NEW."ProductId"
    GROUP BY vs."ProductId" )
-WHERE "id" = NEW."ProductId";
-RETURN NEW;
+WHERE "id" = NEW."ProductId"; 
+RETURN NEW; 
 END $$;
 
 
@@ -105,7 +105,7 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
--- Name: Address; Type: TABLE; Schema: public; Owner: -; Tablespace:
+-- Name: Address; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE "Address" (
@@ -144,7 +144,7 @@ ALTER SEQUENCE "Address_id_seq" OWNED BY "Address".id;
 
 
 --
--- Name: Brand; Type: TABLE; Schema: public; Owner: -; Tablespace:
+-- Name: Brand; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE "Brand" (
@@ -177,7 +177,7 @@ ALTER SEQUENCE "Brand_id_seq" OWNED BY "Brand".id;
 
 
 --
--- Name: Category; Type: TABLE; Schema: public; Owner: -; Tablespace:
+-- Name: Category; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE "Category" (
@@ -211,7 +211,7 @@ ALTER SEQUENCE "Category_id_seq" OWNED BY "Category".id;
 
 
 --
--- Name: InvalidateProduct; Type: TABLE; Schema: public; Owner: -; Tablespace:
+-- Name: InvalidateProduct; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE "InvalidateProduct" (
@@ -222,7 +222,7 @@ CREATE TABLE "InvalidateProduct" (
 
 
 --
--- Name: InvalidateProductCategory; Type: TABLE; Schema: public; Owner: -; Tablespace:
+-- Name: InvalidateProductCategory; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE "InvalidateProductCategory" (
@@ -233,7 +233,7 @@ CREATE TABLE "InvalidateProductCategory" (
 
 
 --
--- Name: InvalidateVariant; Type: TABLE; Schema: public; Owner: -; Tablespace:
+-- Name: InvalidateVariant; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE "InvalidateVariant" (
@@ -244,7 +244,7 @@ CREATE TABLE "InvalidateVariant" (
 
 
 --
--- Name: InvalidateVariantImg; Type: TABLE; Schema: public; Owner: -; Tablespace:
+-- Name: InvalidateVariantImg; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE "InvalidateVariantImg" (
@@ -255,7 +255,7 @@ CREATE TABLE "InvalidateVariantImg" (
 
 
 --
--- Name: ItemCountShippingCost; Type: TABLE; Schema: public; Owner: -; Tablespace:
+-- Name: ItemCountShippingCost; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE "ItemCountShippingCost" (
@@ -289,7 +289,7 @@ ALTER SEQUENCE "ItemCountShippingCost_id_seq" OWNED BY "ItemCountShippingCost".i
 
 
 --
--- Name: Order; Type: TABLE; Schema: public; Owner: -; Tablespace:
+-- Name: Order; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE "Order" (
@@ -314,7 +314,7 @@ CREATE TABLE "Order" (
 
 
 --
--- Name: OrderItem; Type: TABLE; Schema: public; Owner: -; Tablespace:
+-- Name: OrderItem; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE "OrderItem" (
@@ -374,7 +374,7 @@ ALTER SEQUENCE "Order_id_seq" OWNED BY "Order".id;
 
 
 --
--- Name: Partner; Type: TABLE; Schema: public; Owner: -; Tablespace:
+-- Name: Partner; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE "Partner" (
@@ -391,7 +391,7 @@ CREATE TABLE "Partner" (
 
 
 --
--- Name: PartnerDetail; Type: TABLE; Schema: public; Owner: -; Tablespace:
+-- Name: PartnerDetail; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE "PartnerDetail" (
@@ -429,7 +429,7 @@ ALTER SEQUENCE "PartnerDetail_id_seq" OWNED BY "PartnerDetail".id;
 
 
 --
--- Name: PartnerImport; Type: TABLE; Schema: public; Owner: -; Tablespace:
+-- Name: PartnerImport; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE "PartnerImport" (
@@ -480,7 +480,7 @@ ALTER SEQUENCE "Partner_id_seq" OWNED BY "Partner".id;
 
 
 --
--- Name: Payment; Type: TABLE; Schema: public; Owner: -; Tablespace:
+-- Name: Payment; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE "Payment" (
@@ -519,7 +519,7 @@ ALTER SEQUENCE "Payment_id_seq" OWNED BY "Payment".id;
 
 
 --
--- Name: Product; Type: TABLE; Schema: public; Owner: -; Tablespace:
+-- Name: Product; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE "Product" (
@@ -546,7 +546,7 @@ CREATE TABLE "Product" (
 
 
 --
--- Name: ProductCategory; Type: TABLE; Schema: public; Owner: -; Tablespace:
+-- Name: ProductCategory; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE "ProductCategory" (
@@ -600,7 +600,7 @@ ALTER SEQUENCE "Product_id_seq" OWNED BY "Product".id;
 
 
 --
--- Name: Role; Type: TABLE; Schema: public; Owner: -; Tablespace:
+-- Name: Role; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE "Role" (
@@ -632,7 +632,7 @@ ALTER SEQUENCE "Role_id_seq" OWNED BY "Role".id;
 
 
 --
--- Name: User; Type: TABLE; Schema: public; Owner: -; Tablespace:
+-- Name: User; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE "User" (
@@ -657,7 +657,7 @@ CREATE TABLE "User" (
 
 
 --
--- Name: UserRole; Type: TABLE; Schema: public; Owner: -; Tablespace:
+-- Name: UserRole; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE "UserRole" (
@@ -709,7 +709,7 @@ ALTER SEQUENCE "User_id_seq" OWNED BY "User".id;
 
 
 --
--- Name: Variant; Type: TABLE; Schema: public; Owner: -; Tablespace:
+-- Name: Variant; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE "Variant" (
@@ -733,7 +733,7 @@ CREATE TABLE "Variant" (
 
 
 --
--- Name: VariantImg; Type: TABLE; Schema: public; Owner: -; Tablespace:
+-- Name: VariantImg; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE "VariantImg" (
@@ -789,7 +789,42 @@ ALTER SEQUENCE "Variant_id_seq" OWNED BY "Variant".id;
 
 
 --
--- Name: active_admin_comments; Type: TABLE; Schema: public; Owner: -; Tablespace:
+-- Name: access_tokens; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE access_tokens (
+    id integer NOT NULL,
+    consumer_id integer NOT NULL,
+    fingerprint character varying NOT NULL,
+    token character varying NOT NULL,
+    expires_at timestamp without time zone NOT NULL,
+    prev_token character varying,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: access_tokens_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE access_tokens_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: access_tokens_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE access_tokens_id_seq OWNED BY access_tokens.id;
+
+
+--
+-- Name: active_admin_comments; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE active_admin_comments (
@@ -825,7 +860,7 @@ ALTER SEQUENCE active_admin_comments_id_seq OWNED BY active_admin_comments.id;
 
 
 --
--- Name: admin_users; Type: TABLE; Schema: public; Owner: -; Tablespace:
+-- Name: admin_users; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE admin_users (
@@ -865,7 +900,41 @@ ALTER SEQUENCE admin_users_id_seq OWNED BY admin_users.id;
 
 
 --
--- Name: brandfilters; Type: TABLE; Schema: public; Owner: -; Tablespace:
+-- Name: auth_tokens; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE auth_tokens (
+    id integer NOT NULL,
+    owner_id integer NOT NULL,
+    owner_type character varying NOT NULL,
+    key character varying NOT NULL,
+    secret character varying NOT NULL,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: auth_tokens_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE auth_tokens_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: auth_tokens_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE auth_tokens_id_seq OWNED BY auth_tokens.id;
+
+
+--
+-- Name: brandfilters; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE brandfilters (
@@ -876,7 +945,7 @@ CREATE TABLE brandfilters (
 
 
 --
--- Name: categoryfilters; Type: TABLE; Schema: public; Owner: -; Tablespace:
+-- Name: categoryfilters; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE categoryfilters (
@@ -887,7 +956,71 @@ CREATE TABLE categoryfilters (
 
 
 --
--- Name: delayed_jobs; Type: TABLE; Schema: public; Owner: -; Tablespace:
+-- Name: clients; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE clients (
+    id integer NOT NULL,
+    referer character varying,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: clients_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE clients_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: clients_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE clients_id_seq OWNED BY clients.id;
+
+
+--
+-- Name: consumers; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE consumers (
+    id integer NOT NULL,
+    email character varying NOT NULL,
+    password_digest character varying NOT NULL,
+    client_id integer NOT NULL,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: consumers_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE consumers_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: consumers_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE consumers_id_seq OWNED BY consumers.id;
+
+
+--
+-- Name: delayed_jobs; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE delayed_jobs (
@@ -926,7 +1059,7 @@ ALTER SEQUENCE delayed_jobs_id_seq OWNED BY delayed_jobs.id;
 
 
 --
--- Name: partnerdetailid; Type: TABLE; Schema: public; Owner: -; Tablespace:
+-- Name: partnerdetailid; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE partnerdetailid (
@@ -935,7 +1068,7 @@ CREATE TABLE partnerdetailid (
 
 
 --
--- Name: partnerfilters; Type: TABLE; Schema: public; Owner: -; Tablespace:
+-- Name: partnerfilters; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE partnerfilters (
@@ -946,7 +1079,7 @@ CREATE TABLE partnerfilters (
 
 
 --
--- Name: proxy_users; Type: TABLE; Schema: public; Owner: -; Tablespace:
+-- Name: proxy_users; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE proxy_users (
@@ -982,7 +1115,7 @@ ALTER SEQUENCE proxy_users_id_seq OWNED BY proxy_users.id;
 
 
 --
--- Name: schema_migrations; Type: TABLE; Schema: public; Owner: -; Tablespace:
+-- Name: schema_migrations; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE schema_migrations (
@@ -991,7 +1124,38 @@ CREATE TABLE schema_migrations (
 
 
 --
--- Name: sessions; Type: TABLE; Schema: public; Owner: -; Tablespace:
+-- Name: services; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE services (
+    id integer NOT NULL,
+    name character varying NOT NULL,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: services_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE services_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: services_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE services_id_seq OWNED BY services.id;
+
+
+--
+-- Name: sessions; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE sessions (
@@ -1145,6 +1309,13 @@ ALTER TABLE ONLY "VariantImg" ALTER COLUMN id SET DEFAULT nextval('"VariantImg_i
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE ONLY access_tokens ALTER COLUMN id SET DEFAULT nextval('access_tokens_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE ONLY active_admin_comments ALTER COLUMN id SET DEFAULT nextval('active_admin_comments_id_seq'::regclass);
 
 
@@ -1153,6 +1324,27 @@ ALTER TABLE ONLY active_admin_comments ALTER COLUMN id SET DEFAULT nextval('acti
 --
 
 ALTER TABLE ONLY admin_users ALTER COLUMN id SET DEFAULT nextval('admin_users_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY auth_tokens ALTER COLUMN id SET DEFAULT nextval('auth_tokens_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY clients ALTER COLUMN id SET DEFAULT nextval('clients_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY consumers ALTER COLUMN id SET DEFAULT nextval('consumers_id_seq'::regclass);
 
 
 --
@@ -1173,11 +1365,18 @@ ALTER TABLE ONLY proxy_users ALTER COLUMN id SET DEFAULT nextval('proxy_users_id
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE ONLY services ALTER COLUMN id SET DEFAULT nextval('services_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE ONLY sessions ALTER COLUMN id SET DEFAULT nextval('sessions_id_seq'::regclass);
 
 
 --
--- Name: Address_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace:
+-- Name: Address_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY "Address"
@@ -1185,7 +1384,7 @@ ALTER TABLE ONLY "Address"
 
 
 --
--- Name: Brand_PartnerId_name_unique; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace:
+-- Name: Brand_PartnerId_name_unique; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY "Brand"
@@ -1193,7 +1392,7 @@ ALTER TABLE ONLY "Brand"
 
 
 --
--- Name: Brand_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace:
+-- Name: Brand_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY "Brand"
@@ -1201,7 +1400,7 @@ ALTER TABLE ONLY "Brand"
 
 
 --
--- Name: Category_name_key; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace:
+-- Name: Category_name_key; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY "Category"
@@ -1209,7 +1408,7 @@ ALTER TABLE ONLY "Category"
 
 
 --
--- Name: Category_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace:
+-- Name: Category_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY "Category"
@@ -1217,7 +1416,7 @@ ALTER TABLE ONLY "Category"
 
 
 --
--- Name: ItemCountShippingCost_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace:
+-- Name: ItemCountShippingCost_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY "ItemCountShippingCost"
@@ -1225,7 +1424,7 @@ ALTER TABLE ONLY "ItemCountShippingCost"
 
 
 --
--- Name: OrderItem_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace:
+-- Name: OrderItem_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY "OrderItem"
@@ -1233,7 +1432,7 @@ ALTER TABLE ONLY "OrderItem"
 
 
 --
--- Name: Order_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace:
+-- Name: Order_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY "Order"
@@ -1241,7 +1440,7 @@ ALTER TABLE ONLY "Order"
 
 
 --
--- Name: PartnerDetail_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace:
+-- Name: PartnerDetail_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY "PartnerDetail"
@@ -1249,7 +1448,7 @@ ALTER TABLE ONLY "PartnerDetail"
 
 
 --
--- Name: PartnerImport_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace:
+-- Name: PartnerImport_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY "PartnerImport"
@@ -1257,7 +1456,7 @@ ALTER TABLE ONLY "PartnerImport"
 
 
 --
--- Name: Partner_name_key; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace:
+-- Name: Partner_name_key; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY "Partner"
@@ -1265,7 +1464,7 @@ ALTER TABLE ONLY "Partner"
 
 
 --
--- Name: Partner_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace:
+-- Name: Partner_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY "Partner"
@@ -1273,7 +1472,7 @@ ALTER TABLE ONLY "Partner"
 
 
 --
--- Name: Payment_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace:
+-- Name: Payment_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY "Payment"
@@ -1281,7 +1480,7 @@ ALTER TABLE ONLY "Payment"
 
 
 --
--- Name: ProductCategory_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace:
+-- Name: ProductCategory_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY "ProductCategory"
@@ -1289,7 +1488,7 @@ ALTER TABLE ONLY "ProductCategory"
 
 
 --
--- Name: Product_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace:
+-- Name: Product_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY "Product"
@@ -1297,7 +1496,7 @@ ALTER TABLE ONLY "Product"
 
 
 --
--- Name: Role_name_key; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace:
+-- Name: Role_name_key; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY "Role"
@@ -1305,7 +1504,7 @@ ALTER TABLE ONLY "Role"
 
 
 --
--- Name: Role_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace:
+-- Name: Role_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY "Role"
@@ -1313,7 +1512,7 @@ ALTER TABLE ONLY "Role"
 
 
 --
--- Name: UserRole_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace:
+-- Name: UserRole_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY "UserRole"
@@ -1321,7 +1520,7 @@ ALTER TABLE ONLY "UserRole"
 
 
 --
--- Name: User_facebookId_key; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace:
+-- Name: User_facebookId_key; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY "User"
@@ -1329,7 +1528,7 @@ ALTER TABLE ONLY "User"
 
 
 --
--- Name: User_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace:
+-- Name: User_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY "User"
@@ -1337,7 +1536,7 @@ ALTER TABLE ONLY "User"
 
 
 --
--- Name: VariantImg_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace:
+-- Name: VariantImg_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY "VariantImg"
@@ -1345,7 +1544,7 @@ ALTER TABLE ONLY "VariantImg"
 
 
 --
--- Name: Variant_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace:
+-- Name: Variant_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY "Variant"
@@ -1353,7 +1552,15 @@ ALTER TABLE ONLY "Variant"
 
 
 --
--- Name: admin_notes_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace:
+-- Name: access_tokens_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY access_tokens
+    ADD CONSTRAINT access_tokens_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: admin_notes_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY active_admin_comments
@@ -1361,7 +1568,7 @@ ALTER TABLE ONLY active_admin_comments
 
 
 --
--- Name: admin_users_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace:
+-- Name: admin_users_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY admin_users
@@ -1369,7 +1576,31 @@ ALTER TABLE ONLY admin_users
 
 
 --
--- Name: delayed_jobs_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace:
+-- Name: auth_tokens_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY auth_tokens
+    ADD CONSTRAINT auth_tokens_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: clients_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY clients
+    ADD CONSTRAINT clients_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: consumers_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY consumers
+    ADD CONSTRAINT consumers_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: delayed_jobs_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY delayed_jobs
@@ -1377,7 +1608,7 @@ ALTER TABLE ONLY delayed_jobs
 
 
 --
--- Name: proxy_users_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace:
+-- Name: proxy_users_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY proxy_users
@@ -1385,7 +1616,15 @@ ALTER TABLE ONLY proxy_users
 
 
 --
--- Name: sessions_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace:
+-- Name: services_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY services
+    ADD CONSTRAINT services_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: sessions_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY sessions
@@ -1393,329 +1632,385 @@ ALTER TABLE ONLY sessions
 
 
 --
--- Name: InvalidateProductCategory_batchId_idx; Type: INDEX; Schema: public; Owner: -; Tablespace:
+-- Name: InvalidateProductCategory_batchId_idx; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE INDEX "InvalidateProductCategory_batchId_idx" ON "InvalidateProductCategory" USING btree ("batchId");
 
 
 --
--- Name: InvalidateProductCategory_partnerId_batchId_idx; Type: INDEX; Schema: public; Owner: -; Tablespace:
+-- Name: InvalidateProductCategory_partnerId_batchId_idx; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE INDEX "InvalidateProductCategory_partnerId_batchId_idx" ON "InvalidateProductCategory" USING btree ("partnerId", "batchId" NULLS FIRST);
 
 
 --
--- Name: InvalidateProductCategory_partnerId_idx; Type: INDEX; Schema: public; Owner: -; Tablespace:
+-- Name: InvalidateProductCategory_partnerId_idx; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE INDEX "InvalidateProductCategory_partnerId_idx" ON "InvalidateProductCategory" USING btree ("partnerId");
 
 
 --
--- Name: InvalidateProductCategory_productId_idx; Type: INDEX; Schema: public; Owner: -; Tablespace:
+-- Name: InvalidateProductCategory_productId_idx; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE INDEX "InvalidateProductCategory_productId_idx" ON "InvalidateProductCategory" USING btree ("productId");
 
 
 --
--- Name: InvalidateProduct_batchId_idx; Type: INDEX; Schema: public; Owner: -; Tablespace:
+-- Name: InvalidateProduct_batchId_idx; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE INDEX "InvalidateProduct_batchId_idx" ON "InvalidateProduct" USING btree ("batchId");
 
 
 --
--- Name: InvalidateProduct_partnerId_batchId_idx; Type: INDEX; Schema: public; Owner: -; Tablespace:
+-- Name: InvalidateProduct_partnerId_batchId_idx; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE INDEX "InvalidateProduct_partnerId_batchId_idx" ON "InvalidateProduct" USING btree ("partnerId", "batchId" NULLS FIRST);
 
 
 --
--- Name: InvalidateProduct_partnerId_idx; Type: INDEX; Schema: public; Owner: -; Tablespace:
+-- Name: InvalidateProduct_partnerId_idx; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE INDEX "InvalidateProduct_partnerId_idx" ON "InvalidateProduct" USING btree ("partnerId");
 
 
 --
--- Name: InvalidateProduct_productId_idx; Type: INDEX; Schema: public; Owner: -; Tablespace:
+-- Name: InvalidateProduct_productId_idx; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE INDEX "InvalidateProduct_productId_idx" ON "InvalidateProduct" USING btree ("productId");
 
 
 --
--- Name: InvalidateVariantImg_batchId_idx; Type: INDEX; Schema: public; Owner: -; Tablespace:
+-- Name: InvalidateVariantImg_batchId_idx; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE INDEX "InvalidateVariantImg_batchId_idx" ON "InvalidateVariantImg" USING btree ("batchId");
 
 
 --
--- Name: InvalidateVariantImg_partnerId_batchId_idx; Type: INDEX; Schema: public; Owner: -; Tablespace:
+-- Name: InvalidateVariantImg_partnerId_batchId_idx; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE INDEX "InvalidateVariantImg_partnerId_batchId_idx" ON "InvalidateVariantImg" USING btree ("partnerId", "batchId" NULLS FIRST);
 
 
 --
--- Name: InvalidateVariantImg_partnerId_idx; Type: INDEX; Schema: public; Owner: -; Tablespace:
+-- Name: InvalidateVariantImg_partnerId_idx; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE INDEX "InvalidateVariantImg_partnerId_idx" ON "InvalidateVariantImg" USING btree ("partnerId");
 
 
 --
--- Name: InvalidateVariantImg_variantId_idx; Type: INDEX; Schema: public; Owner: -; Tablespace:
+-- Name: InvalidateVariantImg_variantId_idx; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE INDEX "InvalidateVariantImg_variantId_idx" ON "InvalidateVariantImg" USING btree ("variantImgId");
 
 
 --
--- Name: InvalidateVariant_batchId_idx; Type: INDEX; Schema: public; Owner: -; Tablespace:
+-- Name: InvalidateVariant_batchId_idx; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE INDEX "InvalidateVariant_batchId_idx" ON "InvalidateVariant" USING btree ("batchId");
 
 
 --
--- Name: InvalidateVariant_partnerId_batchId_idx; Type: INDEX; Schema: public; Owner: -; Tablespace:
+-- Name: InvalidateVariant_partnerId_batchId_idx; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE INDEX "InvalidateVariant_partnerId_batchId_idx" ON "InvalidateVariant" USING btree ("partnerId", "batchId" NULLS FIRST);
 
 
 --
--- Name: InvalidateVariant_partnerId_idx; Type: INDEX; Schema: public; Owner: -; Tablespace:
+-- Name: InvalidateVariant_partnerId_idx; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE INDEX "InvalidateVariant_partnerId_idx" ON "InvalidateVariant" USING btree ("partnerId");
 
 
 --
--- Name: InvalidateVariant_variantId_idx; Type: INDEX; Schema: public; Owner: -; Tablespace:
+-- Name: InvalidateVariant_variantId_idx; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE INDEX "InvalidateVariant_variantId_idx" ON "InvalidateVariant" USING btree ("variantId");
 
 
 --
--- Name: Order_createdAt_idx_status_3; Type: INDEX; Schema: public; Owner: -; Tablespace:
+-- Name: Order_createdAt_idx_status_3; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE INDEX "Order_createdAt_idx_status_3" ON "Order" USING btree ("createdAt" NULLS FIRST) WHERE (status = 3);
 
 
 --
--- Name: Order_dequeuedAt_idx_dequeuedAt_not_null; Type: INDEX; Schema: public; Owner: -; Tablespace:
+-- Name: Order_dequeuedAt_idx_dequeuedAt_not_null; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE INDEX "Order_dequeuedAt_idx_dequeuedAt_not_null" ON "Order" USING btree ("dequeuedAt") WHERE ("dequeuedAt" IS NOT NULL);
 
 
 --
--- Name: Partner_name_idx_status_1; Type: INDEX; Schema: public; Owner: -; Tablespace:
+-- Name: Partner_name_idx_status_1; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE INDEX "Partner_name_idx_status_1" ON "Partner" USING btree (name NULLS FIRST) WHERE (status = 1);
 
 
 --
--- Name: Product_BrandId_createdAt_status_1; Type: INDEX; Schema: public; Owner: -; Tablespace:
+-- Name: Product_BrandId_createdAt_status_1; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE INDEX "Product_BrandId_createdAt_status_1" ON "Product" USING btree ("BrandId", "createdAt") WHERE (status = 1);
 
 
 --
--- Name: Product_createdAt_idx_status_1; Type: INDEX; Schema: public; Owner: -; Tablespace:
+-- Name: Product_createdAt_idx_status_1; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE INDEX "Product_createdAt_idx_status_1" ON "Product" USING btree ("createdAt" DESC) WHERE (status = 1);
 
 
 --
--- Name: Product_maxPriceCents_idx_status_1; Type: INDEX; Schema: public; Owner: -; Tablespace:
+-- Name: Product_maxPriceCents_idx_status_1; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE INDEX "Product_maxPriceCents_idx_status_1" ON "Product" USING btree ("maxPriceCents") WHERE (status = 1);
 
 
 --
--- Name: Product_minPriceCents_idx_status_1; Type: INDEX; Schema: public; Owner: -; Tablespace:
+-- Name: Product_minPriceCents_idx_status_1; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE INDEX "Product_minPriceCents_idx_status_1" ON "Product" USING btree ("minPriceCents") WHERE (status = 1);
 
 
 --
--- Name: Product_salePercent_Desc_idx_status_1; Type: INDEX; Schema: public; Owner: -; Tablespace:
+-- Name: Product_salePercent_Desc_idx_status_1; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE INDEX "Product_salePercent_Desc_idx_status_1" ON "Product" USING btree ("salePercent" DESC) WHERE (status = 1);
 
 
 --
--- Name: Product_sku_idx; Type: INDEX; Schema: public; Owner: -; Tablespace:
+-- Name: Product_sku_idx; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE INDEX "Product_sku_idx" ON "Product" USING btree (sku NULLS FIRST);
 
 
 --
--- Name: Variant_sku_idx; Type: INDEX; Schema: public; Owner: -; Tablespace:
+-- Name: Variant_sku_idx; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE INDEX "Variant_sku_idx" ON "Variant" USING btree (sku NULLS FIRST);
 
 
 --
--- Name: delayed_jobs_priority; Type: INDEX; Schema: public; Owner: -; Tablespace:
+-- Name: delayed_jobs_priority; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE INDEX delayed_jobs_priority ON delayed_jobs USING btree (priority, run_at);
 
 
 --
--- Name: fki_Brand_PartnerId_fkey_status_1; Type: INDEX; Schema: public; Owner: -; Tablespace:
+-- Name: fki_Brand_PartnerId_fkey_status_1; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE INDEX "fki_Brand_PartnerId_fkey_status_1" ON "Brand" USING btree ("PartnerId") WHERE (status = 1);
 
 
 --
--- Name: fki_ProductCategory_CategoryId_fkey_status_1; Type: INDEX; Schema: public; Owner: -; Tablespace:
+-- Name: fki_ProductCategory_CategoryId_fkey_status_1; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE INDEX "fki_ProductCategory_CategoryId_fkey_status_1" ON "ProductCategory" USING btree ("CategoryId") WHERE (status = 1);
 
 
 --
--- Name: fki_ProductCategory_ProductId_fkey_status_1; Type: INDEX; Schema: public; Owner: -; Tablespace:
+-- Name: fki_ProductCategory_ProductId_fkey_status_1; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE INDEX "fki_ProductCategory_ProductId_fkey_status_1" ON "ProductCategory" USING btree ("ProductId") WHERE (status = 1);
 
 
 --
--- Name: fki_Product_BrandId_fkey_status_1; Type: INDEX; Schema: public; Owner: -; Tablespace:
+-- Name: fki_Product_BrandId_fkey_status_1; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE INDEX "fki_Product_BrandId_fkey_status_1" ON "Product" USING btree ("BrandId") WHERE (status = 1);
 
 
 --
--- Name: fki_VariantImg_VariantId_fkey; Type: INDEX; Schema: public; Owner: -; Tablespace:
+-- Name: fki_VariantImg_VariantId_fkey; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE INDEX "fki_VariantImg_VariantId_fkey" ON "VariantImg" USING btree ("VariantId");
 
 
 --
--- Name: fki_VariantImg_VariantId_fkey_status_1; Type: INDEX; Schema: public; Owner: -; Tablespace:
+-- Name: fki_VariantImg_VariantId_fkey_status_1; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE INDEX "fki_VariantImg_VariantId_fkey_status_1" ON "VariantImg" USING btree ("VariantId") WHERE (status = 1);
 
 
 --
--- Name: fki_Variant_ProductId_fkey; Type: INDEX; Schema: public; Owner: -; Tablespace:
+-- Name: fki_Variant_ProductId_fkey; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE INDEX "fki_Variant_ProductId_fkey" ON "Variant" USING btree ("ProductId");
 
 
 --
--- Name: fki_Variant_ProductId_fkey_status_1; Type: INDEX; Schema: public; Owner: -; Tablespace:
+-- Name: fki_Variant_ProductId_fkey_status_1; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE INDEX "fki_Variant_ProductId_fkey_status_1" ON "Variant" USING btree ("ProductId") WHERE (status = 1);
 
 
 --
--- Name: index_active_admin_comments_on_author_type_and_author_id; Type: INDEX; Schema: public; Owner: -; Tablespace:
+-- Name: index_access_tokens_on_consumer_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_access_tokens_on_consumer_id ON access_tokens USING btree (consumer_id);
+
+
+--
+-- Name: index_access_tokens_on_fingerprint; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE UNIQUE INDEX index_access_tokens_on_fingerprint ON access_tokens USING btree (fingerprint);
+
+
+--
+-- Name: index_access_tokens_on_token; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE UNIQUE INDEX index_access_tokens_on_token ON access_tokens USING btree (token);
+
+
+--
+-- Name: index_active_admin_comments_on_author_type_and_author_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE INDEX index_active_admin_comments_on_author_type_and_author_id ON active_admin_comments USING btree (author_type, author_id);
 
 
 --
--- Name: index_active_admin_comments_on_namespace; Type: INDEX; Schema: public; Owner: -; Tablespace:
+-- Name: index_active_admin_comments_on_namespace; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE INDEX index_active_admin_comments_on_namespace ON active_admin_comments USING btree (namespace);
 
 
 --
--- Name: index_admin_notes_on_resource_type_and_resource_id; Type: INDEX; Schema: public; Owner: -; Tablespace:
+-- Name: index_admin_notes_on_resource_type_and_resource_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE INDEX index_admin_notes_on_resource_type_and_resource_id ON active_admin_comments USING btree (resource_type, resource_id);
 
 
 --
--- Name: index_admin_users_on_email; Type: INDEX; Schema: public; Owner: -; Tablespace:
+-- Name: index_admin_users_on_email; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE UNIQUE INDEX index_admin_users_on_email ON admin_users USING btree (email);
 
 
 --
--- Name: index_admin_users_on_reset_password_token; Type: INDEX; Schema: public; Owner: -; Tablespace:
+-- Name: index_admin_users_on_reset_password_token; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE UNIQUE INDEX index_admin_users_on_reset_password_token ON admin_users USING btree (reset_password_token);
 
 
 --
--- Name: index_proxy_users_on_email; Type: INDEX; Schema: public; Owner: -; Tablespace:
+-- Name: index_auth_tokens_on_key; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE UNIQUE INDEX index_auth_tokens_on_key ON auth_tokens USING btree (key);
+
+
+--
+-- Name: index_auth_tokens_on_owner_id_and_owner_type; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_auth_tokens_on_owner_id_and_owner_type ON auth_tokens USING btree (owner_id, owner_type);
+
+
+--
+-- Name: index_auth_tokens_on_secret; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE UNIQUE INDEX index_auth_tokens_on_secret ON auth_tokens USING btree (secret);
+
+
+--
+-- Name: index_consumers_on_client_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_consumers_on_client_id ON consumers USING btree (client_id);
+
+
+--
+-- Name: index_consumers_on_email; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE UNIQUE INDEX index_consumers_on_email ON consumers USING btree (email);
+
+
+--
+-- Name: index_proxy_users_on_email; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE UNIQUE INDEX index_proxy_users_on_email ON proxy_users USING btree (email);
 
 
 --
--- Name: index_proxy_users_on_user_id; Type: INDEX; Schema: public; Owner: -; Tablespace:
+-- Name: index_proxy_users_on_user_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE INDEX index_proxy_users_on_user_id ON proxy_users USING btree (user_id);
 
 
 --
--- Name: index_proxy_users_on_user_id_and_partner_type; Type: INDEX; Schema: public; Owner: -; Tablespace:
+-- Name: index_proxy_users_on_user_id_and_partner_type; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE UNIQUE INDEX index_proxy_users_on_user_id_and_partner_type ON proxy_users USING btree (user_id, partner_type);
 
 
 --
--- Name: index_sessions_on_session_id; Type: INDEX; Schema: public; Owner: -; Tablespace:
+-- Name: index_sessions_on_session_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE INDEX index_sessions_on_session_id ON sessions USING btree (session_id);
 
 
 --
--- Name: index_sessions_on_updated_at; Type: INDEX; Schema: public; Owner: -; Tablespace:
+-- Name: index_sessions_on_updated_at; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE INDEX index_sessions_on_updated_at ON sessions USING btree (updated_at);
 
 
 --
--- Name: tsv_idx_status_1; Type: INDEX; Schema: public; Owner: -; Tablespace:
+-- Name: tsv_idx_status_1; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE INDEX tsv_idx_status_1 ON "Product" USING gin (tsv) WHERE (status = 1);
 
 
 --
--- Name: unique_schema_migrations; Type: INDEX; Schema: public; Owner: -; Tablespace:
+-- Name: unique_schema_migrations; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE UNIQUE INDEX unique_schema_migrations ON schema_migrations USING btree (version);
@@ -1799,6 +2094,22 @@ ALTER TABLE ONLY proxy_users
 
 
 --
+-- Name: fk_rails_88efc838a2; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY access_tokens
+    ADD CONSTRAINT fk_rails_88efc838a2 FOREIGN KEY (consumer_id) REFERENCES consumers(id);
+
+
+--
+-- Name: fk_rails_ae466ba5b2; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY consumers
+    ADD CONSTRAINT fk_rails_ae466ba5b2 FOREIGN KEY (client_id) REFERENCES clients(id);
+
+
+--
 -- PostgreSQL database dump complete
 --
 
@@ -1823,3 +2134,14 @@ INSERT INTO schema_migrations (version) VALUES ('20150907090911');
 INSERT INTO schema_migrations (version) VALUES ('20150917095708');
 
 INSERT INTO schema_migrations (version) VALUES ('20150925132327');
+
+INSERT INTO schema_migrations (version) VALUES ('20151018212606');
+
+INSERT INTO schema_migrations (version) VALUES ('20151018212741');
+
+INSERT INTO schema_migrations (version) VALUES ('20151018214229');
+
+INSERT INTO schema_migrations (version) VALUES ('20151018214654');
+
+INSERT INTO schema_migrations (version) VALUES ('20151018222937');
+

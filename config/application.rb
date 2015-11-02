@@ -36,5 +36,16 @@ module OrderManager
 
     # Use the schema in SQL format because of database-dependent statements
     config.active_record.schema_format = :sql
+
+    config.middleware.insert_before 0, 'Rack::Cors' do
+      allow do
+        origins '*'
+
+        resource '*',
+          headers: :any,
+          methods: %i(get post delete put patch options head),
+          max_age: 0
+      end
+    end
   end
 end

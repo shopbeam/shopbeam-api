@@ -3,7 +3,7 @@ module Checkout
     extend ActiveSupport::Concern
 
     included do
-      include PopupCloser
+      include PopupCloser::Helpers
     end
   end
 end
