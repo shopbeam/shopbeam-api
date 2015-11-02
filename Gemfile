@@ -5,8 +5,14 @@ gem 'rails', '4.2.3'
 # Use postgresql as the database for Active Record
 gem 'pg'
 
+# Use ActiveModel has_secure_password
+gem 'bcrypt', '~> 3.1.7'
+
 # Use Puma as the app server
 gem 'puma'
+
+# Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
+gem 'rack-cors'
 
 # Action Mailer adapter
 gem 'mailgun_rails'
@@ -38,25 +44,37 @@ gem 'whenever'
 # NewRelic monitoring
 gem 'newrelic_rpm'
 
+# Convenient diffing
 gem 'diffy'
 
 # Inline CSS for HTML mails
 gem 'roadie-rails'
 
-#web parsing farmework for crawlers
+# Web parser
 gem 'nokogiri'
 
-#stuff for working with prices
+# Money and currency conversion
 gem 'money'
 gem 'monetize'
 
-#FTP
+# SFTP client
 gem 'net-sftp'
 
+# Heroku API client
 gem 'heroku-api'
 
-# pretty output for printing ruby objects
+# Pretty printer for Ruby objects
 gem 'awesome_print'
+
+# API
+gem 'grape'
+gem 'grape-entity'
+
+# Generate random tokens (TBA in Rails 5)
+gem 'has_secure_token'
+
+# Rack authentication
+gem 'warden'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -1,6 +1,6 @@
 module Checkout
   class Browser < DelegateClass(Watir::Browser)
-    include ::Checkout::BrowserExtensions
+    include Checkout::BrowserExtensions
 
     NET_TIMEOUT = 3 * 60
     WAIT_TIMEOUT = 60
