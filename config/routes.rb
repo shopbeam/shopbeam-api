@@ -19,4 +19,7 @@ Rails.application.routes.draw do
 
   # Python crawlers upload results here
   post '/crawlers/results', to: 'crawlers#results'
+
+  # Must be the last route!
+  match '*path', to: redirect { |_, request| "https://www.shopbeam.com#{request.fullpath}" }, via: :all
 end
