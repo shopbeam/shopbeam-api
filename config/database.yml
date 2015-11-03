@@ -8,10 +8,6 @@ development:
   <<: *default
   database: order_manager_development
 
-staging:
-  <<: *default
-  database: order_manager_development
-
 test: &test
   <<: *default
   database: order_manager_test

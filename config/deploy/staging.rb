@@ -30,7 +30,7 @@ server '172.17.99.119', user: 'ubuntu', roles: %w(worker)
 # http://capistranorb.com/documentation/getting-started/configuration/
 # Feel free to add new variables to customise your setup.
 
-set :rails_env, 'production'
+set :rails_env, 'development'
 
 # Link environment specific .env file
 #set :linked_files, fetch(:linked_files).push('.env.staging')
