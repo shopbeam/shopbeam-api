@@ -5,7 +5,7 @@ set :rbenv_type, :user
 set :rbenv_ruby, '2.2.2'
 
 set :application, 'order_manager'
-set :repo_url, 'git@github.com:shopbeam/order-manager.git'
+set :repo_url, 'git@github.com:shopbeam/shopbeam-api.git'
 
 # Default branch is :master
 ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
@@ -26,7 +26,7 @@ set :deploy_to, '/home/ubuntu/www/order_manager'
 # set :pty, false
 
 # Default value for :linked_files is []
-set :linked_files, fetch(:linked_files, []).push('.env', 'config/database.yml', 'config/secrets.yml', 'config/newrelic.yml')
+#set :linked_files, fetch(:linked_files, []).push('.env', 'config/database.yml', 'config/secrets.yml', 'config/newrelic.yml')
 
 # Default value for linked_dirs is []
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
@@ -39,7 +39,7 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', '
 
 set :puma_init_active_record, true
 set :sidekiq_role, :worker
-set :puma_monit_service_name, "puma_order_manager"
+#set :puma_monit_service_name, "puma_order_manager"
 
 namespace :deploy do
 
