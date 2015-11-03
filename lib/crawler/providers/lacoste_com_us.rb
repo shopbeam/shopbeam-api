@@ -67,7 +67,7 @@ module Crawler
             colors << { color: color, images: images, page: @page }
           else
             color_urls.each do |color_url|
-              color_page = get(color_url)
+              color_page = self.class.get(color_url)
               images = color_page.css("[itemprop='image'] [itemprop='image']")
               color = color_page.css("input[name='selectedColor']")
               colors << { color: color, images: images, page: color_page }

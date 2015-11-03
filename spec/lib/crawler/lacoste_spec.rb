@@ -3,6 +3,7 @@ require 'rails_helper'
 describe Crawler::Providers::LacosteComUs do
   describe ".scrape" do
     before(:context) { @url = "http://www.lacoste.com/us/lacoste/men/accessories/watches/lacoste.12.12-watch/2010823.html?dwvar_2010823_color=000" }
+    before(:context) { stub_request(:get, @url).to_return(File.new('spec/fixtures/lacoste.12.12.txt')) }
     subject { described_class.new(url).scrape }
 
     let(:url) { @url }
@@ -34,7 +35,10 @@ describe Crawler::Providers::LacosteComUs do
 
 
     context "attributes" do
-      before(:context) { @smf = described_class.new(@url).scrape.first }
+      before(:context) do
+        stub_request(:get, @url).to_return(File.new('spec/fixtures/lacoste.12.12.txt'))
+        @smf = described_class.new(@url).scrape.first
+      end
       Crawler::SMF_FIELDS.each do |attr|
         it "should parse #{attr} attribute" do
           expect(@smf.send(attr)).to eq send(attr)
@@ -43,6 +47,7 @@ describe Crawler::Providers::LacosteComUs do
     end
 
     context "no colors variations" do
+      before(:each) { stub_request(:get, @url).to_return(File.new('spec/fixtures/lacoste.12.12.txt')) }
       it "yields the only color" do
         crawler = described_class.new(url)
 
@@ -58,11 +63,17 @@ describe Crawler::Providers::LacosteComUs do
     end
 
     context "there are colors variations" do
-      let(:url) { 'http://www.lacoste.com/us/lacoste-sport/kids/shoes/high-top-ampthill-sneakers/30SPI3001.html?dwvar_30SPI3001_color=21G' }
+      before(:context) do
+        @url = 'http://www.lacoste.com/us/lacoste-sport/kids/shoes/high-top-ampthill-sneakers/30SPI3001.html?dwvar_30SPI3001_color=21G'
+        stub_request(:get, @url).to_return(File.new('spec/fixtures/high-top-ampthill-sneakers.txt'))
+        stub_request(:get, "http://www.lacoste.com/on/demandware.store/Sites-FlagShip-Site/en_US/ProductV2-SkuProduct?dwvar_30SPI3001_color=21G&pid=30SPI3001").to_return(body: File.new('spec/fixtures/high-top-ampthill-sneakers_variant_1.html'))
+        stub_request(:get, "http://www.lacoste.com/on/demandware.store/Sites-FlagShip-Site/en_US/ProductV2-SkuProduct?dwvar_30SPI3001_color=DB4&pid=30SPI3001").to_return(body: File.new('spec/fixtures/high-top-ampthill-sneakers_variant_2.html'))
+      end
+      let(:url) { @url }
       it "yields all color variations" do
         crawler = described_class.new(url)
 
-        expect { |b| crawler.send(:variations, &b) }.to yield_control.exactly(12).times
+        expect { |b| crawler.send(:variations, &b) }.to yield_control.exactly(8).times
 
         results = []
         crawler.send(:variations) do |color, images, prices, size|
@@ -81,8 +92,8 @@ describe Crawler::Providers::LacosteComUs do
         expect(results[0][:prices][:sale]).to be_nil
         expect(results[6][:prices][:sale]).to be_nil
 
-        expect(results[0][:size]).to eq "4 (uk 3)"
-        expect(results[11][:size]).to eq "9 (uk 8)"
+        expect(results[0][:size]).to eq "6 (uk 5)"
+        expect(results[7][:size]).to eq "9 (uk 8)"
       end
     end
   end

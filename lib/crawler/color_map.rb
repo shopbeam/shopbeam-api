@@ -29,14 +29,15 @@ module Crawler
       end
 
       def mappings
-        return @mappings if defined? @mappings
-        colors = CSV.read("lib/assets/colors.csv")
-        colors.shift # skip header
-        result = {}
-        colors.each do |color|
-          result[color.shift] = color.compact
+        @mappings ||= begin
+          colors = CSV.read("lib/assets/colors.csv")
+          colors.shift # skip header
+          result = {}
+          colors.each do |color|
+            result[color.shift] = color.compact
+          end
+          result
         end
-        @mappings = result
       end
 
       def try_split(text)

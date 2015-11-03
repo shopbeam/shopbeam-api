@@ -3,6 +3,27 @@ require 'open-uri'
 module Crawler
   module Providers
     class WellCa < Crawler::Provider
+      class << self
+        def scrape_brand(brand)
+          result, page = [], 1
+
+          loop do
+            products = scrape_brand_page(brand, page)
+            result += products
+            page += 1
+            break unless products.any?
+          end
+          result
+        end
+
+        def scrape_brand_page(brand, page_number)
+          page = get("https://well.ca/brand/#{brand}.html?page=#{page_number}")
+          page.css(".product_grid_link").map do |product_link|
+            product_link['href']
+          end
+        end
+      end
+
       def scrape
         return [] if sold_out?
         color_family, formatted_color = ColorMap.format(color)

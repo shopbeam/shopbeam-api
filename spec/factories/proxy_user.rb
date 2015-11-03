@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :proxy_user do
     user
-    partner_type 'WellCa'
+    partner_type 'FakePartner'
   end
 end

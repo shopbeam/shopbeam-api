@@ -1,7 +1,7 @@
 class Batch
   class Job
     include Sidekiq::Worker
-    sidekiq_options retry: 3, backtrace: 5
+    sidekiq_options retry: 4, backtrace: 5
 
     class << self
       def perform_async(*args)
@@ -41,6 +41,14 @@ class Batch
       else
         self.class.perform_in(10.seconds, *args, batch_id: @batch_id, callback: true)
       end
+    end
+
+    def add_to_batch
+      ThreadStorage[:batch_id] = @batch_id
+      yield
+      self
+    ensure
+      ThreadStorage[:batch_id] = nil
     end
 
     def run(*)

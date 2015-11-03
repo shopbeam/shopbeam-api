@@ -3,21 +3,44 @@ module Crawler
     class ProviderNotSupportedError < StandardError; end
 
     class << self
-      def lookup(url)
+      def lookup(url: nil, name: nil)
+        if url
+          lookup_by_url(url)
+        elsif name
+          lookup_by_name(name)
+        else
+          raise ArgumentError.new("specify url or name")
+        end
+      end
+
+      def lookup_by_url(url)
         case url
         when %r(https?://well.ca)
           Crawler::Providers::WellCa
         when %r(https?://www.lacoste.com)
           Crawler::Providers::LacosteComUs
         else
-          raise ProviderNotSupportedError.new(url, 'Crawler for this site is not supported.')
+          raise ProviderNotSupportedError.new("Crawler for site '#{url}' is not supported.")
         end
+      end
+
+      def lookup_by_name(name)
+        case name
+        when "well_ca"
+          Crawler::Providers::WellCa
+        else
+          raise ProviderNotSupportedError.new("Crawler for provider '#{name}' is not supported.")
+        end
+      end
+
+      def get(url)
+        Nokogiri::HTML(open(url))
       end
     end
 
     def initialize(url)
       @url = url
-      @page = get(url)
+      @page = self.class.get(url)
     end
 
     private
@@ -41,10 +64,6 @@ module Crawler
 
     def format_categories(categories)
       categories.map { |c| strip_tabs c }.join(': ')
-    end
-
-    def get(url)
-      Nokogiri::HTML(open(url))
     end
 
     def uid(*args)

@@ -111,4 +111,5 @@ group :test do
   gem 'rspec-expectations'
   gem 'rspec-sidekiq'
   gem 'fakeredis', :require => 'fakeredis/rspec'
+  gem 'webmock'
 end

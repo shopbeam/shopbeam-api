@@ -114,4 +114,39 @@ describe Batch do
       end
     end
   end
+
+  context ".add_to_batch" do
+    let!(:sample_job) do
+      class SampleJob < Batch::Job
+        def run(*args)
+          Storage[:result_run1] = true
+          add_to_batch do
+            ChildJob.perform_async
+          end
+        end
+      end
+    end
+
+    let!(:child_job) do
+      class ChildJob < Batch::Job
+        def run
+          Storage[:result_run2] = true
+        end
+      end
+    end
+
+    subject do
+      Sidekiq::Testing.inline! do
+        described_class.new(name).jobs do
+          SampleJob.perform_async
+        end
+      end
+      Storage
+    end
+
+    it "should run parent and child job" do
+      expect(subject[:result_run1]).to be_truthy
+      expect(subject[:result_run2]).to be_truthy
+    end
+  end
 end
