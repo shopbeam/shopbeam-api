@@ -33,7 +33,7 @@ server '172.17.99.119', user: 'ubuntu', roles: %w(worker)
 set :rails_env, 'production'
 
 # Link environment specific .env file
-#set :linked_files, fetch(:linked_files).push('.env.production')
+#set :linked_files, fetch(:linked_files).push('.env.staging')
 
 # Keep test group to be able to run Cucumber features
 set :bundle_without, 'development'
