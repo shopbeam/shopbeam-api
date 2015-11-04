@@ -23,17 +23,13 @@ module Checkout
 
       def add_to_cart(item)
         browser.goto item.source_url
-
-        add_to_cart_btn = browser.button(id: 'add-to-cart')
-
-        unless add_to_cart_btn.present?
-          raise VariantNotAvailableError.new(browser.url, item)
-        end
+        ensure_availability(item)
 
         variations = browser.element(class: 'product-variations')
 
         select_color(item, variations) if item.color.present?
         select_size(item, variations) if item.size.present?
+        ensure_availability(item)
 
         price_cents = browser.element(css: '[itemprop="price"]').attribute_value('textContent').to_f * 100
 
@@ -45,12 +41,10 @@ module Checkout
           )
         end
 
-        if add_to_cart_btn.disabled?
-          raise VariantNotAvailableError.new(browser.url, item)
-        end
+        ensure_availability(item)
 
         item.quantity.times do
-          browser.click_on browser.element(id: 'add-to-cart')
+          browser.click_on add_to_cart_btn
           browser.element(class: 'mini-cart')
             .tap(&:wait_until_present)
             .tap(&:wait_while_present)
@@ -121,6 +115,16 @@ module Checkout
         on_error do |message|
           raise ConfirmationError.new(browser.url, message)
         end
+      end
+
+      def ensure_availability(item)
+        unless add_to_cart_btn.present? && add_to_cart_btn.enabled?
+          raise VariantNotAvailableError.new(browser.url, item)
+        end
+      end
+
+      def add_to_cart_btn
+        browser.button(id: 'add-to-cart')
       end
 
       def select_color(item, variations)
