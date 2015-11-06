@@ -60,6 +60,8 @@ namespace :cucumber do
       api_key: Rails.application.secrets.mailgun_api_key,
       domain: 'orders.shopbeam.com'
     }
+
+    WebMock.allow_net_connect!
   end
 
   namespace :partners do
