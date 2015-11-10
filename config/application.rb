@@ -42,8 +42,9 @@ module OrderManager
         origins '*'
 
         resource '*',
-          headers: :any,
           methods: %i(get post delete put patch options head),
+          headers: :any,
+          expose: %w(X-Auth-Fingerprint X-Auth-Token X-Auth-Expires),
           max_age: 0
       end
     end
