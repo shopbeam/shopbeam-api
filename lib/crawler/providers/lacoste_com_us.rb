@@ -92,7 +92,8 @@ module Crawler
       end
 
       def available?(page)
-        page.css("#haveColorAvailable").first['value'] == "true"
+        has_color = page.css("#haveColorAvailable").first
+        has_color && (has_color['value'] == "true")
       end
 
       def parse_prices!(color)

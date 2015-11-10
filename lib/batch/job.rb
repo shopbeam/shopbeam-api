@@ -25,6 +25,7 @@ class Batch
     end
 
     def perform_job(*args)
+      add_newrelic_params
       storage.started
       run(*args)
       storage.finished
@@ -56,7 +57,11 @@ class Batch
     end
 
     def on_error(exception)
-      BatchJobMailer.error(exception, @batch_id, @jid).deliver_now
+      add_newrelic_params
+    end
+
+    def add_newrelic_params
+      ::NewRelic::Agent.add_custom_attributes(batch_id: @batch_id, jid: @jid)
     end
 
     def storage
