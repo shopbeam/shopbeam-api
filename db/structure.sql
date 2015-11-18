@@ -309,7 +309,8 @@ CREATE TABLE "Order" (
     "ShippingAddressId" integer,
     "UserId" integer,
     "PaymentId" integer,
-    "dequeuedAt" double precision
+    "dequeuedAt" double precision,
+    theme character varying DEFAULT 'default'::character varying NOT NULL
 );
 
 
@@ -2144,4 +2145,6 @@ INSERT INTO schema_migrations (version) VALUES ('20151018214229');
 INSERT INTO schema_migrations (version) VALUES ('20151018214654');
 
 INSERT INTO schema_migrations (version) VALUES ('20151018222937');
+
+INSERT INTO schema_migrations (version) VALUES ('20151118143841');
 
