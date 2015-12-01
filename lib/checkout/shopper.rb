@@ -13,6 +13,9 @@ module Checkout
       end
     rescue ActiveRecord::RecordNotFound
       broadcast :order_not_found, order_id
+    rescue InvalidOrderNumberError => exception
+      order.complete!
+      broadcast :order_completed_with_error, order, exception
     rescue OrderError => exception
       order.terminate!
       broadcast :order_terminated, order, exception

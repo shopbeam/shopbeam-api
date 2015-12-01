@@ -7,14 +7,12 @@ module Checkout
 
     def call
       proxy_user = ProxyUser.find_by!(email: mail.recipient)
-      html_options = validator.parse!(mail.body_html, :html)
-      text_options = validator.parse!(mail.body_plain, :text)
+      options = validator.parse!(mail.body)
 
       ProxyMailer.forward(
         to: proxy_user.user_email,
         proxy_mail: mail,
-        html: Checkout::MailTemplate.new(proxy_user, validator, html_options).html,
-        text: Checkout::MailTemplate.new(proxy_user, validator, text_options).text
+        body: Checkout::MailTemplate.new(proxy_user, validator, options).render
       ).deliver_now
     rescue ActiveRecord::RecordNotFound
       ProxyMailer.recipient_not_found(mail.recipient).deliver_now
@@ -33,6 +31,13 @@ module Checkout
         diff: exception.diff
       ).deliver_now
       raise
+    rescue MailTemplateNotFoundError => exception
+      ProxyMailer.template_not_found(
+        proxy_mail: mail,
+        dispatcher: self.class,
+        filename: exception.filename
+      ).deliver_now
+      raise
     end
 
     protected
@@ -44,8 +49,7 @@ module Checkout
         from: params[:from],
         recipient: params[:recipient],
         subject: params[:subject],
-        body_html: params[:'body-html'],
-        body_plain: params[:'body-plain']
+        body: params[:'body-html']
       }
     end
 

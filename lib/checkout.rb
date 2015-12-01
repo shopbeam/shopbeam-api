@@ -1,5 +1,7 @@
 module Checkout
   class OrderError < StandardError
+    attr_accessor :screenshot, :page_source
+
     def initialize(url, message)
       @url = url
       @message = message
@@ -36,6 +38,7 @@ module Checkout
   class InvalidShippingInfoError < OrderError; end
   class InvalidBillingInfoError < OrderError; end
   class ConfirmationError < OrderError; end
+  class InvalidOrderNumberError < OrderError; end
 
   class UnknownMailError < StandardError; end
 
@@ -66,6 +69,14 @@ module Checkout
       stripped_diff = diff.gsub(MATCHED_LINES, '').gsub(UNCHANGED_LINES, '')
 
       diff.replace(stripped_diff) if stripped_diff =~ /<li class="diff-block-info">/
+    end
+  end
+
+  class MailTemplateNotFoundError < StandardError
+    attr_reader :filename
+
+    def initialize(filename)
+      @filename = filename
     end
   end
 end

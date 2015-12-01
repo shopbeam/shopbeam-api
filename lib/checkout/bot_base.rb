@@ -5,7 +5,23 @@ module Checkout
     end
 
     def purchase!(items)
-      raise NotImplementedError, 'Subclasses must implement a purchase!(items) method.'
+      browser.open do
+        begin
+          yield
+        rescue OrderError => exception
+          filename = "#{session.id}_#{Time.now.utc.strftime('%Y%m%d%H%M%S')}"
+          screenshot = Rails.root.join('tmp', "#{filename}.png")
+          page_source = Rails.root.join('tmp', "#{filename}.html")
+
+          browser.screenshot.save screenshot
+          File.open(page_source, 'w') { |f| f.write(browser.html) }
+
+          exception.screenshot = screenshot.to_path
+          exception.page_source = page_source.to_path
+
+          raise exception
+        end
+      end
     end
 
     def new_user?

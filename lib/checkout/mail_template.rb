@@ -1,11 +1,8 @@
 module Checkout
   class MailTemplate < OpenStruct
-    include ActionView::Helpers
-    include Rails.application.routes.url_helpers
+    DEFAULT_THEME = 'default'
 
-    def self.default_url_options
-      ActionMailer::Base.default_url_options
-    end
+    include MailView::Helpers
 
     def initialize(proxy_user, validator, options)
       super(options)
@@ -14,25 +11,35 @@ module Checkout
       @validator = validator
     end
 
-    def html
-      render :html
-    end
-
-    def text
-      render :text
+    def render
+      ERB.new(template).result(binding)
     end
 
     private
 
     attr_reader :validator
 
-    def render(format)
-      ERB.new(template(format)).result(binding)
+    def template
+      filename = validator.to_s.underscore.sub('validators', "templates/#{theme}")
+      filename = "app/views/#{filename}.html.erb"
+
+      raise MailTemplateNotFoundError.new(filename) unless File.exist?(filename)
+
+      File.read(filename)
     end
 
-    def template(format)
-      filename = validator.to_s.underscore.sub('validators', 'templates')
-      File.read("app/views/#{filename}.#{format}.erb")
+    def theme
+      # Check whether order reference number (order_id) was initialized via options
+      return DEFAULT_THEME unless respond_to?(:order_id)
+
+      order =
+        proxy_user
+          .orders.joins(:references)
+          .find_by(order_references: { partner_type: proxy_user.partner_type, number: order_id })
+
+      return DEFAULT_THEME unless order
+
+      order.theme.underscore
     end
   end
 end

@@ -1,6 +1,6 @@
 module Checkout
   class Session
-    delegate :id, :user, to: :order
+    delegate :id, :user, :save_reference!, to: :order
 
     def initialize(order)
       @order = order
