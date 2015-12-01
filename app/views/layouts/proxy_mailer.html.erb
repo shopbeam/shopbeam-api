@@ -4,10 +4,8 @@
   <p><b>From:</b> <%= @mail.from %>
   <br><b>To:</b> <%= @mail.recipient %>
   <br><b>Subject:</b> <%= @mail.subject %>
-  <p><b>HTML Body:</b>
-  <blockquote><%= JSON.dump(@mail.body_html) %></blockquote>
-  <p><b>Plain Body:</b>
-  <blockquote><%= JSON.dump(@mail.body_plain) %></blockquote>
+  <p><b>Body:</b>
+  <blockquote><%= JSON.dump(@mail.body) %></blockquote>
 <% end %>
 
 <%= render template: 'layouts/mailer' %>

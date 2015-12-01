@@ -7,8 +7,7 @@ module Checkout
         def self.===(mail)
           mail.from =~ %r(orders@well.ca) &&
           mail.subject =~ /\AOrder Update \w+\z/ &&
-          mail.body_html =~ /Your order is now being processed/ &&
-          mail.body_plain =~ /Your order is now processing/
+          mail.body =~ /Your order is now being processed/
         end
       end
     end

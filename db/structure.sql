@@ -1060,6 +1060,39 @@ ALTER SEQUENCE delayed_jobs_id_seq OWNED BY delayed_jobs.id;
 
 
 --
+-- Name: order_references; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE order_references (
+    id integer NOT NULL,
+    order_id integer NOT NULL,
+    partner_type character varying NOT NULL,
+    number character varying NOT NULL,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: order_references_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE order_references_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: order_references_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE order_references_id_seq OWNED BY order_references.id;
+
+
+--
 -- Name: partnerdetailid; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -1359,6 +1392,13 @@ ALTER TABLE ONLY delayed_jobs ALTER COLUMN id SET DEFAULT nextval('delayed_jobs_
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE ONLY order_references ALTER COLUMN id SET DEFAULT nextval('order_references_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE ONLY proxy_users ALTER COLUMN id SET DEFAULT nextval('proxy_users_id_seq'::regclass);
 
 
@@ -1606,6 +1646,14 @@ ALTER TABLE ONLY consumers
 
 ALTER TABLE ONLY delayed_jobs
     ADD CONSTRAINT delayed_jobs_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: order_references_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY order_references
+    ADD CONSTRAINT order_references_pkey PRIMARY KEY (id);
 
 
 --
@@ -1969,6 +2017,20 @@ CREATE UNIQUE INDEX index_consumers_on_email ON consumers USING btree (email);
 
 
 --
+-- Name: index_order_references_on_order_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_order_references_on_order_id ON order_references USING btree (order_id);
+
+
+--
+-- Name: index_order_references_on_partner_type_and_number; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE UNIQUE INDEX index_order_references_on_partner_type_and_number ON order_references USING btree (partner_type, number);
+
+
+--
 -- Name: index_proxy_users_on_email; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -2095,6 +2157,14 @@ ALTER TABLE ONLY proxy_users
 
 
 --
+-- Name: fk_rails_48971e18f8; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY order_references
+    ADD CONSTRAINT fk_rails_48971e18f8 FOREIGN KEY (order_id) REFERENCES "Order"(id);
+
+
+--
 -- Name: fk_rails_88efc838a2; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -2147,4 +2217,6 @@ INSERT INTO schema_migrations (version) VALUES ('20151018214654');
 INSERT INTO schema_migrations (version) VALUES ('20151018222937');
 
 INSERT INTO schema_migrations (version) VALUES ('20151118143841');
+
+INSERT INTO schema_migrations (version) VALUES ('20151119104647');
 

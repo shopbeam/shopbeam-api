@@ -2,6 +2,7 @@ class ProxyUser < ActiveRecord::Base
   EMAIL_DOMAIN = 'orders.shopbeam.com'.freeze
 
   belongs_to :user
+  has_many :orders, through: :user
 
   delegate :first_name, :last_name, to: :user, allow_nil: true
   delegate :email, to: :user, prefix: true

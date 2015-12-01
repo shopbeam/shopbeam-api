@@ -18,9 +18,10 @@ module Checkout
       NEW_ADDRESS_SLUG                  = 'address_book_process'.freeze
       EDIT_SHIPPING_ADDRESS_URL         = "#{BASE_URL}checkout_shipping_address".freeze
       EDIT_BILLING_ADDRESS_URL          = "#{BASE_URL}checkout_payment_address".freeze
+      ORDER_NUMBER_PATTERN              = /your order number is:\s*(\w+)/i.freeze
 
       def purchase!(items)
-        browser.open do
+        super do
           browser.goto BASE_URL
 
           if new_user?
@@ -85,7 +86,7 @@ module Checkout
         browser.links(href: ALTERNATE_ADDRESS_URL_PATTERN)
           .map { |link|
             address_id = link.href.match(ALTERNATE_ADDRESS_URL_PATTERN)[1]
-            ADDRESS_DELETE_CONFIRM_URL_FORMAT % address_id
+            sprintf(ADDRESS_DELETE_CONFIRM_URL_FORMAT, address_id)
           }.each { |url|
             browser.goto url
           }
@@ -203,6 +204,8 @@ module Checkout
         on_error do |message|
           raise ConfirmationError.new(browser.url, message)
         end
+
+        save_order_number
       end
 
       def cart_count
@@ -246,6 +249,22 @@ module Checkout
           browser.text_field(name: 'postcode').set data[:zip]
           browser.select(name: 'country').select data[:country]
         end
+      end
+
+      def save_order_number
+        order_number = browser.element(class: 'checkout_ref_num')
+
+        unless order_number.present?
+          raise "Unable to locate element #{order_number.inspect}."
+        end
+
+        unless ORDER_NUMBER_PATTERN =~ order_number.text
+          raise "Unable to find order number in #{order_number.text}."
+        end
+
+        session.save_reference!(partner_type, Regexp.last_match(1))
+      rescue StandardError => exception
+        raise InvalidOrderNumberError.new(browser.url, exception.message)
       end
 
       def shipping_address

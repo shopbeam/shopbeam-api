@@ -23,6 +23,7 @@ Rails.application.configure do
     host: 'localhost',
     port: 3000
   }
+  config.action_mailer.asset_host = 'http://localhost:3000'
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false

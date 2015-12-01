@@ -4,7 +4,16 @@ class OrderMailer < ApplicationMailer
   def completed(order)
     @order = order
 
-    mail subject: "[order-manager] Shopbeam order ##{@order.id} has been successfully processed"
+    mail subject: "[order-manager] Shopbeam order ##{@order.id} has been successfully completed"
+  end
+
+  def completed_with_error(order, exception)
+    @order = order
+    @exception = exception
+
+    attach_exception
+
+    mail subject: "[order-manager] ACTION REQUIRED: Shopbeam order ##{@order.id} has been completed with error"
   end
 
   def not_found(order_id)
@@ -17,6 +26,8 @@ class OrderMailer < ApplicationMailer
     @order = order
     @exception = exception
 
+    attach_exception
+
     mail subject: "[order-manager] ACTION REQUIRED: Shopbeam order ##{@order.id} has been terminated"
   end
 
@@ -25,5 +36,20 @@ class OrderMailer < ApplicationMailer
     @exception = exception
 
     mail subject: "[order-manager] ACTION REQUIRED: Shopbeam order ##{@order.id} has been aborted"
+  end
+
+  private
+
+  def attach_exception
+    attach_file(@exception.try(:screenshot))
+    attach_file(@exception.try(:page_source))
+  end
+
+  def attach_file(path)
+    return unless path
+
+    filename = Pathname.new(path).basename.to_s
+    attachments[filename] = File.read(path)
+    File.unlink(path)
   end
 end

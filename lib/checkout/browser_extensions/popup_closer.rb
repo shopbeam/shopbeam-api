@@ -6,8 +6,6 @@ module Checkout
         ['class', 'ui-dialog-titlebar-close']
       ]
 
-      extend self
-
       module Helpers
         def close_popup
           elements(xpath: PopupCloser.xpath).each do |popup|
@@ -18,8 +16,8 @@ module Checkout
           end
         end
       end
-      
-      def xpath
+
+      def self.xpath
         @xpath ||= begin
           nodes = SELECTORS.map { |attribute, value| "contains(@#{attribute}, '#{value}')" }
           "//*[#{nodes.join(' or ')}]"

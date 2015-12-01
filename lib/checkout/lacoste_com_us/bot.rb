@@ -5,7 +5,7 @@ module Checkout
       CHECKOUT_URL = "#{BASE_URL}login-checkout".freeze
 
       def purchase!(items)
-        browser.open do
+        super do
           items.each do |item|
             add_to_cart(item)
           end

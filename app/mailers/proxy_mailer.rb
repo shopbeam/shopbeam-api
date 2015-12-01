@@ -4,12 +4,11 @@ class ProxyMailer < ApplicationMailer
   # only/except options do not work in ActionMailer properly, use method instead
   layout :proxy_mailer_layout
 
-  def forward(to:, proxy_mail:, **body)
+  def forward(to:, proxy_mail:, body:)
     mail to: to,
          bcc: 'support@shopbeam.com',
          subject: proxy_mail.subject do |format|
-      format.html { render html: body[:html].html_safe }
-      format.text { render plain: body[:text] }
+      format.html { render html: body.html_safe }
     end
   end
 
@@ -37,11 +36,19 @@ class ProxyMailer < ApplicationMailer
                 subject: "Re: #{proxy_mail.subject}"
   end
 
+  def template_not_found(proxy_mail:, dispatcher:, filename:)
+    @mail, @dispatcher, @filename = proxy_mail, dispatcher, filename
+
+    mail to: 'tech@shopbeam.com',
+         cc: 'support@shopbeam.com',
+         subject: "Re: #{proxy_mail.subject}"
+  end
+
   private
 
   def proxy_mailer_layout
     case action_name
-    when 'unknown_mail', 'invalid_mail'
+    when 'unknown_mail', 'invalid_mail', 'template_not_found'
       'proxy_mailer'
     else
       'mailer'
