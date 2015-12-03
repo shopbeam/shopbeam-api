@@ -57,7 +57,7 @@ module Checkout
         browser.text_field(name: 'email_address').set proxy_user.email
         browser.text_field(name: 'password').set proxy_user.password
         browser.text_field(name: 'confirmation').set proxy_user.password
-        browser.click_on browser.input(type: 'submit', value: /join/i)
+        browser.click_on browser.button(text: /join/i)
 
         on_error do |message|
           raise InvalidAccountError.new(browser.url, message)
@@ -70,7 +70,7 @@ module Checkout
         browser.goto LOGIN_URL
         browser.text_field(name: 'email_address').set proxy_user.email
         browser.text_field(name: 'password').set proxy_user.password
-        browser.click_on browser.input(type: 'submit', value: /sign in/i)
+        browser.click_on browser.button(text: /sign in/i)
 
         on_error(LOGIN_URL) do |message|
           raise InvalidAccountError.new(browser.url, message)
@@ -95,10 +95,10 @@ module Checkout
       def add_to_cart(item)
         browser.goto item.source_url
 
-        form = browser.form(name: 'cart_quantity')
-        price_cents = browser.element(class: 'product_text_price').text.gsub(/[$,]/, '').to_f * 100
+        price_cents = browser.element(class: 'currentPrice').text.gsub(/[$,]/, '').to_f * 100
+        product_notes = browser.elements(class: 'productNotes').last
 
-        unless form.present?
+        unless browser.form(name: 'cart_quantity').present?
           raise ItemOutOfStockError.new(
             url: item.source_url,
             requested_qty: item.quantity,
@@ -106,13 +106,15 @@ module Checkout
           )
         end
 
-        form.text.match(/(?=max|stock).*(\d+)/i) do |match|
-          if match[1].to_i < item.quantity
-            raise ItemOutOfStockError.new(
-              url: item.source_url,
-              requested_qty: item.quantity,
-              actual_qty: match[1]
-            )
+        if product_notes.present?
+          product_notes.text.match(/(?=max|stock).*(\d+)/i) do |match|
+            if match[1].to_i < item.quantity
+              raise ItemOutOfStockError.new(
+                url: item.source_url,
+                requested_qty: item.quantity,
+                actual_qty: match[1]
+              )
+            end
           end
         end
 
@@ -125,8 +127,8 @@ module Checkout
         end
 
         browser.text_field(id: 'cart_quantity').set item.quantity
-        browser.click_on browser.element(id: 'add_to_cart_button')
-        browser.element(id: 'shopping-cart-dropdown').wait_until_present
+        browser.click_on browser.button(id: 'add_to_cart_button')
+        browser.element(id: 'shopping-cart-table').wait_until_present
       rescue ItemOutOfStockError
         item.mark_as_out_of_stock!
         raise
@@ -167,13 +169,13 @@ module Checkout
         end
 
         fill_address(shipping_address)
-        browser.click_on browser.input(type: 'submit', value: /submit|update/i)
+        browser.form(name: /addressbook|checkout_address/).submit
 
         on_error do |message|
           raise InvalidAddressError.new(browser.url, message)
         end
 
-        continue_btn = browser.input(type: 'submit', value: /\Acontinue\z/i)
+        continue_btn = browser.links(class: 'btn-pink', text: /\Acontinue\z/i).last
 
         if continue_btn.present?
           browser.click_on continue_btn
@@ -186,7 +188,7 @@ module Checkout
         fill_billing_address
         fill_payment_info
 
-        continue_btn = browser.buttons(value: /\Acontinue\z/i).last
+        continue_btn = browser.links(class: 'btn-pink', text: /\Acontinue\z/i).last
         browser.click_on continue_btn
 
         # Wait for page with 3rd party iframe to reload
@@ -199,7 +201,7 @@ module Checkout
       end
 
       def confirm_order
-        browser.click_on browser.input(type: 'submit', value: /confirm/i)
+        browser.click_on browser.buttons(text: /confirm/i).last
 
         on_error do |message|
           raise ConfirmationError.new(browser.url, message)
@@ -215,7 +217,7 @@ module Checkout
       def fill_billing_address
         browser.goto EDIT_BILLING_ADDRESS_URL
         fill_address(billing_address)
-        browser.click_on browser.input(type: 'submit', value: /submit|update/i)
+        browser.click_on browser.buttons(text: /submit|update/i).last
 
         on_error do |message|
           raise InvalidAddressError.new(browser.url, message)
@@ -309,7 +311,7 @@ module Checkout
         return if url && !browser.on_page?(url)
 
         alert = browser.alert
-        error = browser.element(class: 'error')
+        error = browser.element(class: 'messageStackError')
 
         if alert.present?
           message = alert.text

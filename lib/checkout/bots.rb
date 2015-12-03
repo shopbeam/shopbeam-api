@@ -4,8 +4,9 @@ module Checkout
       case url
       when %r(https?://well.ca)
         WellCa::Bot
-      when %r(https?://www.lacoste.com/us)
-        LacosteComUs::Bot
+      # TODO: Temporarily disable Lacoste partner
+      # when %r(https?://www.lacoste.com/us)
+      #   LacosteComUs::Bot
       else
         raise PartnerNotSupportedError.new(url, 'Checkout partner not supported.')
       end

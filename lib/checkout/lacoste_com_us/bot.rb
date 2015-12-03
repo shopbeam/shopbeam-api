@@ -115,6 +115,8 @@ module Checkout
         on_error do |message|
           raise ConfirmationError.new(browser.url, message)
         end
+
+        # TODO: save order number, then enable Lacoste bot and mail dispatcher
       end
 
       def ensure_availability(item)

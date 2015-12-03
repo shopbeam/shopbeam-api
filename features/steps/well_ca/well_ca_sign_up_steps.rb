@@ -36,6 +36,5 @@ When(/^I fill password_confirmation$/) do
 end
 
 Then(/^I should see submit button$/) do
-  button_visisble = @browser.input(type: 'submit', value: /join/i).present?
-  expect(button_visisble).to be_truthy
+  expect(@browser.button(text: /join/i)).to be_present
 end
