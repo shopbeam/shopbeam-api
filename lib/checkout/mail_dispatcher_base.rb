@@ -7,6 +7,9 @@ module Checkout
 
     def call
       proxy_user = ProxyUser.find_by!(email: mail.recipient)
+
+      return unless proxy_user.subscribed_to_orders?
+
       options = validator.parse!(mail.body)
 
       ProxyMailer.forward(

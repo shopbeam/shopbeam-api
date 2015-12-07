@@ -1,17 +1,32 @@
 class ProxyUsersController < ApplicationController
-  skip_before_action :verify_authenticity_signature, only: :unsubscribe
+  skip_before_action :verify_authenticity_signature
+
+  rescue_from ActiveSupport::MessageVerifier::InvalidSignature,
+              ActiveRecord::RecordNotFound,
+              with: :invalid_link
 
   def unsubscribe
-    proxy_user = ProxyUser.find_by_signature(params[:signature])
+    @subscription = OpenStruct.new(proxy_user.subscription)
+  end
 
-    if proxy_user.subscribed?
-      proxy_user.update_attribute(:subscribed, false)
-      render plain: 'You have been successfully unsubscribed from email communications'
-    else
-      render plain: 'You already were unsubscribed as per your request'
-    end
-  rescue ActiveSupport::MessageVerifier::InvalidSignature,
-         ActiveRecord::RecordNotFound
-    render plain: 'Invalid link'
+  def confirm_unsubscribe
+    proxy_user.update!(subscription: subscription_params)
+    flash[:notice] = 'Your settings have been successfully saved'
+    redirect_to unsubscribe_url
+  end
+
+  private
+
+  def proxy_user
+    ProxyUser.find_by_signature(params[:signature])
+  end
+
+  def subscription_params
+    params.require(:subscription).permit(:orders, :promotions)
+  end
+
+  def invalid_link
+    flash.now[:error] = 'Invalid link'
+    render 'unsubscribe', status: :not_found
   end
 end
