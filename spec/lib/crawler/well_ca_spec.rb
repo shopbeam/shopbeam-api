@@ -38,7 +38,7 @@ describe Crawler::Providers::WellCa do
     context "attributes" do
       before(:context) do
         stub_request(:get, @url).to_return(body: File.new('spec/fixtures/rogaine_for_women.html'))
-        @smf = described_class.new(@url).scrape.first
+        @smf = described_class.new(@url).scrape.first.format
       end
 
       attributes_to_test = Crawler::SMF_FIELDS.reject { |f| f == :description }

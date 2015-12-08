@@ -66,6 +66,9 @@ gem 'heroku-api'
 # Pretty printer for Ruby objects
 gem 'awesome_print'
 
+# Amazon AWS SDK
+gem 'aws-sdk', '~> 2'
+
 # API
 gem 'grape'
 gem 'grape-entity'

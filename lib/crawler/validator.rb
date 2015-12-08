@@ -18,7 +18,7 @@ module Crawler
       new_r = {}
       storage.all.each do |job_id, results|
         results.each do |r|
-          rr = Crawler::SMF.new(r.symbolize_keys).to_a
+          rr = Crawler::SMF.new(r.symbolize_keys).format.to_a
           new_r[rr.shift] = rr
         end
       end

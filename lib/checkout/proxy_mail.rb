@@ -1,3 +1,3 @@
 module Checkout
-  ProxyMail = KeywordStruct.new(:from, :recipient, :subject, :body)
+  ProxyMail = SmartStruct.keyword(:from, :recipient, :subject, :body)
 end

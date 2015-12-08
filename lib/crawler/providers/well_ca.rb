@@ -26,24 +26,17 @@ module Crawler
 
       def scrape
         return [] if sold_out?
-        color_family, formatted_color = ColorMap.format(color)
-        formatted_name = format_name(name, brand, formatted_color)
-        formatted_brand = capitalize brand.downcase
         params = {
           partner: partner,
-          brand: formatted_brand,
-          'original-brand': brand,
-          name: formatted_name,
-          color: formatted_color,
-          'color-family': color_family,
+          brand: brand,
+          name: name,
+          color: color,
           size: size,
           description: description,
           category: '',
-          'original-category': format_categories(original_category),
-          'list-price': prices[:list],
-          'sale-price': prices[:sale],
-          sku: uid(formatted_name, formatted_brand, formatted_color, size, 'child'),
-          'parent-sku': uid(formatted_name, formatted_brand),
+          'original-category': original_category,
+          'list-price': list_price,
+          'sale-price': sale_price,
           'source-url': @url
         }
         images.each_with_index do |img, index|
@@ -77,7 +70,7 @@ module Crawler
       end
 
       def size
-        @size ||= capitalize @page.css(".product_info_header .product_text_product_subtitle span[style='display: inline-block']").first.try(:text) || ""
+        @size ||= @page.css(".product_info_header .product_text_product_subtitle span[style='display: inline-block']").first.try(:text) || ""
       end
 
       def description
@@ -88,20 +81,28 @@ module Crawler
         @original_category ||= begin
           breadcrumbs = @page.css(".bread_crumb_container a")
           breadcrumbs.shift
-          breadcrumbs.map {|b| b.text }
+          breadcrumbs.map {|b| strip_tabs b.text }
         end
       end
 
-      def prices
-        @prices ||= begin
-          list_price = @page.css(".product_price_container .product_text.product_text_product_subtitle.product_text_sale_price").try(:text)
-          sale_price = @page.css(".product_price_container .product_text_price").try(:text)
-          if list_price.empty?
-            list_price = sale_price
-            sale_price = nil
-          end
-          format_prices(list: list_price, sale: sale_price)
+      def parse_prices
+        return if defined? @list_price
+        @list_price = @page.css(".product_price_container .product_text.product_text_product_subtitle.product_text_sale_price").try(:text)
+        @sale_price = @page.css(".product_price_container .product_text_price").try(:text)
+        if @list_price.empty?
+          @list_price = @sale_price
+          @sale_price = nil
         end
+      end
+
+      def list_price
+        parse_prices
+        @list_price
+      end
+
+      def sale_price
+        parse_prices
+        @sale_price
       end
 
       def images

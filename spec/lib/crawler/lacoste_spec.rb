@@ -25,7 +25,7 @@ describe Crawler::Providers::LacosteComUs do
       let(:"image-url#{i}") { nil }
     end
     let(:'source-url') { url }
-    let(:'list-price') { 175.00 }
+    let(:'list-price') { "175.00" }
     let(:'sale-price') { nil }
     let(:'partner-data') { nil }
 
@@ -37,8 +37,9 @@ describe Crawler::Providers::LacosteComUs do
     context "attributes" do
       before(:context) do
         stub_request(:get, @url).to_return(File.new('spec/fixtures/lacoste.12.12.txt'))
-        @smf = described_class.new(@url).scrape.first
+        @smf = described_class.new(@url).scrape.first.format
       end
+
       Crawler::SMF_FIELDS.each do |attr|
         it "should parse #{attr} attribute" do
           expect(@smf.send(attr)).to eq send(attr)
@@ -56,7 +57,7 @@ describe Crawler::Providers::LacosteComUs do
         crawler.send(:variations) do |color, images, prices|
           expect(color).to eq 'White'
           expect(images).to include(send(:'image-url1'))
-          expect(prices[:list]).to eq '175.00'
+          expect(prices[:list]).to eq '$175.00'
           expect(prices[:sale]).to be_nil
         end
       end
@@ -86,8 +87,8 @@ describe Crawler::Providers::LacosteComUs do
         expect(results[0][:images]).to include("http://imagena1.lacoste.com/sits_pod26/dw/image/v2/AAUP_PRD/on/demandware.static/-/Sites-master/default/dw81561705/11_30SPI3001_21G_01.jpg?sw=656&amp;sh=656&amp;sm=fit")
         expect(results[6][:images]).to include("http://imagena1.lacoste.com/sits_pod26/dw/image/v2/AAUP_PRD/on/demandware.static/-/Sites-master/default/dwce38d190/11_30SPI3001_DB4_01.jpg?sw=656&amp;sh=656&amp;sm=fit")
 
-        expect(results[0][:prices][:list]).to eq '50.00'
-        expect(results[6][:prices][:list]).to eq '50.00'
+        expect(results[0][:prices][:list]).to eq '$50.00'
+        expect(results[6][:prices][:list]).to eq '$50.00'
 
         expect(results[0][:prices][:sale]).to be_nil
         expect(results[6][:prices][:sale]).to be_nil
