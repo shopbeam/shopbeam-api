@@ -36,8 +36,16 @@ class ProxyMailer < ApplicationMailer
                 subject: "Re: #{proxy_mail.subject}"
   end
 
+  def theme_not_found(proxy_mail:, dispatcher:, number:)
+    @dispatcher, @number = dispatcher, number
+
+    mail to: 'tech@shopbeam.com',
+         cc: 'support@shopbeam.com',
+         subject: "Re: #{proxy_mail.subject}"
+  end
+
   def template_not_found(proxy_mail:, dispatcher:, filename:)
-    @mail, @dispatcher, @filename = proxy_mail, dispatcher, filename
+    @dispatcher, @filename = dispatcher, filename
 
     mail to: 'tech@shopbeam.com',
          cc: 'support@shopbeam.com',
@@ -48,7 +56,7 @@ class ProxyMailer < ApplicationMailer
 
   def proxy_mailer_layout
     case action_name
-    when 'unknown_mail', 'invalid_mail', 'template_not_found'
+    when 'unknown_mail', 'invalid_mail'
       'proxy_mailer'
     else
       'mailer'

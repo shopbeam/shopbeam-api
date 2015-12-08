@@ -31,6 +31,13 @@ module Checkout
         diff: exception.diff
       ).deliver_now
       raise
+    rescue MailThemeNotFoundError => exception
+      ProxyMailer.theme_not_found(
+        proxy_mail: mail,
+        dispatcher: self.class,
+        number: exception.number
+      ).deliver_now
+      raise
     rescue MailTemplateNotFoundError => exception
       ProxyMailer.template_not_found(
         proxy_mail: mail,

@@ -85,6 +85,5 @@ When(/^I fill billing info$/) do
 end
 
 Then(/^I should see confirm button$/) do
-  button_visible = @browser.input(type: 'submit', value: /confirm/i).present?
-  expect(button_visible).to be_truthy
+  expect(@browser.button(text: /confirm/i)).to be_present
 end

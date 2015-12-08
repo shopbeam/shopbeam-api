@@ -4,8 +4,9 @@ module Checkout
       case from
       when %r(.*@well.ca)
         WellCa::MailDispatcher
-      when %r(.*@lacoste.(com|us))
-        LacosteComUs::MailDispatcher
+      # TODO: Temporarily disable Lacoste partner
+      # when %r(.*@lacoste.(com|us))
+      #   LacosteComUs::MailDispatcher
       end
     end
   end

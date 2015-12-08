@@ -37,7 +37,7 @@ module Checkout
           .orders.joins(:references)
           .find_by(order_references: { partner_type: proxy_user.partner_type, number: order_id })
 
-      return DEFAULT_THEME unless order
+      raise MailThemeNotFoundError.new(order_id) unless order
 
       order.theme.underscore
     end

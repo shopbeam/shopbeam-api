@@ -40,9 +40,9 @@ module Checkout
   class ConfirmationError < OrderError; end
   class InvalidOrderNumberError < OrderError; end
 
-  class UnknownMailError < StandardError; end
+  class MailError < StandardError; end
 
-  class InvalidMailError < StandardError
+  class InvalidMailError < MailError
     MATCHED_LINES = Regexp.new <<-MATCHED.squish!
       <li class="del"><del>.*?match.*?match.*?</del></li>\\s*
       (<li class="del"><del>.*?</del></li>\\s*)*
@@ -72,11 +72,21 @@ module Checkout
     end
   end
 
-  class MailTemplateNotFoundError < StandardError
+  class MailThemeNotFoundError < MailError
+    attr_reader :number
+
+    def initialize(number)
+      @number = number
+    end
+  end
+
+  class MailTemplateNotFoundError < MailError
     attr_reader :filename
 
     def initialize(filename)
       @filename = filename
     end
   end
+
+  class UnknownMailError < MailError; end
 end
