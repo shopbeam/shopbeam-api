@@ -1,0 +1,32 @@
+<div class="container">
+  <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>"><%= value %></div>
+  <% end %>
+
+  <% if @subscription.present? %>
+    <%= form_for :subscription, url: confirm_unsubscribe_path(signature: params[:signature]),
+                                method: :patch,
+                                html: { class: 'form-inline' } do |f| %>
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          Subscription Preferences
+        </div>
+        <div class="panel-body">
+          <label class="checkbox-inline">
+            <%= f.check_box :orders %>
+            Order mails
+          </label>
+          <label class="checkbox-inline">
+            <%= f.check_box :promotions %>
+            Promotions
+          </label>
+        </div>
+        <div class="panel-footer">
+          <%= f.button :submit, class: 'btn btn-primary' do %>
+            Save
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

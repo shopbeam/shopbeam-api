@@ -6,12 +6,11 @@ require 'capistrano/deploy'
 
 # Include tasks from other gems included in your Gemfile
 require 'capistrano/rbenv'
-require 'capistrano/bundler'
+require 'capistrano/rails'
 require 'capistrano/puma'
 require 'capistrano/puma/nginx'
 require 'capistrano/puma/monit'
 require 'capistrano/sidekiq'
-require 'capistrano/rails/migrations'
 require 'whenever/capistrano'
 
 # Load custom tasks from `lib/capistrano/tasks` if you have any defined

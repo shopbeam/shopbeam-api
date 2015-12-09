@@ -229,7 +229,7 @@
         <tr>
         <td align="center" valign="top" style="padding-bottom:20px;">
         <font style="font-family:Helvetica, Arial, sans-serif; color:#222222; font-size:11px;">
-        <p><br><%= link_to 'unsubscribe', unsubscribe_url(proxy_user.signature), target: '_blank' %></p>
+          <p><br><a href="http://well.ca/index.php?main_page=unsubscribe">unsubscribe</a></p>
         </font>
         </td>
         </tr>
@@ -259,7 +259,7 @@
             </td>
             <td style="width: 40%">
               <p style="background-color: white;margin: 6px;font-size: 11px;color: #a1a3a5;font-family:arial,helvetica,sans-serif;padding: 6px;">
-                If you no longer wish to receive these communications, please  <a href="#unsubscribe" target="_blank" style="color: #777777;font-size: 11px;text-decoration: underline;font-family:arial,helvetica,sans-serif;">click unsuscribe</a> or write to us at:
+                If you no longer wish to receive these communications, please <%= link_to 'click unsubscribe', unsubscribe_url(proxy_user.signature), target: '_blank', style: 'color: #777777; font-size: 11px; text-decoration: underline; font-family: arial, helvetica, sans-serif' %> or write to us at:
                 <br>
                 <br>
                 Johnson & Johnson Inc. Orders Canadian Information Centre, 199 Grandview Road, Skilman, NJ, 08558-9418, U.S.A or phone us at 1-866-296-9135.

@@ -7,6 +7,8 @@ class ProxyUser < ActiveRecord::Base
   delegate :first_name, :last_name, to: :user, allow_nil: true
   delegate :email, to: :user, prefix: true
 
+  serialize :subscription, Hash
+
   validates :user, presence: true, uniqueness: { scope: :partner_type }
   validates :partner_type, :password, :password_salt, presence: true
   validates :email, presence: true, uniqueness: true
@@ -23,6 +25,10 @@ class ProxyUser < ActiveRecord::Base
 
   def signature
     self.class.signature(self)
+  end
+
+  def subscribed_to_orders?
+    subscription[:orders] == '1'
   end
 
   private
