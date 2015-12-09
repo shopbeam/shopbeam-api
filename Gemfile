@@ -123,11 +123,10 @@ group :test do
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'shoulda-matchers'
-  gem 'cucumber'
-  gem 'cucumber-rails', require: false
+  gem 'turnip'
   gem 'database_cleaner'
   gem 'rspec-expectations'
   gem 'rspec-sidekiq'
-  gem 'fakeredis', :require => 'fakeredis/rspec'
+  gem 'fakeredis', require: 'fakeredis/rspec'
   gem 'webmock'
 end

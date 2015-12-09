@@ -1,7 +1,7 @@
-@widgets @rogaine
+@rogaine
 Feature: Rogaine widgets
-  All widgets should be clickable
-  And items should not be out of stock
+  # All widgets should be clickable
+  # And items should not be out of stock
 
   Scenario: Rogaine widgets
     When I go to manual testing page
