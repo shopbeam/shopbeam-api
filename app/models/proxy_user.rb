@@ -28,7 +28,11 @@ class ProxyUser < ActiveRecord::Base
   end
 
   def subscribed_to_orders?
-    subscription[:orders] == '1'
+    subscription['orders'] == '1'
+  end
+
+  def subscribed_to_promotions?
+    subscription['promotions'] == '1'
   end
 
   private
