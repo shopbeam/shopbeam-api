@@ -1125,7 +1125,6 @@ CREATE TABLE proxy_users (
     password_salt character varying NOT NULL,
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL,
-    subscribed boolean DEFAULT true,
     subscription text
 );
 
@@ -2222,4 +2221,6 @@ INSERT INTO schema_migrations (version) VALUES ('20151118143841');
 INSERT INTO schema_migrations (version) VALUES ('20151119104647');
 
 INSERT INTO schema_migrations (version) VALUES ('20151202124315');
+
+INSERT INTO schema_migrations (version) VALUES ('20151209125233');
 

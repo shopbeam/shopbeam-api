@@ -28,7 +28,11 @@ class ProxyUser < ActiveRecord::Base
   end
 
   def subscribed_to_orders?
-    subscription[:orders] == '1'
+    subscription['orders'] == '1'
+  end
+
+  def subscribed_to_promotions?
+    subscription['promotions'] == '1'
   end
 
   private
@@ -46,6 +50,7 @@ class ProxyUser < ActiveRecord::Base
   def set_defaults
     encrypted_password = Encryptor.encrypt(SecureRandom.hex(6))
 
+    self.subscription = { 'orders' => '1', 'promotions' => '1' }
     write_attribute(:email, "#{first_name}.#{last_name}.#{SecureRandom.hex(2)}".parameterize << "@#{EMAIL_DOMAIN}")
     write_attribute(:password, encrypted_password[:value])
     write_attribute(:password_salt, encrypted_password[:salt])
