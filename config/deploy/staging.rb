@@ -33,10 +33,10 @@ set :rails_env, 'production'
 # Link environment specific .env file
 set :linked_files, fetch(:linked_files).push('.env.production')
 
-# Keep test group to be able to run Cucumber features
+# Keep test group to be able to run features
 set :bundle_without, 'development'
 
-# Run Cucumber features on a schedule
+# Run features on a schedule
 set :whenever_roles, %w(worker)
 
 # Custom SSH Options

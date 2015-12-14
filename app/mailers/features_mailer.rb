@@ -1,4 +1,4 @@
-class CucumberMailer < ApplicationMailer
+class FeaturesMailer < ApplicationMailer
   default to: 'tech@shopbeam.com'
 
   def completed(task:, results:, retries:, status_type:)
