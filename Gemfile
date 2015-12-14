@@ -94,6 +94,9 @@ gem 'has_secure_token'
 # Rack authentication
 gem 'warden'
 
+# Use RSpec in production as well (see rake tasks)
+gem 'rspec-rails', '~> 3.0'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -103,8 +106,6 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-
-  gem 'rspec-rails', '~> 3.0'
 end
 
 group :development do
@@ -123,11 +124,10 @@ group :test do
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'shoulda-matchers'
-  gem 'cucumber'
-  gem 'cucumber-rails', require: false
+  gem 'turnip'
   gem 'database_cleaner'
   gem 'rspec-expectations'
   gem 'rspec-sidekiq'
-  gem 'fakeredis', :require => 'fakeredis/rspec'
+  gem 'fakeredis', require: 'fakeredis/rspec'
   gem 'webmock'
 end
