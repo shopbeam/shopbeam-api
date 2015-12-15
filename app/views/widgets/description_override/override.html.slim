@@ -1,0 +1,15 @@
+html
+  body
+    script async="true" class="shopbeam-script" src="https://www.shopbeam.com/js/widget.loader.js"
+    div
+      table
+        - products.each do |product|
+          tr
+            td
+              h3 == product[:url]
+              == product[:rendered]
+            td style="word-wrap: break-word; overflow-wrap: break-word;"
+              pre
+                code
+                  textarea rows=30 style="width: 700px"
+                    = product[:rendered]

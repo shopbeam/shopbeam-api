@@ -1,0 +1,12 @@
+img.nopin(width="403" height="403" 
+          src="https://cloudinary-a.akamaihd.net/shopbeam/image/fetch/w_403/#{product[:image_url]}"
+          alt="#{product[:brand].name} - #{product[:product].name}"
+          id="shopbeam-widget-image-placeholder-#{product[:uid]}"
+          data-shopbeam-url="/v1/products?id=#{product[:variant].id}&image=1&apiKey=4b46b341-99ff-4613-b83c-3a1907de76b6")
+div class="shopbeam-widget-data-override-#{product[:uid]}" style="display: none;"
+  .brandName 
+    == product[:brand_name]
+  .name 
+    == product[:name]
+  .description
+    == product[:description]
