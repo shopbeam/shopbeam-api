@@ -19,7 +19,7 @@ describe Crawler::Providers::WellCa do
     let(:'original-category') { 'Personal Care: Hair Care: Hair Regrowth & Hair Loss' }
     let(:'list-price') { '129.99' }
     let(:'sale-price') { nil }
-    let(:'image-url1') { 'https://d3t32hsnjxo7q6.cloudfront.net/i/a87a5a3ca17d01c61286bee4dbb40555_ra,w403,h403_pa,w403,h403.jpg' }
+    let(:'image-url1') { 'https://d3t32hsnjxo7q6.cloudfront.net/i/a87a5a3ca17d01c61286bee4dbb40555_ra,w380,h380_pa,w380,h380.jpg' }
     let(:sku) { '5f61f23eef41af91' }
     let(:'parent-sku') { '10016433ceaa0b26' }
     let(:'partner-data') { nil }
@@ -49,9 +49,22 @@ describe Crawler::Providers::WellCa do
       end
     end
 
+    context "when product is on sale" do
+      let(:url) { "https://well.ca/products/giovanni-flight-attendant-hair_87108.html" }
+      before do
+        stub_request(:get, url).to_return(body: File.new('spec/fixtures/on_sale.html'))
+        @smf = described_class.new(url).scrape.first.format
+      end
+
+      it "should correctly parse list and sale price" do
+        expect(@smf.sale_price).to eq "9.34"
+        expect(@smf.list_price).to eq "10.99"
+      end
+    end
+
     context "out of stock" do
-      let(:url) { "https://well.ca/products/rogaine-for-men-hair-regrowth_2005.html" }
-      before { stub_request(:get, url).to_return(body: File.new('spec/fixtures/rogaine_for_men.html')) }
+      let(:url) { "http://well.ca/products/nuvian-sacha-inchi-omega-3-oil_104219.html" }
+      before { stub_request(:get, url).to_return(body: File.new('spec/fixtures/inchi_omega.html')) }
 
       it "should return empty array" do
         expect(subject.count).to eq 0

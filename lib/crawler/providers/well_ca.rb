@@ -51,30 +51,30 @@ module Crawler
       end
 
       def sold_out?
-        @page.css(".unavailable_sprite_container").any?
+        !@page.css("form[name='cart_quantity']").present?
       end
 
       def brand
         @brand ||= begin
-          link = @page.css("a[href*='brand']:contains('View all')")
-          link.text.match(/view all (.+) products/i)[1]
+          section = @page.css("#brand_other_products_container span.col-sm-9.col-md-10.col-lg-10")
+          section.text.match(/Other (.+) Products/)[1]
         end
       end
 
       def name
-        @name ||= @page.css(".product_text.product_text_product_name").text
+        @name ||= @page.css("h1.productName").text
       end
 
       def color
-        @color ||= @page.css(".product_info_header .product_text_product_subtitle span[style*='color:']").first.try(:text) || ""
+        @color ||= @page.css(".product_text.product_text_product_subtitle span").first.try(:text) || ""
       end
 
       def size
-        @size ||= @page.css(".product_info_header .product_text_product_subtitle span[style='display: inline-block']").first.try(:text) || ""
+        @size ||= @page.css(".product_text.product_text_product_subtitle span").try(:[], 1).try(:text) || ""
       end
 
       def description
-        @description ||= @page.css(".product_text.product_text_product_description").inner_html
+        @description ||= @page.css(".textWrap-1.textWrap").inner_html
       end
 
       def original_category
@@ -87,12 +87,13 @@ module Crawler
 
       def parse_prices
         return if defined? @list_price
-        @list_price = @page.css(".product_price_container .product_text.product_text_product_subtitle.product_text_sale_price").try(:text)
-        @sale_price = @page.css(".product_price_container .product_text_price").try(:text)
+        @sale_price = @page.css(".productPrice .currentPrice").try(:text)
+        @list_price = @page.css(".productPrice .oldPrice").try(:text)
         if @list_price.empty?
           @list_price = @sale_price
           @sale_price = nil
         end
+        @sale_price = nil if @sale_price.try(:empty?)
       end
 
       def list_price
@@ -107,7 +108,7 @@ module Crawler
 
       def images
         @images ||= begin
-          images = [@page.css(".product_main_image img").first['src']]
+          images = [@page.css("#productMainImage").first['src']]
           @page.css(".product_text.product_text_product_description img").each do |i|
             images << i['src']
           end
