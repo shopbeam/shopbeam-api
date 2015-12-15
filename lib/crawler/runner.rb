@@ -18,6 +18,14 @@ module Crawler
         end
       end
 
+      def without_python
+        dummy_python_result = [["sku", "parent-sku", "name", "original-brand", "brand", "partner",
+          "original-category", "category", "description", "list-price", "sale-price", "color", "color-family",
+          "color-substitute", "size", "image-url1", "image-url2", "image-url3", "image-url4", "image-url5", "image-url6",
+          "image-url7", "source-url", "partner-data"]]
+        hourly(dummy_python_result)
+      end
+
       private
       def product_list
         rows = CSV.read(Rails.root.join('lib', 'assets', 'crawler_realtime.csv'))

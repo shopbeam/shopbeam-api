@@ -78,6 +78,9 @@ gem 'net-sftp'
 # Heroku API client
 gem 'heroku-api'
 
+#slim template engine
+gem 'slim'
+
 # Pretty printer for Ruby objects
 gem 'awesome_print'
 
