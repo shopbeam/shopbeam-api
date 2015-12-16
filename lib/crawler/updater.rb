@@ -8,7 +8,7 @@ module Crawler
 
     def upload_results
       result = merge_results
-      Aws::S3::Client.new.put_object(bucket: 'sb-crawls', "#{ENV['STAGE_NAME']}.csv", body: result.force_encoding('binary'))
+      Aws::S3::Client.new.put_object(bucket: 'sb-crawls', key: "#{ENV['STAGE_NAME']}.csv", body: result.force_encoding('binary'))
 
       heroku = Heroku::API.new(:api_key => ENV['HEROKU_API_KEY'])
       heroku.post_ps(ENV['HEROKU_APP'], "EXTRA_LOGGING=true node server/import/s3.js #{ENV['STAGE_NAME']}")
