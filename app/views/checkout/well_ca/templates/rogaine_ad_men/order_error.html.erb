@@ -62,7 +62,7 @@
         <tr>
           <td style="background: #fafafa;border: 5px solid #142347;border-top:0px;padding: 10px 35px;">
             <p style="font-family:arial,helvetica,sans-serif;font-size:14px;">
-              Apologies, <%= @order.user_first_name %>,
+              Apologies, <%= @proxy_user.first_name %>,
             </p>
             <p style="font-family:arial,helvetica,sans-serif;font-size:14px;">
               <% case @error_code %>
@@ -114,7 +114,7 @@
             </td>
             <td style="width: 40%">
               <p style="background-color: white;margin: 6px;font-size: 11px;color: #a1a3a5;font-family:arial,helvetica,sans-serif;padding: 6px;">
-                If you no longer wish to receive these communications, please <%= link_to 'click unsubscribe', unsubscribe_url(proxy_user.signature), target: '_blank', style: 'color: #777777; font-size: 11px; text-decoration: underline; font-family: arial, helvetica, sans-serif' %> or write to us at:
+                If you no longer wish to receive these communications, please <%= link_to 'click unsubscribe', unsubscribe_url(@proxy_user.signature), target: '_blank', style: 'color: #777777; font-size: 11px; text-decoration: underline; font-family: arial, helvetica, sans-serif' %> or write to us at:
                 <br>
                 <br>
                 Johnson & Johnson Inc. Orders Canadian Information Centre, 199 Grandview Road, Skilman, NJ, 08558-9418, U.S.A or phone us at 1-866-296-9135.

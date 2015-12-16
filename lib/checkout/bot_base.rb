@@ -4,6 +4,10 @@ module Checkout
       @session = session
     end
 
+    def self.partner_type
+      name.deconstantize.demodulize
+    end
+
     def purchase!(items)
       browser.open do
         begin
@@ -29,7 +33,7 @@ module Checkout
     end
 
     def partner_type
-      self.class.name.deconstantize.demodulize
+      self.class.partner_type
     end
 
     protected
