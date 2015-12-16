@@ -19,7 +19,7 @@ class CheckoutJob
         :invalid_cc
       end
 
-    UserMailer.order_error(order, error_code, msg['error_message']).deliver_now if error_code
+    OrderMailer.terminated_with_error(order, error_code, msg['error_message']).deliver_now if error_code
   end
 
   def perform(order_id)

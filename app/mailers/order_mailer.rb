@@ -11,7 +11,7 @@ class OrderMailer < ApplicationMailer
     @order = order
     @exception = exception
 
-    attach_exception
+    attach_exception(exception)
 
     mail subject: "[order-manager] ACTION REQUIRED: Shopbeam order ##{@order.id} has been completed with error"
   end
@@ -26,9 +26,28 @@ class OrderMailer < ApplicationMailer
     @order = order
     @exception = exception
 
-    attach_exception
+    attach_exception(exception)
 
     mail subject: "[order-manager] ACTION REQUIRED: Shopbeam order ##{@order.id} has been terminated"
+  end
+
+  def terminated_with_error(order, error_code, error_message)
+    bot_class = Checkout::Bots.lookup!(error_message)
+
+    @proxy_user = order.proxy_user(bot_class.partner_type)
+
+    return unless @proxy_user
+
+    @error_code = error_code
+    @error_title = error_title(error_code)
+
+    mail to: @proxy_user.user_email,
+         bcc: 'support@shopbeam.com',
+         subject: @error_title do |format|
+      format.html { render template: error_template(order, bot_class), layout: false }
+    end
+  rescue ActionView::MissingTemplate
+    # Skip error mails for unsupported partners or themes
   end
 
   def aborted(order, exception)
@@ -40,9 +59,9 @@ class OrderMailer < ApplicationMailer
 
   private
 
-  def attach_exception
-    attach_file(@exception.try(:screenshot))
-    attach_file(@exception.try(:page_source))
+  def attach_exception(exception)
+    attach_file(exception.try(:screenshot))
+    attach_file(exception.try(:page_source))
   end
 
   def attach_file(path)
@@ -51,5 +70,25 @@ class OrderMailer < ApplicationMailer
     filename = Pathname.new(path).basename.to_s
     attachments[filename] = File.read(path)
     File.unlink(path)
+  end
+
+  def error_title(error_code)
+    case error_code
+    when :item_out_of_stock
+      'Out of Stock Item'
+    when :invalid_address
+      'Address Error'
+    when :invalid_cc
+      'Credit Card Error'
+    else
+      raise 'Unknown order error subject.'
+    end
+  end
+
+  def error_template(order, bot_class)
+    partner_path = bot_class.to_s.deconstantize.underscore
+    theme = order.theme.underscore
+
+    "#{partner_path}/templates/#{theme}/order_error.html.erb"
   end
 end

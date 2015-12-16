@@ -39,8 +39,8 @@ class ProxyUser < ActiveRecord::Base
 
   attr_writer :email, :password
 
-  def self.signature(user)
-    verifier.generate(user.id)
+  def self.signature(proxy_user)
+    verifier.generate(proxy_user.id)
   end
 
   def self.verifier

@@ -10,7 +10,6 @@ class Order < ActiveRecord::Base
   has_many :order_items, foreign_key: 'OrderId', autosave: true
   has_many :references, class_name: 'OrderReference'
 
-  delegate :email, :first_name, to: :user, prefix: true
   delegate :first_name, :last_name, :address1, :address2, :city, :state, :zip, :phone_number,
            to: :shipping_address,
            prefix: :shipping
@@ -59,6 +58,10 @@ class Order < ActiveRecord::Base
                   to: :aborted,
                   after: -> { transit_order_items(:abort) }
     end
+  end
+
+  def proxy_user(partner_type)
+    ProxyUser.find_by(user: user, partner_type: partner_type)
   end
 
   def save_reference!(partner_type, number)
