@@ -10,6 +10,7 @@ module Checkout
           when Validators::OrderProcessing then Validators::OrderProcessing
           when Validators::OrderShipped    then Validators::OrderShipped
           when Validators::OrderCanceled   then Validators::OrderCanceled
+          when Validators::OrderInvoice    then Validators::OrderInvoice
           end
         end
       end

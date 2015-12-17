@@ -1,0 +1,326 @@
+<!doctype html public "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html dir="ltr" lang="en">
+<head>
+  <style type="text/css">
+/* ---------- Standard Stripping and basic style stuff ------------- */
+:link,:visited { text-decoration:none }
+ul,ol { list-style:none }
+h1,h2,h3,h4,h5,h6,pre,code { font-size:1em; font-weight:normal; }
+ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,body,html,p,blockquote,fieldset,input { margin:0; padding:0 }
+a img,:link img,:visited img { border:none }
+address { font-style:normal;line-height:1.3em;padding-top:2px;font-size:1.1em; }
+body { font-family: Helvetica,Arial,sans-serif; font-size: 62.5%; margin-outside:0; margin-inside:0;}
+
+.content {
+  width:730px;
+}
+
+.content a {
+  color:#383838;
+}
+
+#headerInvoice {
+  clear:left;
+  padding-top:0px;
+  width:100%;
+  border-bottom:5px solid #000;
+  padding-bottom:14px;
+  height:68px;
+}
+
+#wellLogo {
+  color:#fff;
+  display:block;
+  float:left;
+  width:280px;
+  height:68px;
+}
+
+#wellLogo img {
+  width:280px;
+  height:68px;
+}
+
+#headerInvoice address {
+  text-align:right;
+  font-size:1.1em;
+  color:#000;
+  float:right;
+  padding-left:58px;
+  padding-top:1px;
+}
+
+#headerInvoice:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.invoiceLeft {
+  width:364px;
+  float:left;
+  border-right:1px solid #6c6c6c;
+}
+
+.invoiceRight {
+  width:364px;
+  float:right;
+  border-left:1px solid #6c6c6c;
+  background: transparent url(../images/invoiceProduct-bg.png) top left repeat-x;
+}
+
+.invoiceFooter {
+  width:100%;
+  text-align:center;
+  clear:both;
+  padding-top:20px;
+  padding-bottom:17px;
+}
+
+h2 {
+  font-weight:bold;
+  padding-right:20px;
+  font-size:2.0em;
+  margin-top:17px;
+}
+
+.invoiceItems h2 {
+  padding-left:6px;
+  padding-top:10px;
+}
+
+.invoiceItems .dataTableContent, .invoiceText {
+  text-align:right;
+  font-size:11px;
+}
+
+.invoiceItems .dataTableAmount, .invoiceAmount {
+  font-size:11px;
+}
+
+h2 small {
+  font-weight:normal;
+  font-size:0.5em;
+  color:#383838;
+}
+
+h3 {
+  font-weight:bold;
+  padding-right:20px;
+  font-size:1.2em;
+  margin-top:10px;
+}
+
+.invoiceItems table {
+  border-collapse:collapse;
+  border-top:1px solid #000;
+}
+
+.invoiceItems table td {
+  border-bottom:1px solid #000;
+  padding:5px 6px;
+}
+
+.invoiceItems table td.productName {
+  width:450px;
+}
+
+.invoiceItems table td.productPrice {
+  width:280px;
+  text-align:right;
+  border-left:1px solid #000;
+}
+
+.invoiceItems table p {
+  font-weight:normal;
+  font-size:11px;
+}
+
+h4 {
+  font-weight:normal;
+  padding-right:20px;
+  font-size:1.1em;
+  clear:left;
+  color:#383838;
+  padding-top:2px;
+}
+
+h4 strong {
+  color:#000;
+}
+
+.invoiceMessage {
+  border-right:1px solid #aaa;
+}
+
+.invoiceItems {
+  border-top:5px solid #000;
+  clear:left;
+}
+
+.invoiceMessage, .shippingInfo {
+  width:354px;
+  padding-bottom:10px;
+  padding-left:10px;
+  float:left
+}
+
+.invoiceMessage p {
+  font-size:1.1em;
+  padding-right:20px;
+  line-height:1.3em;
+  color:#383838;
+}
+
+.addy {
+  float:left;
+  width:150px;
+  padding-bottom:0px;
+  color:#383838;
+}
+
+.ccInfo {
+
+}
+
+.addy h3{
+  color:#000;
+  margin-top:0px;
+}
+
+.invoiceInfo {
+  padding-bottom:16px;
+}
+
+.invoiceSpecials {
+  padding-top:5px;
+  padding-bottom:16px;
+  border-top:1px dashed #aaa;
+  border-bottom:1px dashed #aaa;
+  clear:both;
+}
+
+.invoiceItems .invoiceRight h2 {
+  float:left;
+  padding-bottom:36px;
+  padding-left:10px;
+  padding-right:0px;
+}
+
+.invoiceItems .invoiceRight h3.orderNo {
+  float:right;
+  padding-left:0px;
+  padding-top:10px;
+  font-weight:normal;
+  font-size:1.4em;
+  margin-top:10px
+}
+
+.invoiceItems .invoiceRight h3.product {
+  margin-top:10px
+}
+
+.invoiceItems .invoiceRight h3 {
+  margin-top:6px
+  font-size:1.5em;
+}
+
+.invoiceItems .productEntry {
+  border-top:1px solid #aaa;
+  clear:both;
+  padding:2px 20px 10px 10px;
+}
+
+.invoiceItems span.tax {
+  font-size:0.9em;
+  font-weight:normal;
+  color:#383838;
+}
+
+.invoiceItems .invoiceTotals {
+  font-size:1.1em;
+  border-top:1px solid #6c6c6c;
+  width:364px;
+  padding:12px 0 0 0;
+  border-collapse:collapse;
+  background:transparent url(../images/invoiceTable-bg.png) left bottom repeat;
+}
+
+.invoiceItems .invoiceTotals td.invoiceText,
+.invoiceItems .invoiceTotals td.dataTableContent {
+  width:100px;
+  padding:6px 0px 4px 10px;
+}
+
+.invoiceItems .invoiceTotals td.invoiceAmount,
+.invoiceItems .invoiceTotals td.dataTableAmount {
+  padding:6px 160px 4px 10px;
+}
+
+.invoiceItems tr.finalBalance {
+  background:#a5a5a5;
+}
+
+.promo_message {
+    float:left;
+    font-size:1.7em;
+    margin:15 15 5 15;
+}
+  </style>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <title>Invoice - Order #<match>(?<order_id>\w+)</match></title>
+  <script language="javascript" src="includes/menu.js">
+</script>
+</head>
+
+<body id="invoice" bgcolor="white">
+<div class="content">
+<div id="headerInvoice">
+  <h1 id="wellLogo"><img src="http://well.ca/images/invoiceLogo-lg.png" alt="Well.ca, Canada's online health + beauty store." /></h1>
+  <address>935B Southgate Drive, Guelph, Ontario, N1L 0B9, N1H 4J4, Canada<br />GST Number: 81088 8750 RT0001 | Toll-Free: 1 [866] 640-3800<br />Pharmaceutical sales are done under the accreditation of Norfolk Pharmacy<br /><b>OCP Accred# 023424</b></address>
+</div>
+
+<!-- Customer Billing and Shipping info -->
+<div class="invoiceInfo" style="clear:left">
+  <div class="invoiceMessage">
+    <h2>Thanks for your order!</h2>
+    <p>Thanks for shopping with us online. If you have any questions or comments please contact our customer care team at <strong>info@well.ca</strong>. We'd love to hear from you. :)</p>
+    <h2>Hassle free returns</h2>
+    <p>Not happy with your purchase? We offer free and easy returns. Please visit <strong>http://Well.ca/Returns</strong> for more information.</p>
+    <h2>Please recycle</h2>
+    <p>To protect your order from damage during shipment, Well.ca uses recycled paper, which is a greener option than styrofoam or plastic fillers. Please re-use or recycle our packing materials to help keep the earth clean!</p>
+  </div>
+  <div class="shippingInfo">
+  <h2>Your information</h2>
+
+    <div class="addy">
+      <h3>Billing address</h3>
+      <address class="billing">
+        <match>(?<billing_address>.+?)</match>
+      </address>
+                </div>
+
+    <div class="addy">
+      <h3>Shipping address</h3>
+      <address class="shipping">
+        <match>(?<shipping_address>.+?)</match>
+      </address>
+    </div>
+  </div>
+
+  <div style="float:left; margin-left: 10px; font-size: 16px">
+    Please enjoy your complimentary sample.<br>
+    Exclusions may apply.
+  </div>
+
+  <!-- Invoice Number and Info -->
+  <div class="invoiceItems">
+    <match>(?<invoice_info>.+?)</match>
+  </div>
+</div>
+<!-- body_text_eof //-->
+</div>
+</body>
+</html>
