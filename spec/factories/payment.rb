@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :payment do
     type            1
-    salt            { Base64.strict_encode64(SecureRandom.random_bytes(16)) }
+    salt            { SecureRandom.base64 }
     number          { Encryptor.encrypt('4111111111111111', salt)[:value] }
     expirationMonth { Encryptor.encrypt('5', salt)[:value] }
     expirationYear  { Encryptor.encrypt("#{Time.now.year + 5}", salt)[:value] }
