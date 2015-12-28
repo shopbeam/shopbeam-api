@@ -11,6 +11,10 @@ namespace :features do
       t.pattern = 'spec/features/partners/lacoste_com_us.feature'
     end
 
+    RSpec::Core::RakeTask.new(:target_com) do |t|
+      t.pattern = 'spec/features/partners/target_com.feature'
+    end
+
     RSpec::Core::RakeTask.new(:well_ca) do |t|
       t.pattern = 'spec/features/partners/well_ca.feature'
     end

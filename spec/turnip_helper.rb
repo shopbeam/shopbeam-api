@@ -12,14 +12,34 @@ RSpec.configure do |config|
   end
 
   config.before(lacoste: true) do
-    session = build_session(address1: '1 Infinite Loop', city: 'Cupertino', state: 'CA')
+    session = build_session(
+      address1: '1 Infinite Loop',
+      city: 'Cupertino',
+      state: 'CA'
+    )
 
     @bot = Checkout::LacosteComUs::Bot.new(session)
     @browser = @bot.send(:browser)
   end
 
+  config.before(target_com: true) do
+    session = build_session(
+      address1: '1 Infinite Loop',
+      city: 'Cupertino',
+      state: 'CA',
+      phone_number: '1234567890'
+    )
+
+    @bot = Checkout::TargetCom::Bot.new(session)
+    @browser = @bot.send(:browser)
+  end
+
   config.before(well_ca: true) do
-    session = build_session(city: 'Toronto', state: 'ON', zip: 'A1A 1A1')
+    session = build_session(
+      city: 'Toronto',
+      state: 'ON',
+      zip: 'A1A 1A1'
+    )
 
     @bot = Checkout::WellCa::Bot.new(session)
     @browser = @bot.send(:browser)

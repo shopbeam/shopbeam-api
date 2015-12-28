@@ -22,32 +22,26 @@ module Checkout
       private
 
       def add_to_cart(item)
-        browser.goto item.source_url
-        ensure_availability(item)
+        super do
+          ensure_availability(item)
 
-        variations = browser.element(class: 'product-variations')
+          variations = browser.element(class: 'product-variations')
 
-        select_color(item, variations) if item.color.present?
-        select_size(item, variations) if item.size.present?
-        ensure_availability(item)
+          select_color(item, variations) if item.color.present?
+          select_size(item, variations) if item.size.present?
 
-        price_cents = browser.element(css: '[itemprop="price"]').attribute_value('textContent').to_f * 100
+          ensure_availability(item)
 
-        if price_cents > item.sale_price_cents
-          raise ItemPriceMismatchError.new(
-            url: item.source_url,
-            requested_price_cents: item.sale_price_cents,
-            actual_price_cents: price_cents
-          )
-        end
+          price_cents = browser.element(css: '[itemprop="price"]').attribute_value('textContent').to_f * 100
 
-        ensure_availability(item)
+          ensure_price_match(item, price_cents)
 
-        item.quantity.times do
-          browser.click_on add_to_cart_btn
-          browser.element(class: 'mini-cart')
-            .tap(&:wait_until_present)
-            .tap(&:wait_while_present)
+          item.quantity.times do
+            browser.click_on add_to_cart_btn
+            browser.element(class: 'mini-cart')
+              .tap(&:wait_until_present)
+              .tap(&:wait_while_present)
+          end
         end
       end
 
@@ -90,7 +84,7 @@ module Checkout
 
         browser.element(css: '.dialog.active').when_present do |dialog|
           if dialog.radio(name: 'address', value: 'found').present?
-            browser.click_on browser.button(id: 'acceptDavCheck')
+            browser.click_on dialog.button(id: 'acceptDavCheck')
           else
             raise InvalidAddressError.new(browser.url, dialog.ps.last.text)
           end
@@ -101,12 +95,8 @@ module Checkout
         browser.radio(name: 'add-payment-method', value: 'CREDIT_CARD').set
         browser.select(name: 'npm-type-card').select_value to_cc_brand(session.cc[:brand])
         browser.text_field(name: 'npm-holder-name').set session.cc[:name]
-        browser
-          .select(name: 'npm-expiry-date-month')
-          .select_value session.cc[:expiration_month]
-        browser
-          .select(name: 'npm-expiry-date-year')
-          .select_value session.cc[:expiration_year]
+        browser.select(name: 'npm-expiry-date-month').select_value session.cc[:expiration_month]
+        browser.select(name: 'npm-expiry-date-year').select_value session.cc[:expiration_year]
         browser.text_field(id: 'npm-card-number').set session.cc[:number]
         browser.text_field(id: 'npm-cryptogramme').set session.cc[:cvv]
         browser.checkbox(name: 'check-condition').set
@@ -204,9 +194,7 @@ module Checkout
         }
       end
 
-      def on_error(url = nil)
-        return if url && !browser.on_page?(url)
-
+      def on_error
         errors = browser.spans(class: 'error').select(&:visible?)
 
         if errors.any?

@@ -2,6 +2,7 @@ class FeaturesRunner
   MAX_RETRIES = 3
   ERRORS = %w(
     Watir::Wait::TimeoutError
+    Selenium::WebDriver::Error::UnknownError
     Net::ReadTimeout
   )
 

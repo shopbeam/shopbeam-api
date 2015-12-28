@@ -48,6 +48,24 @@ module Checkout
       @proxy_user ||= ProxyUser.find_or_initialize_by(user: session.user, partner_type: partner_type)
     end
 
+    def add_to_cart(item)
+      browser.goto item.source_url
+      yield
+    rescue ItemOutOfStockError
+      item.mark_as_out_of_stock!
+      raise
+    end
+
+    def ensure_price_match(item, price_cents)
+      if price_cents > item.sale_price_cents
+        raise ItemPriceMismatchError.new(
+          url: item.source_url,
+          requested_price_cents: item.sale_price_cents,
+          actual_price_cents: price_cents
+        )
+      end
+    end
+
     def fill_address
       yield
     rescue Watir::Exception::NoValueFoundException => exception
