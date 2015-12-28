@@ -33,4 +33,4 @@ Feature: Purchase on well.ca
      And I skip samples
      And I fill shipping address
      And I fill billing info
-    Then I should see confirm button
+    Then I confirm order

@@ -93,45 +93,31 @@ module Checkout
       end
 
       def add_to_cart(item)
-        browser.goto item.source_url
+        super do
+          ensure_availability(item)
 
-        price_cents = browser.element(class: 'currentPrice').text.gsub(/[$,]/, '').to_f * 100
-        product_notes = browser.elements(class: 'productNotes').last
+          product_notes = browser.elements(class: 'productNotes').last
 
-        unless browser.form(name: 'cart_quantity').present?
-          raise ItemOutOfStockError.new(
-            url: item.source_url,
-            requested_qty: item.quantity,
-            actual_qty: 0
-          )
-        end
-
-        if product_notes.present?
-          product_notes.text.match(/(?=max|stock).*(\d+)/i) do |match|
-            if match[1].to_i < item.quantity
-              raise ItemOutOfStockError.new(
-                url: item.source_url,
-                requested_qty: item.quantity,
-                actual_qty: match[1]
-              )
+          if product_notes.present?
+            product_notes.text.match(/(?=max|stock).*(\d+)/i) do |match|
+              if match[1].to_i < item.quantity
+                raise ItemOutOfStockError.new(
+                  url: item.source_url,
+                  requested_qty: item.quantity,
+                  actual_qty: match[1]
+                )
+              end
             end
           end
-        end
 
-        if price_cents > item.sale_price_cents
-          raise ItemPriceMismatchError.new(
-            url: item.source_url,
-            requested_price_cents: item.sale_price_cents,
-            actual_price_cents: price_cents
-          )
-        end
+          price_cents = browser.element(class: 'currentPrice').text.gsub(/[$,]/, '').to_f * 100
 
-        browser.text_field(id: 'cart_quantity').set item.quantity
-        browser.click_on browser.button(id: 'add_to_cart_button')
-        browser.element(id: 'shopping-cart-table').wait_until_present
-      rescue ItemOutOfStockError
-        item.mark_as_out_of_stock!
-        raise
+          ensure_price_match(item, price_cents)
+
+          browser.text_field(id: 'cart_quantity').set item.quantity
+          browser.click_on browser.button(id: 'add_to_cart_button')
+          browser.element(id: 'shopping-cart-table').wait_until_present
+        end
       end
 
       def remove_samples(items)
@@ -208,6 +194,12 @@ module Checkout
         end
 
         save_order_number
+      end
+
+      def ensure_availability(item)
+        unless browser.form(name: 'cart_quantity').present?
+          raise VariantNotAvailableError.new(browser.url, item)
+        end
       end
 
       def cart_count
@@ -311,7 +303,6 @@ module Checkout
         return if url && !browser.on_page?(url)
 
         alert = browser.alert
-        error = browser.element(class: 'messageStackError')
 
         if alert.present?
           message = alert.text
@@ -319,7 +310,9 @@ module Checkout
           return yield message
         end
 
-        return yield error.text if error.present?
+        error = browser.element(class: 'messageStackError')
+
+        yield error.text if error.present?
       end
     end
   end

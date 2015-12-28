@@ -62,7 +62,9 @@ steps_for :well_ca_purchase do
     @bot.send(:fill_billing_info)
   end
 
-  step 'I should see confirm button' do
-    expect(@browser.button(text: /confirm/i)).to be_present
+  step 'I confirm order' do
+    # Expect it to fail because of the test credit card number
+    error_message = /Your card has been declined/
+    expect { @bot.send(:confirm_order) }.to raise_error(Checkout::ConfirmationError, error_message)
   end
 end
