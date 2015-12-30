@@ -13,6 +13,9 @@ module Crawler
           brands_list do |brand, provider|
             CrawlerBrandJob.perform_async(brand, provider)
           end
+          keywords_list do |query, provider|
+            CrawlerKeywordJob.perform_async(query, provider)
+          end
         end.after do
           CrawlerUploadJob.perform_async
         end
@@ -36,12 +39,24 @@ module Crawler
       end
 
       def brands_list
-        config = YAML.load_file Rails.root.join('lib', 'assets', 'brands_list.yml')
         config['providers'].each do |provider_name, vars|
           vars['brands'].each do |brand|
             yield brand, provider_name
           end
         end
+      end
+
+      def keywords_list
+        config['providers'].each do |provider_name, vars|
+          next unless vars['keywords']
+          vars['keywords'].each do |query|
+            yield query, provider_name
+          end
+        end
+      end
+
+      def config
+        YAML.load_file Rails.root.join('lib', 'assets', 'crawlers.yml')
       end
     end
   end

@@ -28,9 +28,15 @@ module Crawler
         case name
         when "well_ca"
           Crawler::Providers::WellCa
+        when "target_com"
+          Crawler::Providers::TargetCom
         else
           raise ProviderNotSupportedError.new("Crawler for provider '#{name}' is not supported.")
         end
+      end
+
+      def can_scrape_whole_brand?
+        false
       end
 
       def get(url)

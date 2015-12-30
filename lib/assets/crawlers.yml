@@ -1,0 +1,10 @@
+---
+providers:
+  well_ca:
+    brands:
+      - 'andrea-eye-qs'
+  target_com:
+    brands:
+      - 'l%27oreal+paris'
+    keywords:
+      - 'facets=d_brand_all:C9%20Champion%C2%AE&category=4636'

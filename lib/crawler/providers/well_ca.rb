@@ -57,7 +57,7 @@ module Crawler
       def brand
         @brand ||= begin
           section = @page.css("#brand_other_products_container span.col-sm-9.col-md-10.col-lg-10")
-          section.text.match(/Other (.+) Products/)[1]
+          section.text.match(/Other (.+) Products/).try(:[], 1) || "new"
         end
       end
 
