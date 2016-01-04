@@ -141,6 +141,7 @@ module Checkout
         end
 
         size.select
+        sleep 1 # wait for select list to be refreshed
       end
 
       def fill_billing_address
