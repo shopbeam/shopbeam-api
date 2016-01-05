@@ -7,8 +7,8 @@ Feature: Purchase on target.com
   @purchase @target_com_purchase
   Scenario: Purchase products
     Given there are the following products:
-      | Quantity | Sale price cents | Color      | Size    | Source URL |
-      | 1        | 3499             | Neon Flare | x small | http://www.target.com/p/c9-champion-women-s-seamless-long-sleeve-top/-/A-21567571#prodSlot=_1_23 |
+      | Quantity | Sale price cents | Color      | Size | Source URL |
+      | 1        | 3499             | Neon Flare | XS   | http://www.target.com/p/c9-champion-women-s-seamless-long-sleeve-top/-/A-21567571#prodSlot=_1_23 |
     When I go to landing page
      And I add products to cart
      And I go to checkout page
