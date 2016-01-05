@@ -8,8 +8,8 @@ module Checkout
 
     def shipping_address
       {
-        first_name: order.shipping_first_name,
-        last_name: order.shipping_last_name,
+        first_name: order.user_first_name,
+        last_name: order.user_last_name,
         address1: order.shipping_address1,
         address2: order.shipping_address2,
         city: order.shipping_city,
@@ -21,8 +21,8 @@ module Checkout
 
     def billing_address
       {
-        first_name: order.billing_first_name,
-        last_name: order.billing_last_name,
+        first_name: order.user_first_name,
+        last_name: order.user_last_name,
         address1: order.billing_address1,
         address2: order.billing_address2,
         city: order.billing_city,

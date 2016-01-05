@@ -1,0 +1,7 @@
+Registration of Shopbeam account #<%= @account.id %> has been terminated due to the following failure:
+
+<%= @exception.message %>
+
+Backtrace:
+
+<%= @exception.backtrace.join("\n") %>

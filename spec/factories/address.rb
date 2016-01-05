@@ -1,6 +1,5 @@
 FactoryGirl.define do
   factory :address do
-    user
     address1    Faker::Address.street_address
     city        Faker::Address.city
     state       Faker::Address.state

@@ -48,4 +48,38 @@ describe Checkout::Notifier do
       subject.order_aborted(order, exception)
     end
   end
+
+  describe '#account_activated' do
+    it 'calls account mailer with the target account' do
+      account = double
+
+      expect(AccountMailer)
+        .to receive(:activated).with(account)
+        .and_return(mailer)
+
+      subject.account_activated(account)
+    end
+  end
+
+  describe '#account_not_found' do
+    it 'calls account mailer with the target account ID' do
+      expect(AccountMailer)
+        .to receive(:not_found).with(1)
+        .and_return(mailer)
+
+      subject.account_not_found(1)
+    end
+  end
+
+  describe '#account_aborted' do
+    it 'calls account mailer with the target account and exception' do
+      account, exception = double, double
+
+      expect(AccountMailer)
+        .to receive(:aborted).with(account, exception)
+        .and_return(mailer)
+
+      subject.account_aborted(account, exception)
+    end
+  end
 end

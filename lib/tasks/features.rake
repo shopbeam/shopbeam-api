@@ -7,6 +7,10 @@ namespace :features do
       t.rspec_opts = "--format documentation --out #{output} --fail-fast"
     end
 
+    RSpec::Core::RakeTask.new(:hilton_com) do |t|
+      t.pattern = 'spec/features/partners/hilton_com.feature'
+    end
+
     RSpec::Core::RakeTask.new(:lacoste) do |t|
       t.pattern = 'spec/features/partners/lacoste_com_us.feature'
     end
