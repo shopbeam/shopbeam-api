@@ -5,14 +5,14 @@ module Crawler
       SMF_FIELDS.map {|field| self[field].nil? ? '' : self[field] }
     end
 
-    def format
+    def format(opts={})
       format_brand
       format_color
       format_name
       format_prices
       format_categories
       format_size
-      generate_sku
+      generate_sku(opts[:with_url])
       self
     end
 
@@ -43,7 +43,7 @@ module Crawler
     end
 
     def format_categories
-      self.original_category = original_category.join(': ')
+      self.original_category = original_category.join(': ') if original_category.is_a? Array
     end
 
     def format_size
@@ -55,9 +55,13 @@ module Crawler
       text.split(" ").map(&:capitalize).join(" ")
     end
 
-    def generate_sku
-      self.sku = uid(name, brand, color, size, 'child')
-      self.parent_sku = uid(name, brand)
+    def generate_sku(with_url = false)
+      self.sku ||= uid(name, brand, color, size, 'child')
+      self.parent_sku ||= if with_url
+        uid(name, brand, source_url)
+      else
+        uid(name, brand)
+      end
     end
 
     def uid(*args)

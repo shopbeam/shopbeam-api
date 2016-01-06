@@ -81,12 +81,6 @@ describe Batch do
         expect_any_instance_of(SampleJob).to receive(:on_error)
         expect{ subject }.to raise_error("some error")
       end
-
-      it "sends email notification by default" do
-        ActionMailer::Base.deliveries.clear
-        expect{ subject }.to raise_error("some error")
-        expect(ActionMailer::Base.deliveries.count).to eq 1
-      end
     end
 
     context ".after callback" do
