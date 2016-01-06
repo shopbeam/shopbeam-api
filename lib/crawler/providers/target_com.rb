@@ -14,11 +14,11 @@ module Crawler
         end
 
         def scrape_brand(brand)
-          process_all_pages(API_URL, "guest_mfg_brand=#{brand}")
+          process_all_pages(API_URL, keyword: "guest_mfg_brand=#{brand}")
         end
 
-        def scrape_by_keyword(query)
-          process_all_pages(KEYWORD_URL, query)
+        def scrape_by_keyword(opts)
+          process_all_pages(KEYWORD_URL, opts)
         end
 
         def can_scrape_whole_brand?
@@ -26,18 +26,19 @@ module Crawler
         end
 
         private
-        def process_all_pages(url, query)
+        def process_all_pages(url, opts)
           offset, results = 0, []
 
           begin
             result = []
-            page = get_json("#{url}?pageCount=#{PAGINATOR}&offset=#{offset}&response_group=Items%2CVariationSummary&#{query}")
+            limit = opts['limit'] || PAGINATOR
+            page = get_json("#{url}?pageCount=#{limit}&offset=#{offset}&response_group=Items%2CVariationSummary&#{opts['keyword']}")
             page['searchResponse']['items']['Item'].each do |product|
               result += self.new(product).scrape
             end
             results += result
             offset += PAGINATOR
-          end while result.any?
+          end while result.any? && !opts['limit']
 
           results
         end
@@ -50,7 +51,7 @@ module Crawler
       def scrape
         result = []
         return result if sold_out?
-        variations do |size, color, image, price|
+        variations do |size, color, image, price, name|
           params = {
             name: name,
             brand: brand,
@@ -66,13 +67,13 @@ module Crawler
             'source-url': details_url,
             'image-url1': image.split('?').first
           }
-          result << SMF.new(params).format(with_url: true)
+          result << SMF.new(params)
         end
         result
       end
 
       private
-      def name
+      def default_name
         @product['title']
       end
 
@@ -81,7 +82,8 @@ module Crawler
       end
 
       def description
-        @product['itemAttributes']['productDescription']
+        desc = @product['itemAttributes']['productDescription']
+        desc.empty? ? default_name : desc
       end
 
       def details_url
@@ -98,6 +100,15 @@ module Crawler
         price.split("-").first
       end
 
+      def default_color
+        if summary = @product['variationSummary']
+          key, with_color = summary.detect { |k, s| s['definedAttributes'].try(:[], 'color') }
+          with_color ? with_color['definedAttributes']['color'] : ""
+        else
+          ""
+        end
+      end
+
       def variations
         if summary = @product['variationSummary']
           summary.each do |k, variation|
@@ -106,11 +117,12 @@ module Crawler
             color = attrs['color'] || ''
             price = variation['offerPrice'] || variation['listPrice']
             price = default_price if price.empty?
+            name = variation['title']
 
-            yield size, color, variation['imagePath'], price
+            yield size, color, variation['imagePath'], price, name
           end
         else
-          yield '', '', default_image, default_price
+          yield '', '', default_image, default_price, default_name
         end
       end
 

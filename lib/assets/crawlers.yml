@@ -7,4 +7,20 @@ providers:
     brands:
       - 'l%27oreal+paris'
     keywords:
-      - 'facets=d_brand_all:C9%20Champion%C2%AE&category=4636'
+      -
+        keyword: 'facets=d_brand_all:C9%20Champion%C2%AE&category=4636'
+      -
+        keyword: 'category=4476&sort_by=bestselling'
+        limit: 10
+      -
+        keyword: 'category=5xtk4&sort_by=bestselling'
+        limit: 10
+      -
+        keyword: 'category=3678&sort_by=bestselling'
+        limit: 10
+      -
+        keyword: 'category=5xtf0&sort_by=bestselling'
+        limit: 10
+      -
+        keyword: 'category=5xtlz&sort_by=bestselling'
+        limit: 10
