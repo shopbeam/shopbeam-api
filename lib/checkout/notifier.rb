@@ -19,5 +19,17 @@ module Checkout
     def order_aborted(order, exception)
       OrderMailer.aborted(order, exception).deliver_now
     end
+
+    def account_activated(account)
+      AccountMailer.activated(account).deliver_now
+    end
+
+    def account_not_found(account_id)
+      AccountMailer.not_found(account_id).deliver_now
+    end
+
+    def account_aborted(account, exception)
+      AccountMailer.aborted(account, exception).deliver_now
+    end
   end
 end

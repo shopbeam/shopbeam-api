@@ -7,11 +7,11 @@ steps_for :well_ca_sign_up do
     @browser.radio(name: 'gender', value: 'o').set
   end
 
-  step 'I fill firstname' do
+  step 'I fill first name' do
     @browser.text_field(name: 'firstname').set 'first name'
   end
 
-  step 'I fill lastname' do
+  step 'I fill last name' do
     @browser.text_field(name: 'lastname').set 'last name'
   end
 
@@ -19,7 +19,7 @@ steps_for :well_ca_sign_up do
     @browser.select(name: 'dob_year').select(DateTime.now.year - 25)
   end
 
-  step 'I fill email_address' do
+  step 'I fill email address' do
     @browser.text_field(name: 'email_address').set 'some@example.com'
   end
 
@@ -27,7 +27,7 @@ steps_for :well_ca_sign_up do
     @browser.text_field(name: 'password').set 'some_password'
   end
 
-  step 'I fill password_confirmation' do
+  step 'I fill password confirmation' do
     @browser.text_field(name: 'confirmation').set 'some_password'
   end
 

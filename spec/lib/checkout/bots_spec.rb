@@ -10,11 +10,12 @@ describe Checkout::Bots do
       it { is_expected.to eq(Checkout::WellCa::Bot) }
     end
 
-    context 'for lacoste.com/us' do
-      let(:url) { 'https://www.lacoste.com/us/foo-bar.html' }
+    # TODO: Temporarily disable Lacoste partner
+    # context 'for lacoste.com/us' do
+    #   let(:url) { 'https://www.lacoste.com/us/foo-bar.html' }
 
-      it { is_expected.to eq(Checkout::LacosteComUs::Bot) }
-    end
+    #   it { is_expected.to eq(Checkout::LacosteComUs::Bot) }
+    # end
 
     context 'for unsupported url' do
       let(:url) { 'http://foo.com/' }

@@ -11,6 +11,13 @@ RSpec.configure do |config|
     @browser.close if @browser
   end
 
+  config.before(hilton_com: true) do
+    account = build_stubbed(:account, partner_type: 'HiltonCom')
+    registrator = Checkout::HiltonCom::Registrator.new(account)
+
+    @browser = registrator.send(:browser)
+  end
+
   config.before(lacoste: true) do
     session = build_session(
       address1: '1 Infinite Loop',

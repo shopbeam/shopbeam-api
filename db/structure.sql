@@ -120,7 +120,9 @@ CREATE TABLE "Address" (
     "createdAt" timestamp with time zone NOT NULL,
     "updatedAt" timestamp with time zone NOT NULL,
     "UserId" integer,
-    "phoneNumber" character varying(255) NOT NULL
+    "phoneNumber" character varying(255) NOT NULL,
+    country character varying,
+    account_id integer
 );
 
 
@@ -825,6 +827,43 @@ ALTER SEQUENCE access_tokens_id_seq OWNED BY access_tokens.id;
 
 
 --
+-- Name: accounts; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE accounts (
+    id integer NOT NULL,
+    first_name character varying NOT NULL,
+    last_name character varying NOT NULL,
+    partner_type character varying NOT NULL,
+    email character varying NOT NULL,
+    password character varying NOT NULL,
+    password_salt character varying NOT NULL,
+    aasm_state character varying DEFAULT 'pending'::character varying NOT NULL,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: accounts_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE accounts_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: accounts_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE accounts_id_seq OWNED BY accounts.id;
+
+
+--
 -- Name: active_admin_comments; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -1350,6 +1389,13 @@ ALTER TABLE ONLY access_tokens ALTER COLUMN id SET DEFAULT nextval('access_token
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE ONLY accounts ALTER COLUMN id SET DEFAULT nextval('accounts_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE ONLY active_admin_comments ALTER COLUMN id SET DEFAULT nextval('active_admin_comments_id_seq'::regclass);
 
 
@@ -1598,6 +1644,14 @@ ALTER TABLE ONLY "Variant"
 
 ALTER TABLE ONLY access_tokens
     ADD CONSTRAINT access_tokens_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: accounts_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY accounts
+    ADD CONSTRAINT accounts_pkey PRIMARY KEY (id);
 
 
 --
@@ -1926,6 +1980,13 @@ CREATE INDEX "fki_Variant_ProductId_fkey_status_1" ON "Variant" USING btree ("Pr
 
 
 --
+-- Name: index_Address_on_account_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX "index_Address_on_account_id" ON "Address" USING btree (account_id);
+
+
+--
 -- Name: index_access_tokens_on_consumer_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -1944,6 +2005,13 @@ CREATE UNIQUE INDEX index_access_tokens_on_fingerprint ON access_tokens USING bt
 --
 
 CREATE UNIQUE INDEX index_access_tokens_on_token ON access_tokens USING btree (token);
+
+
+--
+-- Name: index_accounts_on_partner_type_and_email; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE UNIQUE INDEX index_accounts_on_partner_type_and_email ON accounts USING btree (partner_type, email);
 
 
 --
@@ -2173,6 +2241,14 @@ ALTER TABLE ONLY access_tokens
 
 
 --
+-- Name: fk_rails_a9dc98293a; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY "Address"
+    ADD CONSTRAINT fk_rails_a9dc98293a FOREIGN KEY (account_id) REFERENCES accounts(id);
+
+
+--
 -- Name: fk_rails_ae466ba5b2; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -2223,4 +2299,8 @@ INSERT INTO schema_migrations (version) VALUES ('20151119104647');
 INSERT INTO schema_migrations (version) VALUES ('20151202124315');
 
 INSERT INTO schema_migrations (version) VALUES ('20151209125233');
+
+INSERT INTO schema_migrations (version) VALUES ('20160105101919');
+
+INSERT INTO schema_migrations (version) VALUES ('20160105123254');
 

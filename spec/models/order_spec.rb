@@ -3,11 +3,15 @@ require 'rails_helper'
 describe Order do
   it { is_expected.to have_many(:order_items).autosave(true) }
 
-  %i(first_name last_name address1 address2 city state zip phone_number).each do |method|
+  %i(first_name last_name).each do |method|
+    it { is_expected.to delegate_method(method).to(:user).with_prefix }
+  end
+
+  %i(address1 address2 city state zip phone_number).each do |method|
     it { is_expected.to delegate_method(method).to(:shipping_address).with_prefix(:shipping) }
   end
 
-  %i(first_name last_name address1 address2 city state zip phone_number).each do |method|
+  %i(address1 address2 city state zip phone_number).each do |method|
     it { is_expected.to delegate_method(method).to(:billing_address).with_prefix(:billing) }
   end
 

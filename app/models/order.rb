@@ -10,10 +10,13 @@ class Order < ActiveRecord::Base
   has_many :order_items, foreign_key: 'OrderId', autosave: true
   has_many :references, class_name: 'OrderReference'
 
-  delegate :first_name, :last_name, :address1, :address2, :city, :state, :zip, :phone_number,
+  delegate :first_name, :last_name,
+           to: :user,
+           prefix: true
+  delegate :address1, :address2, :city, :state, :zip, :phone_number,
            to: :shipping_address,
            prefix: :shipping
-  delegate :first_name, :last_name, :address1, :address2, :city, :state, :zip, :phone_number,
+  delegate :address1, :address2, :city, :state, :zip, :phone_number,
            to: :billing_address,
            prefix: :billing
   delegate :name, :brand, :number, :cvv, :expiration_month, :expiration_year,

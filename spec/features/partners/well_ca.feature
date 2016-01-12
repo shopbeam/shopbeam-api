@@ -8,12 +8,12 @@ Feature: Purchase on well.ca
   Scenario: Sign up user
     When I go to registration page
      And I set gender
-     And I fill firstname
-     And I fill lastname
+     And I fill first name
+     And I fill last name
      And I set birthday
-     And I fill email_address
+     And I fill email address
      And I fill password
-     And I fill password_confirmation
+     And I fill password confirmation
     Then I should see submit button
 
   @purchase @well_ca_purchase
