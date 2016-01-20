@@ -1,5 +1,8 @@
 class Account < ActiveRecord::Base
   include AASM
+  include AttrDecryptor
+
+  attr_decryptor :password
 
   has_one :address, dependent: :destroy
 
@@ -27,9 +30,5 @@ class Account < ActiveRecord::Base
     event :abort do
       transitions from: :pending, to: :aborted
     end
-  end
-
-  def password
-    Encryptor.decrypt(read_attribute(:password), read_attribute(:password_salt))
   end
 end

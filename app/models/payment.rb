@@ -1,13 +1,16 @@
 class Payment < ActiveRecord::Base
+  include AttrDecryptor
+
   self.table_name = 'Payment'
   self.inheritance_column = nil
 
+  with_options salt: :salt do
+    attr_decryptor :number, :name, :cvv, type: :string
+    attr_decryptor :expirationMonth, :expirationYear, type: :integer
+  end
+
   alias_attribute :expiration_month, :expirationMonth
   alias_attribute :expiration_year, :expirationYear
-
-  def number
-    Encryptor.decrypt(read_attribute(:number), read_attribute(:numberSalt))
-  end
 
   def brand
     case number
@@ -27,7 +30,7 @@ class Payment < ActiveRecord::Base
       expirationYear: 0,
       name: '',
       cvv: '',
-      numberSalt: ''
+      salt: ''
     )
   end
 end

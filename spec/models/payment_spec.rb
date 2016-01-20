@@ -1,30 +1,58 @@
 require 'rails_helper'
 
 describe Payment do
-  describe '#expiration_month' do
-    it 'is an alias of #expirationMonth' do
-      payment = described_class.new(expirationMonth: 6)
-
-      expect(payment.expiration_month).to eq(6)
-    end
-  end
-
-  describe '#expiration_year' do
-    it 'is an alias of #expirationYear' do
-      payment = described_class.new(expirationYear: 2020)
-
-      expect(payment.expiration_year).to eq(2020)
-    end
-  end
-
   describe '#number' do
     it 'returns decrypted value' do
       encrypted_number = Encryptor.encrypt('1234567890')
 
       subject.send(:write_attribute, :number, encrypted_number[:value])
-      subject.send(:write_attribute, :numberSalt, encrypted_number[:salt])
+      subject.send(:write_attribute, :salt, encrypted_number[:salt])
 
       expect(subject.number).to eq('1234567890')
+    end
+  end
+
+  describe '#expiration_month' do
+    it 'returns decrypted value' do
+      encrypted_month = Encryptor.encrypt('6')
+
+      subject.send(:write_attribute, :expirationMonth, encrypted_month[:value])
+      subject.send(:write_attribute, :salt, encrypted_month[:salt])
+
+      expect(subject.expiration_month).to eq(6)
+    end
+  end
+
+  describe '#expiration_year' do
+    it 'returns decrypted value' do
+      encrypted_year = Encryptor.encrypt('2020')
+
+      subject.send(:write_attribute, :expirationYear, encrypted_year[:value])
+      subject.send(:write_attribute, :salt, encrypted_year[:salt])
+
+      expect(subject.expiration_year).to eq(2020)
+    end
+  end
+
+  describe '#name' do
+    it 'returns decrypted value' do
+      encrypted_name = Encryptor.encrypt('John Smith')
+
+      subject.send(:write_attribute, :name, encrypted_name[:value])
+      subject.send(:write_attribute, :salt, encrypted_name[:salt])
+
+      expect(subject.name).to eq('John Smith')
+    end
+  end
+
+  describe '#cvv' do
+    it 'returns decrypted value' do
+      encrypted_cvv = Encryptor.encrypt('123')
+
+      subject.send(:write_attribute, :cvv, encrypted_cvv[:value])
+      subject.send(:write_attribute, :salt, encrypted_cvv[:salt])
+
+      expect(subject.cvv).to eq('123')
     end
   end
 

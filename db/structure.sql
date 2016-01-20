@@ -489,8 +489,8 @@ ALTER SEQUENCE "Partner_id_seq" OWNED BY "Partner".id;
 CREATE TABLE "Payment" (
     type integer NOT NULL,
     number character varying(255) NOT NULL,
-    "expirationMonth" integer NOT NULL,
-    "expirationYear" integer NOT NULL,
+    "expirationMonth" character varying NOT NULL,
+    "expirationYear" character varying NOT NULL,
     name character varying(255) NOT NULL,
     status integer,
     id integer NOT NULL,
@@ -498,7 +498,7 @@ CREATE TABLE "Payment" (
     "updatedAt" timestamp with time zone NOT NULL,
     "UserId" integer,
     cvv character varying(255),
-    "numberSalt" character varying
+    salt character varying
 );
 
 
@@ -2303,4 +2303,10 @@ INSERT INTO schema_migrations (version) VALUES ('20151209125233');
 INSERT INTO schema_migrations (version) VALUES ('20160105101919');
 
 INSERT INTO schema_migrations (version) VALUES ('20160105123254');
+
+INSERT INTO schema_migrations (version) VALUES ('20160113143937');
+
+INSERT INTO schema_migrations (version) VALUES ('20160118110905');
+
+INSERT INTO schema_migrations (version) VALUES ('20160118194435');
 
