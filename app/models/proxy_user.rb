@@ -1,5 +1,9 @@
 class ProxyUser < ActiveRecord::Base
+  include AttrDecryptor
+
   EMAIL_DOMAIN = 'orders.shopbeam.com'.freeze
+
+  attr_decryptor :password
 
   belongs_to :user
   has_many :orders, through: :user
@@ -17,10 +21,6 @@ class ProxyUser < ActiveRecord::Base
 
   def self.find_by_signature(signature)
     find(verifier.verify(signature))
-  end
-
-  def password
-    Encryptor.decrypt(read_attribute(:password), read_attribute(:password_salt))
   end
 
   def signature
