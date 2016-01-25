@@ -66,11 +66,26 @@ module Crawler
       end
 
       def color
-        @color ||= @page.css(".product_text.product_text_product_subtitle span").first.try(:text) || ""
+        @color ||= begin
+          elements = @page.css(".product_text.product_text_product_subtitle span")
+          # if 2 spans, than first is color, second is size
+          # if 1 span, than it's size
+          if elements.any? && elements.count == 2
+            elements.first.text
+          else
+            ""
+          end
+        end
       end
 
       def size
-        @size ||= @page.css(".product_text.product_text_product_subtitle span").try(:[], 1).try(:text) || ""
+        @size ||= begin
+          if elements = @page.css(".product_text.product_text_product_subtitle span")
+            elements.count == 2 ? elements[1].text : elements.first.text
+          else
+            ""
+          end
+        end
       end
 
       def description

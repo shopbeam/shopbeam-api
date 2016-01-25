@@ -49,14 +49,14 @@ module Crawler
       def keywords_list
         config['providers'].each do |provider_name, vars|
           next unless vars['keywords']
-          vars['keywords'].each do |query|
-            yield query, provider_name
+          vars['keywords'].each do |keyword|
+            yield keyword, provider_name
           end
         end
       end
 
       def config
-        YAML.load_file Rails.root.join('lib', 'assets', 'crawlers.yml')
+        @config ||= YAML.load_file(Rails.root.join('lib', 'assets', 'crawlers.yml')).with_indifferent_access
       end
     end
   end

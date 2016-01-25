@@ -17,7 +17,7 @@ describe Crawler::Providers::TargetCom do
     let(:partner) { 'Target.com' }
     let(:brand) { "L'oreal Paris" }
     let(:'original-brand') { "L'Oreal Paris" }
-    let(:name) { "L'Oréal® Paris Colour Riche Collection Exclusive Lipstick - 403 Eva's Red" }
+    let(:name) { "L'Oréal® Paris Colour Riche Collection Exclusive Red Lipcolor" }
     let(:color) { "Julianne's Red" }
     let(:'color-family') { 'red' }
     let(:size) { '' }
@@ -26,8 +26,8 @@ describe Crawler::Providers::TargetCom do
     let(:'list-price') { '5.99' }
     let(:'sale-price') { nil }
     let(:'image-url1') { 'http://scene7.targetimg1.com/is/image/Target/17256627' }
-    let(:sku) { '65d9014b6dc0d685' }
-    let(:'parent-sku') { '18ec6c7c6702c665' }
+    let(:sku) { 'e3dce3be5fd40fdd' }
+    let(:'parent-sku') { 'b2afb22622b3049d' }
     let(:'partner-data') { nil }
     let(:'source-url') { 'http://www.target.com/p/l-oreal-paris-13-oz-red-lipstick/-/A-17256628' }
     let(:'color-substitute') { nil }
