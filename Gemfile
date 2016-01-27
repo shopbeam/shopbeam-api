@@ -88,8 +88,9 @@ gem 'awesome_print'
 gem 'aws-sdk', '~> 2'
 
 # API
-gem 'grape'
+gem 'grape', git: 'https://github.com/ruby-grape/grape.git'
 gem 'grape-entity'
+gem 'grape-route-helpers'
 
 # Generate random tokens (TBA in Rails 5)
 gem 'has_secure_token'

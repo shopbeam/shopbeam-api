@@ -22,3 +22,6 @@ every 4.hours do
   rake 'features:partners', environment: 'test'
   rake 'features:widgets', environment: 'test'
 end
+every 1.hours do
+  runner "Crawler::Runner.hourly"
+end

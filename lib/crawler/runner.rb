@@ -2,10 +2,9 @@ require 'csv'
 module Crawler
   class Runner
     class << self
-      def hourly(python_result)
+      def hourly
         batch = Batch.new("hourly")
         storage = Crawler::RedisStorage.new(batch.batch_id)
-        storage.legacy_results = python_result
         batch.jobs do
           product_list.each do |url|
             CrawlerJob.perform_async(url)

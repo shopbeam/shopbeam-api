@@ -3,6 +3,12 @@ module API
     class Root < Grape::API
       version 'v1', using: :header, vendor: 'shopbeam'
 
+      # Temporary disable, so we can use spock for now
+      # enable for tests only
+      if Rails.env.test?
+        mount API::V1::Products
+      end
+
       helpers do
         params :consumer do
           requires :email, type: String, desc: 'Consumer email'
