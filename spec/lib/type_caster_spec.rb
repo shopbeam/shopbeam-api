@@ -11,15 +11,15 @@ describe TypeCaster do
     end
   end
 
-  %w(string text).each do |string|
-    it_behaves_like "#{string} caster", nil      => nil
-    it_behaves_like "#{string} caster", ''       => ''
-    it_behaves_like "#{string} caster", ' '      => ' '
-    it_behaves_like "#{string} caster", 'string' => 'string'
-    it_behaves_like "#{string} caster", true     => '1'
-    it_behaves_like "#{string} caster", 'true'   => 'true'
-    it_behaves_like "#{string} caster", false    => '0'
-    it_behaves_like "#{string} caster", 'false'  => 'false'
+  %w(string text).each do |type|
+    it_behaves_like "#{type} caster", nil      => nil
+    it_behaves_like "#{type} caster", ''       => ''
+    it_behaves_like "#{type} caster", ' '      => ' '
+    it_behaves_like "#{type} caster", 'string' => 'string'
+    it_behaves_like "#{type} caster", true     => '1'
+    it_behaves_like "#{type} caster", 'true'   => 'true'
+    it_behaves_like "#{type} caster", false    => '0'
+    it_behaves_like "#{type} caster", 'false'  => 'false'
   end
 
   it_behaves_like 'integer caster', nil        => nil
@@ -39,14 +39,14 @@ describe TypeCaster do
   it_behaves_like 'integer caster', 1.0/0.0    => nil
   it_behaves_like 'integer caster', 30.minutes => 1800
 
-  %w(float decimal).each do |float|
-    it_behaves_like "#{float} caster", nil        => nil
-    it_behaves_like "#{float} caster", 1.23       => 1.23
-    it_behaves_like "#{float} caster", '1'        => 1.0
-    it_behaves_like "#{float} caster", '1ignore'  => 1.0
-    it_behaves_like "#{float} caster", 'bad1'     => 0.0
-    it_behaves_like "#{float} caster", 'bad'      => 0.0
-    it_behaves_like "#{float} caster", 30.minutes => 1800.0
+  %w(float decimal).each do |type|
+    it_behaves_like "#{type} caster", nil        => nil
+    it_behaves_like "#{type} caster", 1.23       => 1.23
+    it_behaves_like "#{type} caster", '1'        => 1.0
+    it_behaves_like "#{type} caster", '1ignore'  => 1.0
+    it_behaves_like "#{type} caster", 'bad1'     => 0.0
+    it_behaves_like "#{type} caster", 'bad'      => 0.0
+    it_behaves_like "#{type} caster", 30.minutes => 1800.0
   end
 
   it_behaves_like 'float caster', 1.0/0.0 => Float::INFINITY

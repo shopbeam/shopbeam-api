@@ -11,7 +11,7 @@ describe Encryptor do
     end
 
     it 'encrypts with custom salt' do
-      salt = Base64.strict_encode64('bar')
+      salt = SecureRandom.base64
 
       result = described_class.encrypt('foo', salt)
 
