@@ -14,7 +14,7 @@ module Crawler
         end
 
         def scrape_brand(brand)
-          process_all_pages(API_URL, keyword: "guest_mfg_brand=#{brand}")
+          process_all_pages(API_URL, 'keyword' => "guest_mfg_brand=#{brand}")
         end
 
         def scrape_by_keyword(opts)

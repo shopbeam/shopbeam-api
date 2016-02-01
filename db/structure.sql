@@ -23,6 +23,20 @@ CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
 COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
 
 
+--
+-- Name: unaccent; Type: EXTENSION; Schema: -; Owner: -
+--
+
+CREATE EXTENSION IF NOT EXISTS unaccent WITH SCHEMA public;
+
+
+--
+-- Name: EXTENSION unaccent; Type: COMMENT; Schema: -; Owner: -
+--
+
+COMMENT ON EXTENSION unaccent IS 'text search dictionary that removes accents';
+
+
 SET search_path = public, pg_catalog;
 
 --
@@ -155,7 +169,8 @@ CREATE TABLE "Brand" (
     id integer NOT NULL,
     "createdAt" timestamp with time zone NOT NULL,
     "updatedAt" timestamp with time zone NOT NULL,
-    "PartnerId" integer
+    "PartnerId" integer,
+    "validatedAt" double precision DEFAULT 0.0 NOT NULL
 );
 
 
@@ -189,7 +204,8 @@ CREATE TABLE "Category" (
     status integer,
     id integer NOT NULL,
     "createdAt" timestamp with time zone NOT NULL,
-    "updatedAt" timestamp with time zone NOT NULL
+    "updatedAt" timestamp with time zone NOT NULL,
+    "validatedAt" double precision DEFAULT 0.0 NOT NULL
 );
 
 
@@ -389,7 +405,8 @@ CREATE TABLE "Partner" (
     commission integer NOT NULL,
     "daysToWait" integer,
     "policyUrl" character varying(255),
-    "linkshareId" character varying(255)
+    "linkshareId" character varying(255),
+    "validatedAt" double precision DEFAULT 0.0 NOT NULL
 );
 
 
@@ -544,7 +561,7 @@ CREATE TABLE "Product" (
     "salePercent" integer,
     "minPriceCents" integer,
     "maxPriceCents" integer,
-    "validatedAt" double precision
+    "validatedAt" double precision DEFAULT 0.0 NOT NULL
 );
 
 
@@ -2309,4 +2326,6 @@ INSERT INTO schema_migrations (version) VALUES ('20160113143937');
 INSERT INTO schema_migrations (version) VALUES ('20160118110905');
 
 INSERT INTO schema_migrations (version) VALUES ('20160118194435');
+
+INSERT INTO schema_migrations (version) VALUES ('20160127114200');
 

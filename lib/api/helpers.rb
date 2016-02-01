@@ -4,6 +4,10 @@ module API
       env['warden']
     end
 
+    def declared_params
+      declared(params, include_missing: false)
+    end
+
     def authenticate_client!
       warden.authenticate!(scope: :client)
     end
@@ -32,6 +36,12 @@ module API
     def set_consumer(consumer)
       warden.set_user(consumer, scope: :consumer, store: false)
       set_auth_headers
+    end
+
+    def handle_param(parameter, &block)
+      if declared_params[parameter]
+        yield declared_params[parameter]
+      end
     end
 
     private

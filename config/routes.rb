@@ -18,9 +18,6 @@ Rails.application.routes.draw do
   get '/unsubscribe/:signature', to: 'proxy_users#unsubscribe', as: 'unsubscribe'
   patch '/unsubscribe/:signature', to: 'proxy_users#confirm_unsubscribe', as: 'confirm_unsubscribe'
 
-  # Python crawlers upload results here
-  post '/crawlers/results', to: 'crawlers#results'
-
   # Must be the last route!
   match '*path', to: redirect { |_, request| "https://www.shopbeam.com#{request.fullpath}" }, via: :all
 end

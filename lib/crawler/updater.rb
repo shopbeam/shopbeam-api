@@ -7,18 +7,12 @@ module Crawler
     end
 
     def upload_results
-      result = merge_results
-      Aws::S3::Client.new.put_object(bucket: 'sb-crawls', key: "#{ENV['STAGE_NAME']}.csv", body: result.force_encoding('binary'))
-
-      heroku = Heroku::API.new(:api_key => ENV['HEROKU_API_KEY'])
-      heroku.post_ps(ENV['HEROKU_APP'], "EXTRA_LOGGING=true node server/import/s3.js #{ENV['STAGE_NAME']}")
+      Importer::Runner.from_csv(merge_results)
     end
 
     private
     def merge_results
       storage = Crawler::RedisStorage.new(@batch_id)
-      legacy_results = JSON.parse(storage.legacy_results)
-
       CSV.generate do |csv|
         legacy_results.each do |row|
           csv << row
@@ -34,6 +28,15 @@ module Crawler
       end
     end
 
+    def store_legacy_results(results)
+      file = CSV.generate do |csv|
+        results.each do |row|
+          csv << row
+        end
+      end
+      Aws::S3::Client.new.put_object(bucket: 'sb-crawls', key: "python_legacy.csv", body: file.force_encoding('binary'))
+    end
+
     def external_results
       s3 = Aws::S3::Client.new
       results = []
@@ -41,6 +44,11 @@ module Crawler
         results += JSON.parse(s3.get_object(bucket: 'sb-scrapinghub-results', key: "#{file}.json").body.read)
       end
       results
+    end
+
+    def legacy_results
+      s3 = Aws::S3::Client.new
+      CSV.parse(s3.get_object(bucket: 'sb-crawls', key: "python_legacy.csv").body.read)
     end
   end
 end
