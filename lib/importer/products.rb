@@ -23,6 +23,7 @@ module Importer
           Rails.logger.info "done with product #{product.id}"
         end
       end
+      touch_demo_products
       Invalidator.by_time(start_time)
       Rails.logger.info "Ivalid variants count: #{@invalid_count} out of #{data.count}"
     end
@@ -155,6 +156,18 @@ module Importer
       end
       @invalid_count += (variants.count - valid.count)
       valid
+    end
+
+    def touch_demo_products
+      Product.where(demo: true).all.each do |product|
+        Variant.where(ProductId: product.id).all.each do |variant|
+          variant.update(validatedAt: timestamp)
+          variant.product.update(validatedAt: timestamp)
+          variant.product.brand.update(validatedAt: timestamp)
+          variant.product.partner.update_all(validatedAt: timestamp)
+          VariantImage.where(VariantId: variant.id).update_all(validatedAt: timestamp)
+        end
+      end
     end
 
     def timestamp
