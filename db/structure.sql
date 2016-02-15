@@ -561,7 +561,8 @@ CREATE TABLE "Product" (
     "salePercent" integer,
     "minPriceCents" integer,
     "maxPriceCents" integer,
-    "validatedAt" double precision DEFAULT 0.0 NOT NULL
+    "validatedAt" double precision DEFAULT 0.0 NOT NULL,
+    demo boolean DEFAULT false NOT NULL
 );
 
 
@@ -2328,4 +2329,6 @@ INSERT INTO schema_migrations (version) VALUES ('20160118110905');
 INSERT INTO schema_migrations (version) VALUES ('20160118194435');
 
 INSERT INTO schema_migrations (version) VALUES ('20160127114200');
+
+INSERT INTO schema_migrations (version) VALUES ('20160210113019');
 
