@@ -1,13 +1,12 @@
 module Checkout
   module WellCa
     module Validators
-      module OrderProcessing
+      module OrderInvoice
         extend MailValidator
 
         def self.===(mail)
           mail.from == 'orders@well.ca' &&
-          mail.subject =~ /\AOrder Update \w+\z/ &&
-          mail.body =~ /Your order is now being processed/
+          mail.subject =~ /\AOrder Invoice: \w+\z/
         end
       end
     end

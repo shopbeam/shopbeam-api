@@ -5,7 +5,7 @@ module Checkout
         extend MailValidator
 
         def self.===(mail)
-          mail.from =~ %r(info@well.ca) &&
+          mail.from == 'info@well.ca' &&
           mail.subject =~ /\AOrder Confirmation No: \w+\z/
         end
       end
