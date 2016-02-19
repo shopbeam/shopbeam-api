@@ -17,6 +17,9 @@
 !/log/.keep
 /tmp
 
+# Ignore encrypted cipher key
+/config/cipher_key.asc
+
 # Ignore CTags files
 .gemtags
 .tags*

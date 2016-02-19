@@ -23,6 +23,9 @@ gem 'jquery-rails'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+# Interface to GnuPG Made Easy
+gem 'gpgme'
+
 # Use Puma as the app server
 gem 'puma'
 

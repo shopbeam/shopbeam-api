@@ -1,6 +1,6 @@
 module RequestHelper
   def verify_authenticity_signature
-    signature = generate_signature(Rails.application.secrets.cipher_key)
+    signature = generate_signature(Rails.application.secrets.secret_key_base)
 
     request.headers.merge!(
       'X-Timestamp'      => signature[:timestamp],
