@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
   def verify_authenticity_signature
     head :unauthorized unless SignatureVerifier.verify(
-      key: Rails.application.secrets.cipher_key,
+      key: Rails.application.secrets.secret_key_base,
       timestamp: request.headers['X-Timestamp'],
       token: request.headers['X-Auth-Token'],
       signature: request.headers['X-Auth-Signature']
