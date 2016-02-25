@@ -19,7 +19,7 @@ if Rails.env.production?
 
     decrypted_key = crypto.decrypt(File.open(encrypted_key), password: password)
 
-    CIPHER_KEY = decrypted_key.to_s.strip
+    CIPHER_KEY = decrypted_key.to_s
   rescue StandardError => exception
     raise "Could not decrypt cipher key. #{exception.message}"
   end
