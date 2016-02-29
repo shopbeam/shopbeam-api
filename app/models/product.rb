@@ -1,5 +1,5 @@
 class Product < ActiveRecord::Base
-  include API::V1::Entities::Product
+  include API::V2::Entities::Product
 
   self.table_name = 'Product'
 
