@@ -1,5 +1,5 @@
 module API
-  module V1
+  module V2
     module Entities
       module Product
         class Entity < Grape::Entity

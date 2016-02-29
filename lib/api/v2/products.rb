@@ -1,8 +1,9 @@
 module API
-  module V1
+  module V2
     class Products < Grape::API
       desc 'retrive products'
       params do
+        optional :id,       type: Array, coerce_with: Params::IntegerArray.method(:parse)
         optional :partner,  type: Array, coerce_with: Params::IntegerArray.method(:parse)
         optional :brand,    type: Array, coerce_with: Params::IntegerArray.method(:parse)
         optional :category, type: Array, coerce_with: Params::IntegerArray.method(:parse)
@@ -16,6 +17,7 @@ module API
           query = Product.joins(:brand, :partner, :variants).includes(:variants, :categories)
           query.where!(Variant: {status: 1}, Partner: {status: 1}, status: 1).limit(400)
 
+          handle_param(:id)       { |ids| query.where!(Variant:  {id: ids}) }
           handle_param(:partner)  { |ids| query.where!(Partner:  {id: ids}) }
           handle_param(:brand)    { |ids| query.where!(Brand:    {id: ids}) }
           handle_param(:category) { |ids| query.where!(Category: {id: ids}) }
