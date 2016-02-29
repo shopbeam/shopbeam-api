@@ -20,6 +20,7 @@ module API
           handle_param(:limit)    { |lim| query.limit!(lim) }
           handle_param(:id)       { |ids| query.where!(Variant:  {id: ids}) }
 
+          handle_param(:id)       { |ids| query.where!(Variant:  {id: ids}) }
           handle_param(:partner)  { |ids| query.where!(Partner:  {id: ids}) }
           handle_param(:brand)    { |ids| query.where!(Brand:    {id: ids}) }
           handle_param(:category) { |ids| query.where!(Category: {id: ids}) }
