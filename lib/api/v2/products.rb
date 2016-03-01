@@ -11,13 +11,15 @@ module API
         optional :size,     type: Array, coerce_with: Params::StringArray.method(:parse)
         optional :minprice, type: Integer
         optional :maxprice, type: Integer
+        optional :limit,    type: Integer
       end
       resource :products do
         get '/' do
           query = Product.joins(:brand, :partner, :variants).includes(:variants, :categories)
-          query.where!(Variant: {status: 1}, Partner: {status: 1}, status: 1).limit(400)
+          query.where!(Variant: {status: 1}, Partner: {status: 1}, status: 1).limit(100)
 
           handle_param(:id)       { |ids| query.where!(Variant:  {id: ids}) }
+          handle_param(:limit)    { |lim| query.limit(lim) }
           handle_param(:partner)  { |ids| query.where!(Partner:  {id: ids}) }
           handle_param(:brand)    { |ids| query.where!(Brand:    {id: ids}) }
           handle_param(:category) { |ids| query.where!(Category: {id: ids}) }
