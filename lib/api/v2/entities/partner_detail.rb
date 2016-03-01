@@ -10,14 +10,20 @@ module API
                   name: partner.name,
                   commission: partner.commission,
                   policyUrl: partner.policyUrl,
-                  partnerDetails: results.map do |r|
+                  partnerDetails: group_by_state(results) do |r, res|
                     {
                       state: r.state,
                       zip: r.zip,
                       shippingType: r.shippingType,
                       salesTax: r.salesTax,
                       freeShippingAbove: r.freeShippingAbove,
-                      siteWideDiscount: r.siteWideDiscount
+                      siteWideDiscount: r.siteWideDiscount,
+                      shippingItems: res.map do |rr|
+                        {
+                          itemCount: rr.item_count_shipping_cost.item_count,
+                          shippingPrice: rr.item_count_shipping_cost.shipping_price,
+                        }
+                      end
                     }
                   end
                 }
@@ -32,6 +38,17 @@ module API
               end
               grouped.map do |partner, results|
                 yield partner, results
+              end
+            end
+
+            def group_by_state(records)
+              grouped = {}
+              records.each do |r|
+                grouped[r.state] ||= []
+                grouped[r.state] << r
+              end
+              grouped.map do |state, results|
+                yield results.first, results
               end
             end
           end
