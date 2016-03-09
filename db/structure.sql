@@ -24,6 +24,20 @@ COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
 
 
 --
+-- Name: hstore; Type: EXTENSION; Schema: -; Owner: -
+--
+
+CREATE EXTENSION IF NOT EXISTS hstore WITH SCHEMA public;
+
+
+--
+-- Name: EXTENSION hstore; Type: COMMENT; Schema: -; Owner: -
+--
+
+COMMENT ON EXTENSION hstore IS 'data type for storing sets of (key, value) pairs';
+
+
+--
 -- Name: unaccent; Type: EXTENSION; Schema: -; Owner: -
 --
 
@@ -70,12 +84,12 @@ CREATE FUNCTION aggregateminmaxprice_trigger() RETURNS trigger
     LANGUAGE plpgsql
     AS $$ BEGIN
 UPDATE "Product" SET
-	"minPriceCents" = (SELECT MIN(coalesce(nullif(v."salePriceCents", 0), v."listPriceCents"))
-				       FROM "Variant" v
-				       WHERE v."status" = 1 AND v."ProductId" = NEW."ProductId"),
-	"maxPriceCents" = (SELECT MAX(coalesce(nullif(v."salePriceCents", 0), v."listPriceCents"))
-				       FROM "Variant" v
-				       WHERE v."status" = 1 AND v."ProductId" = NEW."ProductId")
+    "minPriceCents" = (SELECT MIN(coalesce(nullif(v."salePriceCents", 0), v."listPriceCents"))
+                       FROM "Variant" v
+                       WHERE v."status" = 1 AND v."ProductId" = NEW."ProductId"),
+    "maxPriceCents" = (SELECT MAX(coalesce(nullif(v."salePriceCents", 0), v."listPriceCents"))
+                       FROM "Variant" v
+                       WHERE v."status" = 1 AND v."ProductId" = NEW."ProductId")
 WHERE "id" = NEW."ProductId"; 
 RETURN NEW; 
 END $$;
@@ -328,7 +342,8 @@ CREATE TABLE "Order" (
     "UserId" integer,
     "PaymentId" integer,
     "dequeuedAt" double precision,
-    theme character varying DEFAULT 'default'::character varying NOT NULL
+    theme character varying DEFAULT 'default'::character varying NOT NULL,
+    info hstore
 );
 
 
@@ -2331,4 +2346,6 @@ INSERT INTO schema_migrations (version) VALUES ('20160118194435');
 INSERT INTO schema_migrations (version) VALUES ('20160127114200');
 
 INSERT INTO schema_migrations (version) VALUES ('20160210113019');
+
+INSERT INTO schema_migrations (version) VALUES ('20160304130408');
 

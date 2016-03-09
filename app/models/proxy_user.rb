@@ -11,6 +11,7 @@ class ProxyUser < ActiveRecord::Base
   delegate :first_name, :last_name, to: :user, allow_nil: true
   delegate :email, to: :user, prefix: true
 
+  # TODO: change to hstore and store_accessor
   serialize :subscription, Hash
 
   validates :user, presence: true, uniqueness: { scope: :partner_type }

@@ -2,9 +2,12 @@ module Checkout
   class Shopper
     include Wisper::Publisher
 
-    def call(order_id)
+    def call(order_id, customer)
       order = Order.uncompleted.find(order_id)
       session = Session.new(order)
+
+      order.customer = customer
+      session.customer_password = customer.try(:[], 'password')
 
       order.process!
 
