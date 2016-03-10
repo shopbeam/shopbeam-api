@@ -4,7 +4,7 @@ steps_for :lacoste_purchase do
       double(
         source_url: hash['Source URL'],
         quantity: hash['Quantity'].to_i,
-        sale_price_cents: hash['Sale price cents'].to_i,
+        price_cents: hash['Price cents'].to_i,
         color: hash['Color'],
         size: hash['Size']
       )

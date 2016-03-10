@@ -57,10 +57,10 @@ module Checkout
     end
 
     def ensure_price_match(item, price_cents)
-      if price_cents > item.sale_price_cents
+      if price_cents > item.price_cents
         raise ItemPriceMismatchError.new(
           url: item.source_url,
-          requested_price_cents: item.sale_price_cents,
+          requested_price_cents: item.price_cents,
           actual_price_cents: price_cents
         )
       end

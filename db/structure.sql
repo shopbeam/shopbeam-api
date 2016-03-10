@@ -84,12 +84,12 @@ CREATE FUNCTION aggregateminmaxprice_trigger() RETURNS trigger
     LANGUAGE plpgsql
     AS $$ BEGIN
 UPDATE "Product" SET
-    "minPriceCents" = (SELECT MIN(coalesce(nullif(v."salePriceCents", 0), v."listPriceCents"))
-                       FROM "Variant" v
-                       WHERE v."status" = 1 AND v."ProductId" = NEW."ProductId"),
-    "maxPriceCents" = (SELECT MAX(coalesce(nullif(v."salePriceCents", 0), v."listPriceCents"))
-                       FROM "Variant" v
-                       WHERE v."status" = 1 AND v."ProductId" = NEW."ProductId")
+	"minPriceCents" = (SELECT MIN(coalesce(nullif(v."salePriceCents", 0), v."listPriceCents"))
+				       FROM "Variant" v
+				       WHERE v."status" = 1 AND v."ProductId" = NEW."ProductId"),
+	"maxPriceCents" = (SELECT MAX(coalesce(nullif(v."salePriceCents", 0), v."listPriceCents"))
+				       FROM "Variant" v
+				       WHERE v."status" = 1 AND v."ProductId" = NEW."ProductId")
 WHERE "id" = NEW."ProductId"; 
 RETURN NEW; 
 END $$;
@@ -141,7 +141,7 @@ CREATE TABLE "Address" (
     address1 character varying(255) NOT NULL,
     address2 character varying(255),
     city character varying(255) NOT NULL,
-    state character varying(255) NOT NULL,
+    state character varying(255),
     zip character varying(255) NOT NULL,
     status integer,
     id integer NOT NULL,
@@ -2348,4 +2348,6 @@ INSERT INTO schema_migrations (version) VALUES ('20160127114200');
 INSERT INTO schema_migrations (version) VALUES ('20160210113019');
 
 INSERT INTO schema_migrations (version) VALUES ('20160304130408');
+
+INSERT INTO schema_migrations (version) VALUES ('20160310155608');
 

@@ -24,8 +24,8 @@ Feature: Purchase on advertisingweek.eu
   @purchase @advertisingweek_eu_purchase
   Scenario: Purchase passes
     Given there are the following passes:
-      | Quantity | Sale price cents | Size     | Source URL |
-      | 1        | 41900            | Delegate | https://advertisingweek.eu/register/ |
+      | Quantity | Price cents | Size     | Source URL |
+      | 1        | 41900       | Delegate | https://advertisingweek.eu/register/ |
      And I am registered user
     When I go to landing page
      And I sign in
