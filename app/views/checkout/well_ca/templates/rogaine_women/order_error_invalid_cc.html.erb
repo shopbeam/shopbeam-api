@@ -65,26 +65,11 @@
               Apologies, <%= @proxy_user.first_name %>,
             </p>
             <p style="font-family:arial,helvetica,sans-serif;font-size:14px;">
-              <% case @error_code %>
-              <% when :item_out_of_stock %>
-                This isn't how it was supposed to happen, it appears one of your items order is no longer in stock
-                at the moment. You have not been charged and the entire order has not been processed.
-                We are always getting more product in and encourage you to return soon to
-                <a href="http://www.rogaine.ca" style="color: #2d1328;font-weight: 600;">rogaine.ca</a>,
-                reload your cart and check out again.
-              <% when :invalid_address %>
-                This isn't how it was supposed to happen, but there as an error with your address when trying to process
-                your order. You have not been charged and the order has not been placed. We encourage you to return to
-                <a href="http://www.rogaine.ca" style="color: #2d1328;font-weight: 600;">rogaine.ca</a>,
-                reload your cart and check out again. Please be sure that your billing address is correct,
-                so that we can promptly attempt to successfully process your order - thanks for understanding!
-              <% when :invalid_cc %>
-                This isn't how it was supposed to happen, but there was an error when trying to process your credit card
-                and you have not been charged. We encourage you to return to
-                <a href="http://www.rogaine.ca" style="color: #2d1328;font-weight: 600;">rogaine.ca</a>,
-                reload your cart and checkout again,
-                so that we can promptly attempt to successfully process your order - thanks for understanding!
-              <% end %>
+              This isn't how it was supposed to happen, but there was an error when trying to process your credit card
+              and you have not been charged. We encourage you to return to
+              <a href="http://www.rogaine.ca" style="color: #2d1328;font-weight: 600;">rogaine.ca</a>,
+              reload your cart and checkout again,
+              so that we can promptly attempt to successfully process your order - thanks for understanding!
             </p>
             <%= image_tag 'divider.png' %>
             <p style="font-family:arial,helvetica,sans-serif;font-size:14px;text-align: center;width: 330px;margin: 10px auto;">

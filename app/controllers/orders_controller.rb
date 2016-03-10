@@ -3,7 +3,7 @@ class OrdersController < ApplicationController
   skip_before_action :verify_authenticity_signature, only: :mail
 
   def fill
-    CheckoutJob.perform_async(params[:id])
+    CheckoutJob.perform_async(params[:id], params[:customer])
     head :accepted
   end
 

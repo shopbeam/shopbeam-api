@@ -71,6 +71,9 @@ gem 'roadie-rails'
 # Web parser
 gem 'nokogiri'
 
+# Country value object
+gem 'countries'
+
 # Money and currency conversion
 gem 'money'
 gem 'monetize'

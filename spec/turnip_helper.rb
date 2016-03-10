@@ -11,6 +11,18 @@ RSpec.configure do |config|
     @browser.close if @browser
   end
 
+  config.before(advertisingweek_eu: true) do
+    session = build_session(
+      address1: '26 Little Portland Street',
+      city: 'London',
+      country: 'GB'
+    )
+
+    @bot = Checkout::AdvertisingweekEu::Bot.new(session)
+    @session = @bot.send(:session)
+    @browser = @bot.send(:browser)
+  end
+
   config.before(hilton_com: true) do
     account = build_stubbed(:account, partner_type: 'HiltonCom')
     registrator = Checkout::HiltonCom::Registrator.new(account)

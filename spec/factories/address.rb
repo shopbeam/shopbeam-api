@@ -3,6 +3,7 @@ FactoryGirl.define do
     address1    Faker::Address.street_address
     city        Faker::Address.city
     state       Faker::Address.state
+    country     Faker::Address.country_code
     zip         Faker::Address.zip_code
     phoneNumber Faker::PhoneNumber.phone_number
     createdAt   Time.now

@@ -3,6 +3,14 @@ class Order < ActiveRecord::Base
 
   self.table_name = 'Order'
 
+  store_accessor :info,
+                 :customer_first_name,
+                 :customer_last_name,
+                 :customer_company,
+                 :customer_job_title,
+                 :customer_mobile_phone,
+                 :customer_email
+
   belongs_to :user, foreign_key: 'UserId'
   belongs_to :shipping_address, foreign_key: 'ShippingAddressId'
   belongs_to :billing_address, foreign_key: 'BillingAddressId'
@@ -13,10 +21,10 @@ class Order < ActiveRecord::Base
   delegate :first_name, :last_name,
            to: :user,
            prefix: true
-  delegate :address1, :address2, :city, :state, :zip, :phone_number,
+  delegate :address1, :address2, :city, :state, :country, :zip, :phone_number,
            to: :shipping_address,
            prefix: :shipping
-  delegate :address1, :address2, :city, :state, :zip, :phone_number,
+  delegate :address1, :address2, :city, :state, :country, :zip, :phone_number,
            to: :billing_address,
            prefix: :billing
   delegate :name, :brand, :number, :cvv, :expiration_month, :expiration_year,
@@ -65,6 +73,19 @@ class Order < ActiveRecord::Base
 
   def proxy_user(partner_type)
     ProxyUser.find_by(user: user, partner_type: partner_type)
+  end
+
+  def customer=(data)
+    if data.is_a?(Hash)
+      assign_attributes(
+        customer_first_name:   data['firstName'],
+        customer_last_name:    data['lastName'],
+        customer_company:      data['company'],
+        customer_job_title:    data['jobTitle'],
+        customer_mobile_phone: data['mobilePhone'],
+        customer_email:        data['email']
+      )
+    end
   end
 
   def save_reference!(partner_type, number)

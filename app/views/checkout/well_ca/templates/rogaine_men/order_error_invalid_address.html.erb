@@ -44,7 +44,7 @@
   <tr>
     <td align="center" valign="top" style="padding: 0 20px;background: #fff">
       <!--*** Start of: Table used to set width of email ***-->
-      <table style="margin-top: 20px" class="container" width="526" border="0" cellspacing="0" cellpadding="0" bgcolor="#fff">
+      <table style="margin-top: 20px; margin-left: -2px" class="container" width="526" border="0" cellspacing="0" cellpadding="0" bgcolor="#fff">
         <tr style="height: 20px" bgcolor="#133356">
           <td valign="middle">
             <h3 style="color: #fff;margin: 0px;font-size: 12px;text-align: center;font-family:arial,helvetica,sans-serif;">#1 Dermatologist Recommended Brand*</h3>
@@ -53,7 +53,7 @@
         <tr style="height: 16px"></tr>
         <tr>
           <td>
-            <%= image_tag 'rogaine-men-header.png', style: 'width: 526px; margin-left: 1px; margin-right: 2px' %>
+            <%= image_tag 'rogaine-men-header.png', style: 'width: 526px' %>
           </td>
         </tr>
       </table>
@@ -65,26 +65,11 @@
               Apologies, <%= @proxy_user.first_name %>,
             </p>
             <p style="font-family:arial,helvetica,sans-serif;font-size:14px;">
-              <% case @error_code %>
-              <% when :item_out_of_stock %>
-                This isn't how it was supposed to happen, it appears one of your items order is no longer in stock
-                at the moment. You have not been charged and the entire order has not been processed.
-                We are always getting more product in and encourage you to return soon to
-                <a href="http://www.rogaine.ca" style="color: #142347;font-weight: 600;">rogaine.ca</a>,
-                reload your cart and check out again.
-              <% when :invalid_address %>
-                This isn't how it was supposed to happen, but there as an error with your address when trying to process
-                your order. You have not been charged and the order has not been placed. We encourage you to return to
-                <a href="http://www.rogaine.ca" style="color: #142347;font-weight: 600;">rogaine.ca</a>,
-                reload your cart and check out again. Please be sure that your billing address is correct,
-                so that we can promptly attempt to successfully process your order - thanks for understanding!
-              <% when :invalid_cc %>
-                This isn't how it was supposed to happen, but there was an error when trying to process your credit card
-                and you have not been charged. We encourage you to return to
-                <a href="http://www.rogaine.ca" style="color: #142347;font-weight: 600;">rogaine.ca</a>,
-                reload your cart and checkout again,
-                so that we can promptly attempt to successfully process your order - thanks for understanding!
-              <% end %>
+              This isn't how it was supposed to happen, but there as an error with your address when trying to process
+              your order. You have not been charged and the order has not been placed. We encourage you to return to
+              <a href="http://www.rogaine.ca" style="color: #142347;font-weight: 600;">rogaine.ca</a>,
+              reload your cart and check out again. Please be sure that your billing address is correct,
+              so that we can promptly attempt to successfully process your order - thanks for understanding!
             </p>
             <%= image_tag 'divider.png' %>
             <p style="font-family:arial,helvetica,sans-serif;font-size:14px;text-align: center;width: 330px;margin: 10px auto;">
@@ -104,7 +89,7 @@
           <tr>
             <td style="width: 40%">
               <p style="background-color: white;margin: 6px;font-size: 11px;color: #a1a3a5;font-family:arial,helvetica,sans-serif;padding: 6px;">
-                You are receiving this communication to confirm the status of your order of Johnson & Johnson Inc. products purchased on Well.ca.
+                You are receiving this communication to confirm the status of your order of Johnson & Johnson Inc. products purchased on Well.ca, a Johnson & Johnson Inc. owned website.
                 <br>
                 <br>
                 <a href="http://www.rogaine.ca/privacy" target="_blank" style="color: #777777;font-size: 11px;text-decoration: underline;font-family:arial,helvetica,sans-serif;">Privacy Policy</a>
