@@ -7,6 +7,7 @@ class OrderItem < ActiveRecord::Base
 
   delegate :source_url, :color, :size, to: :variant
 
+  alias_attribute :list_price_cents, :listPriceCents
   alias_attribute :sale_price_cents, :salePriceCents
 
   enum status: {
@@ -43,6 +44,10 @@ class OrderItem < ActiveRecord::Base
     event :abort do
       transitions from: :pending, to: :aborted
     end
+  end
+
+  def price_cents
+    sale_price_cents || list_price_cents
   end
 
   def bot

@@ -19,8 +19,8 @@ Feature: Purchase on well.ca
   @purchase @well_ca_purchase
   Scenario: Purchase products
     Given there are the following products:
-      | Quantity | Sale price cents | Source URL |
-      | 10       | 349              | https://well.ca/products/manitoba-harvest-hemp-heart-bar_109716.html |
+      | Quantity | Price cents | Source URL |
+      | 10       | 349         | https://well.ca/products/manitoba-harvest-hemp-heart-bar_109716.html |
      And I am registered user
     When I go to landing page
      And I sign in

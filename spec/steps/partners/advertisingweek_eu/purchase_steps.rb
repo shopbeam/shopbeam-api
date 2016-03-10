@@ -4,7 +4,7 @@ steps_for :advertisingweek_eu_purchase do
       double(
         source_url: hash['Source URL'],
         quantity: hash['Quantity'].to_i,
-        sale_price_cents: hash['Sale price cents'].to_i,
+        price_cents: hash['Price cents'].to_i,
         size: hash['Size']
       )
     end
