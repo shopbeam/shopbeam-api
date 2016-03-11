@@ -19,12 +19,12 @@ task create_aw_pass: :environment do
       status: 1,
       demo: true,
       brand: brand,
-      description: '',
+      description: '18 - 22 April 2016<br>London',
       searchText: '',
       sku: :fake,
       createdAt: Time.now,
       updatedAt: Time.now
-    ).find_or_create_by!(name: 'Delegate Pass: 18-22 April 2016 London')
+    ).find_or_create_by!(name: 'Delegate Pass')
 
     variant = Variant.create_with(
       status: 1,
