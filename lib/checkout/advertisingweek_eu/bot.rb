@@ -138,8 +138,14 @@ module Checkout
       def confirm_order
         browser.click_on browser.form(name: 'payment').link(text: /process payment/i)
 
+        iframe = payment_iframe
+
         # Wait for Braintree to process payment
-        browser.iframe(id: 'braintree-dropin-frame').element(class: 'loader').wait_while_present
+        iframe.element(class: 'loader').wait_while_present
+
+        if iframe.elements(class: 'invalid').any?
+          raise InvalidBillingInfoError.new(browser.url, 'Invalid credit card.')
+        end
 
         # Although Watir.always_locate? is true it cannot re-locate an element on use on this page
         # Touch body content to force DOM refresh
@@ -169,7 +175,7 @@ module Checkout
       def fill_payment_info
         # Scroll to bottom where the target iframe is accessible
         scroll_to_bottom
-        iframe = browser.iframe(id: 'braintree-dropin-frame')
+        iframe = payment_iframe
         iframe.text_field(name: 'credit-card-number').set session.cc[:number]
         iframe.text_field(name: 'expiration').set "#{session.cc[:expiration_month]}#{session.cc[:expiration_year].to_s.last(2)}"
         iframe.text_field(name: 'cvv').set session.cc[:cvv]
@@ -182,6 +188,14 @@ module Checkout
         })
       end
 
+      def scroll_to_bottom
+        browser.execute_script('window.scrollTo(0, document.body.scrollHeight)')
+      end
+
+      def payment_iframe
+        browser.iframe(id: 'braintree-dropin-frame')
+      end
+
       def on_error
         errors = browser.elements(xpath: "//*[contains(@class, 'alert-danger') or contains(@class, 'form-invalid')]").select(&:visible?)
 
@@ -189,10 +203,6 @@ module Checkout
           message = errors.map(&:text).join("\n")
           yield message if message.present?
         end
-      end
-
-      def scroll_to_bottom
-        browser.execute_script('window.scrollTo(0, document.body.scrollHeight)')
       end
     end
   end
