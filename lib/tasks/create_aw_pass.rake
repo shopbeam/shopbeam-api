@@ -28,6 +28,7 @@ task create_aw_pass: :environment do
 
     variant = Variant.create_with(
       status: 1,
+      sourceUrl: 'https://advertisingweek.eu/register/',
       sku: :fake,
       listPriceCents: 41900,
       createdAt: Time.now,
