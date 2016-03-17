@@ -1,0 +1,183 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title><%= yield :title %></title>
+  <style type="text/css">
+      /***** GENERAL EMAIL CLIENT FIXES *****/
+    ReadMsgBody{ width: 100%;} /* Forces Hotmail to display emails at full width */
+    .ExternalClass {width: 100%;} /*Hotmail table centering fix*/
+    .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {line-height: 100%;}
+      /* Forces Hotmail to display normal line spacing*/
+    body {-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;margin:0 !important; padding:0 !important;}
+      /* Prevent Webkit and Windows Mobile platforms from changing default font sizes, while not breaking desktop design. */
+    p { margin: 1em 0;} /*Yahoo paragraph fix*/
+    table td { border-collapse: collapse;}  /*This resolves the Outlook 07, 10, and Gmail td padding issue fix*/
+      /* Remove the borders that appear when linking images with "border:none" and "outline:none" */
+    img {outline:0;}
+    a img {border:none;}
+    p {margin: 1em 0;} /*Yahoo paragraph fix*/
+    @-ms-viewport{ width: device-width;}
+      /***** SMARTPHONE STYLING RULES *****/
+    @media only screen and (max-width: 480px) {
+      body[yahoo] .container { width:100% !important; }
+      body[yahoo] .mobile-hidden { display:none !important; }
+      body[yahoo] .mobile-hidden, body[yahoo] .sideblock-hidden { display:none !important; }
+      body[yahoo] .logo { display:block !important; padding:0 !important; }
+      body[yahoo] .photo img { width:100% !important; height:auto !important;}
+      body[yahoo] .drop { display:block !important; width: 100% !important; }
+      body[yahoo] .nav4, body[yahoo] .nav5, body[yahoo] .nav6 { display: none !important; }
+    }
+      /***** TABLET STYLING RULES *****/
+    @media only screen and (max-width: 640px) {
+      body[yahoo] .container { width:100% !important; }
+      body[yahoo] .logo { display:block !important; padding:0 !important; }
+      body[yahoo] .photo img { width:100% !important; height:auto !important;}
+      body[yahoo] .nav5, body[yahoo] .nav6 { display: none !important;}
+    }
+  </style>
+</head>
+<body style="margin: 0px; padding:0px; -webkit-text-size-adjust:none;" yahoo="fix">
+<!--*** Start of: Table used to center email ***-->
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td align="center" valign="top" style="padding: 0 20px;">
+      <!--*** Start of: Table used to set width of email ***-->
+      <table style="margin-top: 20px" class="container" width="600" border="0" cellspacing="0" cellpadding="0" bgcolor="#fafafa">
+        <tr style="height: 6px"></tr>
+        <tr style="height: 20px" bgcolor="#e1e0e0">
+          <td valign="middle">
+            <h3 style="margin: 0px;font-size: 12px;text-align: center;font-style: italic;">View your order confirmation details</h3>
+          </td>
+        </tr>
+        <tr style="height: 75px">
+          <td>
+            <%= image_tag 'he-logo.png', style: 'margin-left: 20px' %>
+            <%= image_tag 'jj-logo.png', style: 'float: right; margin-right: 20px' %>
+          </td>
+        </tr>
+      </table>
+
+      <%= yield :content %>
+
+      <table style="font-family:arial,helvetica,sans-serif;font-size:12px;color:#666666">
+        <tbody>
+        <tr valign="top">
+          <td width="150px" style="padding-left: 33px; font-size: 11px;">
+            <strong>Questions? Feedback?</strong><br>Email us at <a href="mailto:info@well.ca" style="color:#666" target="_blank">info@well.ca</a>
+          </td>
+                </tr>
+        </tbody>
+      </table> <br>
+      <span><font color="#888888"></font></span><span><font color="#888888"></font></span>
+      <table width="100%" style="font-family:arial,helvetica,sans-serif;font-size:12px;color:#666666;padding-left: 33px;padding-right: 33px;" cellpadding="0" cellspacing="0">
+        <tbody>
+        <tr>
+          <td style="border-top:1px solid #ccc;border-bottom:1px solid #ccc">
+            <div>
+              <img src="http://well.ca//images/email/logo-wellca-footer.png" alt="Well.ca">
+            </div>
+          </td>
+          <td style="border-top:1px solid #ccc;border-bottom:1px solid #ccc;font-size:11px"><div><h3 style="margin:0;padding:0"><br>
+            <a href="http://well.ca/?utm_source=email&utm_medium=email-newsletter&utm_campaign=transac-orderrec&utm_content=" style="text-decoration:none;font-size:12px;color:#666666" target="_blank">Well.ca</a></h3>
+            <div>935-B Southgate Drive</div>
+            <span>Guelph</span>,<span> Ontario </span><span>N1L 0B9</span>
+            <div>Canada</div>
+            <div>GST Number: 81088 8750 RT0001</div>
+            <div><strong>Toll-Free:</strong><span>1 (866) 640-3800</span></div><br>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td height="82" align="left" valign="top">
+      <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+          <td align="center">
+            <table border="0" cellpadding="0" cellspacing="0">
+              <tr>
+                <td style="padding: 10px;"><a href="https://www.facebook.com/wellca"><img src="http://well.ca//images/email/icon-facebook.png" alt="" style="display: block; border: 0;" /></td></a>
+                <td style="padding: 10px;"><a href="https://www.instagram.com/welldotca"><img src="http://well.ca//images/email/Instagram-icon.png" alt="Follow Welldotca on Instagram" style="display: block; border: 0;" /></td></a>
+                <td style="padding: 10px;"><a href="https://twitter.com/welldotca"><img src="http://well.ca//images/email/icon-twitter.png" alt="" style="display: block; border: 0;" /></td></a>
+                <td style="padding: 10px;"><a href="https://www.pinterest.com/welldotca/"><img src="http://well.ca//images/email/icon-pinterest.png" alt="" style="display: block; border: 0;" /></a></td>
+                <td style="padding: 10px 0 10px 10px;"><a href="https://www.youtube.com/user/Welldotca"><img src="http://well.ca//images/email/icon-youtube.png" alt="" style="display: block; border: 0;" /></a></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" valign="top" style="padding-bottom:20px;">
+      <font style="font-family:Helvetica, Arial, sans-serif; color:#222222; font-size:11px;">
+        <p><br><a href="http://well.ca/index.php?main_page=unsubscribe">unsubscribe</a></p>
+      </font>
+    </td>
+  </tr>
+              </table>
+              <!--*** End of: Table used to set width of email ***-->
+            </td>
+          </tr>
+        </table>
+
+        <table border="0" cellpadding="0" cellspacing="0" width="600px" style="margin-top: 35px">
+          <tr>
+            <td style="height: 30px; background-repeat: repeat-x; background-image: url('<%= image_path('gradient.png') %>')">
+            </td>
+          </tr>
+
+          <table border="0" cellpadding="0" cellspacing="0" style="margin-top: 15px; background-color: #f1f1f1; width: 600px">
+            <tr>
+              <td style="width: 40%">
+                <p style="background-color: white;margin: 6px;font-size: 11px;color: #a1a3a5;font-family:arial,helvetica,sans-serif;padding: 6px;">
+                  You are receiving this communication because you expressed interest in receiving information, exclusive offers and products from a Johnson & Johnson Inc owned website.
+                  <br>
+                  <br>
+                  <a href="http://www.healthyessentials.ca/privacy" target="_blank" style="color: #777777;font-size: 11px;text-decoration: underline;font-family:arial,helvetica,sans-serif;">Privacy Policy</a>
+                </p>
+              </td>
+              <td style="width: 1%">
+              </td>
+              <td style="width: 40%">
+                <p style="background-color: white;margin: 6px;font-size: 11px;color: #a1a3a5;font-family:arial,helvetica,sans-serif;padding: 6px;">
+                  If you no longer wish to receive these communications, please <%= link_to 'click unsubscribe', unsubscribe_url(proxy_user.signature), target: '_blank', style: 'color: #777777; font-size: 11px; text-decoration: underline; font-family: arial, helvetica, sans-serif' %> or write to us at:
+                  <br>
+                  <br>
+                  HEALTHY ESSENTIALS&reg; Canadian Information Centre, 199 Grandview Road, Skillman, NJ, 08558-9418, U.S.A. or phone us at 1-866-296-9135.
+                </p>
+              </td>
+            </tr>
+          </table>
+
+      <table border="0" cellpadding="0" cellspacing="0" width="600px" style="margin-top: 15px; margin-bottom: 65px">
+        <tr>
+          <td style="color: #a1a3a5; font-family:arial,helvetica,sans-serif;font-size:11px;">
+            <p style="text-align: center;width: 330px;margin: 0px auto;">The HEALTHY ESSENTIALS program provides information, solutions and exclusive offers.</p>
+            <p style="margin-top: 20px;">* Trademark of Johnson & Johnson.</p>
+            <p style="margin-top: 10px;">* Well.ca is a registered trademark owned by Well.ca Inc. The Well.ca ecommerce services are subject to the terms and conditions of use of Well.ca Inc. and can be reviewed <a href="https://well.ca/terms.html" target="_blank" style="color: #777777; text-decoration: underline;">here</a>. Johnson & Johnson Inc. (JJI) is providing information from your product purchase request to the Well.ca site for the purchase of JJI products and is not affiliated with Well.ca Inc.; nor is JJI responsible for the sale delivery of JJI products that you select for purchase from the Well.ca site.</p>
+            <p style="margin-top: 10px;">Some of the products mentioned above may not be right for you. Always read and follow the label.</p>
+            <p style="margin-top: 10px;">Please do not reply this email. If you have any comments, question, or general feedback, please contact our Customer Care Center by <a href="https://www.ccc-consumercarecenter.com/universal-contact-us/ca-healthyessentials-ucu/www.healthyessentials.ca/" target="_blank" style="color: #777777; text-decoration: underline;">clicking here</a> to ensure we receive your communication.</p>
+            <p style="margin-top: 10px;">Please Note: The HEALTHY ESSENTIALS&reg; program provides access to a network of Canadian health and wellness experts. Some of the links in this communication may take you to websites to which our privacy policy does not apply. You are solely responsible for your interactions with those websites. We encourage you to read the privacy policy of every website you visit.</p>
+            <p style="margin-top: 10px;">* Well.ca is a registered trademark owned by Well.ca Inc. The Well.ca ecommerce services are subject to the terms and conditions of use of Well.ca Inc. and can be reviewed here. Johnson & Johnson Inc. (JJI) is providing information from your product purchase request to the Well.ca site for the purchase of JJI products and is not affiliated with Well.ca Inc,; nor is JJI responsible for the sale delivery of JJI products that you select for purchase from the Well.ca site.</p>
+
+            <p style="margin: 0px;">Well.ca Pharmacy Accreditation as of November 11th 2015</p>
+            <p style="margin: 0px;">OPC Certificate Accreditation #304222</p>
+            <p style="margin: 0px;">Your Pharmacist is Philip Rosenberg</p>
+            <p style="margin: 0px;">Central Fill Solutions Inc. 346 Millway Ave. Vaughan ON L4K 3W1</p>
+            <p style="margin: 0px;">Call Well.ca Toll Free. 1-866-640-3800</p>
+
+            <p style="margin-top: 20px;">This communication is intended for visitors from Canada only and is subject to the terms of our <a href="http://www.healthyessentials.ca/legal" target="_blank" style="color: #777777; text-decoration: underline;">Legal Notice</a> and <a href="http://www.healthyessentials.ca/privacy" target="_blank" style="color: #777777; text-decoration: underline;">Privacy Policy</a>. </p>
+            <p style="margin-top: 20px;">&copy; Johnson & Johnson Inc. 2015</p>
+
+          </td>
+        </tr>
+      </table>
+    </table>
+
+    <!--*** End of: Table used to center email ***-->
+</body>
+</html>
