@@ -94,6 +94,6 @@ class OrderMailer < ApplicationMailer
     partner_path = bot_class.to_s.deconstantize.underscore
     theme = order.theme.underscore
 
-    "#{partner_path}/templates/#{theme}/order_error_#{error_code.underscore}.html.erb"
+    "#{partner_path}/templates/#{theme}/order_error_#{error_code}.html.erb"
   end
 end
