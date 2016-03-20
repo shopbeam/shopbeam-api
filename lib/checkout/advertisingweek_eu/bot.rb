@@ -143,7 +143,7 @@ module Checkout
         # Wait for Braintree to process payment
         iframe.element(class: 'loader').wait_while_present
 
-        if iframe.elements(class: 'invalid').any?
+        if iframe.present? && iframe.elements(class: 'invalid').any?
           raise InvalidBillingInfoError.new(browser.url, 'Invalid credit card.')
         end
 
