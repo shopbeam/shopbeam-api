@@ -3,13 +3,9 @@ module API
     class Root < Grape::API
       version 'v2', using: :path, vendor: 'shopbeam'
 
-      # Temporary disable, so we can use spock for now
-      # enable for tests only
-      # if Rails.env.test?
-        mount API::V2::Products
-        mount API::V2::PartnerDetails
-        # mount API::V2::Orders
-      # end
+      mount API::V2::Products
+      mount API::V2::PartnerDetails
+      mount API::V2::Orders
 
       helpers do
         params :consumer do

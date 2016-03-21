@@ -5,4 +5,5 @@ class User < ActiveRecord::Base
 
   alias_attribute :first_name, :firstName
   alias_attribute :last_name, :lastName
+  alias_attribute :api_key, :apiKey
 end

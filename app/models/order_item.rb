@@ -4,6 +4,7 @@ class OrderItem < ActiveRecord::Base
   self.table_name = 'OrderItem'
 
   belongs_to :variant, foreign_key: 'VariantId'
+  has_one :product, through: :variant
 
   delegate :source_url, :color, :size, to: :variant
 

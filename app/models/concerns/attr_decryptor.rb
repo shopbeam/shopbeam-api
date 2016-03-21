@@ -13,9 +13,14 @@ module AttrDecryptor
           value = read_attribute(attribute)
 
           return nil if !value.is_a?(String) || value.empty?
-
           value = Encryptor.decrypt(value, read_attribute(salt))
           TypeCaster.cast(value, type)
+        end
+
+        define_method("#{attribute}=") do |value|
+          salted = read_attribute(salt) || write_attribute(salt, SecureRandom.base64) && read_attribute(salt)
+          encrypted = Encryptor.encrypt(value.to_s, salted)[:value]
+          write_attribute(attribute, encrypted)
         end
       end
     end
