@@ -59,10 +59,6 @@ module API
                                   UserId: user_record.id, PaymentId: payment_record.id, shareWithPublisher: declared_params[:shareWithPublisher],
                                   apiKey: declared_params[:apiKey], sourceUrl: declared_params[:sourceUrl], theme: declared_params[:theme],
                                   createdAt: Time.now, updatedAt: Time.now)
-            # query = PartnerDetail.joins(:partner)
-            # handle_param(:partner)  { |ids| query.where!(PartnerId: ids) }
-            # handle_param(:state)    { |ids| query.where!(state: ids) }
-            # present query.all, with: API::V2::Entities::PartnerDetail::Entity
             partners = []
             item_records = []
             handle_param(:items) do |items|
