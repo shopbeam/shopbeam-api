@@ -11,7 +11,7 @@ class Payment < ActiveRecord::Base
 
   alias_attribute :expiration_month, :expirationMonth
   alias_attribute :expiration_year, :expirationYear
-
+  
   def brand
     case number
     when /^4[0-9]{12}(?:[0-9]{3})?$/           then :visa
