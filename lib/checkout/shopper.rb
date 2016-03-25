@@ -7,8 +7,6 @@ module Checkout
       session = Session.new(order)
 
       order.customer = customer
-      session.customer_password = customer.try(:[], 'password')
-
       order.process!
 
       order.order_items.group_by(&:bot).each do |bot, items|

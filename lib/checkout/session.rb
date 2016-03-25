@@ -1,7 +1,5 @@
 module Checkout
   class Session
-    attr_accessor :customer_password
-
     delegate :id,
              :user,
              :customer_first_name,
@@ -10,6 +8,7 @@ module Checkout
              :customer_job_title,
              :customer_mobile_phone,
              :customer_email,
+             :customer_password,
              :save_reference!,
              to: :order
 

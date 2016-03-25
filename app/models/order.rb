@@ -11,6 +11,8 @@ class Order < ActiveRecord::Base
                  :customer_mobile_phone,
                  :customer_email
 
+  attr_accessor :customer_password
+
   belongs_to :user, foreign_key: 'UserId'
   belongs_to :shipping_address, foreign_key: 'ShippingAddressId'
   belongs_to :billing_address, foreign_key: 'BillingAddressId'
@@ -83,7 +85,8 @@ class Order < ActiveRecord::Base
         customer_company:      data['company'],
         customer_job_title:    data['jobTitle'],
         customer_mobile_phone: data['mobilePhone'],
-        customer_email:        data['email']
+        customer_email:        data['email'],
+        customer_password:     Encryptor.decrypt(data['password'], data['passwordSalt'])
       )
     end
   end
