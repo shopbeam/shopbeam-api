@@ -10,12 +10,8 @@ module Checkout
         super do
           browser.goto BASE_URL
 
-          if new_user?
-            sign_up
-          else
-            sign_in
-            empty_cart
-          end
+          sign_up_or_sign_in
+          empty_cart
 
           items.each do |item|
             add_to_cart(item)
@@ -31,7 +27,7 @@ module Checkout
 
       private
 
-      def sign_up
+      def sign_up_or_sign_in
         browser.goto REGISTRATION_URL
         browser.text_field(name: 'register[firstname]').set session.customer_first_name
         browser.text_field(name: 'register[lastname]').set session.customer_last_name
@@ -40,8 +36,6 @@ module Checkout
         browser.select(name: 'register[user_job_role_id]').select 'Other'
         browser.select(name: 'register[user_company_activity_id]').select 'Other'
         browser.text_field(name: 'register[mobile_phone]').set session.customer_mobile_phone
-        browser.checkbox(name: 'register[awconnect]').clear
-        browser.checkbox(name: 'register[sms_opt_out]').clear
         browser.text_field(name: 'register[email]').set session.customer_email
         browser.text_field(name: 'register[web_password]').set session.customer_password
         browser.text_field(name: 'register[web_passwordconfirm]').set session.customer_password
@@ -51,13 +45,11 @@ module Checkout
 
         on_error do |message|
           if message =~ /Email already in use/i
-            raise AccountExistsError.new(browser.url, session.customer_email)
+            sign_in
           else
             raise InvalidAccountError.new(browser.url, message)
           end
         end
-
-        proxy_user.save!
       end
 
       def sign_in
@@ -67,7 +59,7 @@ module Checkout
         browser.click_on browser.link(class: 'login-button')
 
         on_error do |message|
-          raise InvalidAccountError.new(browser.url, message)
+          raise InvalidCredentialsError.new(browser.url, message)
         end
       end
 
@@ -177,7 +169,7 @@ module Checkout
         scroll_to_bottom
         iframe = payment_iframe
         iframe.text_field(name: 'credit-card-number').set session.cc[:number]
-        iframe.text_field(name: 'expiration').set "#{session.cc[:expiration_month]}#{session.cc[:expiration_year].to_s.last(2)}"
+        iframe.text_field(name: 'expiration').set "#{session.cc[:expiration_month].to_s.rjust(2, '0')}#{session.cc[:expiration_year].to_s.last(2)}"
         iframe.text_field(name: 'cvv').set session.cc[:cvv]
         browser.checkbox(name: 'cc[confirm]').set
       end

@@ -5,4 +5,8 @@ class User < ActiveRecord::Base
 
   alias_attribute :first_name, :firstName
   alias_attribute :last_name, :lastName
+
+  def proxy_user(partner_type)
+    ProxyUser.find_by(user: self, partner_type: partner_type)
+  end
 end

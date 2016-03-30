@@ -12,12 +12,6 @@ module Checkout
     end
   end
 
-  class AccountExistsError < OrderError
-    def initialize(url, email)
-      super url, "An account with the email address '#{email}' already exists."
-    end
-  end
-
   class VariantNotAvailableError < OrderError
     def initialize(url, item)
       super url, "Requested variant (color: #{item.color}, size: #{item.size}) not available."
@@ -39,6 +33,7 @@ module Checkout
   end
 
   class PartnerNotSupportedError < OrderError; end
+  class InvalidCredentialsError < OrderError; end
   class InvalidAccountError < OrderError; end
   class InvalidAddressError < OrderError; end
   class InvalidShippingInfoError < OrderError; end
