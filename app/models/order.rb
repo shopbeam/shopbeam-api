@@ -71,10 +71,6 @@ class Order < ActiveRecord::Base
     end
   end
 
-  def proxy_user(partner_type)
-    ProxyUser.find_by(user: user, partner_type: partner_type)
-  end
-
   def customer=(data)
     if data.is_a?(Hash)
       assign_attributes(

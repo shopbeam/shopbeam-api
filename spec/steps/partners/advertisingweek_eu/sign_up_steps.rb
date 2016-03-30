@@ -31,14 +31,6 @@ steps_for :advertisingweek_eu_sign_up do
     @browser.text_field(name: 'register[mobile_phone]').set '1234567890'
   end
 
-  step 'I do not participate in the networking program' do
-    @browser.checkbox(name: 'register[awconnect]').clear
-  end
-
-  step 'I do not receive updates' do
-    @browser.checkbox(name: 'register[sms_opt_out]').clear
-  end
-
   step 'I fill email address' do
     @browser.text_field(name: 'register[email]').set 'john-doe-5e4c@orders.shopbeam.com'
   end

@@ -34,13 +34,11 @@ class OrderMailer < ApplicationMailer
   def terminated_with_error(order, error_code, error_message)
     bot_class = Checkout::Bots.lookup!(error_message)
 
-    @proxy_user = order.proxy_user(bot_class.partner_type)
-
-    return unless @proxy_user
-
+    @user = order.user
+    @proxy_user = @user.proxy_user(bot_class.partner_type)
     @error_title = error_title(error_code)
 
-    mail to: @proxy_user.user_email,
+    mail to: @user.email,
          bcc: 'support@shopbeam.com',
          subject: @error_title do |format|
       format.html { render template: error_template(order, bot_class, error_code), layout: false }
@@ -73,10 +71,7 @@ class OrderMailer < ApplicationMailer
 
   def error_title(error_code)
     case error_code
-    when :account_exists
-      # TODO: specify it per partner (in locales?)
-      'AWEurope Conference Registration - Existing AW Account Alert'
-    when :invalid_account
+    when :invalid_credentials
       # TODO: specify it per partner (in locales?)
       'AWEurope Conference Registration - Existing AW Account Alert'
     when :item_out_of_stock

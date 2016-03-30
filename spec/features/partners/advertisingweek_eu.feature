@@ -14,8 +14,6 @@ Feature: Purchase on advertisingweek.eu
      And I select job role
      And I select company activity
      And I fill mobile phone
-     And I do not participate in the networking program
-     And I do not receive updates
      And I fill email address
      And I fill password
      And I fill password confirmation

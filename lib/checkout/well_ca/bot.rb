@@ -73,7 +73,7 @@ module Checkout
         browser.click_on browser.button(text: /sign in/i)
 
         on_error(LOGIN_URL) do |message|
-          raise InvalidAccountError.new(browser.url, message)
+          raise InvalidCredentialsError.new(browser.url, message)
         end
       end
 
