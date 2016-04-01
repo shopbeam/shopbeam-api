@@ -1,5 +1,6 @@
 module Checkout
   class Notifier
+    # TODO: pass order.id to mailers here and below
     def order_completed(order)
       OrderMailer.completed(order).deliver_now
     end
@@ -13,7 +14,9 @@ module Checkout
     end
 
     def order_terminated(order, exception)
+      # TODO: deliver below mails async
       OrderMailer.terminated(order, exception).deliver_now
+      UserMailer.order_error(order, exception).deliver_now
     end
 
     def order_aborted(order, exception)
