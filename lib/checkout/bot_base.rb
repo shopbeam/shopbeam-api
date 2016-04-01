@@ -12,7 +12,12 @@ module Checkout
       browser.open do
         begin
           yield
-        rescue OrderError => exception
+        rescue StandardError => exception
+          unless exception.kind_of?(OrderError)
+            # Decorate standard error
+            exception = OrderError.new(browser.url, exception.message)
+          end
+
           filename = "#{session.id}_#{Time.now.utc.strftime('%Y%m%d%H%M%S')}"
           screenshot = Rails.root.join('tmp', "#{filename}.png")
           page_source = Rails.root.join('tmp', "#{filename}.html")

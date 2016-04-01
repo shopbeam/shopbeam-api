@@ -2,7 +2,7 @@ module Checkout
   module Bots
     def self.lookup!(url)
       case url
-      when %r(https://advertisingweek.eu)
+      when %r(https?://advertisingweek.eu)
         AdvertisingweekEu::Bot
       # TODO: Temporarily disable Lacoste partner
       # when %r(https?://www.lacoste.com/us)
