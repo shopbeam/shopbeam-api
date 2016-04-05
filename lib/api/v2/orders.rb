@@ -61,6 +61,7 @@ module API
                                   createdAt: Time.now, updatedAt: Time.now)
             partners = []
             item_records = []
+            order_total = 0
             handle_param(:items) do |items|
               items.each do |item|
                 record = OrderItem.create!(OrderId: order.id, VariantId: item[:variantId], quantity: item[:quantity], listPriceCents: item[:listPriceCents],
@@ -68,11 +69,17 @@ module API
                                   widgetUuid: item[:widgetUuid], createdAt: Time.now, updatedAt: Time.now, commissionCents: 0)
                 partners << record.product.partner.first.name
                 item_records << record
+                order_total += record.sale_price_cents || record.list_price_cents
               end
             end
+            order.update!(orderTotalCents: order_total)
             CheckoutJob.perform_async(order.id)
             OrderMailer.received(order: order, user: user_record, partners: partners.uniq.join(", "), source_url: declared_params[:sourceUrl],
                                  items: item_records, shipping_address: shipping_addr, billing_address: billing_addr).deliver_now
+            partner_user = User.where(apiKey: item_records.first.apiKey, status: 1).first
+            OrderMailer.publisher(order: order, user: user_record, partners: partners.uniq.join(", "), source_url: declared_params[:sourceUrl],
+                                 items: item_records, shipping_address: shipping_addr, billing_address: billing_addr,
+                                 partner: partner_user).deliver_now
           end
         end
       end
