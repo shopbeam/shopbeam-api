@@ -30,7 +30,7 @@ task create_aw_pass: :environment do
       status: 1,
       sourceUrl: 'https://advertisingweek.eu/register/',
       sku: :fake,
-      listPriceCents: 41900,
+      listPriceCents: 44900,
       createdAt: Time.now,
       updatedAt: Time.now
     ).find_or_create_by!(product: product, size: 'Delegate')

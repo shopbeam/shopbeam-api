@@ -23,7 +23,7 @@ Feature: Purchase on advertisingweek.eu
   Scenario: Purchase passes
     Given there are the following passes:
       | Quantity | Price cents | Size     | Source URL |
-      | 1        | 41900       | Delegate | https://advertisingweek.eu/register/ |
+      | 1        | 44900       | Delegate | https://advertisingweek.eu/register/ |
      And I am registered user
     When I go to landing page
      And I sign in
