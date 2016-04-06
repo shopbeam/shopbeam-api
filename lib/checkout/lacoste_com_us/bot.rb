@@ -46,19 +46,8 @@ module Checkout
       end
 
       def sign_up_as_guest
-        sign_in(proxy_user.user_email)
-
-        if browser.element(id: 'js-login-already-exists').present?
-          proxy_user.save! if new_user?
-          sign_in(proxy_user.email)
-        end
-
-        browser.radio(name: 'salutation', value: 'MR').set
-        browser.text_field(name: 'firstname').set proxy_user.first_name
-        browser.text_field(name: 'lastname').set proxy_user.last_name
-        browser.text_field(name: 'email2').set browser.text_field(name: 'email1').value
-        browser.checkbox(name: 'receivenews').clear
-        browser.click_on browser.button(id: 'js-checkout-register-guest')
+        browser.text_field(id: 'js-login-checkout-new-user-email').set proxy_user.user_email
+        browser.click_on browser.button(id: 'js-express-order')
 
         on_error do |message|
           raise InvalidAccountError.new(browser.url, message)
@@ -142,11 +131,6 @@ module Checkout
         end
 
         browser.wait_for_ajax { sizes.select_value(size.value) }
-      end
-
-      def sign_in(email)
-        browser.text_field(name: 'email').set email
-        browser.click_on browser.button(id: 'js-validate-email')
       end
 
       def fill_shipping_address
