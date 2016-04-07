@@ -10,6 +10,7 @@ class OrderItem < ActiveRecord::Base
 
   alias_attribute :list_price_cents, :listPriceCents
   alias_attribute :sale_price_cents, :salePriceCents
+  alias_attribute :list_price_cents, :listPriceCents
 
   enum status: {
     pending: 9,
