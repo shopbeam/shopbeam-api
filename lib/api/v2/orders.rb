@@ -73,7 +73,11 @@ module API
               end
             end
             order.update!(orderTotalCents: order_total)
-            CheckoutJob.perform_async(order.id)
+            customer_data = {
+              first_name: user[:firstName], last_name: user[:lastName], company: '', jobTitle: '',
+              email: user[:email], mobilePhone: billing[:phoneNumber], password: user[:password]
+            }
+            CheckoutJob.perform_async(order.id, customer_data)
             OrderMailer.received(order: order, user: user_record, partners: partners.uniq.join(", "), source_url: declared_params[:sourceUrl],
                                  items: item_records, shipping_address: shipping_addr, billing_address: billing_addr).deliver_now
             partner_user = User.where(apiKey: item_records.first.apiKey, status: 1).first
