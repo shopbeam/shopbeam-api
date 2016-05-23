@@ -33,7 +33,7 @@ module Crawler
         rows = CSV.read(Rails.root.join('lib', 'assets', 'crawler_realtime.csv'))
         rows.shift #skip header
         rows.map do |provider, url|
-          {provider: provider, url: url}
+          {provider_name: provider, product_url: url}
         end
       end
 
