@@ -1,4 +1,5 @@
 class CrawlerJob < Batch::Job
+  # TODO: Pass provider name as well to support lookup by name
   def run(product_url)
     @product_url = product_url
     provider = Crawler::Provider.lookup(url: product_url)

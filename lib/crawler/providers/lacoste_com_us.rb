@@ -63,7 +63,7 @@ module Crawler
           else
             color_urls.each do |color_url|
               color_page = self.class.get(color_url)
-              images = color_page.css("[itemprop='image'] [itemprop='image']")
+              images = color_page.css("[itemprop='image']")
               color = color_page.css("input[name='selectedColor']")
               colors << { color: color, images: images, page: color_page }
             end
@@ -135,7 +135,7 @@ module Crawler
 
       def format_images(images)
         images.map do |img|
-          url = img['content'] || img['data-src']
+          url = img['content'] || img['src'] || img['data-src']
           ERB::Util.html_escape(url)
         end
       end
