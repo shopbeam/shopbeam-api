@@ -137,7 +137,7 @@ module Crawler
         images.map do |img|
           url = img['content'] || img['src'] || img['data-src']
           ERB::Util.html_escape(url)
-        end
+        end.first(7) # TODO: Extract images max count
       end
     end
   end
