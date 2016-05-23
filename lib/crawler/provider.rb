@@ -15,10 +15,11 @@ module Crawler
 
       def lookup_by_url(url)
         case url
+        # TODO: Extract URL patterns into constants
+        when %r((https?://www.lacoste.com/us)|(http://click.linksynergy.com(.*?)www.lacoste.com))
+          Crawler::Providers::LacosteComUs
         when %r(https?://well.ca)
           Crawler::Providers::WellCa
-        when %r(https?://www.lacoste.com)
-          Crawler::Providers::LacosteComUs
         else
           raise ProviderNotSupportedError.new("Crawler for site '#{url}' is not supported.")
         end
