@@ -4,10 +4,10 @@ module Crawler
 
     class << self
       def lookup(url: nil, name: nil)
-        if url
-          lookup_by_url(url)
-        elsif name
+        if name
           lookup_by_name(name)
+        elsif url
+          lookup_by_url(url)
         else
           raise ArgumentError.new("specify url or name")
         end

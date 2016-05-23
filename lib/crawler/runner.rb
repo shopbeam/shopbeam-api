@@ -6,8 +6,8 @@ module Crawler
         batch = Batch.new("hourly")
         storage = Crawler::RedisStorage.new(batch.batch_id)
         batch.jobs do
-          product_list.each do |url|
-            CrawlerJob.perform_async(url)
+          product_list.each do |product_hash|
+            CrawlerJob.perform_async(product_hash)
           end
           brands_list do |brand, provider|
             CrawlerBrandJob.perform_async(brand, provider)
@@ -32,9 +32,7 @@ module Crawler
       def product_list
         rows = CSV.read(Rails.root.join('lib', 'assets', 'crawler_realtime.csv'))
         rows.shift #skip header
-        rows.map do |provider, url|
-          url
-        end
+        rows
       end
 
       def brands_list

@@ -1,8 +1,9 @@
 class CrawlerJob < Batch::Job
-  def run(product_url)
-    @product_url = product_url
-    provider = Crawler::Provider.lookup(url: product_url)
-    result = provider.new(product_url).scrape
+  def run(product_hash)
+    @product_url = product_hash[:url]
+    @product_name = product_hash[:name]
+    provider = Crawler::Provider.lookup(name: @product_name)
+    result = provider.new(product_hash).scrape
     Crawler::RedisStorage.new(@batch_id).push(@jid, result)
   end
 
