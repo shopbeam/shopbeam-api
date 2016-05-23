@@ -30,6 +30,8 @@ module Crawler
           Crawler::Providers::WellCa
         when "target_com"
           Crawler::Providers::TargetCom
+          when "lacoste_com_us"
+            Crawler::Providers::LacosteComUs
         else
           raise ProviderNotSupportedError.new("Crawler for provider '#{name}' is not supported.")
         end

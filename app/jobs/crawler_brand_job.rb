@@ -8,7 +8,7 @@ class CrawlerBrandJob < Batch::Job
       products = provider.scrape_brand(brand)
       add_to_batch do
         products.each do |product_url|
-          CrawlerJob.perform_async(product_url)
+          CrawlerJob.perform_async(provider: provider_name, url: product_url)
         end
       end
     end

@@ -32,7 +32,9 @@ module Crawler
       def product_list
         rows = CSV.read(Rails.root.join('lib', 'assets', 'crawler_realtime.csv'))
         rows.shift #skip header
-        rows
+        rows.map do |provider, url|
+          {provider: provider, url: url}
+        end
       end
 
       def brands_list
