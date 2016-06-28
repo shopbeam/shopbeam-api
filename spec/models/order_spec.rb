@@ -39,18 +39,26 @@ describe Order do
 
       it { is_expected.to eq('aborted') }
     end
+
+    context 'for code 4' do
+      let(:code) { 4 }
+
+      it { is_expected.to eq('test') }
+    end
   end
 
   describe '.uncompleted' do
     let(:pending_order) { create(:order, status: 'pending') }
     let(:aborted_order) { create(:order, status: 'aborted') }
     let(:completed_order) { create(:order, status: 'completed') }
+    let(:test_order) { create(:order, status: 'test') }
 
     subject { described_class.uncompleted }
 
     it { is_expected.to include(pending_order) }
     it { is_expected.to include(aborted_order) }
     it { is_expected.not_to include(completed_order) }
+    it { is_expected.not_to include(test_order) }
   end
 
   describe 'events' do

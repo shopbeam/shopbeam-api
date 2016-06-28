@@ -1,0 +1,79 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "number"
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "sku": {
+      "type": "string"
+    },
+    "minListPrice": {
+      "type": "number",
+      "minimum": 0,
+      "exclusiveMinimum": true
+    },
+    "maxListPrice": {
+      "type": "number",
+      "minimum": 0,
+      "exclusiveMinimum": true
+    },
+    "minPrice": {
+      "type": "number",
+      "minimum": 0,
+      "exclusiveMinimum": true
+    },
+    "maxPrice": {
+      "type": "number",
+      "minimum": 0,
+      "exclusiveMinimum": true
+    },
+    "salePercent": {
+      "type": ["number", "null"],
+      "minimum": 0,
+      "exclusiveMinimum": true
+    },
+    "partnerId": {
+      "type": "number"
+    },
+    "partnerCommission": {
+      "type": "number"
+    },
+    "partnerName": {
+      "type": "string"
+    },
+    "partnerLinkshareId": {
+      "type": "string"
+    },
+    "brandId": {
+      "type": "number"
+    },
+    "brandName": {
+      "type": "string"
+    },
+    "colorSubstitute": {
+      "type": "string"
+    },
+    "createdAt": {
+      "type": "string"
+    },
+    "categories": {
+      "type": "array",
+      "items": {
+        "$ref": "category.json"
+      }
+    },
+    "variants": {
+      "type": "array",
+      "items": {
+        "$ref": "variant.json"
+      }
+    }
+  },
+  "required": ["id", "name", "description", "sku", "minListPrice", "maxListPrice", "minPrice", "maxPrice", "salePercent", "partnerId", "partnerCommission", "partnerName", "partnerLinkshareId", "brandId", "brandName", "colorSubstitute", "createdAt", "categories", "variants"]
+}

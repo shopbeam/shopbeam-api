@@ -1,0 +1,13 @@
+%td.bodytextsmall(valign="top" style="padding-right: 25px;border-collapse: collapse;font-size: 13px;line-height: 18px;color: #000000;font-family: helvetica, times new roman, sans-serif;")
+  %p(style="color: #000;font-size: 13px;font-family: helvetica, times new roman, sans-serif;margin: 0px;padding: 0px;mso-table-lspace: 0;mso-table-rspace: 0;")
+    %strong
+      = address.class.name.titleize
+    %br
+    = address.address1
+    %br
+    - if address.address2.present?
+      = address.address2
+      %br
+    #{address.city}, #{address.state} #{address.zip}
+    %br
+    = address.phoneNumber

@@ -7,6 +7,6 @@ module API
 
     helpers API::Helpers
 
-    mount API::V1::Root
+    mount API::V2::Root
   end
 end

@@ -5,6 +5,9 @@ gem 'rails', '4.2.3'
 # Use postgresql as the database for Active Record
 gem 'pg'
 
+# Full-text search
+gem 'pg_search'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 
@@ -78,14 +81,19 @@ gem 'countries'
 gem 'money'
 gem 'monetize'
 
+# Decorators
+gem 'draper'
+
 # SFTP client
 gem 'net-sftp'
 
 # Heroku API client
 gem 'heroku-api'
 
-#slim template engine
+# Template engines
+# TODO: leave only one
 gem 'slim'
+gem 'haml'
 
 # Pretty printer for Ruby objects
 gem 'awesome_print'
@@ -94,7 +102,7 @@ gem 'awesome_print'
 gem 'aws-sdk', '~> 2'
 
 # API
-gem 'grape', git: 'https://github.com/ruby-grape/grape.git'
+gem 'grape'
 gem 'grape-entity'
 gem 'grape-route-helpers'
 
@@ -140,4 +148,5 @@ group :test do
   gem 'rspec-sidekiq'
   gem 'fakeredis', require: 'fakeredis/rspec'
   gem 'webmock'
+  gem 'json-schema'
 end

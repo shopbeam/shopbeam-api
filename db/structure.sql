@@ -2020,6 +2020,13 @@ CREATE INDEX "index_Address_on_account_id" ON "Address" USING btree (account_id)
 
 
 --
+-- Name: index_User_on_apiKey; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE UNIQUE INDEX "index_User_on_apiKey" ON "User" USING btree ("apiKey");
+
+
+--
 -- Name: index_access_tokens_on_consumer_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -2350,4 +2357,6 @@ INSERT INTO schema_migrations (version) VALUES ('20160210113019');
 INSERT INTO schema_migrations (version) VALUES ('20160304130408');
 
 INSERT INTO schema_migrations (version) VALUES ('20160310155608');
+
+INSERT INTO schema_migrations (version) VALUES ('20160815152700');
 

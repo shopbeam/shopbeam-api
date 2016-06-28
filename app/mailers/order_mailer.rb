@@ -1,55 +1,50 @@
 class OrderMailer < ApplicationMailer
-  default to: 'tech@shopbeam.com'
+  layout false
 
-  def completed(order)
-    @order = order
+  def received(order_id)
+    @order = Order.find(order_id).decorate
 
-    mail subject: "[order-manager] Shopbeam order ##{@order.id} has been successfully completed"
+    themes_to_suppress = %w(advertisingweek healthy-essentials rogaine)
+    subject = "Your Shopbeam order is being processed -- Order ##{@order.id}"
+    subject = "[#{stage.upcase}] #{subject}" unless stage.production?
+
+    if @order.theme =~ Regexp.new(themes_to_suppress.join('|'))
+      to = 'orders@shopbeam.com'
+      bcc = nil
+      subject = "[SUPPRESSED] #{subject}"
+    else
+      to = @order.user_email
+      bcc = 'orders@shopbeam.com'
+    end
+
+    prepend_theme_path(@order.theme)
+
+    mail from: 'Shopbeam Support <support@shopbeam.com>',
+         to: to,
+         bcc: bcc,
+         subject: subject
   end
 
-  def completed_with_error(order, exception)
-    @order = order
-    @exception = exception
+  def placed(order_id, user_id, order_item_ids, commission)
+    user = User.find(user_id)
+    order_items = OrderItem.find(order_item_ids)
+    publisher = Publisher.new(user: user, order_items: order_items, commission: commission)
 
-    attach_exception(exception)
+    @order = Order.find(order_id).decorate
+    @publisher = PublisherDecorator.new(publisher)
 
-    mail subject: "[order-manager] ACTION REQUIRED: Shopbeam order ##{@order.id} has been completed with error"
-  end
+    subject = "You've made a sale with Shopbeam! -- Order ##{@order.id}"
+    subject = "[#{stage.upcase}] #{subject}" unless stage.production?
 
-  def not_found(order_id)
-    @order_id = order_id
-
-    mail subject: "[order-manager] Shopbeam order ##{@order_id} not found"
-  end
-
-  def terminated(order, exception)
-    @order = order
-    @exception = exception
-
-    attach_exception(exception)
-
-    mail subject: "[order-manager] ACTION REQUIRED: Shopbeam order ##{@order.id} has been terminated"
-  end
-
-  def aborted(order, exception)
-    @order = order
-    @exception = exception
-
-    mail subject: "[order-manager] ACTION REQUIRED: Shopbeam order ##{@order.id} has been aborted"
+    mail from: 'Shopbeam Support <support@shopbeam.com>',
+         to: @publisher.email,
+         bcc: 'orders@shopbeam.com',
+         subject: subject
   end
 
   private
 
-  def attach_exception(exception)
-    attach_file(exception.try(:screenshot))
-    attach_file(exception.try(:page_source))
-  end
-
-  def attach_file(path)
-    return unless path
-
-    filename = Pathname.new(path).basename.to_s
-    attachments[filename] = File.read(path)
-    File.unlink(path)
+  def stage
+    Rails.configuration.x.stage
   end
 end

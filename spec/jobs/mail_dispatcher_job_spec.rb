@@ -7,7 +7,7 @@ describe MailDispatcherJob do
     it 'calls the target dispatcher' do
       dispatcher = spy('dispatcher')
 
-      expect(Checkout::MailDispatchers)
+      allow(Checkout::MailDispatchers)
         .to receive(:lookup).with('sender@example.com')
         .and_return(dispatcher)
 
@@ -21,7 +21,7 @@ describe MailDispatcherJob do
     it 'does not call a dispatcher' do
       dispatcher = spy('dispatcher')
 
-      expect(Checkout::MailDispatchers)
+      allow(Checkout::MailDispatchers)
         .to receive(:lookup).with('sender@example.com')
         .and_return(nil)
 

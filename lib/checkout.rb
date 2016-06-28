@@ -1,5 +1,5 @@
 module Checkout
-  class OrderError < StandardError
+  class CheckoutError < StandardError
     attr_accessor :screenshot, :page_source
 
     def initialize(url, message)
@@ -12,19 +12,19 @@ module Checkout
     end
   end
 
-  class VariantNotAvailableError < OrderError
+  class VariantNotAvailableError < CheckoutError
     def initialize(url, item)
       super url, "Requested variant (color: #{item.color}, size: #{item.size}) not available."
     end
   end
 
-  class ItemOutOfStockError < OrderError
+  class ItemOutOfStockError < CheckoutError
     def initialize(url:, requested_qty:, actual_qty:)
       super url, "#{requested_qty} requested but #{actual_qty} available."
     end
   end
 
-  class ItemPriceMismatchError < OrderError
+  class ItemPriceMismatchError < CheckoutError
     include ActionView::Helpers::NumberHelper
 
     def initialize(url:, requested_price_cents:, actual_price_cents:)
@@ -32,14 +32,14 @@ module Checkout
     end
   end
 
-  class PartnerNotSupportedError < OrderError; end
-  class InvalidCredentialsError < OrderError; end
-  class InvalidAccountError < OrderError; end
-  class InvalidAddressError < OrderError; end
-  class InvalidShippingInfoError < OrderError; end
-  class InvalidBillingInfoError < OrderError; end
-  class ConfirmationError < OrderError; end
-  class InvalidOrderNumberError < OrderError; end
+  class PartnerNotSupportedError < CheckoutError; end
+  class InvalidCredentialsError < CheckoutError; end
+  class InvalidAccountError < CheckoutError; end
+  class InvalidAddressError < CheckoutError; end
+  class InvalidShippingInfoError < CheckoutError; end
+  class InvalidBillingInfoError < CheckoutError; end
+  class ConfirmationError < CheckoutError; end
+  class InvalidOrderNumberError < CheckoutError; end
 
   class MailError < StandardError; end
 
