@@ -107,6 +107,9 @@ gem 'warden'
 # Use RSpec in production as well (see rake tasks)
 gem 'rspec-rails', '~> 3.0'
 
+#haml templates
+gem 'haml'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
