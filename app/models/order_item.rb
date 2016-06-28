@@ -4,11 +4,13 @@ class OrderItem < ActiveRecord::Base
   self.table_name = 'OrderItem'
 
   belongs_to :variant, foreign_key: 'VariantId'
+  has_one :product, through: :variant
 
   delegate :source_url, :color, :size, to: :variant
 
   alias_attribute :list_price_cents, :listPriceCents
   alias_attribute :sale_price_cents, :salePriceCents
+  alias_attribute :list_price_cents, :listPriceCents
 
   enum status: {
     pending: 9,

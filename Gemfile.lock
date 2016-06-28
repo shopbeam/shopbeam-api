@@ -155,6 +155,8 @@ GEM
       activesupport
       grape
       rake
+    haml (4.0.7)
+      tilt
     has_secure_token (1.0.0)
       activerecord (>= 3.0)
     hashie (3.4.3)
@@ -402,6 +404,7 @@ DEPENDENCIES
   grape!
   grape-entity
   grape-route-helpers
+  haml
   has_secure_token
   headless
   heroku-api
