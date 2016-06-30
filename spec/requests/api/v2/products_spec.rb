@@ -1,10 +1,12 @@
 require 'rails_helper'
 
-describe API::V1::Products, type: :request do
-  let(:url) { "/products" }
+describe API::V2::Products, api: :true do
+  include GrapeRouteHelpers::NamedRouteMatcher
+
+  let(:url) { v2_products_path }
   subject do
     get url
-    JSON.parse(response.body)
+    json_response
   end
 
   context "zero case" do
@@ -30,7 +32,7 @@ describe API::V1::Products, type: :request do
 
     context "parameters" do
       context "partner" do
-        let(:url) { "/products?partner=#{product1.brand.partner_id},666" }
+        let(:url) { v2_products_path(params: { partner: "#{product1.brand.partner_id},666" }) }
 
         it "returns 1 product and 1 variant for specified partners" do
           expect(subject.first['partnerId']).to eq product1.brand.partner_id
@@ -38,7 +40,7 @@ describe API::V1::Products, type: :request do
       end
 
       context "brand" do
-        let(:url) { "/products?brand=#{product2.brand_id},666" }
+        let(:url) { v2_products_path(params: { brand: "#{product2.brand_id},666" }) }
 
         it "returns 1 product 2 variants for specified brands" do
           expect(subject.first['brandId']).to eq product2.brand_id
@@ -47,7 +49,7 @@ describe API::V1::Products, type: :request do
 
       context "category" do
         let!(:product_category) { create(:product_category, product: product1) }
-        let(:url) { "/products?category=#{product_category.category_id},666" }
+        let(:url) { v2_products_path(params: { category: "#{product_category.category_id},666" }) }
 
         it "returns 1 product 1 variants for specified category" do
           expect(subject.first['categories'].first['name']).to eq product_category.category.name
@@ -55,14 +57,14 @@ describe API::V1::Products, type: :request do
       end
 
       context "color" do
-        let(:url) { "/products?color=#{variant1.color},#{variant2.color}" }
+        let(:url) { v2_products_path(params: { color: "#{variant1.color},#{variant2.color}" }) }
 
         it "returns 2 product 2 variants for specified colors" do
           expect(subject.count).to eq 2
         end
 
         context "variants of same product" do
-          let(:url) { "/products?color=#{variant3.color},#{variant2.color}" }
+          let(:url) { v2_products_path(params: { color: "#{variant3.color},#{variant2.color}" }) }
 
           it "returns 1 product 2 variants for specified colors" do
             expect(subject.count).to eq 1
@@ -72,7 +74,7 @@ describe API::V1::Products, type: :request do
       end
 
       context "size" do
-        let(:url) { "/products?size=#{variant1.size},zzz" }
+        let(:url) { v2_products_path(params: { size: "#{variant1.size},zzz" }) }
 
         it "returns 1 product 1 variants for specified category" do
           expect(subject.first['variants'].first['size']).to eq variant1.size
@@ -81,7 +83,7 @@ describe API::V1::Products, type: :request do
 
       context "minprice" do
         let(:price) { variant1.list_price_cents }
-        let(:url) { "/products?minprice=#{price}" }
+        let(:url) { v2_products_path(params: { minprice: price }) }
 
         it "returns products with higher price" do
           subject.first['variants'].each do |v|
@@ -93,7 +95,7 @@ describe API::V1::Products, type: :request do
 
       context "maxprice" do
         let(:price) { variant1.list_price_cents }
-        let(:url) { "/products?maxprice=#{price}" }
+        let(:url) { v2_products_path(params: { maxprice: price }) }
 
         it "returns products with lower price" do
           subject.first['variants'].each do |v|
