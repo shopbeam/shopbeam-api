@@ -1,10 +1,9 @@
 module API
   module V2
     module Entities
-      module Partner
-        class Entity < Grape::Entity
-          expose :id, :name
-        end
+      class Partner < Grape::Entity
+        expose :id, :name, :commission, :policyUrl
+        expose :details, using: API::V2::Entities::PartnerDetail, as: :partnerDetails
       end
     end
   end

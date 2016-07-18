@@ -5,4 +5,6 @@ class ItemCountShippingCost < ActiveRecord::Base
 
   alias_attribute :shipping_price, :shippingPrice
   alias_attribute :item_count, :itemCount
+
+  scope :active, -> { where(status: 1) }
 end

@@ -9,12 +9,12 @@ module API
 
       resources :partnerdetails do
         get '/' do
-          partner_details = PartnerDetailQuery.new(
-                              partner_id: declared_params[:partner],
-                              state: declared_params[:state]
-                            ).by_partner
+          partners = PartnerQuery.new(
+                       partner_id: declared_params[:partner],
+                       state: declared_params[:state]
+                     ).active
 
-          present partner_details, with: API::V2::Entities::PartnerDetail::Entity
+          present partners, with: API::V2::Entities::Partner
         end
       end
     end

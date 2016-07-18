@@ -36,7 +36,7 @@ module API
           handle_param(:maxprice) do |v|
             query.where!('COALESCE(NULLIF("Variant"."salePriceCents", 0), "Variant"."listPriceCents") <= ?', v)
           end
-          present query.all
+          present query.all, with: API::V2::Entities::Product
         end
       end
     end

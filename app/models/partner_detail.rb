@@ -1,11 +1,12 @@
 class PartnerDetail < ActiveRecord::Base
-  # TODO: extract entity from the model
-  include API::V2::Entities::PartnerDetail
-
   self.table_name = 'PartnerDetail'
 
   belongs_to :partner, foreign_key: :PartnerId
-  has_many :item_count_shipping_costs, foreign_key: :PartnerDetailId
+
+  with_options foreign_key: :PartnerDetailId, class_name: 'ItemCountShippingCost' do
+    has_many :shipping_items
+    has_many :active_shipping_items, -> { active }
+  end
 
   scope :active, -> { where(status: 1) }
 end
