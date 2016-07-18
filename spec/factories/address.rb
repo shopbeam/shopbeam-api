@@ -6,8 +6,8 @@ FactoryGirl.define do
     country     Faker::Address.country_code
     zip         Faker::Address.zip_code
     phoneNumber Faker::PhoneNumber.phone_number
-    createdAt   Time.now
-    updatedAt   Time.now
+    createdAt   { Time.now }
+    updatedAt   { Time.now }
 
     factory :shipping_address, class: 'ShippingAddress' do
       addressType 1

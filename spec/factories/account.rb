@@ -10,7 +10,7 @@ FactoryGirl.define do
     email         Faker::Internet.email
     password      { encrypted_password[:value] }
     password_salt { encrypted_password[:salt] }
-    created_at    Time.now
-    updated_at    Time.now
+    created_at    { Time.now }
+    updated_at    { Time.now }
   end
 end

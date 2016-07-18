@@ -1,0 +1,120 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "number"
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "sku": {
+      "type": "string"
+    },
+    "salePercent": {
+      "type": "number"
+    },
+    "createdAt": {
+      "type": "string"
+    },
+    "colorSubstitute": {
+      "type": "string"
+    },
+    "minListPrice": {
+      "type": "number",
+      "minimum": 0,
+      "exclusiveMinimum": true
+    },
+    "maxListPrice": {
+      "type": "number",
+      "minimum": 0,
+      "exclusiveMinimum": true
+    },
+    "minPrice": {
+      "type": "number",
+      "minimum": 0,
+      "exclusiveMinimum": true
+    },
+    "maxPrice": {
+      "type": "number",
+      "minimum": 0,
+      "exclusiveMinimum": true
+    },
+    "partnerId": {
+      "type": "number"
+    },
+    "partnerCommission": {
+      "type": "number"
+    },
+    "partnerName": {
+      "type": "string"
+    },
+    "partnerLinkshareId": {
+      "type": "string"
+    },
+    "brandId": {
+      "type": "number"
+    },
+    "brandName": {
+      "type": "string"
+    },
+    "categories": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "variants": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "sku": {
+            "type": "string"
+          },
+          "sourceUrl": {
+            "type": "string"
+          },
+          "color": {
+            "type": "string"
+          },
+          "colorFamily": {
+            "type": "array"
+          },
+          "size": {
+            "type": "string"
+          },
+          "listPrice": {
+            "type": "number",
+            "minimum": 0,
+            "exclusiveMinimum": true
+          },
+          "salePrice": {
+            "type": "number",
+            "minimum": 0,
+            "exclusiveMinimum": true
+          },
+          "images": {
+            "type": "array",
+            "items": {
+              "type": "string"
+             }
+          }
+        }
+      }
+    }
+  }
+}

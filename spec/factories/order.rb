@@ -8,8 +8,8 @@ FactoryGirl.define do
     status                 9
     shareWithPublisher     true
     apiKey                 'ae989f80-5125-f8c4-3e3a-87850b3d0f30'
-    createdAt              Time.now
-    updatedAt              Time.now
+    createdAt              { Time.now }
+    updatedAt              { Time.now }
 
     factory :full_order do
       user

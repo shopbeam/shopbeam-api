@@ -1,0 +1,31 @@
+{
+  "type": "object",
+  "required" : [
+    "id",
+    "name",
+    "commission",
+    "policyUrl",
+    "partnerDetails"
+  ],
+  "properties": {
+    "id": {
+      "type": "number"
+    },
+    "name": {
+      "type": "string"
+    },
+    "commission": {
+      "type": "number",
+      "minimum": 0
+    },
+    "policyUrl": {
+      "type": ["string", "null"]
+    },
+    "partnerDetails": {
+      "type": "array",
+      "items": {
+        "$ref": "partner_detail.json"
+      }
+    }
+  }
+}

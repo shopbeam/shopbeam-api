@@ -84,8 +84,10 @@ gem 'net-sftp'
 # Heroku API client
 gem 'heroku-api'
 
-#slim template engine
+# Templating engines
+# TODO: leave only one
 gem 'slim'
+gem 'haml'
 
 # Pretty printer for Ruby objects
 gem 'awesome_print'
@@ -94,7 +96,7 @@ gem 'awesome_print'
 gem 'aws-sdk', '~> 2'
 
 # API
-gem 'grape', git: 'https://github.com/ruby-grape/grape.git'
+gem 'grape'
 gem 'grape-entity'
 gem 'grape-route-helpers'
 
@@ -106,9 +108,6 @@ gem 'warden'
 
 # Use RSpec in production as well (see rake tasks)
 gem 'rspec-rails', '~> 3.0'
-
-#haml templates
-gem 'haml'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -143,4 +142,5 @@ group :test do
   gem 'rspec-sidekiq'
   gem 'fakeredis', require: 'fakeredis/rspec'
   gem 'webmock'
+  gem 'json-schema'
 end

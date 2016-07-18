@@ -1,14 +1,14 @@
 module API
   module V2
     class Products < Grape::API
-      desc 'retrive products'
+      desc 'retrieve products'
       params do
-        optional :id,       type: Array, coerce_with: Params::IntegerArray.method(:parse)
-        optional :partner,  type: Array, coerce_with: Params::IntegerArray.method(:parse)
-        optional :brand,    type: Array, coerce_with: Params::IntegerArray.method(:parse)
-        optional :category, type: Array, coerce_with: Params::IntegerArray.method(:parse)
-        optional :color,    type: Array, coerce_with: Params::StringArray.method(:parse)
-        optional :size,     type: Array, coerce_with: Params::StringArray.method(:parse)
+        optional :id,       type: Array[Integer], coerce_with: Params::IntegerList
+        optional :partner,  type: Array[Integer], coerce_with: Params::IntegerList
+        optional :brand,    type: Array[Integer], coerce_with: Params::IntegerList
+        optional :category, type: Array[Integer], coerce_with: Params::IntegerList
+        optional :color,    type: Array[String], coerce_with: Params::StringList
+        optional :size,     type: Array[String], coerce_with: Params::StringList
         optional :minprice, type: Integer
         optional :maxprice, type: Integer
         optional :limit,    type: Integer

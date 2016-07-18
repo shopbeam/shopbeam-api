@@ -1,8 +1,7 @@
 FactoryGirl.define do
   factory :variant do
+    product
     sku               { Faker::Code.ean }
-    createdAt         { Time.now }
-    updatedAt         { Time.now }
     color             { Faker::Commerce.color }
     colorSubstitute   { Faker::Commerce.color }
     size              { ['M', 'L', 'XXL'].sample }
@@ -11,6 +10,7 @@ FactoryGirl.define do
     status            1
     sourceUrl         { Faker::Internet.url }
     colorFamily       { Faker::Commerce.color }
-    product
+    createdAt         { Time.now }
+    updatedAt         { Time.now }
   end
 end

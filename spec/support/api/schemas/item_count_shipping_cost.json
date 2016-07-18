@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "required" : [
+    "itemCount",
+    "shippingPrice"
+  ],
+  "properties": {
+    "itemCount": {
+      "type": "number",
+      "minimum": 0,
+      "exclusiveMinimum": true
+    },
+    "shippingPrice": {
+      "type": "number",
+      "minimum": 0
+    }
+  }
+}

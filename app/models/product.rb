@@ -1,4 +1,5 @@
 class Product < ActiveRecord::Base
+  # TODO: extract entity from the model
   include API::V2::Entities::Product
 
   self.table_name = 'Product'

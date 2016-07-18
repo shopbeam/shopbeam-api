@@ -1,8 +1,6 @@
 require 'rails_helper'
 
 describe API::V2::Products, api: :true do
-  include GrapeRouteHelpers::NamedRouteMatcher
-
   let(:url) { v2_products_path }
   subject do
     get url
