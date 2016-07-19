@@ -32,7 +32,7 @@ module OrderManager
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
 
-    config.eager_load_paths += Dir["#{config.root}/lib/**/"]
+    config.paths.add 'lib', eager_load: true
 
     # Use the schema in SQL format because of database-dependent statements
     config.active_record.schema_format = :sql

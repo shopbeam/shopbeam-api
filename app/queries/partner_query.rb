@@ -6,9 +6,8 @@ class PartnerQuery
   end
 
   def active
-    results.eager_load(details: :active_shipping_items)
-      .merge(Partner.active)
-      .merge(PartnerDetail.active)
+    results.active
+      .eager_load(details: :shipping_items)
       .order('
         "Partner".id,
         "PartnerDetail".state,

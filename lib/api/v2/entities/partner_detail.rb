@@ -3,7 +3,7 @@ module API
     module Entities
       class PartnerDetail < Grape::Entity
         expose :state, :zip, :shippingType, :salesTax, :freeShippingAbove, :siteWideDiscount
-        expose :active_shipping_items, using: API::V2::Entities::ItemCountShippingCost, as: :shippingItems
+        expose :shipping_items, using: API::V2::Entities::ItemCountShippingCost, as: :shippingItems
       end
     end
   end
