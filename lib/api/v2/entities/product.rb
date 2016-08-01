@@ -2,48 +2,24 @@ module API
   module V2
     module Entities
       class Product < Grape::Entity
-        expose :id, :name, :description, :sku, :salePercent, :createdAt, :colorSubstitute
+        expose :id, :name, :sku, :description, :salePercent, :createdAt, :colorSubstitute
 
         expose :minListPrice do |product|
-          product.variants.minimum(:listPriceCents)
+          product.variants.map(&:listPriceCents).min
         end
 
         expose :maxListPrice do |product|
-          product.variants.maximum(:listPriceCents)
+          product.variants.map(&:listPriceCents).max
         end
 
-        expose :minPrice do |product|
-          product.min_price_cents
-        end
-
-        expose :maxPrice do |product|
-          product.max_price_cents
-        end
-
-        expose :partnerId do |product|
-          product.brand.partner_id
-        end
-
-        expose :partnerCommission do |product|
-          product.brand.partner.commission
-        end
-
-        expose :partnerName do |product|
-          product.brand.partner.name
-        end
-
-        expose :partnerLinkshareId do |product|
-          product.brand.partner.linkshare_id
-        end
-
-        expose :brandId do |product|
-          product.brand_id
-        end
-
-        expose :brandName do |product|
-          product.brand.name
-        end
-
+        expose :min_price_cents, as: :minPrice
+        expose :max_price_cents, as: :maxPrice
+        expose :partner_id, as: :partnerId
+        expose :partner_commission, as: :partnerCommission
+        expose :partner_name, as: :partnerName
+        expose :partner_linkshare_id, as: :partnerLinkshareId
+        expose :brand_id, as: :brandId
+        expose :brand_name, as: :brandName
         expose :categories, using: Category::Entity
         expose :variants, using: Variant::Entity
       end

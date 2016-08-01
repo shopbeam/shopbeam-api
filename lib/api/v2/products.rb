@@ -1,42 +1,37 @@
 module API
   module V2
     class Products < Grape::API
-      desc 'retrieve products'
-      params do
-        optional :id,       type: Array[Integer], coerce_with: Params::IntegerList
-        optional :partner,  type: Array[Integer], coerce_with: Params::IntegerList
-        optional :brand,    type: Array[Integer], coerce_with: Params::IntegerList
-        optional :category, type: Array[Integer], coerce_with: Params::IntegerList
-        optional :color,    type: Array[String], coerce_with: Params::StringList
-        optional :size,     type: Array[String], coerce_with: Params::StringList
-        optional :minprice, type: Integer
-        optional :maxprice, type: Integer
-        optional :limit,    type: Integer
-      end
       resource :products do
-        get '/' do
-          query = Product.joins(:brand, :partner, :variants).includes(:variants, :categories)
-          query.where!(Variant: {status: 1}, Partner: {status: 1}, status: 1).limit(100)
-          handle_param(:limit)    { |lim| query.limit!(lim) }
-          handle_param(:id)       { |ids| query.where!(Variant:  {id: ids}) }
-          handle_param(:partner)  { |ids| query.where!(Partner:  {id: ids}) }
-          handle_param(:brand)    { |ids| query.where!(Brand:    {id: ids}) }
-          handle_param(:category) { |ids| query.where!(Category: {id: ids}) }
-          handle_param(:color) do |c|
-            colors = c.join(',')
-            query.where!('"Variant"."color" ~~* ANY(?) OR ( ? && ("Variant"."colorFamily") )', "{#{colors}}", "{#{colors}}")
-          end
-          handle_param(:size) do |s|
-            sizes = s.join(',')
-            query.where!('"Variant"."size" ILIKE ANY(?)', "{#{sizes}}")
-          end
-          handle_param(:minprice) do |v|
-            query.where!('COALESCE(NULLIF("Variant"."salePriceCents", 0), "Variant"."listPriceCents") >= ?', v)
-          end
-          handle_param(:maxprice) do |v|
-            query.where!('COALESCE(NULLIF("Variant"."salePriceCents", 0), "Variant"."listPriceCents") <= ?', v)
-          end
-          present query.all, with: API::V2::Entities::Product
+        desc 'Retrieve products'
+        params do
+          optional :id,        type: Array[Integer], coerce_with: Params::IntegerList
+          optional :partner,   type: Array[Integer], coerce_with: Params::IntegerList
+          optional :brand,     type: Array[Integer], coerce_with: Params::IntegerList
+          optional :category,  type: Array[Integer], coerce_with: Params::IntegerList
+          optional :minprice,  type: Integer # TODO: implement custom validation: greater_than_or_equal_to: 0
+          optional :maxprice,  type: Integer # TODO: implement custom validation: greater_than_or_equal_to: 0
+          optional :sale,      type: Integer, values: 1..99
+          optional :q,         type: String
+          optional :sortby,    type: Symbol, values: [:recent, :lowtohigh, :hightolow, :relevance], default: :recent
+          optional :limit,     type: Integer, values: 1..100, default: 20
+          optional :offset,    type: Integer, default: 0 # TODO: implement custom validation: greater_than_or_equal_to: 0
+        end
+        get do
+          products = ProductQuery.call do |query|
+                       with_param(:id)       { |param| query.by_variant_id!(param) }
+                       with_param(:partner)  { |param| query.by_partner_id!(param) }
+                       with_param(:brand)    { |param| query.by_brand_id!(param) }
+                       with_param(:category) { |param| query.by_category_id!(param) }
+                       with_param(:minprice) { |param| query.by_min_price!(param) }
+                       with_param(:maxprice) { |param| query.by_max_price!(param) }
+                       with_param(:sale)     { |param| query.by_sale_percent!(param) }
+                       with_param(:q)        { |param| query.search!(param) }
+                       with_param(:sortby)   { |param| query.sort_by!(param) }
+                       with_param(:limit)    { |param| query.limit!(param) }
+                       with_param(:offset)   { |param| query.offset!(param) }
+                     end
+
+          present products, with: API::V2::Entities::Product
         end
       end
     end

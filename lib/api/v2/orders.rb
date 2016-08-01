@@ -62,7 +62,7 @@ module API
             partners = []
             item_records = []
             order_total = 0
-            handle_param(:items) do |items|
+            with_param(:items) do |items|
               items.each do |item|
                 record = OrderItem.create!(OrderId: order.id, VariantId: item[:variantId], quantity: item[:quantity], listPriceCents: item[:listPriceCents],
                                   salePriceCents: item[:salePriceCents], sourceUrl: item[:sourceUrl], apiKey: item[:apiKey],

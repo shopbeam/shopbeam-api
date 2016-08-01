@@ -4,12 +4,12 @@ FactoryGirl.define do
     sku               { Faker::Code.ean }
     color             { Faker::Commerce.color }
     colorSubstitute   { Faker::Commerce.color }
-    size              { ['M', 'L', 'XXL'].sample }
-    listPriceCents    { Faker::Number.between(100, 10000) }
-    salePriceCents    { Faker::Number.between(100, 10000) }
+    size              { %w(M L XXL).sample }
+    listPriceCents    { Faker::Number.between(200, 300) }
+    salePriceCents    { Faker::Number.between(100, 200) }
     status            1
     sourceUrl         { Faker::Internet.url }
-    colorFamily       { Faker::Commerce.color }
+    colorFamily       { [%w(red green blue).sample] }
     createdAt         { Time.now }
     updatedAt         { Time.now }
   end

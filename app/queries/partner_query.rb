@@ -1,12 +1,17 @@
 class PartnerQuery
-  def initialize(relation: Partner.all, partner_id: nil, state: nil)
-    @relation = relation
-    @partner_id = partner_id
-    @state = state
+  class << self
+    delegate :call, to: :new
   end
 
-  def active
-    results.active
+  def initialize(relation: Partner.all)
+    @relation = relation
+  end
+
+  def call
+    yield self if block_given?
+
+    relation.active
+      .joins(:details)
       .eager_load(details: :shipping_items)
       .order('
         "Partner".id,
@@ -16,14 +21,17 @@ class PartnerQuery
       ')
   end
 
+  def by_partner_id!(partner_id)
+    self.relation = relation.where(id: partner_id)
+    self
+  end
+
+  def by_state!(state)
+    self.relation = relation.joins(:details).where(PartnerDetail: { state: state })
+    self
+  end
+
   private
 
-  attr_reader :relation, :partner_id, :state
-
-  def results
-    relation.joins(:details).tap do |r|
-      r.where!(id: partner_id) if partner_id
-      r.where!(PartnerDetail: { state: state }) if state
-    end
-  end
+  attr_accessor :relation
 end

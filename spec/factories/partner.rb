@@ -7,9 +7,9 @@ FactoryGirl.define do
     createdAt   { Time.now }
     updatedAt   { Time.now }
 
-    trait :with_active_details do
+    trait :with_details do
       after(:create) do |partner|
-        create_list(:partner_detail, 2, partner: partner, status: 1)
+        create(:partner_detail, partner: partner, status: 1)
       end
     end
   end

@@ -1,5 +1,26 @@
 {
   "type": "object",
+  "required": [
+    "id",
+    "name",
+    "description",
+    "sku",
+    "minListPrice",
+    "maxListPrice",
+    "minPrice",
+    "maxPrice",
+    "salePercent",
+    "partnerId",
+    "partnerCommission",
+    "partnerName",
+    "partnerLinkshareId",
+    "brandId",
+    "brandName",
+    "colorSubstitute",
+    "createdAt",
+    "categories",
+    "variants"
+  ],
   "properties": {
     "id": {
       "type": "number"
@@ -11,15 +32,6 @@
       "type": "string"
     },
     "sku": {
-      "type": "string"
-    },
-    "salePercent": {
-      "type": "number"
-    },
-    "createdAt": {
-      "type": "string"
-    },
-    "colorSubstitute": {
       "type": "string"
     },
     "minListPrice": {
@@ -42,6 +54,9 @@
       "minimum": 0,
       "exclusiveMinimum": true
     },
+    "salePercent": {
+      "type": "number"
+    },
     "partnerId": {
       "type": "number"
     },
@@ -60,60 +75,22 @@
     "brandName": {
       "type": "string"
     },
+    "colorSubstitute": {
+      "type": "string"
+    },
+    "createdAt": {
+      "type": "string"
+    },
     "categories": {
       "type": "array",
       "items": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "number"
-          },
-          "name": {
-            "type": "string"
-          }
-        }
+        "$ref": "category.json"
       }
     },
     "variants": {
       "type": "array",
       "items": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "number"
-          },
-          "sku": {
-            "type": "string"
-          },
-          "sourceUrl": {
-            "type": "string"
-          },
-          "color": {
-            "type": "string"
-          },
-          "colorFamily": {
-            "type": "array"
-          },
-          "size": {
-            "type": "string"
-          },
-          "listPrice": {
-            "type": "number",
-            "minimum": 0,
-            "exclusiveMinimum": true
-          },
-          "salePrice": {
-            "type": "number",
-            "minimum": 0,
-            "exclusiveMinimum": true
-          },
-          "images": {
-            "type": "array",
-            "items": {
-              "type": "string"
-             }
-          }
-        }
+        "$ref": "variant.json"
       }
     }
   }

@@ -1,0 +1,53 @@
+{
+  "type": "object",
+  "required": [
+    "id",
+    "sku",
+    "sourceUrl",
+    "color",
+    "colorFamily",
+    "size",
+    "listPrice",
+    "salePrice",
+    "images"
+  ],
+  "properties": {
+    "id": {
+      "type": "number"
+    },
+    "sku": {
+      "type": "string"
+    },
+    "sourceUrl": {
+      "type": "string"
+    },
+    "color": {
+      "type": "string"
+    },
+    "colorFamily": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "size": {
+      "type": "string"
+    },
+    "listPrice": {
+      "type": "number",
+      "minimum": 0,
+      "exclusiveMinimum": true
+    },
+    "salePrice": {
+      "type": "number",
+      "minimum": 0,
+      "exclusiveMinimum": true
+    },
+    "images": {
+      "type": "array",
+      "items": {
+        "$ref": "variant_img.json"
+      }
+    }
+  }
+}

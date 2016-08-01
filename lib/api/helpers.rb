@@ -38,10 +38,8 @@ module API
       set_auth_headers
     end
 
-    def handle_param(parameter, &block)
-      if declared_params[parameter]
-        yield declared_params[parameter]
-      end
+    def with_param(param)
+      yield declared_params[param] if declared_params[param]
     end
 
     private
