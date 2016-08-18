@@ -1,14 +1,5 @@
 {
   "type": "object",
-  "required": [
-    "state",
-    "zip",
-    "shippingType",
-    "salesTax",
-    "freeShippingAbove",
-    "siteWideDiscount",
-    "shippingItems"
-  ],
   "properties": {
     "state": {
       "type": "string"
@@ -37,5 +28,6 @@
         "$ref": "item_count_shipping_cost.json"
       }
     }
-  }
+  },
+  "required": ["state", "zip", "shippingType", "salesTax", "freeShippingAbove", "siteWideDiscount", "shippingItems"]
 }

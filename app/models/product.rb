@@ -5,9 +5,10 @@ class Product < ActiveRecord::Base
 
   belongs_to :brand, foreign_key: 'BrandId'
   has_one :partner, through: :brand
-  has_many :product_categories, -> { where(status: 1) }, foreign_key:   'ProductId'
-  has_many :categories,         -> { where(status: 1) }, through:       :product_categories
-  has_many :variants,           -> { where(status: 1) }, foreign_key:   'ProductId'
+  has_many :variants,           -> { where(status: 1) }, foreign_key: 'ProductId'
+  has_many :images,             -> { where(status: 1) }, through:     :variants
+  has_many :product_categories, -> { where(status: 1) }, foreign_key: 'ProductId'
+  has_many :categories,         -> { where(status: 1) }, through:     :product_categories
 
   pg_search_scope(
     :search,

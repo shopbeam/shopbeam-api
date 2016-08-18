@@ -1,0 +1,272 @@
+{
+  "type": "object",
+  "properties": {
+    "order": {
+      "type": "object",
+      "properties": {
+        "orderItems": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "number"
+              },
+              "quantity": {
+                "type": "number",
+                "minimum": 0,
+                "exclusiveMinimum": true
+              },
+              "listPriceCents": {
+                "type": "number",
+                "minimum": 0,
+                "exclusiveMinimum": true
+              },
+              "salePriceCents": {
+                "type": "number",
+                "minimum": 0,
+                "exclusiveMinimum": true
+              },
+              "commissionCents": {
+                "type": "number",
+                "minimum": 0
+              },
+              "orderId": {
+                "type": "number"
+              },
+              "apiKey": {
+                "type": "string"
+              },
+              "widgetUuid": {
+                "type": "string"
+              },
+              "sourceUrl": {
+                "type": "string"
+              },
+              "variantId": {
+                "type": "number"
+              },
+              "createdAt": {
+                "type": "string"
+              },
+              "updatedAt": {
+                "type": "string"
+              },
+              "status": {
+                "type": "number"
+              }
+            },
+            "required": ["id", "quantity", "listPriceCents", "salePriceCents", "commissionCents", "orderId", "apiKey", "widgetUuid", "sourceUrl", "variantId", "createdAt", "updatedAt", "status"]
+          }
+        },
+        "id": {
+          "type": "number"
+        },
+        "shippingCents": {
+          "type": "number",
+          "minimum": 0
+        },
+        "taxCents": {
+          "type": "number",
+          "minimum": 0
+        },
+        "orderTotalCents": {
+          "type": "number",
+          "minimum": 0,
+          "exclusiveMinimum": true
+        },
+        "notes": {
+          "type": "string"
+        },
+        "appliedCommissionCents": {
+          "type": "number",
+          "minimum": 0
+        },
+        "userId": {
+          "type": "number"
+        },
+        "shippingAddressId": {
+          "type": "number"
+        },
+        "billingAddressId": {
+          "type": "number"
+        },
+        "paymentId": {
+          "type": "number"
+        },
+        "shareWithPublisher": {
+          "type": "boolean"
+        },
+        "apiKey": {
+          "type": "string"
+        },
+        "sourceUrl": {
+          "type": "string"
+        },
+        "status": {
+          "type": "number"
+        },
+        "dequeuedAt": {
+          "type": ["string", "null"]
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        },
+        "theme": {
+          "type": "string"
+        },
+        "shippingAddress": {
+          "type": "object",
+          "properties": {
+            "address1": {
+              "type": "string"
+            },
+            "address2": {
+              "type": "string"
+            },
+            "city": {
+              "type": "string"
+            },
+            "state": {
+              "type": "string"
+            },
+            "zip": {
+              "type": "string"
+            },
+            "phoneNumber": {
+              "type": "string"
+            },
+            "addressType": {
+              "type": "number"
+            },
+            "UserId": {
+              "type": "number"
+            },
+            "status": {
+              "type": "number"
+            }
+          },
+          "required": ["address1", "address2", "city", "state", "zip", "phoneNumber", "addressType", "UserId", "status"]
+        },
+        "billingAddress": {
+          "type": "object",
+          "properties": {
+            "address1": {
+              "type": "string"
+            },
+            "address2": {
+              "type": "string"
+            },
+            "city": {
+              "type": "string"
+            },
+            "state": {
+              "type": "string"
+            },
+            "zip": {
+              "type": "string"
+            },
+            "phoneNumber": {
+              "type": "string"
+            },
+            "addressType": {
+              "type": "number"
+            },
+            "UserId": {
+              "type": "number"
+            },
+            "status": {
+              "type": "number"
+            }
+          },
+          "required": ["address1", "address2", "city", "state", "zip", "phoneNumber", "addressType", "UserId", "status"]
+        },
+        "paymentData": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "number"
+            },
+            "number": {
+              "type": "string"
+            },
+            "expirationMonth": {
+              "type": "string"
+            },
+            "expirationYear": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "cvv": {
+              "type": "string"
+            },
+            "salt": {
+              "type": "string"
+            }
+          },
+          "required": ["type", "number", "expirationMonth", "expirationYear", "name", "cvv", "salt"]
+        },
+        "user": {
+          "type": "object",
+          "properties": {
+            "email": {
+              "type": "string"
+            },
+            "password": {
+              "type": "string"
+            },
+            "firstName": {
+              "type": "string"
+            },
+            "lastName": {
+              "type": "string"
+            },
+            "apiKey": {
+              "type": "string"
+            },
+            "status": {
+              "type": "number"
+            },
+            "roleToAdd": {
+              "type": "string"
+            }
+          },
+          "required": ["email", "password", "firstName", "lastName", "apiKey", "status", "roleToAdd"]
+        }
+        // TODO: uncomment when implemented
+        // "publishers": {
+        //   "type": "array",
+        //   "items": {
+        //     "type": "object",
+        //     "properties": {
+        //       "apiKey": {
+        //         "type": "string"
+        //       },
+        //       "email": {
+        //         "type": "string"
+        //       },
+        //       "commission": {
+        //         "type": "number",
+        //         "minimum": 0
+        //       },
+        //       "firstName": {
+        //         "type": "string"
+        //       },
+        //       "lastName": {
+        //         "type": "string"
+        //       }
+        //     },
+        //     "required": ["apiKey", "email", "commission", "firstName", "lastName"]
+        //   }
+        // }
+      },
+      "required": ["orderItems", "id", "shippingCents", "taxCents", "orderTotalCents", "notes", "appliedCommissionCents", "userId", "shippingAddressId", "billingAddressId", "paymentId", "shareWithPublisher", "apiKey", "sourceUrl", "status", "dequeuedAt", "createdAt", "updatedAt", "theme", "shippingAddress", "billingAddress", "paymentData", "user"/*, "publishers"*/]
+    }
+  },
+  "required": ["order"]
+}

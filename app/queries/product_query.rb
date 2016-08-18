@@ -18,7 +18,7 @@ class ProductQuery
 
     relation
       .joins(:brand, :partner, :variants)
-      .includes(:brand, :partner, :variants, :categories)
+      .includes(:brand, :partner, :variants, :images, :categories)
       .where(Partner: { status: 1 }, Brand: { status: 1 }, status: 1)
   end
 

@@ -52,6 +52,10 @@ class OrderItem < ActiveRecord::Base
     sale_price_cents || list_price_cents
   end
 
+  def total_price_cents
+    price_cents * quantity
+  end
+
   def bot
     Checkout::Bots.lookup!(source_url)
   end
