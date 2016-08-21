@@ -34,7 +34,9 @@
       "exclusiveMinimum": true
     },
     "salePercent": {
-      "type": "number"
+      "type": ["number", "null"],
+      "minimum": 0,
+      "exclusiveMinimum": true
     },
     "partnerId": {
       "type": "number"

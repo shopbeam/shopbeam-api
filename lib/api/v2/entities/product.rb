@@ -28,8 +28,8 @@ module API
         expose :partner_linkshare_id, as: :partnerLinkshareId
         expose :brand_id, as: :brandId
         expose :brand_name, as: :brandName
-        expose :categories, using: Category::Entity
-        expose :variants, using: Variant::Entity
+        expose :categories, using: API::V2::Entities::Category
+        expose :variants, using: API::V2::Entities::Variant
       end
     end
   end

@@ -7,4 +7,8 @@ class Partner < ActiveRecord::Base
   alias_attribute :linkshare_id, :linkshareId
 
   scope :active, -> { where(status: 1) }
+
+  def commission_percent
+    commission / 100.0
+  end
 end

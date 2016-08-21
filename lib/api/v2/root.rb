@@ -27,7 +27,7 @@ module API
         )
 
         set_consumer consumer
-        present consumer
+        present consumer, with: API::V2::Entities::Consumer
       end
 
       desc 'Sign in a consumer'
@@ -37,7 +37,7 @@ module API
       post 'sign_in' do
         authenticate_consumer!
         status 200
-        present current_consumer
+        present current_consumer, with: API::V2::Entities::Consumer
       end
     end
   end

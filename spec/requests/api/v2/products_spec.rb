@@ -8,7 +8,6 @@ require 'rails_helper'
 # TODO: status: 1 (active) by default?
 # TODO: by_entity vs by entity_id?
 # TODO: no need to test compound filters in partner details?
-# TODO: extract all entities from models
 # TODO: add spec for aggregateminmaxprice_trigger in Product
 # TODO: use arel instead of raw SQL?
 # TODO: add spec for updatesalepercent_trigger in Product

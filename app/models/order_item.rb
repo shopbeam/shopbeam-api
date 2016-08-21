@@ -17,7 +17,8 @@ class OrderItem < ActiveRecord::Base
     processed: 12,
     out_of_stock: 5,
     unprocessed: 13,
-    aborted: 14
+    aborted: 14,
+    test: 4
   }
 
   aasm column: :status, whiny_transitions: false do
@@ -26,6 +27,7 @@ class OrderItem < ActiveRecord::Base
     state :out_of_stock
     state :unprocessed
     state :aborted
+    state :test
 
     event :process do
       transitions to: :pending

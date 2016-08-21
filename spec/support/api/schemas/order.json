@@ -23,7 +23,7 @@
                 "exclusiveMinimum": true
               },
               "salePriceCents": {
-                "type": "number",
+                "type": ["number", "null"],
                 "minimum": 0,
                 "exclusiveMinimum": true
               },

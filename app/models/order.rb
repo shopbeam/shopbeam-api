@@ -34,15 +34,17 @@ class Order < ActiveRecord::Base
   enum status: {
     pending: 9,
     completed: 11,
-    aborted: 8
+    aborted: 8,
+    test: 4
   }
 
-  scope :uncompleted, -> { where.not(status: statuses[:completed]) }
+  scope :uncompleted, -> { where.not(status: statuses.values_at(:completed, :test)) }
 
   aasm column: :status do
     state :pending, initial: true
     state :completed
     state :aborted
+    state :test
 
     event :process do
       transitions to: :pending, unless: :completed?,

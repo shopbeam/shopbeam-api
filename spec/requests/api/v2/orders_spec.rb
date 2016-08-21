@@ -110,6 +110,28 @@ describe API::V2::Orders, api: :true do
           }.to change(Order, :count).by(1)
         end
 
+        context 'when billing zip is 00000' do
+          it 'creates test order' do
+            order_params = build(:order_params)
+            order_params[:payment][:billingAddress][:zip] = '00000'
+
+            post v2_orders_path, **order_params
+
+            expect(Order.last).to be_test
+          end
+        end
+
+        context 'when billing zip is not 00000' do
+          it 'creates pending order' do
+            order_params = build(:order_params)
+            order_params[:payment][:billingAddress][:zip] = '11111'
+
+            post v2_orders_path, **order_params
+
+            expect(Order.last).to be_pending
+          end
+        end
+
         it 'saves order details' do
           order_params = build(:order_params)
           order_params[:notes] = 'Test Order'
@@ -142,12 +164,54 @@ describe API::V2::Orders, api: :true do
           expect(Order.last.orderTotalCents).to eq(2*100 + 3*150 + 4*300)
         end
 
-        # TODO: status (billingAddressData.zip == '00000' ? 4 : 3)
-        # TODO: appliedCommissionCents
+        # it 'calculates order applied commission' # TODO
       end
 
       describe 'order items' do
+        it 'creates order item records' do
+          expect {
+            variants = create_list(:variant, 2)
+            order_params = build(:order_params, variants: variants)
 
+            post v2_orders_path, **order_params
+          }.to change(OrderItem, :count).by(2)
+        end
+
+        context 'when billing zip is 00000' do
+          it 'creates test order item' do
+            variants = [create(:variant)]
+            order_params = build(:order_params, variants: variants)
+            order_params[:payment][:billingAddress][:zip] = '00000'
+
+            post v2_orders_path, **order_params
+
+            expect(OrderItem.last).to be_test
+          end
+        end
+
+        context 'when billing zip is not 00000' do
+          it 'creates pending order item' do
+            variants = [create(:variant)]
+            order_params = build(:order_params, variants: variants)
+            order_params[:payment][:billingAddress][:zip] = '11111'
+
+            post v2_orders_path, **order_params
+
+            expect(OrderItem.last).to be_pending
+          end
+        end
+
+        it 'saves order item details' do
+          variants = [create(:variant)]
+          order_params = build(:order_params, variants: variants)
+          order_params[:items][0][:sourceUrl] = 'http://foo.com/'
+
+          post v2_orders_path, **order_params
+
+          expect(OrderItem.last.sourceUrl).to eq('http://foo.com/')
+        end
+
+        # it 'calculates order item commission' # TODO
       end
 
       describe 'response' do
@@ -158,6 +222,8 @@ describe API::V2::Orders, api: :true do
           expect(json_response).not_to be_empty
           expect(response).to match_response_schema('order')
         end
+
+        # it 'contains publishers' # TODO
       end
     end
 

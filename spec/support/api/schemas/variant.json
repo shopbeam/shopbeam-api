@@ -28,7 +28,7 @@
       "exclusiveMinimum": true
     },
     "salePrice": {
-      "type": "number",
+      "type": ["number", "null"],
       "minimum": 0,
       "exclusiveMinimum": true
     },
