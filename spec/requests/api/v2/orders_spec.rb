@@ -3,6 +3,8 @@
 # TODO: test transaction
 # TODO: test price validation
 # TODO: simplify factories to avoid partner->brand->product->variant chain
+# TODO: replace password encryption in User with has_secure_password
+# TODO: make params configuration more detailed
 
 require 'rails_helper'
 
@@ -254,6 +256,7 @@ describe API::V2::Orders, api: :true do
           expect(OrderItem.last.commissionCents).to eq((5 * 2 * (1500.0 / 100 / 100)).ceil) # => 2
         end
 
+        # it 'calls checkout job' # TODO
         # it 'calls mailers(s)' # TODO
       end
 
@@ -266,7 +269,7 @@ describe API::V2::Orders, api: :true do
           expect(response).to match_response_schema('order')
         end
 
-        # it 'contains publishers' # TODO
+        # it 'contains publisher details' # TODO
       end
     end
 

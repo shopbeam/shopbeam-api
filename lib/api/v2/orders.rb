@@ -5,11 +5,38 @@ module API
 
       desc 'Process order'
       params do
-        requires :payment,            type: Hash
-        requires :user,               type: Hash
-        requires :shippingAddress,    type: Hash
-        requires :items,              type: Array, allow_blank: false
-        group    :items,              type: Array, validate_prices: true do
+        requires :payment,            type: Hash do
+          requires :type,             type: Integer
+          requires :number,           type: String
+          requires :expirationMonth,  type: Integer
+          requires :expirationYear,   type: Integer
+          requires :name,             type: String
+          requires :cvv,              type: String
+          requires :billingAddress,   type: Hash do
+            requires :phoneNumber,    type: String
+            requires :address1,       type: String
+            requires :address2,       type: String
+            requires :city,           type: String
+            requires :state,          type: String
+            requires :zip,            type: String
+          end
+        end
+        requires :user,               type: Hash do
+          requires :email,            type: String
+          requires :password,         type: String
+          requires :firstName,        type: String
+          requires :middleName,       type: String
+          requires :lastName,         type: String
+        end
+        requires :shippingAddress,    type: Hash do
+          requires :phoneNumber,      type: String
+          requires :address1,         type: String
+          requires :address2,         type: String
+          requires :city,             type: String
+          requires :state,            type: String
+          requires :zip,              type: String
+        end
+        requires :items,              type: Array, allow_blank: false, validate_prices: true do
           requires :listPriceCents,   type: Integer
           requires :salePriceCents,   type: Integer
           requires :variantId,        type: Integer
@@ -28,7 +55,7 @@ module API
       end
       resource :orders do
         post do
-          # TODO: extract into service object
+          # TODO: below looks really messy, extract into service object
           ActiveRecord::Base.transaction do
             user = declared_params[:user]
             user_record = User.create_with( first_name: user[:firstName], last_name: user[:lastName],
@@ -85,7 +112,7 @@ module API
             CheckoutJob.perform_async(order.id, customer_data)
             OrderMailer.received(order: order, user: user_record, partners: partners.uniq.join(", "), source_url: declared_params[:sourceUrl],
                                  items: item_records, shipping_address: shipping_addr, billing_address: billing_addr).deliver_now
-            # partner_user = User.where(apiKey: item_records.first.apiKey, status: 1).first
+            partner_user = User.find_by(apiKey: item_records.first.apiKey, status: 1)
             # OrderMailer.publisher(order: order, user: user_record, partners: partners.uniq.join(", "), source_url: declared_params[:sourceUrl],
             #                      items: item_records, shipping_address: shipping_addr, billing_address: billing_addr,
             #                      partner: partner_user).deliver_now
