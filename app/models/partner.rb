@@ -9,6 +9,6 @@ class Partner < ActiveRecord::Base
   scope :active, -> { where(status: 1) }
 
   def commission_percent
-    commission / 100.0
+    commission.to_f / 100
   end
 end

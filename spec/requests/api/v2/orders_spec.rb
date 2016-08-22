@@ -2,6 +2,7 @@
 # TODO: add publishers node in the response
 # TODO: test transaction
 # TODO: test price validation
+# TODO: simplify factories to avoid partner->brand->product->variant chain
 
 require 'rails_helper'
 
@@ -161,10 +162,38 @@ describe API::V2::Orders, api: :true do
 
           post v2_orders_path, **order_params
 
-          expect(Order.last.orderTotalCents).to eq(2*100 + 3*150 + 4*300)
+          expect(Order.last.orderTotalCents).to eq(100 * 2 + 150 * 3 + 300 * 4) # => 1850
         end
 
-        # it 'calculates order applied commission' # TODO
+        it 'calculates order applied commission' do
+          partner_1 = create(:partner, commission: 1500)
+          partner_2 = create(:partner, commission: 0)
+          partner_3 = create(:partner, commission: 900)
+          brand_1 = create(:brand, partner: partner_1)
+          brand_2 = create(:brand, partner: partner_2)
+          brand_3 = create(:brand, partner: partner_3)
+          product_1 = create(:product, brand: brand_1)
+          product_2 = create(:product, brand: brand_2)
+          product_3 = create(:product, brand: brand_3)
+          variants = [
+            create(:variant, product: product_1, salePriceCents: nil, listPriceCents: 100),
+            create(:variant, product: product_2, salePriceCents: 150, listPriceCents: 200),
+            create(:variant, product: product_3, salePriceCents: 300, listPriceCents: 300)
+          ]
+
+          order_params = build(:order_params, variants: variants)
+          order_params[:items][0][:quantity] = 2
+          order_params[:items][1][:quantity] = 3
+          order_params[:items][2][:quantity] = 4
+
+          post v2_orders_path, **order_params
+
+          expect(Order.last.appliedCommissionCents).to eq(
+            (100 * 2 * (1500.0 / 100 / 100)).ceil + # => 30
+            (150 * 3 * (0 / 100 / 100)).ceil +      # => 0
+            (300 * 4 * (900.0 / 100 / 100)).ceil    # => 108
+          ) # => 138
+        end
       end
 
       describe 'order items' do
@@ -211,7 +240,21 @@ describe API::V2::Orders, api: :true do
           expect(OrderItem.last.sourceUrl).to eq('http://foo.com/')
         end
 
-        # it 'calculates order item commission' # TODO
+        it 'calculates order item commission' do
+          partner = create(:partner, commission: 1500)
+          brand = create(:brand, partner: partner)
+          product = create(:product, brand: brand)
+          variants = [create(:variant, product: product, listPriceCents: 5)]
+
+          order_params = build(:order_params, variants: variants)
+          order_params[:items][0][:quantity] = 2
+
+          post v2_orders_path, **order_params
+
+          expect(OrderItem.last.commissionCents).to eq((5 * 2 * (1500.0 / 100 / 100)).ceil) # => 2
+        end
+
+        # it 'calls mailers(s)' # TODO
       end
 
       describe 'response' do

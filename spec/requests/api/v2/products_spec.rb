@@ -12,7 +12,9 @@ require 'rails_helper'
 # TODO: use arel instead of raw SQL?
 # TODO: add spec for updatesalepercent_trigger in Product
 # TODO: modify OrderItem#price_cents and handle case when sale_price_cents is 0 (if not, add validation???)
+# TODO: exclude cases with sale price is 0 (can be null or positive)
 # TODO: extra queries regardless includes???
+# TODO: revise has_one :partner, through: :brand in Product
 describe API::V2::Products, api: :true do
   describe 'GET /' do
     context 'when products are active' do

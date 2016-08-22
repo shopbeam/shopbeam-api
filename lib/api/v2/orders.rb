@@ -63,17 +63,21 @@ module API
             partners = []
             item_records = []
             order_total = 0
+            order_applied_commission = 0
             with_param(:items) do |items|
               items.each do |item|
+                variant = Variant.find(item[:variantId])
+                commissionCents = ((item[:salePriceCents] || item[:listPriceCents]) * item[:quantity] * variant.commission_percent / 100).ceil
                 record = OrderItem.create!(OrderId: order.id, VariantId: item[:variantId], quantity: item[:quantity], listPriceCents: item[:listPriceCents],
                                   status: order_status, salePriceCents: item[:salePriceCents], sourceUrl: item[:sourceUrl], apiKey: item[:apiKey],
-                                  widgetUuid: item[:widgetUuid], createdAt: Time.now, updatedAt: Time.now, commissionCents: 0)
+                                  widgetUuid: item[:widgetUuid], createdAt: Time.now, updatedAt: Time.now, commissionCents: commissionCents)
                 partners << record.product.partner.name
                 item_records << record
                 order_total += record.total_price_cents
+                order_applied_commission += record.commissionCents
               end
             end
-            order.update!(orderTotalCents: order_total)
+            order.update!(orderTotalCents: order_total, appliedCommissionCents: order_applied_commission)
             customer_data = {
               first_name: user[:firstName], last_name: user[:lastName], company: '', jobTitle: '',
               email: user[:email], mobilePhone: billing[:phoneNumber], password: user[:password]
