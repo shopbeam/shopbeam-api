@@ -4,20 +4,24 @@ FactoryGirl.define do
     initialize_with { attributes }
 
     transient do
-      # customer { create(:user) }
+      publisher { create(:user) }
       variants { [create(:variant)] }
     end
 
-    theme 'rogaine-women' # TODO: Faker::Lorem.word,
-    apiKey { 'customer.api_key' } # TODO
-    widgetUuid '63cf8aae-18b9-a044-25bf-2c2dfad00fea'
-    shippingCents 0
-    taxCents 780 # TODO: calculate tax
-    orderTotalCents 6779 # TODO: calculate total
-    notes ''
+    theme                  { Faker::Lorem.word }
+    apiKey                 { SecureRandom.uuid }
+    widgetUuid             { SecureRandom.uuid }
+
+    orderTotalCents do
+      items.inject(0) { |total, item| total + (item[:salePriceCents] || item[:listPriceCents]) * item[:quantity] }
+    end
+
+    taxCents               { orderTotalCents * 0.875 }
+    shippingCents          0
     appliedCommissionCents 0
-    sourceUrl 'http://localhost:8000/example.html'
-    shareWithPublisher true
+    notes                  { Faker::Lorem.sentence }
+    sourceUrl              { Faker::Internet.url }
+    shareWithPublisher     true
 
     payment do
       {
@@ -62,9 +66,9 @@ FactoryGirl.define do
     items do
       variants.map do |variant|
         {
-          widgetUuid: widgetUuid,
-          apiKey: apiKey,
-          sourceUrl: sourceUrl,
+          apiKey: publisher.api_key,
+          widgetUuid: SecureRandom.uuid,
+          sourceUrl: Faker::Internet.url,
           quantity: 1,
           listPriceCents: variant.list_price_cents,
           salePriceCents: variant.sale_price_cents,
@@ -75,6 +79,6 @@ FactoryGirl.define do
   end
 
   factory :invalid_order_params, parent: :order_params do |f|
-    items nil
+    payment nil
   end
 end

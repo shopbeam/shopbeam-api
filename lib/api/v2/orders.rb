@@ -91,31 +91,35 @@ module API
             item_records = []
             order_total = 0
             order_applied_commission = 0
+            publisher_commissions = Hash.new(0)
             with_param(:items) do |items|
               items.each do |item|
                 variant = Variant.find(item[:variantId])
-                commissionCents = ((item[:salePriceCents] || item[:listPriceCents]) * item[:quantity] * variant.commission_percent / 100).ceil
-                record = OrderItem.create!(OrderId: order.id, VariantId: item[:variantId], quantity: item[:quantity], listPriceCents: item[:listPriceCents],
-                                  status: order_status, salePriceCents: item[:salePriceCents], sourceUrl: item[:sourceUrl], apiKey: item[:apiKey],
-                                  widgetUuid: item[:widgetUuid], createdAt: Time.now, updatedAt: Time.now, commissionCents: commissionCents)
+                record = OrderItem.create!(OrderId: order.id, VariantId: item[:variantId], quantity: item[:quantity], listPriceCents: variant.list_price_cents,
+                                  status: order_status, salePriceCents: variant.sale_price_cents, sourceUrl: item[:sourceUrl], apiKey: item[:apiKey],
+                                  widgetUuid: item[:widgetUuid], createdAt: Time.now, updatedAt: Time.now, commissionCents: variant.commission_cents(item[:quantity]))
                 partners << record.product.partner.name
                 item_records << record
                 order_total += record.total_price_cents
-                order_applied_commission += record.commissionCents
+                order_applied_commission += record.commission_cents
+                publisher_commissions[record.api_key] += record.commission_cents
               end
             end
             order.update!(orderTotalCents: order_total, appliedCommissionCents: order_applied_commission)
-            customer_data = {
-              first_name: user[:firstName], last_name: user[:lastName], company: '', jobTitle: '',
-              email: user[:email], mobilePhone: billing[:phoneNumber], password: user[:password]
-            }
-            CheckoutJob.perform_async(order.id, customer_data)
+            publisher_commissions.each do |api_key, commission|
+              publisher = User.find_by!(api_key: api_key)
+              publisher.update_attributes!(
+                pendingCommissionCents: publisher.pendingCommissionCents.to_i + commission,
+                totalCommissionCents: publisher.totalCommissionCents.to_i + commission
+              )
+            end
+            CheckoutJob.perform_async(order.id, user)
             OrderMailer.received(order: order, user: user_record, partners: partners.uniq.join(", "), source_url: declared_params[:sourceUrl],
                                  items: item_records, shipping_address: shipping_addr, billing_address: billing_addr).deliver_now
             partner_user = User.find_by(apiKey: item_records.first.apiKey, status: 1)
-            # OrderMailer.publisher(order: order, user: user_record, partners: partners.uniq.join(", "), source_url: declared_params[:sourceUrl],
-            #                      items: item_records, shipping_address: shipping_addr, billing_address: billing_addr,
-            #                      partner: partner_user).deliver_now
+            OrderMailer.publisher(order: order, user: user_record, partners: partners.uniq.join(", "), source_url: declared_params[:sourceUrl],
+                                 items: item_records, shipping_address: shipping_addr, billing_address: billing_addr,
+                                 partner: partner_user).deliver_now
 
             status :accepted
             present order, with: API::V2::Entities::Order

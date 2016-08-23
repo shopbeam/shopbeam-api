@@ -10,4 +10,12 @@ class Variant < ActiveRecord::Base
   alias_attribute :source_url, :sourceUrl
   alias_attribute :list_price_cents, :listPriceCents
   alias_attribute :sale_price_cents, :salePriceCents
+
+  def price_cents
+    sale_price_cents || list_price_cents
+  end
+
+  def commission_cents(quantity)
+    (price_cents * quantity * commission_percent / 100).ceil
+  end
 end

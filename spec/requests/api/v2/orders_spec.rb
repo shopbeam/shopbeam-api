@@ -30,8 +30,10 @@ describe API::V2::Orders, api: :true do
 
         context 'when user does not exist' do
           it 'creates user record' do
+            order_params = build(:order_params)
+
             expect {
-              post v2_orders_path, **build(:order_params)
+              post v2_orders_path, **order_params
             }.to change(User, :count).by(1)
           end
 
@@ -200,10 +202,10 @@ describe API::V2::Orders, api: :true do
 
       describe 'order items' do
         it 'creates order item records' do
-          expect {
-            variants = create_list(:variant, 2)
-            order_params = build(:order_params, variants: variants)
+          variants = create_list(:variant, 2)
+          order_params = build(:order_params, variants: variants)
 
+          expect {
             post v2_orders_path, **order_params
           }.to change(OrderItem, :count).by(2)
         end
@@ -246,7 +248,7 @@ describe API::V2::Orders, api: :true do
           partner = create(:partner, commission: 1500)
           brand = create(:brand, partner: partner)
           product = create(:product, brand: brand)
-          variants = [create(:variant, product: product, listPriceCents: 5)]
+          variants = [create(:variant, product: product, salePriceCents: 5, listPriceCents: 10)]
 
           order_params = build(:order_params, variants: variants)
           order_params[:items][0][:quantity] = 2
@@ -256,8 +258,47 @@ describe API::V2::Orders, api: :true do
           expect(OrderItem.last.commissionCents).to eq((5 * 2 * (1500.0 / 100 / 100)).ceil) # => 2
         end
 
-        # it 'calls checkout job' # TODO
+        it 'calls checkout job' do
+          order_params = build(:order_params)
+          allow(CheckoutJob).to receive(:perform_async)
+
+          post v2_orders_path, **order_params
+
+          expect(CheckoutJob).to have_received(:perform_async).with(Order.last.id, order_params[:user])
+        end
+
         # it 'calls mailers(s)' # TODO
+      end
+
+      describe 'publisher' do
+        it 'appends commissions' do
+          publisher = create(:user, pendingCommissionCents: 100, totalCommissionCents: 200)
+          another_publisher = create(:user)
+          partner = create(:partner, commission: 1500)
+          brand = create(:brand, partner: partner)
+          product = create(:product, brand: brand)
+          variants = [
+            create(:variant, product: product, salePriceCents: nil, listPriceCents: 100),
+            create(:variant, product: product, salePriceCents: 150, listPriceCents: 200),
+            create(:variant, product: product, salePriceCents: 300, listPriceCents: 300)
+          ]
+
+          order_params = build(:order_params, variants: variants)
+          order_params[:items][0][:quantity] = 2
+          order_params[:items][1][:quantity] = 3
+          order_params[:items][2][:quantity] = 4
+          order_params[:items][0][:apiKey] = publisher.api_key
+          order_params[:items][1][:apiKey] = publisher.api_key
+          order_params[:items][2][:apiKey] = another_publisher.api_key
+
+          post v2_orders_path, **order_params
+
+          publisher.reload
+          publisher_commission_cents = (100 * 2 * (1500.0 / 100 / 100)).ceil + (150 * 3 * (1500.0 / 100 / 100)).ceil # => 98
+
+          expect(publisher.pendingCommissionCents).to eq(100 + publisher_commission_cents)
+          expect(publisher.totalCommissionCents).to eq(200 + publisher_commission_cents)
+        end
       end
 
       describe 'response' do

@@ -8,9 +8,10 @@ class OrderItem < ActiveRecord::Base
 
   delegate :source_url, :color, :size, to: :variant
 
-  alias_attribute :list_price_cents, :listPriceCents
   alias_attribute :sale_price_cents, :salePriceCents
   alias_attribute :list_price_cents, :listPriceCents
+  alias_attribute :commission_cents, :commissionCents
+  alias_attribute :api_key, :apiKey
 
   enum status: {
     pending: 9,
