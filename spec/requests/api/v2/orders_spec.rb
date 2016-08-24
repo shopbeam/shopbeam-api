@@ -1,10 +1,7 @@
-# TODO: generate apiKey in factories implicitly with Faker or SecureRandom.uuid
-# TODO: add publishers node in the response
 # TODO: test transaction
 # TODO: test price validation
 # TODO: simplify factories to avoid partner->brand->product->variant chain
-# TODO: replace password encryption in User with has_secure_password
-# TODO: make params configuration more detailed
+# TODO: enhance params validation rules
 
 require 'rails_helper'
 
@@ -158,7 +155,6 @@ describe API::V2::Orders, api: :true do
             create(:variant, salePriceCents: 150, listPriceCents: 200),
             create(:variant, salePriceCents: 300, listPriceCents: 300)
           ]
-
           order_params = build(:order_params, variants: variants)
           order_params[:items][0][:quantity] = 2
           order_params[:items][1][:quantity] = 3
@@ -184,7 +180,6 @@ describe API::V2::Orders, api: :true do
             create(:variant, product: product_2, salePriceCents: 150, listPriceCents: 200),
             create(:variant, product: product_3, salePriceCents: 300, listPriceCents: 300)
           ]
-
           order_params = build(:order_params, variants: variants)
           order_params[:items][0][:quantity] = 2
           order_params[:items][1][:quantity] = 3
@@ -249,7 +244,6 @@ describe API::V2::Orders, api: :true do
           brand = create(:brand, partner: partner)
           product = create(:product, brand: brand)
           variants = [create(:variant, product: product, salePriceCents: 5, listPriceCents: 10)]
-
           order_params = build(:order_params, variants: variants)
           order_params[:items][0][:quantity] = 2
 
@@ -272,8 +266,8 @@ describe API::V2::Orders, api: :true do
 
       describe 'publisher' do
         it 'appends commissions' do
-          publisher = create(:user, pendingCommissionCents: 100, totalCommissionCents: 200)
-          another_publisher = create(:user)
+          user = create(:user, pendingCommissionCents: 100, totalCommissionCents: 200)
+          another_user = create(:user)
           partner = create(:partner, commission: 1500)
           brand = create(:brand, partner: partner)
           product = create(:product, brand: brand)
@@ -282,22 +276,21 @@ describe API::V2::Orders, api: :true do
             create(:variant, product: product, salePriceCents: 150, listPriceCents: 200),
             create(:variant, product: product, salePriceCents: 300, listPriceCents: 300)
           ]
-
           order_params = build(:order_params, variants: variants)
           order_params[:items][0][:quantity] = 2
           order_params[:items][1][:quantity] = 3
           order_params[:items][2][:quantity] = 4
-          order_params[:items][0][:apiKey] = publisher.api_key
-          order_params[:items][1][:apiKey] = publisher.api_key
-          order_params[:items][2][:apiKey] = another_publisher.api_key
+          order_params[:items][0][:apiKey] = user.api_key
+          order_params[:items][1][:apiKey] = user.api_key
+          order_params[:items][2][:apiKey] = another_user.api_key
 
           post v2_orders_path, **order_params
 
-          publisher.reload
-          publisher_commission_cents = (100 * 2 * (1500.0 / 100 / 100)).ceil + (150 * 3 * (1500.0 / 100 / 100)).ceil # => 98
+          user.reload
+          user_commission_cents = (100 * 2 * (1500.0 / 100 / 100)).ceil + (150 * 3 * (1500.0 / 100 / 100)).ceil # => 98
 
-          expect(publisher.pendingCommissionCents).to eq(100 + publisher_commission_cents)
-          expect(publisher.totalCommissionCents).to eq(200 + publisher_commission_cents)
+          expect(user.pendingCommissionCents).to eq(100 + user_commission_cents)
+          expect(user.totalCommissionCents).to eq(200 + user_commission_cents)
         end
       end
 
@@ -310,7 +303,50 @@ describe API::V2::Orders, api: :true do
           expect(response).to match_response_schema('order')
         end
 
-        # it 'contains publisher details' # TODO
+        it 'contains publisher details' do
+          user = create(:user, firstName: 'John')
+          variants = [create(:variant)]
+          order_params = build(:order_params, variants: variants)
+          order_params[:items][0][:apiKey] = user.api_key
+
+          post v2_orders_path, **order_params
+
+          publishers = json_response['order']['publishers']
+
+          expect(response).to have_http_status(202)
+          expect(publishers.size).to eq(1)
+          expect(publishers.first['firstName']).to eq('John')
+        end
+
+        it 'calculates publisher commission' do
+          user = create(:user, pendingCommissionCents: 100, totalCommissionCents: 200)
+          another_user = create(:user)
+          partner = create(:partner, commission: 1500)
+          brand = create(:brand, partner: partner)
+          product = create(:product, brand: brand)
+          variants = [
+            create(:variant, product: product, salePriceCents: nil, listPriceCents: 100),
+            create(:variant, product: product, salePriceCents: 150, listPriceCents: 200),
+            create(:variant, product: product, salePriceCents: 300, listPriceCents: 300)
+          ]
+          order_params = build(:order_params, variants: variants)
+          order_params[:items][0][:quantity] = 2
+          order_params[:items][1][:quantity] = 3
+          order_params[:items][2][:quantity] = 4
+          order_params[:items][0][:apiKey] = user.api_key
+          order_params[:items][1][:apiKey] = user.api_key
+          order_params[:items][2][:apiKey] = another_user.api_key
+
+          post v2_orders_path, **order_params
+
+          publishers = json_response['order']['publishers']
+          publisher = publishers.find { |p| p['apiKey'] == user.api_key }
+          publisher_commission = (100 * 2 * (1500.0 / 100 / 100)).ceil + (150 * 3 * (1500.0 / 100 / 100)).ceil # => 98
+
+          expect(response).to have_http_status(202)
+          expect(publishers.size).to eq(2)
+          expect(publisher['commission']).to eq(publisher_commission)
+        end
       end
     end
 

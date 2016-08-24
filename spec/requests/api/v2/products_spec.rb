@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 # TODO: create full with active parents by default?
 # TODO: check nested data count?
 # TODO: omit active parents creation
@@ -15,6 +13,9 @@ require 'rails_helper'
 # TODO: exclude cases with sale price is 0 (can be null or positive)
 # TODO: extra queries regardless includes???
 # TODO: revise has_one :partner, through: :brand in Product
+
+require 'rails_helper'
+
 describe API::V2::Products, api: :true do
   describe 'GET /' do
     context 'when products are active' do

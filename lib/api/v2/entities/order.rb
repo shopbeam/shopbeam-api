@@ -30,6 +30,13 @@ module API
           expose :billing_address, using: API::V2::Entities::Address, as: :billingAddress
           expose :payment, using: API::V2::Entities::Payment, as: :paymentData
           expose :user, using: API::V2::Entities::User
+          expose :publishers
+        end
+
+        private
+
+        def publishers
+          options[:publishers]
         end
       end
     end

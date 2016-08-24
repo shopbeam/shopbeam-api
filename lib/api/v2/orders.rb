@@ -59,9 +59,9 @@ module API
           ActiveRecord::Base.transaction do
             user = declared_params[:user]
             user_record = User.create_with( first_name: user[:firstName], last_name: user[:lastName],
-                                            api_key: uid("#{user[:email]}-#{Time.now.to_i}"), status: 1, createdAt: Time.now,
+                                            api_key: SecureRandom.uuid, status: 1, createdAt: Time.now,
                                             updatedAt: Time.now, password: user[:password])
-                              .find_or_create_by!( email: user[:email])
+                              .find_or_create_by!(email: user[:email])
 
             payment = declared_params[:payment]
             payment_record = Payment.create!(name: payment[:name], UserId: user_record.id, number: payment[:number], cvv: payment[:cvv],
@@ -106,12 +106,14 @@ module API
               end
             end
             order.update!(orderTotalCents: order_total, appliedCommissionCents: order_applied_commission)
+            publishers = []
             publisher_commissions.each do |api_key, commission|
               publisher = User.find_by!(api_key: api_key)
               publisher.update_attributes!(
                 pendingCommissionCents: publisher.pendingCommissionCents.to_i + commission,
                 totalCommissionCents: publisher.totalCommissionCents.to_i + commission
               )
+              publishers << publisher.slice(:apiKey, :email, :firstName, :lastName).merge(commission: commission)
             end
             CheckoutJob.perform_async(order.id, user)
             OrderMailer.received(order: order, user: user_record, partners: partners.uniq.join(", "), source_url: declared_params[:sourceUrl],
@@ -122,15 +124,8 @@ module API
                                  partner: partner_user).deliver_now
 
             status :accepted
-            present order, with: API::V2::Entities::Order
+            present order, with: API::V2::Entities::Order, publishers: publishers
           end
-        end
-      end
-
-      helpers do
-        def uid(data)
-          digest = Digest::MD5.hexdigest(data)
-          "#{digest[0...8]}-#{digest[8...12]}-4#{digest[13...16]}-#{digest[16...20]}-#{digest[20...32]}"
         end
       end
     end

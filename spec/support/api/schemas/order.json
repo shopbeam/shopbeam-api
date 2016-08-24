@@ -237,35 +237,34 @@
             }
           },
           "required": ["email", "password", "firstName", "lastName", "apiKey", "status", "roleToAdd"]
+        },
+        "publishers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "apiKey": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "commission": {
+                "type": "number",
+                "minimum": 0
+              },
+              "firstName": {
+                "type": "string"
+              },
+              "lastName": {
+                "type": "string"
+              }
+            },
+            "required": ["apiKey", "email", "commission", "firstName", "lastName"]
+          }
         }
-        // TODO: uncomment when implemented
-        // "publishers": {
-        //   "type": "array",
-        //   "items": {
-        //     "type": "object",
-        //     "properties": {
-        //       "apiKey": {
-        //         "type": "string"
-        //       },
-        //       "email": {
-        //         "type": "string"
-        //       },
-        //       "commission": {
-        //         "type": "number",
-        //         "minimum": 0
-        //       },
-        //       "firstName": {
-        //         "type": "string"
-        //       },
-        //       "lastName": {
-        //         "type": "string"
-        //       }
-        //     },
-        //     "required": ["apiKey", "email", "commission", "firstName", "lastName"]
-        //   }
-        // }
       },
-      "required": ["orderItems", "id", "shippingCents", "taxCents", "orderTotalCents", "notes", "appliedCommissionCents", "userId", "shippingAddressId", "billingAddressId", "paymentId", "shareWithPublisher", "apiKey", "sourceUrl", "status", "dequeuedAt", "createdAt", "updatedAt", "theme", "shippingAddress", "billingAddress", "paymentData", "user"/*, "publishers"*/]
+      "required": ["orderItems", "id", "shippingCents", "taxCents", "orderTotalCents", "notes", "appliedCommissionCents", "userId", "shippingAddressId", "billingAddressId", "paymentId", "shareWithPublisher", "apiKey", "sourceUrl", "status", "dequeuedAt", "createdAt", "updatedAt", "theme", "shippingAddress", "billingAddress", "paymentData", "user", "publishers"]
     }
   },
   "required": ["order"]
