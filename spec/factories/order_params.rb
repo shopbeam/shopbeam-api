@@ -25,54 +25,54 @@ FactoryGirl.define do
 
     payment do
       {
-        type: 1,
-        number: '4444111111111111',
-        expirationMonth: 2,
-        expirationYear: 2018,
-        name: 'Bryan White',
-        cvv: '123',
+        type:            1,
+        number:          '4444111111111111',
+        expirationMonth: 1,
+        expirationYear:  Time.now.year + 5,
+        name:            Faker::Name.name,
+        cvv:             '000',
         billingAddress: {
-          phoneNumber: '1234567890',
-          address1: '9450 SW Gemini Dr.',
-          address2: '#42146',
-          city: 'Beaverton',
-          state: 'MB',
-          zip: 'a1a 1a1'
+          phoneNumber: Faker::PhoneNumber.phone_number,
+          address1:    Faker::Address.street_address,
+          address2:    Faker::Address.street_address,
+          city:        Faker::Address.city,
+          state:       Faker::Address.state,
+          zip:         Faker::Address.zip_code
         }
       }
     end
 
     user do
       {
-        email: 'bryan@shopbeam.com',
-        password: 'Shopbeam123',
-        firstName: 'Bryan',
+        email:      Faker::Internet.email,
+        password:   Faker::Internet.password,
+        firstName:  Faker::Name.first_name,
         middleName: '',
-        lastName: 'White'
+        lastName:   Faker::Name.last_name
       }
     end
 
     shippingAddress do
       {
-        phoneNumber: '1234567890',
-        address1: '9450 SW Gemini Dr.',
-        address2: '#42146',
-        city: 'Beaverton',
-        state: 'MB',
-        zip: 'a1a 1a1'
+        phoneNumber: Faker::PhoneNumber.phone_number,
+        address1:    Faker::Address.street_address,
+        address2:    Faker::Address.street_address,
+        city:        Faker::Address.city,
+        state:       Faker::Address.state,
+        zip:         Faker::Address.zip_code
       }
     end
 
     items do
       variants.map do |variant|
         {
-          apiKey: publisher.api_key,
-          widgetUuid: SecureRandom.uuid,
-          sourceUrl: Faker::Internet.url,
-          quantity: 1,
+          apiKey:         publisher.api_key,
+          widgetUuid:     SecureRandom.uuid,
+          sourceUrl:      Faker::Internet.url,
+          quantity:       1,
           listPriceCents: variant.list_price_cents,
           salePriceCents: variant.sale_price_cents,
-          variantId: variant.id
+          variantId:      variant.id
         }
       end
     end

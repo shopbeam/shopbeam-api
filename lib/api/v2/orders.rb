@@ -55,7 +55,7 @@ module API
       end
       resource :orders do
         post do
-          # TODO: below looks really messy, extract into service object
+          # TODO: below looks REALLY messy, extract into service object
           ActiveRecord::Base.transaction do
             user = declared_params[:user]
             user_record = User.create_with( first_name: user[:firstName], last_name: user[:lastName],

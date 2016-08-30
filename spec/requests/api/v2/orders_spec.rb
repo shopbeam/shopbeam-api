@@ -2,6 +2,8 @@
 # TODO: test price validation
 # TODO: simplify factories to avoid partner->brand->product->variant chain
 # TODO: enhance params validation rules
+# TODO: rename existing OrderMailer to CheckoutMailer
+# TODO: rename method names in CheckoutMailer into smth like checkout_aborted_email
 
 require 'rails_helper'
 
@@ -28,6 +30,7 @@ describe API::V2::Orders, api: :true do
         context 'when user does not exist' do
           it 'creates user record' do
             order_params = build(:order_params)
+            order_params[:user][:email] = Faker::Internet.email
 
             expect {
               post v2_orders_path, **order_params
@@ -36,6 +39,7 @@ describe API::V2::Orders, api: :true do
 
           it 'saves user details' do
             order_params = build(:order_params)
+            order_params[:user][:email] = Faker::Internet.email
             order_params[:user][:firstName] = 'John'
 
             post v2_orders_path, **order_params
