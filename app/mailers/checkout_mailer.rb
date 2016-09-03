@@ -38,12 +38,11 @@ class CheckoutMailer < ApplicationMailer
     mail subject: "[order-manager] ACTION REQUIRED: Shopbeam order ##{@order.id} has been aborted"
   end
 
-  def received(data)
-    @order = data[:order]
-    @user = @order.user
-    @partners = data[:partners]
-    mail  subject: "Your Shopbeam order is being processed -- Order ##{@order.id}",
-          template_name: 'order-default.html'
+  def received(order_id)
+    @order = Order.find(order_id).decorate
+
+    mail subject: "Your Shopbeam order is being processed -- Order ##{@order.id}",
+         template_name: 'order-default.html'
   end
 
   def publisher(data)

@@ -56,6 +56,8 @@ module API
       resource :orders do
         post do
           # TODO: below looks REALLY messy, extract into service object
+          user, order, publishers = nil, nil, nil
+
           ActiveRecord::Base.transaction do
             user = declared_params[:user]
             user_record = User.create_with( first_name: user[:firstName], last_name: user[:lastName],
@@ -115,16 +117,17 @@ module API
               )
               publishers << publisher.slice(:apiKey, :email, :firstName, :lastName).merge(commission: commission)
             end
-            CheckoutJob.perform_async(order.id, user)
-            CheckoutMailer.received(order: order, partners: partners.uniq.to_sentence).deliver_now
-            partner_user = User.find_by(apiKey: item_records.first.apiKey, status: 1)
-            CheckoutMailer.publisher(order: order, user: user_record, partners: partners.uniq.join(", "), source_url: declared_params[:sourceUrl],
-                                 items: item_records, shipping_address: shipping_addr, billing_address: billing_addr,
-                                 partner: partner_user).deliver_now
-
-            status :accepted
-            present order, with: API::V2::Entities::Order, publishers: publishers
           end
+
+          CheckoutJob.perform_async(order.id, user)
+          CheckoutMailer.received(order.id).deliver_now
+          # partner_user = User.find_by(apiKey: item_records.first.apiKey, status: 1)
+          # CheckoutMailer.publisher(order: order, user: user_record, partners: partners.uniq.join(", "), source_url: declared_params[:sourceUrl],
+          #                      items: item_records, shipping_address: shipping_addr, billing_address: billing_addr,
+          #                      partner: partner_user).deliver_now
+
+          status :accepted
+          present order, with: API::V2::Entities::Order, publishers: publishers
         end
       end
     end

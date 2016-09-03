@@ -81,13 +81,16 @@ gem 'countries'
 gem 'money'
 gem 'monetize'
 
+# Decorators
+gem 'draper'
+
 # SFTP client
 gem 'net-sftp'
 
 # Heroku API client
 gem 'heroku-api'
 
-# Templating engines
+# Template engines
 # TODO: leave only one
 gem 'slim'
 gem 'haml'

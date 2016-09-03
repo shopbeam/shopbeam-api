@@ -9,10 +9,10 @@ module Crawler
           product_list.each do |url|
             CrawlerJob.perform_async(url)
           end
-          brands_list do |brand, provider|
+          brand_list do |brand, provider|
             CrawlerBrandJob.perform_async(brand, provider)
           end
-          keywords_list do |query, provider|
+          keyword_list do |query, provider|
             CrawlerKeywordJob.perform_async(query, provider)
           end
         end.after do
@@ -37,7 +37,7 @@ module Crawler
         end
       end
 
-      def brands_list
+      def brand_list
         config['providers'].each do |provider_name, vars|
           vars['brands'].each do |brand|
             yield brand, provider_name
@@ -45,7 +45,7 @@ module Crawler
         end
       end
 
-      def keywords_list
+      def keyword_list
         config['providers'].each do |provider_name, vars|
           next unless vars['keywords']
           vars['keywords'].each do |keyword|

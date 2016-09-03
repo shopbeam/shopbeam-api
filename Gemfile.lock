@@ -112,6 +112,11 @@ GEM
     dotenv-rails (2.0.2)
       dotenv (= 2.0.2)
       railties (~> 4.0)
+    draper (2.1.0)
+      actionpack (>= 3.0)
+      activemodel (>= 3.0)
+      activesupport (>= 3.0)
+      request_store (~> 1.0)
     enumerable-lazy (0.0.1)
     equalizer (0.0.11)
     erubis (2.7.0)
@@ -255,6 +260,7 @@ GEM
     redis-namespace (1.5.2)
       redis (~> 3.0, >= 3.0.4)
     ref (2.0.0)
+    request_store (1.3.1)
     rest-client (1.8.0)
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 3.0)
@@ -399,6 +405,7 @@ DEPENDENCIES
   database_cleaner
   diffy
   dotenv-rails
+  draper
   factory_girl_rails
   faker
   fakeredis

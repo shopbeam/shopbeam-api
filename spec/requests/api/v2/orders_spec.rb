@@ -6,6 +6,7 @@
 # TODO: rename method names in CheckoutMailer into smth like checkout_aborted_email
 # TODO: merge UserMailer into CheckoutMailer
 # TODO: render collection in mailer tpls
+# TODO: pass model id in mailer and initialize object in place
 
 require 'rails_helper'
 
@@ -265,6 +266,15 @@ describe API::V2::Orders, api: :true do
           post v2_orders_path, **order_params
 
           expect(CheckoutJob).to have_received(:perform_async).with(Order.last.id, order_params[:user])
+        end
+
+        it 'calls checkout mailer' do
+          checkout_mailer = class_double('CheckoutMailer').as_stubbed_const
+          allow(checkout_mailer).to receive(:received)
+
+          post v2_orders_path, **build(:order_params)
+
+          expect(checkout_mailer).to have_received(:received).with(Order.last.id)
         end
 
         # it 'calls mailers(s)' # TODO

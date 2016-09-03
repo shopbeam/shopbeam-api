@@ -5,6 +5,7 @@ class OrderItem < ActiveRecord::Base
 
   belongs_to :variant, foreign_key: 'VariantId'
   has_one :product, through: :variant
+  has_one :partner, through: :product
 
   delegate :source_url, :color, :size, to: :variant
 

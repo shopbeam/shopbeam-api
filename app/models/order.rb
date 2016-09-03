@@ -16,6 +16,7 @@ class Order < ActiveRecord::Base
   belongs_to :billing_address, foreign_key: 'BillingAddressId'
   belongs_to :payment, foreign_key: 'PaymentId'
   has_many :order_items, foreign_key: 'OrderId', autosave: true
+  has_many :partners, -> { distinct }, through: :order_items
   has_many :references, class_name: 'OrderReference'
 
   delegate :first_name, :last_name,
@@ -30,6 +31,9 @@ class Order < ActiveRecord::Base
   delegate :name, :brand, :number, :cvv, :expiration_month, :expiration_year,
            to: :payment,
            prefix: :cc
+
+  alias_attribute :created_at, :createdAt
+  alias_attribute :source_url, :sourceUrl
 
   enum status: {
     pending: 9,
