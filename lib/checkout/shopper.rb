@@ -19,7 +19,7 @@ module Checkout
     rescue InvalidOrderNumberError => exception
       order.complete!
       broadcast :order_completed_with_error, order, exception
-    rescue OrderError => exception
+    rescue CheckoutError => exception
       order.terminate!
       broadcast :order_terminated, order, exception
       raise

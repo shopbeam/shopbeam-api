@@ -2,8 +2,9 @@
 # TODO: test price validation
 # TODO: simplify factories to avoid partner->brand->product->variant chain
 # TODO: enhance params validation rules
-# TODO: rename existing OrderMailer to CheckoutMailer
+# TODO: rename existing OrderMailer to CheckoutMailer (with order_ prefix in method names)
 # TODO: rename method names in CheckoutMailer into smth like checkout_aborted_email
+# TODO: merge UserMailer into CheckoutMailer
 
 require 'rails_helper'
 

@@ -1,4 +1,4 @@
-class OrderMailer < ApplicationMailer
+class CheckoutMailer < ApplicationMailer
   default to: 'tech@shopbeam.com'
 
   def completed(order)

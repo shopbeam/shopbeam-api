@@ -116,10 +116,10 @@ module API
               publishers << publisher.slice(:apiKey, :email, :firstName, :lastName).merge(commission: commission)
             end
             CheckoutJob.perform_async(order.id, user)
-            OrderMailer.received(order: order, user: user_record, partners: partners.uniq.join(", "), source_url: declared_params[:sourceUrl],
+            CheckoutMailer.received(order: order, user: user_record, partners: partners.uniq.join(", "), source_url: declared_params[:sourceUrl],
                                  items: item_records, shipping_address: shipping_addr, billing_address: billing_addr).deliver_now
             partner_user = User.find_by(apiKey: item_records.first.apiKey, status: 1)
-            OrderMailer.publisher(order: order, user: user_record, partners: partners.uniq.join(", "), source_url: declared_params[:sourceUrl],
+            CheckoutMailer.publisher(order: order, user: user_record, partners: partners.uniq.join(", "), source_url: declared_params[:sourceUrl],
                                  items: item_records, shipping_address: shipping_addr, billing_address: billing_addr,
                                  partner: partner_user).deliver_now
 
