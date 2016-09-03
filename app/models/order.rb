@@ -32,8 +32,11 @@ class Order < ActiveRecord::Base
            to: :payment,
            prefix: :cc
 
-  alias_attribute :created_at, :createdAt
+  alias_attribute :order_total_cents, :orderTotalCents
+  alias_attribute :shipping_cents, :shippingCents
+  alias_attribute :tax_cents, :taxCents
   alias_attribute :source_url, :sourceUrl
+  alias_attribute :created_at, :createdAt
 
   enum status: {
     pending: 9,
@@ -75,6 +78,10 @@ class Order < ActiveRecord::Base
                   to: :aborted,
                   after: -> { transit_order_items(:abort) }
     end
+  end
+
+  def total_cents
+    order_total_cents + shipping_cents + tax_cents
   end
 
   def customer=(data)
