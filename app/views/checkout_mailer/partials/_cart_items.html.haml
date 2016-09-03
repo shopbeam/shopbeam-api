@@ -7,6 +7,7 @@
     %td.tableheading.tableprice(width="20%" style="border-collapse: collapse;padding: 7px 0 7px 0;border-top: 1px solid #a19f9d;border-bottom: 1px solid #a19f9d;font-style: italic;text-align: left;padding-right: 0px;")
       %p(style="color: #000;font-size: 13px;font-family: helvetica, times new roman, sans-serif;margin: 0px;padding: 0px;mso-table-lspace: 0;mso-table-rspace: 0;") PRICE
   - @items.each do |item|
+  // # TODO: if (!currentlySelectedPublisher || item.apiKey == currentlySelectedPublisher.apiKey)
     %tr
       %td.productdetail.borderbottom(style="border-collapse: collapse;border-bottom: 1px solid #a19f9d;padding: 5px 0 5px 0;")
         %table.show(width="75" align="left" border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate;border-spacing: 0;display: none;margin-right: 10px;")
@@ -15,6 +16,11 @@
               %p(style="color: #000;font-size: 13px;font-family: helvetica, times new roman, sans-serif;margin: 0px;padding: 0px;mso-table-lspace: 0;mso-table-rspace: 0;")
                 - if item.variant.images.any?
                   %img.image_fix(src="#{item.variant.images.first.sourceUrl}" width="75" border="0" alt="" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;height: auto;display: block;")
+        <!--[if (gte mso 9)|(IE)]>
+        <table width="212" align="left" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+        <td>
+        <![endif]-->
         %table.productdesc(align="left" border="0" cellpadding="0" cellspacing="0" style="width: 100%;max-width: 212px;border-collapse: separate;border-spacing: 0;padding: 25px 0 15px 0;font-size: 15px;line-height: 18px;color: #000000;font-family: helvetica, times new roman, sans-serif;")
           %tr
             %td(style="border-collapse: collapse;")
@@ -25,19 +31,24 @@
                       = item.product.brand.name
                       %br
                       = item.product.name
-                      - unless item.variant.color.blank?
+                      - if item.color.present?
                         %strong
                           Color:
                         = item.color
                         %br
-                      - unless item.variant.size.blank?
+                      - if item.size.present?
                         %strong
                           Size:
-                        = item.variant.size
+                        = item.size
                         %br
                       %strong
                         Shipped By:
                       = item.product.partner.name
+        <!--[if (gte mso 9)|(IE)]>
+        </td>
+        </tr>
+        </table>
+        <![endif]-->
       %td.cellqty.borderbottom(style="border-collapse: collapse;border-bottom: 1px solid #a19f9d;padding-top: 30px;text-align: left;vertical-align: top;")
         %table(width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: separate;border-spacing: 0;")
           %tr
@@ -49,4 +60,4 @@
           %tr
             %td(align="right" style="border-collapse: collapse;")
               %p(style="color: #000;font-size: 13px;font-family: helvetica, times new roman, sans-serif;margin: 0px;padding: 0px;mso-table-lspace: 0;mso-table-rspace: 0;text-align: left;")
-                = Money.new(item.salePriceCents || item.listPriceCents).format
+                = Money.new(item.price_cents).format

@@ -39,10 +39,9 @@ class CheckoutMailer < ApplicationMailer
   end
 
   def received(data)
-    @data = data
     @order = data[:order]
-    @user = data[:user]
-    @items = data[:items]
+    @user = @order.user
+    @partners = data[:partners]
     mail  subject: "Your Shopbeam order is being processed -- Order ##{@order.id}",
           template_name: 'order-default.html'
   end

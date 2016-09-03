@@ -5,6 +5,7 @@
 # TODO: rename existing OrderMailer to CheckoutMailer (with order_ prefix in method names)
 # TODO: rename method names in CheckoutMailer into smth like checkout_aborted_email
 # TODO: merge UserMailer into CheckoutMailer
+# TODO: render collection in mailer tpls
 
 require 'rails_helper'
 

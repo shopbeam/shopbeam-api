@@ -162,10 +162,10 @@ module Importer
       Product.where(demo: true).all.each do |product|
         Variant.where(ProductId: product.id).all.each do |variant|
           variant.update(validatedAt: timestamp)
+          variant.images.update_all(validatedAt: timestamp)
           variant.product.update(validatedAt: timestamp)
           variant.product.brand.update(validatedAt: timestamp)
-          variant.product.partner.update_all(validatedAt: timestamp)
-          VariantImage.where(VariantId: variant.id).update_all(validatedAt: timestamp)
+          variant.product.partner.update(validatedAt: timestamp)
         end
       end
     end

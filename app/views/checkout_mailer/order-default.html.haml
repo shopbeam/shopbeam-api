@@ -134,10 +134,10 @@
                         Dear  #{@user.firstName} #{@user.lastName},
                       %p.bodytext(style="color: #000;font-size: 15px;font-family: helvetica, times new roman, sans-serif;margin: 0px 0px 23px 0px;padding: 0px;mso-table-lspace: 0;mso-table-rspace: 0;line-height: 20px;")
                         Thank you for shopping from
-                        %a.mobile_link(href="#{@data[:source_url]}" style="text-decoration: underline;color: #000000;") #{@data[:source_url]}
+                        %a.mobile_link(href="#{@order.sourceUrl}" style="text-decoration: underline;color: #000000;") #{@order.sourceUrl}.
                         Your order has been received and will be processed momentarily.
                       %p.bodytext(style="color: #000;font-size: 15px;font-family: helvetica, times new roman, sans-serif;margin: 0px 0px 23px 0px;padding: 0px;mso-table-lspace: 0;mso-table-rspace: 0;line-height: 20px;")
-                        You will receive an order confirmation email and shipping details from #{@data[:partners]}.
+                        You will receive an order confirmation email and shipping details from #{@partners}.
                       %p.bodytext(style="color: #000;font-size: 15px;font-family: helvetica, times new roman, sans-serif;margin: 0px 0px 23px 0px;padding: 0px;mso-table-lspace: 0;mso-table-rspace: 0;line-height: 20px;")
                         Shopbeam is here and happy to assist with any questions or comments pertaining to your order. Email us at
                         %a.mobile_link(href="mailto:customercare@shopbeam.com" style="text-decoration: underline;color: #000000;") customercare@shopbeam.com
@@ -149,23 +149,48 @@
                         The Shopbeam Team
             %tr
               %td.innerpadding(style="border-collapse: collapse;padding: 10px 20px 10px 20px;")
-                = render 'checkout_mailer/partials/cart_items', items: @items
+                = render 'checkout_mailer/partials/cart_items', items: @order.order_items
             %tr
               %td.innerpadding(style="border-collapse: collapse;padding: 10px 20px 10px 20px;")
+                <!--[if (gte mso 9)|(IE)]>
+                <table width="245" align="left" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                <td>
+                <![endif]-->
                 %table.orderplace(align="left" border="0" cellpadding="0" cellspacing="0" style="width: 100%;max-width: 245px;border-collapse: separate;border-spacing: 0;")
                   %tr
                     %td.bodytextsmall(style="border-collapse: collapse;font-size: 13px;line-height: 18px;color: #000000;font-family: helvetica, times new roman, sans-serif;")
                       %p(style="color: #000;font-size: 13px;font-family: helvetica, times new roman, sans-serif;margin: 0px;padding: 0px;mso-table-lspace: 0;mso-table-rspace: 0;")
                         Order Placed
                         = @order.createdAt
+                <!--[if (gte mso 9)|(IE)]>
+                </td>
+                </tr>
+                </table>
+                <![endif]-->
+                <!--[if (gte mso 9)|(IE)]>
+                <table width="245" align="right" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                <td>
+                <![endif]-->
                 %table.ordernumber(align="right" border="0" cellpadding="0" cellspacing="0" style="width: 100%;max-width: 245px;border-collapse: separate;border-spacing: 0;padding-top: 10px;float: none;clear: both;")
                   %tr
                     %td(class="bodytextsmall" align="right" style="border-collapse: collapse;font-size: 13px;line-height: 18px;color: #000000;font-family: helvetica, times new roman, sans-serif;text-align: left;")
                       %p(style="color: #000;font-size: 13px;font-family: helvetica, times new roman, sans-serif;margin: 0px;padding: 0px;mso-table-lspace: 0;mso-table-rspace: 0;")
                         Order ##{@order.id}
+                <!--[if (gte mso 9)|(IE)]>
+                </td>
+                </tr>
+                </table>
+                <![endif]-->
             %tr
               %td.innerpadding(style="padding-top: 15px;padding-bottom: 70px;border-collapse: collapse;padding: 10px 20px 10px 20px;")
-                = render "checkout_mailer/partials/customer_info", shipping_address: @data[:shipping_address], billing_address: @data[:billing_address]
+                = render 'checkout_mailer/partials/customer_info', shipping_address: @order.shipping_address, billing_address: @order.billing_address
+                <!--[if (gte mso 9)|(IE)]>
+                <table width="130" align="right" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                <td>
+                <![endif]-->
                 %table.paymentdetails(align="right" border="0" cellpadding="0" cellspacing="0" style="width: 100%;max-width: 130px;border-collapse: separate;border-spacing: 0;padding-bottom: 20px;")
                   %tr
                     %td.bodytextsmall(style="border-collapse: collapse;font-size: 13px;line-height: 18px;color: #000000;font-family: helvetica, times new roman, sans-serif;")
@@ -197,4 +222,14 @@
                                 %br
                               %strong
                                 = Money.new(@order.orderTotalCents + @order.taxCents + @order.shippingCents).format
-            = render "checkout_mailer/partials/footer"
+                <!--[if (gte mso 9)|(IE)]>
+                </td>
+                </tr>
+                </table>
+                <![endif]-->
+            = render 'checkout_mailer/partials/footer'
+          <!--[if (gte mso 9)|(IE)]>
+          </td>
+          </tr>
+          </table>
+          <![endif]-->
