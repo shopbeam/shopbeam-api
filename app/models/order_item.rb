@@ -5,9 +5,12 @@ class OrderItem < ActiveRecord::Base
 
   belongs_to :variant, foreign_key: 'VariantId'
   has_one :product, through: :variant
+  has_many :images, through: :variant
   has_one :partner, through: :product
 
   delegate :source_url, :color, :size, to: :variant
+  delegate :name, to: :product, prefix: true
+  delegate :brand_name, :partner_name, to: :product
 
   alias_attribute :sale_price_cents, :salePriceCents
   alias_attribute :list_price_cents, :listPriceCents

@@ -1,5 +1,5 @@
 class OrderDecorator < Draper::Decorator
-  decorates_association :user
+  decorates_associations :user, :order_items
   delegate_all
   delegate :full_name, to: :user, prefix: true
 
