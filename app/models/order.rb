@@ -19,7 +19,7 @@ class Order < ActiveRecord::Base
   has_many :partners, -> { distinct }, through: :order_items
   has_many :references, class_name: 'OrderReference'
 
-  delegate :first_name, :last_name,
+  delegate :first_name, :last_name, :email,
            to: :user,
            prefix: true
   delegate :address1, :address2, :city, :state, :country, :zip, :phone_number,

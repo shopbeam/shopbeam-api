@@ -7,6 +7,7 @@
 # TODO: merge UserMailer into CheckoutMailer
 # TODO: render collection in mailer tpls
 # TODO: pass model id in mailer and initialize object in place
+# TODO: rename STAGE_NAME to just STAGE
 
 require 'rails_helper'
 
@@ -268,13 +269,13 @@ describe API::V2::Orders, api: :true do
           expect(CheckoutJob).to have_received(:perform_async).with(Order.last.id, order_params[:user])
         end
 
-        it 'calls checkout mailer' do
-          checkout_mailer = class_double('CheckoutMailer').as_stubbed_const
-          allow(checkout_mailer).to receive(:received)
+        it 'calls order mailer' do
+          order_mailer = class_double('OrderMailer').as_stubbed_const
+          allow(order_mailer).to receive(:received)
 
           post v2_orders_path, **build(:order_params)
 
-          expect(checkout_mailer).to have_received(:received).with(Order.last.id)
+          expect(order_mailer).to have_received(:received).with(Order.last.id)
         end
 
         # it 'calls mailers(s)' # TODO

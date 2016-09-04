@@ -47,7 +47,7 @@ module API
         end
         requires :shippingCents,      type: Integer
         requires :taxCents,           type: Integer
-        requires :notes,              type: String
+        optional :notes,              type: String
         requires :shareWithPublisher, type: Boolean
         requires :apiKey,             type: String
         requires :sourceUrl,          type: String
@@ -120,7 +120,7 @@ module API
           end
 
           CheckoutJob.perform_async(order.id, user)
-          CheckoutMailer.received(order.id).deliver_now
+          OrderMailer.received(order.id).deliver_now
           # partner_user = User.find_by(apiKey: item_records.first.apiKey, status: 1)
           # CheckoutMailer.publisher(order: order, user: user_record, partners: partners.uniq.join(", "), source_url: declared_params[:sourceUrl],
           #                      items: item_records, shipping_address: shipping_addr, billing_address: billing_addr,
