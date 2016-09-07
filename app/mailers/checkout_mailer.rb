@@ -38,16 +38,6 @@ class CheckoutMailer < ApplicationMailer
     mail subject: "[order-manager] ACTION REQUIRED: Shopbeam order ##{@order.id} has been aborted"
   end
 
-  def publisher(data)
-    @data = data
-    @order = data[:order]
-    @user = data[:user]
-    @items = data[:items]
-    @partner = data[:partner]
-    mail  subject: "You\'ve made a sale with Shopbeam! -- Order ##{@order.id}",
-          template_name: 'publisher_order.html'
-  end
-
   private
 
   def attach_exception(exception)

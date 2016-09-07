@@ -101,6 +101,11 @@
     %table(width="100%" bgcolor="#eeeeee" border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate;border-spacing: 0;")
       %tr
         %td
+          <!--[if (gte mso 9)|(IE)]>
+          <table width="600" align="center" cellpadding="0" cellspacing="0" border="0">
+          <tr>
+          <td>
+          <![endif]-->
           %table.content(bgcolor="#ffffff" align="center" cellpadding="0" cellspacing="0" border="0" style="border-collapse: separate;border-spacing: 0;width: 600px;max-width: 600px;")
             %tr
               %td.header(bgcolor="#000000" class="header" style="padding: 0px 0px 0px 0px;")
@@ -117,13 +122,13 @@
                   %tr
                     %td.bodytext(style="border-collapse: collapse;")
                       %p.bodytext(style="color: #000;font-family: helvetica, times new roman, sans-serif;margin: 0px 0px 20px 0px;padding: 0px;font-size: 17px;line-height: 20px;")
-                        Dear  #{@partner.firstName} #{@partner.lastName},
+                        Dear #{@publisher.full_name},
                       %p.bodytext(style="color: #000;font-family: helvetica, times new roman, sans-serif;margin: 0px 0px 20px 0px;padding: 0px;font-size: 17px;line-height: 20px;")
                         We have an important update in your account.
                       %p.bodytext(style="color: #000;font-family: helvetica, times new roman, sans-serif;margin: 0px;padding: 0px;font-size: 17px;line-height: 20px;")
                         The following order has been made from
-                        %a.mobile_link(href="#{@data[:source_url]}" style="text-decoration:underline; color: #000;") your post
-                        = "."
+                        = succeed '.' do
+                          %a.mobile_link(href="#{@order.source_url}" style="text-decoration:underline; color: #000;") your post
             %tr
               %td.innerpadding(style="padding: 20px 20px 5px 20px;")
                 <!--[if (gte mso 9)|(IE)]>
@@ -150,7 +155,7 @@
                   %tr
                     %td.bodytextsmall(align="right" style="font-size: 19px;line-height: 22px;color: #000000;font-family: helvetica, times new roman, sans-serif;text-align: left;")
                       %p(style="color: #000;font-family: helvetica, times new roman, sans-serif;margin: 0px;padding: 0px;")
-                        Order Placed #{@order.createdAt}
+                        Order Placed #{@order.created_at}
                 <!--[if (gte mso 9)|(IE)]>
                 </td>
                 </tr>
@@ -166,22 +171,22 @@
                       %p(style="color: #000;font-family: helvetica, times new roman, sans-serif;margin: 0px;padding: 0px;") PRICE
                     %td.tableheading.tablecomm(width="15%" style="padding: 1px 0 1px 0;border-top: 1px solid #a19f9d;border-bottom: 1px solid #a19f9d;font-style: italic;text-align: right;")
                       %p(style="color: #000;font-family: helvetica, times new roman, sans-serif;margin: 0px;padding: 0px;") COMM
-                  - @items.each do |item|
+                  - @publisher.order_items.each do |item|
                     %tr
                       %td.productdetail.borderbottom(style="border-bottom: 1px solid #a19f9d;padding: 5px 0 5px 0;")
                         %p(style="color: #000;font-family: helvetica, times new roman, sans-serif;margin: 0px;padding: 0px;")
-                          = item.product.brand.name
+                          = item.brand_name
                           %br
-                          = item.product.name
+                          = item.product_name
                       %td.cellqty.borderbottom(style="border-bottom: 1px solid #a19f9d;padding-top: 5px;padding-bottom: 5px;text-align: center;vertical-align: bottom;")
                         %p(style="color: #000;font-family: helvetica, times new roman, sans-serif;margin: 0px;padding: 0px;")
                           = item.quantity
                       %td.cellprice.borderbottom(style="border-bottom: 1px solid #a19f9d;padding-top: 5px;padding-bottom: 5px;vertical-align: bottom;text-align: right;padding-right: 10px;")
                         %p(style="color: #000;font-family: helvetica, times new roman, sans-serif;margin: 0px;padding: 0px;")
-                          = Money.new(item.salePriceCents || item.listPriceCents).format
+                          = item.price
                       %td.cellcomm.borderbottom(style="border-bottom: 1px solid #a19f9d;padding-top: 5px;padding-bottom: 5px;vertical-align: bottom;text-align: right;")
                         %p(style="color: #000;font-family: helvetica, times new roman, sans-serif;margin: 0px;padding: 0px;")
-                          0
+                          = item.commission
                   %tr
                     %td.productdetail(style="padding: 5px 0 5px 0;")
                       %p(style="color: #000;font-family: helvetica, times new roman, sans-serif;margin: 0px;padding: 0px;")
@@ -190,21 +195,8 @@
                     %td.cellprice(style="padding-top: 5px;padding-bottom: 5px;vertical-align: bottom;text-align: right;padding-right: 10px;")
                     %td.cellcomm(style="padding-top: 5px;padding-bottom: 5px;vertical-align: bottom;text-align: right;")
                       %p(style="color: #000;font-family: helvetica, times new roman, sans-serif;margin: 0px;padding: 0px;")
-                        %strong -
-            %tr
-              %td.innerpadding(style="padding: 20px 20px 5px 20px;")
-                %table(width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse: separate;border-spacing: 0;")
-                  %tr
-                    %td.borderbottom(style="border-bottom: 1px solid #a19f9d;")
-                      %p(style="color: #000;font-family: helvetica, times new roman, sans-serif;margin: 0px;padding: 0px;")
-                        %strong Customer Details
-                  %tr
-                    %td(style="padding-top:10px;")
-                      %p(style="color: #000;font-family: helvetica, times new roman, sans-serif;margin: 0px;padding: 0px;")
-                        #{@user.firstName} #{@user.lastName}
-                        %br
-                        #{@data[:shipping_address].city}, #{@data[:shipping_address].state} #{@data[:shipping_address].zip}<br/>
-                        %a.mobile_link(href="mailto:#{@user.email}" style="text-decoration: none;color: #000000;") #{@user.email}
+                        %strong
+                          = @publisher.commission
             %tr
               %td.innerpadding(style="padding: 20px;")
                 %table(width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse: separate;border-spacing: 0;")
@@ -223,7 +215,7 @@
                       </tr>
                       </table>
                       <![endif]-->
-            = render "order_mailer/partials/footer"
+            = render 'footer'
           <!--[if (gte mso 9)|(IE)]>
           </td>
           </tr>

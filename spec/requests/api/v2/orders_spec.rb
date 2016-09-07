@@ -2,10 +2,6 @@
 # TODO: test price validation
 # TODO: simplify factories to avoid partner->brand->product->variant chain
 # TODO: enhance params validation rules
-# TODO: rename existing OrderMailer to CheckoutMailer (with order_ prefix in method names)
-# TODO: rename method names in CheckoutMailer into smth like checkout_aborted_email
-# TODO: merge UserMailer into CheckoutMailer
-# TODO: render collection in mailer tpls
 # TODO: pass model id in mailer and initialize object in place
 # TODO: rename STAGE_NAME to just STAGE
 
@@ -261,6 +257,7 @@ describe API::V2::Orders, api: :true do
         end
 
         it 'calls checkout job' do
+          # TODO: use have_enqueued_job matcher when fixed
           order_params = build(:order_params)
           allow(CheckoutJob).to receive(:perform_async)
 
@@ -269,16 +266,28 @@ describe API::V2::Orders, api: :true do
           expect(CheckoutJob).to have_received(:perform_async).with(Order.last.id, order_params[:user])
         end
 
-        it 'calls order mailer' do
-          order_mailer = class_double('OrderMailer').as_stubbed_const
-          allow(order_mailer).to receive(:received)
-
+        it 'sends confirmation email to user' do
           post v2_orders_path, **build(:order_params)
 
-          expect(order_mailer).to have_received(:received).with(Order.last.id)
+          expect(OrderMailer.instance_method(:received)).to be_delayed(Order.last.id)
         end
 
-        # it 'calls mailers(s)' # TODO
+        it 'sends notification email to publishers' do
+          user = create(:user)
+          partner = create(:partner, commission: 1500)
+          brand = create(:brand, partner: partner)
+          product = create(:product, brand: brand)
+          variants = [create(:variant, product: product, salePriceCents: 5, listPriceCents: 10)]
+          order_params = build(:order_params, variants: variants)
+          order_params[:items][0][:quantity] = 2
+          order_params[:items][0][:apiKey] = user.api_key
+
+          post v2_orders_path, **order_params
+
+          commission = (5 * 2 * (1500.0 / 100 / 100)).ceil # => 2
+
+          expect(OrderMailer.instance_method(:placed)).to be_delayed(Order.last.id, user.id, [OrderItem.last.id], commission)
+        end
       end
 
       describe 'publisher' do
