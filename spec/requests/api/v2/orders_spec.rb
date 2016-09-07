@@ -1,10 +1,3 @@
-# TODO: test transaction
-# TODO: test price validation
-# TODO: simplify factories to avoid partner->brand->product->variant chain
-# TODO: enhance params validation rules
-# TODO: pass model id in mailer and initialize object in place
-# TODO: rename STAGE_NAME to just STAGE
-
 require 'rails_helper'
 
 describe API::V2::Orders, api: :true do

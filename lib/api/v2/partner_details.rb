@@ -9,9 +9,9 @@ module API
         end
         get do
           partners = PartnerQuery.call do |query|
-                       with_param(:partner) { |param| query.by_partner_id!(param) }
-                       with_param(:state)   { |param| query.by_state!(param) }
-                     end
+            with_param(:partner) { |param| query.by_partner_id!(param) }
+            with_param(:state)   { |param| query.by_state!(param) }
+          end
 
           present partners, with: API::V2::Entities::Partner
         end

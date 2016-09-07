@@ -14,9 +14,8 @@ module Checkout
     end
 
     def order_terminated(order, exception)
-      # TODO: deliver below mails async
-      CheckoutMailer.terminated(order, exception).deliver_now
-      UserMailer.order_error(order, exception).deliver_now
+      CheckoutMailer.delay.terminated(order, exception)
+      UserMailer.delay.order_error(order, exception)
     end
 
     def order_aborted(order, exception)

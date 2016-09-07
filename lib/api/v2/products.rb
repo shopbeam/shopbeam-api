@@ -18,18 +18,18 @@ module API
         end
         get do
           products = ProductQuery.call do |query|
-                       with_param(:id)       { |param| query.by_variant_id!(param) }
-                       with_param(:partner)  { |param| query.by_partner_id!(param) }
-                       with_param(:brand)    { |param| query.by_brand_id!(param) }
-                       with_param(:category) { |param| query.by_category_id!(param) }
-                       with_param(:minprice) { |param| query.by_min_price!(param) }
-                       with_param(:maxprice) { |param| query.by_max_price!(param) }
-                       with_param(:sale)     { |param| query.by_sale_percent!(param) }
-                       with_param(:q)        { |param| query.search!(param) }
-                       with_param(:sortby)   { |param| query.sort_by!(param) }
-                       with_param(:limit)    { |param| query.limit!(param) }
-                       with_param(:offset)   { |param| query.offset!(param) }
-                     end
+            with_param(:id)       { |param| query.by_variant_id!(param) }
+            with_param(:partner)  { |param| query.by_partner_id!(param) }
+            with_param(:brand)    { |param| query.by_brand_id!(param) }
+            with_param(:category) { |param| query.by_category_id!(param) }
+            with_param(:minprice) { |param| query.by_min_price!(param) }
+            with_param(:maxprice) { |param| query.by_max_price!(param) }
+            with_param(:sale)     { |param| query.by_sale_percent!(param) }
+            with_param(:q)        { |param| query.search!(param) }
+            with_param(:sortby)   { |param| query.sort_by!(param) }
+            with_param(:limit)    { |param| query.limit!(param) }
+            with_param(:offset)   { |param| query.offset!(param) }
+          end
 
           present products, with: API::V2::Entities::Product
         end
