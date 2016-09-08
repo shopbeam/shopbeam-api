@@ -1,0 +1,33 @@
+{
+  "type": "object",
+  "properties": {
+    "state": {
+      "type": "string"
+    },
+    "zip": {
+      "type": "string"
+    },
+    "shippingType": {
+      "type": "number"
+    },
+    "salesTax": {
+      "type": "number",
+      "minimum": 0
+    },
+    "freeShippingAbove": {
+      "type": "number",
+      "minimum": 0
+    },
+    "siteWideDiscount": {
+      "type": "number",
+      "minimum": 0
+    },
+    "shippingItems": {
+      "type": "array",
+      "items": {
+        "$ref": "item_count_shipping_cost.json"
+      }
+    }
+  },
+  "required": ["state", "zip", "shippingType", "salesTax", "freeShippingAbove", "siteWideDiscount", "shippingItems"]
+}

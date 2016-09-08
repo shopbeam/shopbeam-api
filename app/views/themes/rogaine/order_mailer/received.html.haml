@@ -1,0 +1,251 @@
+!!!
+%html
+  %head
+    %title ShopBeam Order
+    %meta(http-equiv="Content-Type" content="text/html; charset=utf-8")
+    %meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
+
+    :css
+      //
+        #outlook a {padding:0;}
+        body{width:100% !important; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; margin:0; padding:0;}
+        .ExternalClass {width:100%;}
+        .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {line-height: 100%;}
+        #backgroundTable {margin:0; padding:0; width:100% !important; line-height: 100% !important;}
+
+        img {outline:none; text-decoration:none; -ms-interpolation-mode: bicubic;}
+        a img {border:none;}
+        .image_fix {display:block;}
+
+        .ReadMsgBody {width: 100%;}
+        .ExternalClass {width: 100%;}
+        a:hover { text-decoration: none !important; }
+        span.yshortcuts { color:#000; background-color:none; border:none;}
+        span.yshortcuts:hover { color: #000 !important; background-color: none !important; border: none !important; }
+        span.yshortcuts:active { color: #000 !important; background-color: none !important; border: none !important; }
+        span.yshortcuts:focus { color: #000 !important; background-color: none !important; border: none !important; }
+
+        body {margin: 0; padding: 0; min-width: 100%!important;}
+        img {height: auto;}
+        table {border-collapse:separate; border-spacing: 0;}
+        table td {border-collapse: collapse;}
+        p{color:#000;font-size:13px;font-family:helvetica, times new roman, sans-serif;margin:0px;padding:0px;mso-table-lspace:0;mso-table-rspace:0;}
+
+        .content {width: 600px; max-width: 600px;}
+        .header {padding: 0px 0px 0px 0px;}
+        .innerpadding {padding: 10px 20px 10px 20px;}
+        .borderbottom {border-bottom: 1px solid #a19f9d;}
+        .subhead {font-size: 15px; color: #ffffff; font-family: sans-serif; letter-spacing: 10px;}
+        .h1, .h2 {color: #000000; font-family: helvetica, times new roman, sans-serif;}
+        .h1 {font-size: 33px; line-height: 38px; font-weight: bold;}
+        .h2 {padding: 0 0 15px 0; font-size: 24px; line-height: 28px; font-weight: bold;}
+        p.bodytext {font-size: 15px; line-height: 20px; margin:0px 0px 23px 0px;padding:0px;}
+        .footer {padding: 30px 30px 30px 30px;}
+        .footercopy, .footercopy p {font-family: sans-serif; font-size: 14px; line-height: 20px; color: #ffffff;}
+        .footercopy a {color: #ffffff; text-decoration: none;}
+        .fix300{max-width: 300px;}
+        .tableheading {padding:7px 0 7px 0; border-top:1px solid #a19f9d; border-bottom:1px solid #a19f9d; font-style: italic; text-align: center;}
+        .tableqty, .tableqty p {text-align: left;}
+        .cellqty {padding-top: 30px; text-align: left; vertical-align: top;}
+        .cellqty p {text-align: left;}
+        .tableprice {text-align: left; padding-right: 0px;}
+        .cellprice {padding-top:30px; vertical-align:top; text-align: right; padding-right: 0px;}
+        .cellprice p {text-align: left;}
+        .productdetail {padding:5px 0 5px 0;}
+        .productdesc {padding: 25px 0 15px 0; font-size: 15px ; line-height: 18px; color: #000000; font-family: helvetica, times new roman, sans-serif;}
+        .bodytextsmall {font-size: 13px ; line-height: 18px; color: #000000; font-family: helvetica, times new roman, sans-serif;}
+        .addresses {padding-bottom:20px;}
+        .paymentdetails {padding-bottom:20px;max-width:600px!important;}
+        .ordernumber {max-width:100%!important;padding-top:10px;width:100%;float:none;clear: both;}
+        .ordernumber td {text-align: left;}
+        .show{display: none;}
+
+        a, a[href^="tel"], a[href^="sms"] {text-decoration: none;color: black;pointer-events: none;cursor: default;}
+        a:hover {text-decoration:underline;}
+        .mobile_link a[href^="tel"], .mobile_link a[href^="sms"] {text-decoration: default;color: #ffffff!important;pointer-events: auto;cursor: default;}
+        .mobile_link {text-decoration: none;}
+
+        @media  (max-width: 599px){
+            .content {width: 100%!important; max-width: 600px!important;}
+        }
+        @media (min-width: 600px){
+            .innerpadding {padding-left: 40px!important; padding-right: 40px!important;}
+            .show{display: table!important;}
+            .tableqty, .tableqty p {text-align: center!important;}
+            .cellqty {text-align: center!important;}
+            .cellqty p {text-align: center!important;}
+            .tableprice {padding-right:65px!important;text-align: right!important;}
+            .cellprice {padding-right:65px!important;text-align: right!important;}
+            .cellprice p {text-align: right!important;}
+            .paymentdetails {max-width:130px!important;}
+            .ordernumber {max-width:245px!important;padding-top:0px!important;width:100%;float:right!important;clear: none!important;}
+            .ordernumber td {text-align: right!important;}
+            p.bodytext {font-size: 17px!important; line-height: 22px!important;}
+        }
+
+        @media only screen and (max-width: 599px), screen and (max-device-width: 599px) {
+            body[yahoo] .innerpadding{padding: 10px 20px 10px 20px!important;}
+            body[yahoo] .hide {display: none!important;}
+            body[yahoo] .tableqty, body[yahoo] .tableqty p {text-align: center!important;}
+            body[yahoo] .cellqty {text-align: center!important;padding-top:5px!important;}
+            body[yahoo] .cellqty p {text-align: center!important;}
+            body[yahoo] .tableprice {padding-right: 0px!important;text-align: right!important;}
+            body[yahoo] .cellprice {padding-top:5px!important; padding-right: 0px!important;text-align: right!important;}
+            body[yahoo] .cellprice p {text-align: right!important;}
+            body[yahoo] .productdesc {padding-top: 0px!important;}
+            body[yahoo] .ordernumber {padding-top:10px!important;width:100%!important;float:none!important;}
+            body[yahoo] .ordernumber td {text-align: left!important;}
+            body[yahoo] .addresses {padding-bottom:20px!important;}
+            body[yahoo] .paymentdetails {padding-bottom:20px!important;float:none!important;}
+            body[yahoo] .orderplace, body[yahoo] .ordernumber{max-width:245px!important;}
+
+            a[href^="tel"], a[href^="sms"] {text-decoration: none;color: black;pointer-events: none;cursor: default;}
+            .mobile_link a[href^="tel"], .mobile_link a[href^="sms"] {text-decoration: default;color: #ffffff!important;pointer-events: auto;cursor: default;}
+        }
+        @media only screen and (-webkit-device-pixel-ratio:.75), only screen and (-webkit-device-pixel-ratio:1), only screen and (-webkit-device-pixel-ratio:1.5){
+
+        }
+
+  %body(yahoo bgcolor="#eeeeee" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;margin: 0;padding: 0;width: 100% !important;min-width: 100%!important;")
+    %table(width="100%" bgcolor="#eeeeee" border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate;border-spacing: 0;")
+      %tr
+        %td(style="border-collapse: collapse;")
+          <!--[if (gte mso 9)|(IE)]>
+          <table width="600" align="center" cellpadding="0" cellspacing="0" border="0">
+          <tr>
+          <td>
+          <![endif]-->
+          %table.content(bgcolor="#ffffff" align="center" cellpadding="0" cellspacing="0" border="0" style="border-collapse: separate;border-spacing: 0;width: 600px;max-width: 600px;")
+            %tr
+              %td.header(bgcolor="#000000" style="border-collapse: collapse;padding: 0px 0px 0px 0px;")
+                %center
+                  %table(width="254" align="center" border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate;border-spacing: 0;")
+                    %tr
+                      %td(height="98" style="padding: 1px 1px 1px 1px;border-collapse: collapse;")
+                        %center
+                          %p(style="color: #000;font-size: 13px;font-family: helvetica, times new roman, sans-serif;margin: 0px;padding: 0px;mso-table-lspace: 0;mso-table-rspace: 0;")
+                            %img.image_fix(src="https://s3.amazonaws.com/statix/emails/header-thank-you-white.png" width="254" border="0" alt="" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;height: auto;display: block;")
+            %tr
+              %td.innerpadding(style="border-collapse: collapse;padding: 10px 20px 10px 20px;")
+                %table(width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse: separate;border-spacing: 0;")
+                  %tr
+                    %td.bodytext(style="border-collapse: collapse;")
+                      %p.bodytext(style="color: #000;font-size: 15px;font-family: helvetica, times new roman, sans-serif;margin: 0px 0px 23px 0px;padding: 0px;mso-table-lspace: 0;mso-table-rspace: 0;line-height: 20px;")
+                        Dear #{@order.user_full_name},
+                      %p.bodytext(style="color: #000;font-size: 15px;font-family: helvetica, times new roman, sans-serif;margin: 0px 0px 23px 0px;padding: 0px;mso-table-lspace: 0;mso-table-rspace: 0;line-height: 20px;")
+                        Thank you for shopping from
+                        = succeed '.' do
+                          %a.mobile_link(href="#{@order.source_url}" style="text-decoration: underline;color: #000000;") #{@order.source_url}
+                        Your order has been received and will be processed momentarily by #{@order.partner_list}.
+                      %p.bodytext(style="color: #000;font-size: 15px;font-family: helvetica, times new roman, sans-serif;margin: 0px 0px 23px 0px;padding: 0px;mso-table-lspace: 0;mso-table-rspace: 0;line-height: 20px;")
+                        Please be aware you will receive a separate Order Confirmation email and shipping details sent directly from #{@order.partner_list}.
+                      %p.bodytext(style="color: #000;font-size: 15px;font-family: helvetica, times new roman, sans-serif;margin: 0px 0px 23px 0px;padding: 0px;mso-table-lspace: 0;mso-table-rspace: 0;line-height: 20px;")
+                        Shopbeam is here to assist with any questions related to your order. Email us at
+                        %a.mobile_link(href="mailto:customercare@shopbeam.com" style="text-decoration: underline;color: #000000;") customercare@shopbeam.com
+                        or call us at
+                        %a.mobile_link(href="tel:8004903216" style="text-decoration: none;color: #000000;") (800) 490-3216.
+                      %p.bodytext(style="color: #000;font-size: 15px;font-family: helvetica, times new roman, sans-serif;margin: 0px 0px 23px 0px;padding: 0px;mso-table-lspace: 0;mso-table-rspace: 0;line-height: 20px;")
+                        Enjoy your new purchase!
+                      %p.bodytext(style="color: #000;font-size: 15px;font-family: helvetica, times new roman, sans-serif;margin: 0px 0px 23px 0px;padding: 0px;mso-table-lspace: 0;mso-table-rspace: 0;line-height: 20px;font-weight: bold;")
+                        The Shopbeam Team
+            %tr
+              %td.innerpadding(style="border-collapse: collapse;padding: 10px 20px 10px 20px;")
+                %table(width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse: separate;border-spacing: 0;")
+                  %tr
+                    %td.tableheading(style="border-collapse: collapse;padding: 7px 0 7px 0;border-top: 1px solid #a19f9d;border-bottom: 1px solid #a19f9d;font-style: italic;text-align: center;")
+                      %p(style="color: #000;font-size: 13px;font-family: helvetica, times new roman, sans-serif;margin: 0px;padding: 0px;mso-table-lspace: 0;mso-table-rspace: 0;") ITEM
+                    %td.tableheading.tableqty(width="20%" style="border-collapse: collapse;padding: 7px 0 7px 0;border-top: 1px solid #a19f9d;border-bottom: 1px solid #a19f9d;font-style: italic;text-align: left;")
+                      %p(style="color: #000;font-size: 13px;font-family: helvetica, times new roman, sans-serif;margin: 0px;padding: 0px;mso-table-lspace: 0;mso-table-rspace: 0;text-align: left;") QTY
+                    %td.tableheading.tableprice(width="20%" style="border-collapse: collapse;padding: 7px 0 7px 0;border-top: 1px solid #a19f9d;border-bottom: 1px solid #a19f9d;font-style: italic;text-align: left;padding-right: 0px;")
+                      %p(style="color: #000;font-size: 13px;font-family: helvetica, times new roman, sans-serif;margin: 0px;padding: 0px;mso-table-lspace: 0;mso-table-rspace: 0;") PRICE
+                  = render partial: 'item', collection: @order.order_items, as: :item
+            %tr
+              %td.innerpadding(style="border-collapse: collapse;padding: 10px 20px 10px 20px;")
+                <!--[if (gte mso 9)|(IE)]>
+                <table width="245" align="left" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                <td>
+                <![endif]-->
+                %table.orderplace(align="left" border="0" cellpadding="0" cellspacing="0" style="width: 100%;max-width: 245px;border-collapse: separate;border-spacing: 0;")
+                  %tr
+                    %td.bodytextsmall(style="border-collapse: collapse;font-size: 13px;line-height: 18px;color: #000000;font-family: helvetica, times new roman, sans-serif;")
+                      %p(style="color: #000;font-size: 13px;font-family: helvetica, times new roman, sans-serif;margin: 0px;padding: 0px;mso-table-lspace: 0;mso-table-rspace: 0;")
+                        Order Placed #{@order.created_at}
+                <!--[if (gte mso 9)|(IE)]>
+                </td>
+                </tr>
+                </table>
+                <![endif]-->
+                <!--[if (gte mso 9)|(IE)]>
+                <table width="245" align="right" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                <td>
+                <![endif]-->
+                %table.ordernumber(align="right" border="0" cellpadding="0" cellspacing="0" style="width: 100%;max-width: 245px;border-collapse: separate;border-spacing: 0;padding-top: 10px;float: none;clear: both;")
+                  %tr
+                    %td(class="bodytextsmall" align="right" style="border-collapse: collapse;font-size: 13px;line-height: 18px;color: #000000;font-family: helvetica, times new roman, sans-serif;text-align: left;")
+                      %p(style="color: #000;font-size: 13px;font-family: helvetica, times new roman, sans-serif;margin: 0px;padding: 0px;mso-table-lspace: 0;mso-table-rspace: 0;")
+                        Order ##{@order.id}
+                <!--[if (gte mso 9)|(IE)]>
+                </td>
+                </tr>
+                </table>
+                <![endif]-->
+            %tr
+              %td.innerpadding(style="padding-top: 15px;padding-bottom: 70px;border-collapse: collapse;padding: 10px 20px 10px 20px;")
+                <!--[if (gte mso 9)|(IE)]>
+                <table width="365" align="left" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                <td>
+                <![endif]-->
+                %table.addresses(align="left" border="0" cellpadding="0" cellspacing="0" style="width: 100%;max-width: 365px;border-collapse: separate;border-spacing: 0;padding-bottom: 20px;")
+                  %tr
+                    = render partial: 'address', collection: [@order.shipping_address, @order.billing_address], as: :address
+                <!--[if (gte mso 9)|(IE)]>
+                </td>
+                </tr>
+                </table>
+                <![endif]-->
+                <!--[if (gte mso 9)|(IE)]>
+                <table width="130" align="right" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                <td>
+                <![endif]-->
+                %table.paymentdetails(align="right" border="0" cellpadding="0" cellspacing="0" style="width: 100%;max-width: 130px;border-collapse: separate;border-spacing: 0;padding-bottom: 20px;")
+                  %tr
+                    %td.bodytextsmall(style="border-collapse: collapse;font-size: 13px;line-height: 18px;color: #000000;font-family: helvetica, times new roman, sans-serif;")
+                      %strong.bodytextsmall(style="font-size: 13px;line-height: 18px;color: #000000;font-family: helvetica, times new roman, sans-serif;")
+                        Payment Details
+                      %table(border="0" cellpadding="0" cellspacing="0" style="width: 100%;border-collapse: separate;border-spacing: 0;")
+                        %tr
+                          %td.bodytextsmall(style="border-collapse: collapse;font-size: 13px;line-height: 18px;color: #000000;font-family: helvetica, times new roman, sans-serif;")
+                            %p(style="color: #000;font-size: 13px;font-family: helvetica, times new roman, sans-serif;margin: 0px;padding: 0px;mso-table-lspace: 0;mso-table-rspace: 0;")
+                              Subtotal
+                              %br
+                              Tax
+                              %br
+                              Shipping
+                              %br
+                              %strong
+                                Total
+                          %td.bodytextsmall(align="right" style="border-collapse: collapse;font-size: 13px;line-height: 18px;color: #000000;font-family: helvetica, times new roman, sans-serif;")
+                            %p(style="color: #000;font-size: 13px;font-family: helvetica, times new roman, sans-serif;margin: 0px;padding: 0px;mso-table-lspace: 0;mso-table-rspace: 0;")
+                              = @order.subtotal
+                              %br
+                              = @order.tax
+                              %br
+                              = @order.shipping
+                              %br
+                              %strong
+                                = @order.total
+                <!--[if (gte mso 9)|(IE)]>
+                </td>
+                </tr>
+                </table>
+                <![endif]-->
+            = render 'footer'
+          <!--[if (gte mso 9)|(IE)]>
+          </td>
+          </tr>
+          </table>
+          <![endif]-->

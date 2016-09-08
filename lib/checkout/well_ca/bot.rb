@@ -121,7 +121,7 @@ module Checkout
       end
 
       def remove_samples(items)
-        items_list = items.map(&:source_url)
+        item_list = items.map(&:source_url)
 
         browser.goto CART_URL
 
@@ -129,7 +129,7 @@ module Checkout
           .each_with_object([]) { |container, links|
             item_link = container.element(class: 'name').link.href
 
-            unless item_link.in?(items_list)
+            unless item_link.in?(item_list)
               links << container.link(href: REMOVE_PRODUCT_URL_PATTERN).href
             end
           }.each { |url|

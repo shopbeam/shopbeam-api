@@ -16,9 +16,10 @@ class Order < ActiveRecord::Base
   belongs_to :billing_address, foreign_key: 'BillingAddressId'
   belongs_to :payment, foreign_key: 'PaymentId'
   has_many :order_items, foreign_key: 'OrderId', autosave: true
+  has_many :partners, -> { distinct }, through: :order_items
   has_many :references, class_name: 'OrderReference'
 
-  delegate :first_name, :last_name,
+  delegate :first_name, :last_name, :email,
            to: :user,
            prefix: true
   delegate :address1, :address2, :city, :state, :country, :zip, :phone_number,
@@ -31,18 +32,26 @@ class Order < ActiveRecord::Base
            to: :payment,
            prefix: :cc
 
+  alias_attribute :order_total_cents, :orderTotalCents
+  alias_attribute :shipping_cents, :shippingCents
+  alias_attribute :tax_cents, :taxCents
+  alias_attribute :source_url, :sourceUrl
+  alias_attribute :created_at, :createdAt
+
   enum status: {
     pending: 9,
     completed: 11,
-    aborted: 8
+    aborted: 8,
+    test: 4
   }
 
-  scope :uncompleted, -> { where.not(status: statuses[:completed]) }
+  scope :uncompleted, -> { where.not(status: statuses.values_at(:completed, :test)) }
 
   aasm column: :status do
     state :pending, initial: true
     state :completed
     state :aborted
+    state :test
 
     event :process do
       transitions to: :pending, unless: :completed?,
@@ -69,6 +78,10 @@ class Order < ActiveRecord::Base
                   to: :aborted,
                   after: -> { transit_order_items(:abort) }
     end
+  end
+
+  def total_cents
+    order_total_cents + shipping_cents + tax_cents
   end
 
   def customer=(data)

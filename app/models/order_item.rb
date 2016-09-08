@@ -4,18 +4,26 @@ class OrderItem < ActiveRecord::Base
   self.table_name = 'OrderItem'
 
   belongs_to :variant, foreign_key: 'VariantId'
+  has_one :product, through: :variant
+  has_many :images, through: :variant
+  has_one :partner, through: :product
 
   delegate :source_url, :color, :size, to: :variant
+  delegate :name, to: :product, prefix: true
+  delegate :brand_name, :partner_name, to: :product
 
-  alias_attribute :list_price_cents, :listPriceCents
   alias_attribute :sale_price_cents, :salePriceCents
+  alias_attribute :list_price_cents, :listPriceCents
+  alias_attribute :commission_cents, :commissionCents
+  alias_attribute :api_key, :apiKey
 
   enum status: {
     pending: 9,
     processed: 12,
     out_of_stock: 5,
     unprocessed: 13,
-    aborted: 14
+    aborted: 14,
+    test: 4
   }
 
   aasm column: :status, whiny_transitions: false do
@@ -24,6 +32,7 @@ class OrderItem < ActiveRecord::Base
     state :out_of_stock
     state :unprocessed
     state :aborted
+    state :test
 
     event :process do
       transitions to: :pending
@@ -48,6 +57,10 @@ class OrderItem < ActiveRecord::Base
 
   def price_cents
     sale_price_cents || list_price_cents
+  end
+
+  def total_price_cents
+    price_cents * quantity
   end
 
   def bot

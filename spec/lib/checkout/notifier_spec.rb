@@ -4,10 +4,10 @@ describe Checkout::Notifier do
   let(:mailer) { double(deliver_now: true) }
 
   describe '#order_completed' do
-    it 'calls order mailer with the target order' do
+    it 'calls checkout mailer with the target order' do
       order = double
 
-      expect(OrderMailer)
+      expect(CheckoutMailer)
         .to receive(:completed).with(order)
         .and_return(mailer)
 
@@ -16,8 +16,8 @@ describe Checkout::Notifier do
   end
 
   describe '#order_not_found' do
-    it 'calls order mailer with the target order ID' do
-      expect(OrderMailer)
+    it 'calls checkout mailer with the target order ID' do
+      expect(CheckoutMailer)
         .to receive(:not_found).with(1)
         .and_return(mailer)
 
@@ -26,10 +26,10 @@ describe Checkout::Notifier do
   end
 
   describe '#order_terminated' do
-    it 'calls order mailer with the target order and exception' do
+    it 'calls checkout mailer with the target order and exception' do
       order, exception = double, double
 
-      expect(OrderMailer)
+      expect(CheckoutMailer)
         .to receive(:terminated).with(order, exception)
         .and_return(mailer)
 
@@ -38,10 +38,10 @@ describe Checkout::Notifier do
   end
 
   describe '#order_aborted' do
-    it 'calls order mailer with the target order and exception' do
+    it 'calls checkout mailer with the target order and exception' do
       order, exception = double, double
 
-      expect(OrderMailer)
+      expect(CheckoutMailer)
         .to receive(:aborted).with(order, exception)
         .and_return(mailer)
 

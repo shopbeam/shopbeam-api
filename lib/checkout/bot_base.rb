@@ -13,9 +13,9 @@ module Checkout
         begin
           yield
         rescue StandardError => exception
-          unless exception.kind_of?(OrderError)
+          unless exception.kind_of?(CheckoutError)
             # Decorate standard error
-            exception = OrderError.new(browser.url, exception.message)
+            exception = CheckoutError.new(browser.url, exception.message)
           end
 
           filename = "#{session.id}_#{Time.now.utc.strftime('%Y%m%d%H%M%S')}"

@@ -7,7 +7,7 @@ module Encryptor
 
   def encrypt(value, salt = nil)
     salt = salt ? Base64.strict_decode64(salt) : SecureRandom.random_bytes(SALT_SIZE)
-    key = ActiveSupport::KeyGenerator.new(CIPHER_KEY, iterations: DEFAULT_HASH_ITERATIONS).generate_key(salt, KEY_LENGTH)
+    key = ActiveSupport::KeyGenerator.new(Rails.application.config.x.cipher_key, iterations: DEFAULT_HASH_ITERATIONS).generate_key(salt, KEY_LENGTH)
     crypt = ActiveSupport::MessageEncryptor.new(key, serializer: ActiveSupport::MessageEncryptor::NullSerializer)
 
     {
@@ -18,7 +18,7 @@ module Encryptor
 
   def decrypt(value, salt)
     salt = Base64.strict_decode64(salt)
-    key = ActiveSupport::KeyGenerator.new(CIPHER_KEY, iterations: DEFAULT_HASH_ITERATIONS).generate_key(salt, KEY_LENGTH)
+    key = ActiveSupport::KeyGenerator.new(Rails.application.config.x.cipher_key, iterations: DEFAULT_HASH_ITERATIONS).generate_key(salt, KEY_LENGTH)
     crypt = ActiveSupport::MessageEncryptor.new(key, serializer: ActiveSupport::MessageEncryptor::NullSerializer)
 
     crypt.decrypt_and_verify(value)

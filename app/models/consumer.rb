@@ -1,10 +1,9 @@
 class Consumer < ActiveRecord::Base
-  belongs_to :client
-
   attr_accessor :access_token
 
   has_secure_password
 
+  belongs_to :client
   has_many :access_tokens, dependent: :destroy
 
   delegate :fingerprint, :token, :expires_at, to: :access_token
@@ -18,10 +17,6 @@ class Consumer < ActiveRecord::Base
 
   before_save :record_email
   before_create :build_access_token
-
-  class Entity < Grape::Entity
-    expose :id, :email, :created_at, :updated_at
-  end
 
   def delete_expired_tokens
     access_tokens.expired.delete_all
