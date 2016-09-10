@@ -7,19 +7,19 @@ module API
 
     included do
       rescue_from ActiveRecord::RecordNotFound do
-        error!('Not Found', 404)
+        error!('404 Not Found', 404)
       end
 
       rescue_from UnauthorizedError do
-        error!('Unauthorized', 401)
+        error!('401 Unauthorized', 401)
       end
 
-      rescue_from Grape::Exceptions::ValidationErrors do |e|
-        error!(e.message, 400)
+      rescue_from ActiveRecord::RecordInvalid do
+        error!('422 Unprocessable Entity', 422)
       end
 
-      rescue_from ActiveRecord::RecordInvalid do |e|
-        error!('Unprocessable Entity', 422)
+      rescue_from Grape::Exceptions::Base do |e|
+        error!(e.message, e.status)
       end
 
       rescue_from :all do |e|
